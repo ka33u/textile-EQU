@@ -1,0 +1,275 @@
+{
+  "checkedAt": "2026-11-16",
+  "scope": "织造准备与剑杆织造四类；先核对厂家当前目录、带日期发布与继任关系，再确定单一型号参照。未改动模型或前端。",
+  "method": "已读 research/visual-reference-v2.md。只据厂家产品页和厂家发布资料作结论；网页仍在列、首次发布、当前最新代与完整工程资料是不同证据。搜索可读而直接访问受限的资料单独标注。",
+  "routeConstraint": "保持棉短纤经纱的分批整经—浆纱—穿经—剑杆机织。新喷气机型不能因发布时间更新而替代剑杆工艺；展示案例的混合纤维参数不能冒充全棉。",
+  "fullStructureEvidenceAvailable": false,
+  "items": [
+    {
+      "id": "warping",
+      "previousReference": "KARL MAYER WARPDIRECT；旧双语单页照片，未锁定代次、幅宽及筒子架。",
+      "previousReferenceYear": null,
+      "previousReferenceYearNote": "原引用文件名没有年份，不能用下载时间或搜索引擎收录时间充当机器发布年份。",
+      "previousReferenceUrl": "https://www.karlmayer.com/ecomaXL/files/KM_FS_WARPDIRECT_encn.pdf",
+      "currentFinding": "WARPDIRECT 当前仍列于厂家目录；2026-10-29 厂家新闻进一步明确现行为 WARPDIRECT 2.0，2025 年末推出。旧 WARPDIRECT 外形不能自动当作 2.0。",
+      "latestGeneration": "WARPDIRECT 2.0；这是本轮找到的厂家明确命名的新一代。2026 新闻中的去年年底换算为 2025 年末，确切首发日未公开。",
+      "lifecycle": {
+        "currentCatalog": true,
+        "datedNewGeneration": "WARPDIRECT 2.0",
+        "launchPeriod": "2025 年末",
+        "launchDate": null,
+        "directSuccessorEvidence": "同一 WARPDIRECT 产品平台的 2.0 改进；厂家明确压辊系统由液压改为电动。",
+        "globalLatestAbsoluteClaim": false
+      },
+      "singleReference": {
+        "manufacturer": "KARL MAYER",
+        "model": "WARPDIRECT 2.0",
+        "referenceGenerationYear": 2025,
+        "configuration": "短纤分批整经主机；电动压辊、Smart-Riet、kick-back、自动理顺。筒子架、张力器、工作幅宽、轴径尚未锁定。",
+        "configurationStatus": "精确代号已确认；完整订单配置未确认",
+        "doNotCombine": "2026 展台列举 OPTOGUARD、YTC 2000、ISOTENS、MEGATENS 是不同纱线应用的选项，不能全部拼入一台安装。"
+      },
+      "sourceConflictsAndLimits": [
+        "当前产品页给幅宽 1800–2400 mm，旧单页给 1800–2800 mm。未取得同代配置表前，不混用两组边界。",
+        "现产品页仍列液气制动器；2.0 新闻说电动化的是压辊系统，不是制动器。",
+        "2024-10-15 新闻也曾称 WARPDIRECT 为最新一代；必须让位于有更晚明确代号的 2026 证据。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.karlmayer.com/en/products/warp-preparation/beaming-machines-and-direct-warpers/warpdirect/",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前系列、Smart-Riet、压辊及制动说明、幅宽和经轴范围；不等于完整 2.0 订单图"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/karl-mayer-at-the-weaving-hall-of-itma-asia-2026-high-performance-warp-preparation-for-high-quality-fabrics-made-from-staple-fibers-and-new-horizons-in-textiles/",
+          "publicationDate": "2026-10-29",
+          "access": "official article body read",
+          "supports": "明确 WARPDIRECT 2.0、2025 年末推出、电动压辊、短纤适用和可选张力系统；同时确认 PROSIZE HSB 在 2026 展示"
+        },
+        {
+          "url": "https://www.karlmayer.com/de/news-events/news/successful-start-to-the-trade-fair/",
+          "publicationDate": "2024-10-15",
+          "access": "official article body read",
+          "supports": "2024 WARPDIRECT 展示年代；不据此覆盖 2.0 后续更新"
+        }
+      ],
+      "fullStructureEvidenceAvailable": false,
+      "reconstructionEvidence": "能确认设备类别、主机轮廓及若干功能系统，不能确认所有内部结构、传动和安装数量。",
+      "requiredBeforeFaithfulRebuild": [
+        "WARPDIRECT 2.0 指定幅宽、轴径及版本的总装图/尺寸图",
+        "单一筒子架型号、锭位数、张力器与断头监测配置",
+        "电动压辊传动/导轨、制动器、轴夹持及退绕纱路装配图",
+        "全方向实机照片与完整 BOM、气路、电柜及辅助系统边界"
+      ]
+    },
+    {
+      "id": "sizing",
+      "previousReference": "KARL MAYER PROSIZE；旧单页照片，未锁定 HSB/VSB、浆槽及烘筒数量。",
+      "previousReferenceYear": null,
+      "previousReferenceYearNote": "原引用单页没有从现记录可确认的发行年份；不能据文件仍在线称为新款。",
+      "previousReferenceUrl": "https://www.karlmayer.com/ecomaXL/files/KM_FS_PROSIZE_en.pdf",
+      "currentFinding": "PROSIZE (PSZ) 仍为当前模块化浆纱平台；2024 发布 CASCADE 与 Smart Size Box，2026 厂家仍重点展示 PROSIZE 的 HSB 浆槽。这些是系统/选件更新，不能虚构 PROSIZE 2.0 代号。",
+      "latestGeneration": "当前 PROSIZE 平台已证实；未找到统一整线新代号。CASCADE 与 Smart Size Box 有 2024-10-16 日期证据。",
+      "lifecycle": {
+        "currentCatalog": true,
+        "datedNewGeneration": null,
+        "datedSubsystemUpdate": "CASCADE、Smart Size Box，2024",
+        "directSuccessorEvidence": null,
+        "globalLatestAbsoluteClaim": false
+      },
+      "singleReference": {
+        "manufacturer": "KARL MAYER",
+        "model": "PROSIZE (PSZ) with HSB Size Box",
+        "referenceGenerationYear": null,
+        "configuration": "棉短纤浆纱、HSB 浆槽；SoftDry 为平台技术。是否装 CASCADE、Smart Size Box，以及浆槽数、烘筒数、幅宽和轴架规模均未锁定。",
+        "configurationStatus": "锁定 HSB 子型参照；整线配置未确认",
+        "selectionReason": "2026-10-29 官方展示明确为 HSB。2024 Pinhua 案例实际订购的是 VSB，不能拿其配置充当 HSB。"
+      },
+      "sourceConflictsAndLimits": [
+        "官方当前页同时列一般幅宽 1800–2800 mm、HSB 1800–2400 mm、VSB 1800–3200 mm；必须按模块识别，不能选一个范围替代整线所有模块。",
+        "4–24 烘筒是可选范围，不是某一具体设备已有 24 个烘筒。",
+        "SoftDry、CASCADE、Smart Size Box 不提供完整安装 BOM；选件名称不构成实际安装证明。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.karlmayer.com/en/products/warp-preparation/sizing-and-assembling-machines/prosize/",
+          "publicationDate": null,
+          "access": "current official page read; Smart Size Box also visible in search index and German official page",
+          "supports": "当前 PROSIZE、HSB/VSB 幅宽、模块化烘筒、SoftDry、CASCADE；尺寸范围不能当作单台完整配置"
+        },
+        {
+          "url": "https://www.karlmayer.com/de/produkte/kettvorbereitung/schlichte-und-assembliermaschinen/prosize/",
+          "publicationDate": null,
+          "access": "official search-index text read",
+          "supports": "Smart Size Box 的电机参数与轴承振动/温度监测"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/investing-in-sizing-technology-from-karl-mayer/",
+          "publicationDate": "2024-10-16",
+          "access": "official article body read",
+          "supports": "CASCADE 与 Smart Size Box 当时为新开发；Pinhua 的 PROSIZE VSB 订单，不等于 HSB 订单"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/karl-mayer-at-the-weaving-hall-of-itma-asia-2026-high-performance-warp-preparation-for-high-quality-fabrics-made-from-staple-fibers-and-new-horizons-in-textiles/",
+          "publicationDate": "2026-10-29",
+          "access": "official article body read",
+          "supports": "2026 当前 HSB 子型展示"
+        }
+      ],
+      "fullStructureEvidenceAvailable": false,
+      "reconstructionEvidence": "公开图可支持主模块顺序及外观；未取得指定整线纱路、全部浆槽/烘筒数量、管路与驱动细节。",
+      "requiredBeforeFaithfulRebuild": [
+        "明确 HSB 的完整订单配置、轴架规模、幅宽、浆槽和烘筒数量",
+        "全线布置图和逐辊纱路图；浆槽内部及轧辊支承剖面",
+        "SoftDry 驱动、电控、蒸汽冷凝水、排湿与循环过滤装配资料",
+        "CASCADE 与 Smart Size Box 的实装状态、完整 BOM 和维护平台/安全防护边界"
+      ]
+    },
+    {
+      "id": "drawing_in",
+      "previousReference": "Stäubli SAFIR S80；官网整机照，未锁定单/双经片、移动小车数、幅宽或综框数量。",
+      "previousReferenceYear": null,
+      "previousReferenceYearNote": "旧照片 URL 无可确认年份；网页版权 2026 不代表 S80 发布于 2026。",
+      "previousReferenceUrl": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-s80.html",
+      "currentFinding": "S80 当前仍在厂家目录，服务复杂单/双经片应用，并非可判定已淘汰。SAFIR PRO S67 于 2024 首发且当前在列，适合棉纱及中等复杂度单经片；没有证据称它是 S80 的等能力直接继任者。",
+      "latestGeneration": "PRO S67 有明确 2024 新机发布证据；S80、PRO S47、PRO S67、PRO S37 为不同应用分支，型号数值或 PRO 字样不能单独判断继任顺序。",
+      "lifecycle": {
+        "currentCatalog": true,
+        "datedNewGeneration": "SAFIR PRO S67，ITM 2024 首发",
+        "launchPeriod": "2024-06",
+        "announcementDate": "2024-05-13",
+        "directSuccessorEvidence": null,
+        "globalLatestAbsoluteClaim": false
+      },
+      "singleReference": {
+        "manufacturer": "Stäubli",
+        "model": "SAFIR PRO S67",
+        "referenceGenerationYear": 2024,
+        "configuration": "作为下一轮现代棉机织单经片参照：固定穿经机头、移动穿经小车、AWC 2.0 双纱检测；小车具体数量、幅宽、综框数与花型检测选件未锁定。",
+        "configurationStatus": "单一新型号参照已建议；订单配置未确认，尚未修改现有 S80 模型",
+        "selectionReason": "用户未指定厂型，按普通棉机织且不要求 S80 的双经片复杂结构选择有日期新机参照；这属于应用选择，不是认定 S80 停产。"
+      },
+      "sourceConflictsAndLimits": [
+        "当前 S67 页主应用为单经片、1/2 纱层，最多 20 片综框；S80 为单/双经片、最多 4 层与 28 片综框。不能把 S80 容量套到 S67。",
+        "2024 S67 发布稿提到双经轴 Layer and Offset 特定应用，而当前产品简介为单经片；该特殊配置需厂家确认，不能擅自与标准参数合并。",
+        "PRO S37 主要为长丝及喷水织造，不适合为了更新年份替代本棉纺路线。PRO S47 偏标准/牛仔应用，其地区页速度存在差异，不用其参数补 S67。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-s80.html",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "S80 仍在列；复杂单/双经片、最多 4 层、28 综框与 AWC 2.0"
+        },
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-pro-s67.html",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前 S67 棉/混纺适用、固定机头与移动小车、单经片和最多 20 综框；通常 2 台小车不是每台已安装证明"
+        },
+        {
+          "url": "https://www.staubli.com/us/en/news/global/2024/ITM-2024.html",
+          "publicationDate": "2024-05-13",
+          "access": "official article body read",
+          "supports": "S67 于 2024-06 ITM 首次公开；双经轴 Layer and Offset 为文中特定应用"
+        },
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine.html",
+          "publicationDate": null,
+          "access": "current official lineup read",
+          "supports": "S37、S47、S67、S80 当前并列，非数字顺序淘汰关系"
+        }
+      ],
+      "fullStructureEvidenceAvailable": false,
+      "reconstructionEvidence": "整机照片与官方功能视频可识别高机头/长移动小车布局，不能据此穷尽穿经头内部、选纱机构、针/夹持器传动、控制和传感装配。",
+      "requiredBeforeFaithfulRebuild": [
+        "S67 指定幅宽、综框/停经片/筘配置、小车数量与 AWC 选件清单",
+        "穿经头内部机构、选纱/夹纱/穿经针和各轴运动关系工程资料",
+        "小车导向/行走驱动、纱层夹持架及安全系统完整图纸",
+        "全方向实机照片、尺寸总图及完整机械/电气 BOM"
+      ]
+    },
+    {
+      "id": "weaving",
+      "previousReference": "Picanol OptiMax-i Connect；2021 英文产品册及路径含 2023-07 的照片，未锁定剑杆导引、幅宽、开口和卷绕配置。",
+      "previousReferenceYear": 2021,
+      "previousReferenceYearNote": "2021 来自原产品册文件名/Connect 代发布年；照片路径 2023-07 仅是资源路径，不能当作新代发布。",
+      "previousReferenceUrl": "https://www.picanol.be/sites/picanol/files/2021-11/pic_optimax-i-connect_brochure_2021_en_0.pdf",
+      "currentFinding": "OptiMax-i Connect 官方仍有目录/资料，并非可据此判停产；但已有同为剑杆的 Ultimax 继任平台。Ultimax 2023-06 首发、计划 2024 年一季度供货，2026 仍展示。不能继续把 OptiMax-i Connect 标成最新一代。",
+      "latestGeneration": "同路线优先参照 Ultimax；Supermax 是 2024 面向亚洲市场的新剑杆分支，不据发布时间认定替代 Ultimax。2025/2026 新喷气机均不纳入本剑杆替换。",
+      "lifecycle": {
+        "currentCatalog": true,
+        "datedNewGeneration": "Ultimax",
+        "announcementDate": "2023-05-09",
+        "launchPeriod": "2023-06",
+        "announcedAvailability": "2024-Q1",
+        "directSuccessorEvidence": "Picanol 官方 2023 发布稿明确把 Ultimax 称为 OptiMax 剑杆一代的继任平台。",
+        "globalLatestAbsoluteClaim": false
+      },
+      "singleReference": {
+        "manufacturer": "Picanol",
+        "model": "Ultimax-4-R 220 Denim",
+        "referenceGenerationYear": 2023,
+        "configurationReferenceYear": 2026,
+        "configuration": "ITM 2026 官方公布的单一示范配置：4-R 220、Guided Gripper GC、ERGO、EcoFill 4c、QSC，棉经 Ne 10/1、穿筘宽 210 cm、经密 19 根/cm；示范纬为 PBT Ne 13/1、18.5 纬/cm。",
+        "configurationStatus": "精确展示型号及部分实装选件可锁定；完整硬件 BOM 未公开",
+        "routeCompatibility": "保留剑杆引纬与棉经纱准备路线。该展样不是全棉：若全流程设定为纯棉坯布，不能照搬 PBT 纬参数或称完全复刻这个展样。也不能因 Denim 名称擅加本流程未选定的靛蓝经纱染色线。",
+        "unconfirmed": ["实际安装综框片数及具体多臂机型号", "经轴直径、卷布系统和全部边组织选件", "电柜/冷却/润滑和所有传感器安装清单"]
+      },
+      "sourceConflictsAndLimits": [
+        "2024 产品册给的是各幅宽/开口/夹持方式选项集合，不是每台同时具备所有选件。",
+        "Ultimax、Ultimax Terry、Supermax 与 OmniPlus-i Connect/AirOne 属不同构型或工艺，不能合成一台。",
+        "2026-11-13 官方 AirOne 新闻虽更新，但其为喷气；发布时间新不满足剑杆路线可比要求。",
+        "Picanol 部分 PDF 和 2026 新闻直接请求返回 403；已读取厂家域名搜索索引正文，未声称成功下载受限文件。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.picanol.be/en/machines-features/machines/ultimax-rapier-weaving-machine",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前 Ultimax 剑杆平台及官方图片/样本入口"
+        },
+        {
+          "url": "https://www.picanol.be/en/milestones",
+          "publicationDate": null,
+          "access": "official timeline read",
+          "supports": "Connect 2021、Ultimax 2023-06、Supermax 2024-10 亚洲市场的明确时间关系"
+        },
+        {
+          "url": "https://picanol.media/sites/default/files/2023-05/pr_2023_picanol_at_itma_2023.pdf",
+          "publicationDate": "2023-05-09",
+          "access": "official PDF text read through search index",
+          "supports": "Ultimax 对 OptiMax 的继任关系及宣布供货 2024-Q1"
+        },
+        {
+          "url": "https://www.picanol.be/en/news/picanol-present-its-leading-weaving-technology-itm-2026",
+          "publicationDate": "2026-05-08",
+          "access": "official search-index article text read; direct open returned HTTP 403",
+          "supports": "Ultimax-4-R 220 Denim 精确示范型号、GC/ERGO/EcoFill/QSC 及棉经/PBT 纬参数"
+        },
+        {
+          "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Ultimax_brochure_2024_EN.pdf",
+          "publicationDate": "2024-09",
+          "datePrecisionNote": "年月据官方文件路径与文件名，不声称具体发布日",
+          "access": "official PDF technical text read through search index; direct download returned HTTP 403",
+          "supports": "宽度、开口、引纬、送经卷布、驱动的可选技术规格；不足以推定全部安装项"
+        },
+        {
+          "url": "https://www.picanol.be/en/news/picanol-present-its-new-airone-airjet-weaving-machine-indian-subcontinent",
+          "publicationDate": "2026-11-13",
+          "access": "official article body read",
+          "supports": "最新消息中的 AirOne 为喷气机，因此不用于替换剑杆路线"
+        }
+      ],
+      "fullStructureEvidenceAvailable": false,
+      "reconstructionEvidence": "单一展机配置比泛用产品册更明确，但仍缺全内部装配与全部辅助系统。不能把外观照片加自行编造传动称为不省略的真实设备复刻。",
+      "requiredBeforeFaithfulRebuild": [
+        "选定 Ultimax-4-R 220 的实际织物与全棉/混纤参数，确认是否沿用 2026 展机配置",
+        "具体多臂机、综框数、经轴/卷布和边组织完整实装清单",
+        "双侧剑杆传动、筘座凸轮、主驱动、送经卷布、润滑冷却与电柜工程图",
+        "全方位设备资料、内部装配图、尺寸与完整 BOM；缺项保留未知，不能擅自填充"
+      ]
+    }
+  ]
+}

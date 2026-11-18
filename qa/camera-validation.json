@@ -1,0 +1,188 @@
+{
+  "testedAt": "2026-11-18T23:37:05.524Z",
+  "models": [
+    {
+      "file": "airjet_spinning.glb",
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202",
+      "meshes": 7881
+    },
+    {
+      "file": "assembly_winding.glb",
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f",
+      "meshes": 670
+    },
+    {
+      "file": "calender.glb",
+      "sha256": "ab9728c0a35d87552d86e536af785fb5f2f210f44428ba40ad316c9d40b2da5b",
+      "meshes": 209
+    },
+    {
+      "file": "carding.glb",
+      "sha256": "6805b808eb73c7df2256432f2008a12d06b0ce83710e6f4ca9ecc7be24dc1068",
+      "meshes": 191
+    },
+    {
+      "file": "combing.glb",
+      "sha256": "d69888cdb9e76d04d7a57966ba6b2712c1dacfb63aa4b8c025ad9d210ea31d88",
+      "meshes": 527
+    },
+    {
+      "file": "compact_spinning.glb",
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "meshes": 8273
+    },
+    {
+      "file": "drawing.glb",
+      "sha256": "42767e516a13657e835610e955682bc1ce0f85c9061a6a1e3592bceb00bc6bc4",
+      "meshes": 180
+    },
+    {
+      "file": "drawing_in.glb",
+      "sha256": "6cfcab870698364bf3b895268beafa973aae19fb4df9b623585c78c890ca8d59",
+      "meshes": 5968
+    },
+    {
+      "file": "dyeing.glb",
+      "sha256": "991163c6023c69d4180a9d37a5513aa60946476d77d1b4cc7341b315b57ce72a",
+      "meshes": 381
+    },
+    {
+      "file": "inspection.glb",
+      "sha256": "1821472e3f6da1ed6b80f349d2905f24f72323362e9b6c7ce400277bf652fc38",
+      "meshes": 120
+    },
+    {
+      "file": "mercerizing.glb",
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674",
+      "meshes": 1718
+    },
+    {
+      "file": "motor.glb",
+      "sha256": "143ff81e95e725d83ea599fe6b53adde49ad91770189896676efe1a8f5ab76f5",
+      "meshes": 345
+    },
+    {
+      "file": "opening.glb",
+      "sha256": "ca3e698fd1522c3804ddf8806f48c902867163907e69a0a2f32319f94be6bc13",
+      "meshes": 245
+    },
+    {
+      "file": "pretreatment.glb",
+      "sha256": "e9e31c48bc00c2ee52431daeaa3cb758dee963b39086eaab8dc023a9549a45f3",
+      "meshes": 935
+    },
+    {
+      "file": "rotor_spinning.glb",
+      "sha256": "0333ae379f82cf457be515614b7347b9fd0746f23a2d544bc71e66cbc33e3ade",
+      "meshes": 6882
+    },
+    {
+      "file": "roving.glb",
+      "sha256": "5a82d5ebcd48cccf7540dd1038011a50aa9b58adece0389215f175b123588d8c",
+      "meshes": 1716
+    },
+    {
+      "file": "sanforizing.glb",
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31",
+      "meshes": 693
+    },
+    {
+      "file": "singeing.glb",
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302",
+      "meshes": 727
+    },
+    {
+      "file": "sizing.glb",
+      "sha256": "8d711333036d8b4fddc3f67ecf1181bf9e417677f3f47ed82f78d192ec2a3b1f",
+      "meshes": 6568
+    },
+    {
+      "file": "spinning.glb",
+      "sha256": "6c4380ccd2dac531d969c04a6b76205466f39915e2d3810389005bd21fc89232",
+      "meshes": 4772
+    },
+    {
+      "file": "stenter.glb",
+      "sha256": "b37222c90b5d5c7bdfea1aa9249374ce9c22a278a66b15482da76c25935532ce",
+      "meshes": 1939
+    },
+    {
+      "file": "texturing.glb",
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "meshes": 17709
+    },
+    {
+      "file": "twisting.glb",
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "meshes": 699
+    },
+    {
+      "file": "warp_tying.glb",
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1",
+      "meshes": 110
+    },
+    {
+      "file": "warping.glb",
+      "sha256": "23268d362e4ad2c79b4f3391c7d7b0146b09b2d6c21351219bc09f0b7cf5208d",
+      "meshes": 3588
+    },
+    {
+      "file": "washing_range.glb",
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565",
+      "meshes": 1509
+    },
+    {
+      "file": "weaving.glb",
+      "sha256": "b4fde3c4d8aa315281492412a40e09237cf3aa041e311d0b8ea586846304dc46",
+      "meshes": 3147
+    },
+    {
+      "file": "winding.glb",
+      "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "meshes": 2504
+    }
+  ],
+  "normalizationCases": 112,
+  "projectionCases": 122976,
+  "groundClearanceCases": 252,
+  "minimumDynamicGroundClearance": 0.035,
+  "originalGroundConflicts": [],
+  "viewports": [
+    [
+      800,
+      500
+    ],
+    [
+      390,
+      380
+    ],
+    [
+      330,
+      480
+    ],
+    [
+      1200,
+      400
+    ]
+  ],
+  "azimuths": 24,
+  "elevations": [
+    -60,
+    0,
+    35,
+    75,
+    89.99
+  ],
+  "explode": [
+    0,
+    0.5,
+    1
+  ],
+  "animationPhases": [
+    0,
+    1.0471975511965976,
+    3.455751918948773
+  ],
+  "failures": [],
+  "result": "pass"
+}

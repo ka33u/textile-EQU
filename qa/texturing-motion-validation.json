@@ -1,0 +1,28 @@
+{
+  "testedAt": "2026-11-18T23:37:06.763Z",
+  "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+  "result": "pass",
+  "stations": 384,
+  "sharedDynamicGeometries": 24,
+  "actualTubeRings": 131,
+  "phaseCount": 10,
+  "constructionMs": 80.651792,
+  "meanCpuUpdateMs": 2.0610730000000443,
+  "guideSamples": 288,
+  "triangleSegmentChecks": 2016,
+  "minimumGuideClearanceMetres": 0.035054944214035134,
+  "minimumDynamicYarnPackageClearanceMetres": 0.0006999999999992074,
+  "crossings": [],
+  "regressions": [
+    "pause",
+    "rewind",
+    "all_384_paths",
+    "exact_motor_side",
+    "camshaft_and_takeup",
+    "oil_fluid_not_rotation",
+    "unknown_motor_no_fallback",
+    "station_384",
+    "world_transform_dirty",
+    "dispose_restoration"
+  ]
+}

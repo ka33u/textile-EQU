@@ -1,0 +1,66 @@
+{
+  "checkedAt": "2026-11-18",
+  "items": [{
+    "id": "rotor_spinning",
+    "name": "气流纺（转杯纺纱机）",
+    "referenceManufacturer": "Rieter",
+    "referenceModel": "R 70",
+    "referenceConfiguration": "双面基础机，2 节共 48 个纺位、2 台落筒机器人。选 1 070 mm 高矩形条筒、圆柱卷装和逐位清纱。",
+    "currentFinding": "立达当前转杯纺产品目录列有全自动 R 70 和半自动 R 37。本模型采用 R 70 技术册第 8 页基础机一行的配置。",
+    "configurationStatus": "原厂整机尺寸和逐纺位驱动有公开依据，安装细节为外形重建。",
+    "modelVersion": "3.0", "driveRevision": "5.0", "motorDetailScope": "external_only",
+    "fidelityStatus": "partial_public_reference", "structuralCompleteness": false,
+    "selectedCounts": {"sections":2,"positions":48,"pitch":"230 mm","length":"11.453 m","width":"2.536 m","height":"2.950 m","sectionLength":"2.820 m","sectionLowerEdge":"1.175 m","cans":"48 个，220 × 920 × 1 070 mm","robots":2,"deliveryBelts":2,"unitDrives":"5 项 × 48 位 = 240 个逐位驱动映射"},
+    "selectedCountLabels":{"sections":"机节数","positions":"纺位数","pitch":"同侧锭距","length":"整机长度","width":"图示宽度（含机器人）","height":"所选高度","sectionLength":"单节长度","sectionLowerEdge":"机节下缘","cans":"所选条筒","robots":"落筒机器人","deliveryBelts":"成筒输送带","unitDrives":"本配置逐位电机"},
+    "verified":[
+      "技术册第 8 页给出基础机的两节、48 位和两台机器人。同侧每节 12 位、节长 2.820 m，所选条筒高度对应整机高 2.950 m。",
+      "第 9 页分别列出喂条、分梳辊、转杯的单电机驱动，以及卷装和导纱的独立驱动。分梳辊电子调速范围 6 000–11 000 r/min；磁轴承转杯的技术设计上限为 180 000 r/min。",
+      "两条成筒皮带向同一端输出。车头两侧分别供管，车尾设抽吸过滤和废料收集；接头时气动清杯，机器人承担落筒。",
+      "纺位直接形成卷装。当前选圆柱筒子；产品技术册标注的直径与质量上限分别为 350 mm、6 kg。"
+    ],
+    "inferred":[
+      "根据外观图和整机尺寸图布置纺纱箱、摇架、卷装、护盖和辅助模块。电机外壳、支承、轴端以及纱线走向按工位功能重建。",
+      "五类逐位电机按原厂公开结构各映射 48 个。模型给出示意筒径、实际装载中的部分空管；供管架额定容量与当前存管量分开。",
+      "纺位运动以可观察速度演示，横动行程、每个纺位的相位以及辊筒接触位置按当前几何选取。"
+    ],
+    "missing":[
+      "各电机的铭牌、功率、极数、绕组和具体电磁型式，以及引纱罗拉的独立动力归属，原厂公开资料未逐项披露。",
+      "风机、皮带、机器人和供管机构的执行电机型号、数量及内部机械分配仍需订单资料。240 只统计五类逐位驱动。",
+      "未取得装配 CAD 或 BOM。所选配置不含选配上蜡、自动成筒提升机和托盘输送接口。"
+    ],
+    "sources":[
+      {"title":"立达 R 70 全自动转杯纺纱机","url":"https://www.rieter.com/products/systems/rotor-spinning-machines/rotor-spinning-machine-r-70","supports":"当前在列型号、逐位自动化与吸风设计。"},
+      {"title":"立达 R 70 原厂技术册","url":"https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-r-70-v2-rotor-spinning-machine-brochure-3313-v4-95393-en.pdf","printedPages":[2,6,8,9,10],"supports":"整机照片、纺纱箱正面、基础机尺寸、五项单电机驱动以及选配边界。"},
+      {"title":"立达转杯纺成套工艺路线","url":"https://www.rieter.com/products/system-applications/rotor-spinning-system","supports":"从纤维准备、梳理和条子准备到转杯成纱及卷装的流程。"}
+    ]
+  }],
+  "stage":{
+    "id":"rotor_spinning","name":"气流纺（转杯纺）","equipment":"气流纺（转杯纺纱机）","en":"ROTOR / OPEN-END SPINNING","section":"yarn_processing","group":"yarn_processing","branchType":"alternative_branch",
+    "input":"经准备的棉条或适纺短纤维条","output":"转杯纱筒子","summary":"棉条由分梳辊开松，纤维经气流送入高速转杯，在凝聚槽内汇聚成纱。纱线连续引出并直接卷成筒子。",
+    "process":["条筒 → 喂给罗拉与给棉板，控制供纤量","针布分梳辊 → 输纤通道 → 转杯凝聚槽，纤维汇聚并加入引出的纱尾","引纱嘴 → 引纱罗拉 → 导纱器与卷绕工作辊，形成圆柱筒子","接头和清杯由纺位自动化完成；机器人落筒后，经同侧输送带向机端输出"],
+    "drive":["每位各设喂条、分梳、转杯、卷绕和横动导纱五项独立驱动。选择一类电机和一个纺位可查看对应负载。","引纱罗拉可以定位。其动力归属和公用辅机的电机数量在所查技术册中未逐项列出。"],
+    "quality":["喂条均匀性、分梳状态与排杂","转杯凝聚槽清洁、纱条条干、捻度和接头质量","卷绕密度、横动成形及筒子退绕性能"],
+    "note":"转杯纺从条子直接成筒；经纱可进入整经，纬纱可按织机要求供纬。这条路线绕过粗纱、环锭细纱及管纱络筒。",
+    "routeLabel":"并条 → 转杯纺 → 筒子纱 → 整经或供纬","branchFrom":"drawing","branchTo":"warping","optional":true
+  },
+  "functions":[
+    ["feed","喂条","纺纱箱下部喂入区","喂给罗拉","按给定供纤量喂入棉条。","feed"],
+    ["opening","分梳","纺纱箱内，喂条口上方","针布分梳辊","针布把条子进一步分离为纤维，纤维随气流进入输纤通道。","process"],
+    ["cup","转杯","纺纱箱上部，凝聚槽与引纱嘴处","纺纱转杯","带动转杯高速回转，使纤维在内壁凝聚槽汇聚并连续成纱。","twist"],
+    ["package","卷绕","上层卷绕单元","卷绕工作辊与筒子","使卷装转动，配合摇架的接触压力形成圆柱形纱筒。","wind"],
+    ["guide","横动导纱","卷绕工作辊下方","往复横动导纱器","沿卷装轴向来回布纱，控制卷装成形。","traverse"]
+  ],
+  "coverageReview":{
+    "finding":"已对照棉纺—机织—染整主线、倍捻上游以及替代成纱工艺。下列项目有独立的工作负载，当前尚无单独三维模型。",
+    "candidates":[
+      {"name":"并纱机（并合络筒机）","position":"单纱筒子 → 并纱 → 短纤倍捻","reason":"为倍捻准备多股平行单纱的喂入卷装。可研究卷绕与横动如何同步、各路喂纱如何监测。","source":{"title":"SSM 并纱设备系列","url":"https://www.ssm.ch/products/winding-solutions/assembly-winding-machines"}},
+      {"name":"自动结经机","position":"织造准备，在沿用原穿法时更换经轴","reason":"将新旧两片经纱逐根分离、对应打结，可研究选纱与打结的动作配合。现有 SAFIR PRO S67 模型展示穿经，TIEPRO 展示的接经工位尚缺独立模型。","source":{"title":"史陶比尔 TIEPRO 自动结经机","url":"https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html"}},
+      {"name":"平幅水洗／皂洗线","position":"冷轧堆堆置固色 → 洗除浮色 → 后整理","reason":"现有冷轧堆模型止于堆置卷装。后洗需单独研究多槽走布、张力控制和洗液循环。","source":{"title":"Benninger 平幅水洗设备","url":"https://benningergroup.com/en/textile-finishing/washing-solutions"}},
+      {"name":"织物烧毛机","position":"坯布前处理，按布面毛羽要求选用","reason":"布幅连续通过烧毛区，去除突出布面的绒毛。可研究布速和走布张力。现有 BEN-BLEACH 模型从浸渍和蒸洗段开始。","source":{"title":"Osthoff-Senge UNIVERSAL 烧毛机","url":"https://www.osthoff-senge.com/page-1785.html"}},
+      {"name":"喷气纺纱机","position":"条子 → 牵伸 → 喷嘴成纱 → 筒子","reason":"立达 J 70 在喷嘴内以气流成纱，有逐纺纱单元和卷绕单元驱动。现有研究页有实例，三维目录尚未单列。","source":{"title":"立达 J 70 喷气纺纱机","url":"https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70"}},
+      {"name":"橡毯预缩机","position":"机织物后整理，按缩水率要求选配","reason":"橡毯和加热辊配合，对织物实施经向压缩。可观察喂布、压缩和后续干燥各段的速度配合。","source":{"title":"Brückner POWER-SHRINK 预缩线","url":"https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html"}},
+      {"name":"丝光机","position":"棉织物染整中的选配工序","reason":"在张力和幅宽控制下进行碱处理及后续稳定、水洗，适合研究走布、扩幅和液体循环的负载。","source":{"title":"Benninger BEN-DIMENSA 丝光设备","url":"https://benningergroup.com/en/textile-finishing/mercerizing-solutions"}}
+    ],
+    "covered":["精梳准备的条并卷机已在 E 90 精梳组合模型内，包含 OMEGAlap E 40 和 SERVOlap E 26。","拉幅烘干、热定型共用已有 MONTEX 条目。紧密纺、倍捻和假捻加弹均有独立模型。"]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "status": "pass",
+  "equipment": 27,
+  "newModels": [
+    {
+      "id": "assembly_winding",
+      "manufacturer": "SSM",
+      "model": "CWX-D",
+      "routes": 2,
+      "motors": 10,
+      "confirmed": 10,
+      "inferred": 0,
+      "unassignedRoutes": 1,
+      "movingParts": 30,
+      "bytes": 924260,
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f"
+    },
+    {
+      "id": "airjet_spinning",
+      "manufacturer": "Rieter",
+      "model": "J 70",
+      "routes": 8,
+      "motors": 84,
+      "confirmed": 40,
+      "inferred": 44,
+      "unassignedRoutes": 4,
+      "movingParts": 366,
+      "bytes": 3696624,
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202"
+    },
+    {
+      "id": "warp_tying",
+      "manufacturer": "Stäubli 史陶比尔",
+      "model": "TIEPRO + TPF",
+      "routes": 4,
+      "motors": 1,
+      "confirmed": 0,
+      "inferred": 1,
+      "unassignedRoutes": 2,
+      "movingParts": 6,
+      "bytes": 942412,
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1"
+    },
+    {
+      "id": "singeing",
+      "manufacturer": "SWASTIK Textile Engineers",
+      "model": "Super Singe",
+      "routes": 8,
+      "motors": 8,
+      "confirmed": 4,
+      "inferred": 4,
+      "unassignedRoutes": 2,
+      "movingParts": 21,
+      "bytes": 1883888,
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302"
+    },
+    {
+      "id": "washing_range",
+      "manufacturer": "Benninger",
+      "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+      "routes": 18,
+      "motors": 18,
+      "confirmed": 0,
+      "inferred": 18,
+      "unassignedRoutes": 0,
+      "movingParts": 100,
+      "bytes": 1595964,
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565"
+    },
+    {
+      "id": "mercerizing",
+      "manufacturer": "Benninger",
+      "model": "BEN-DIMENSA",
+      "routes": 23,
+      "motors": 22,
+      "confirmed": 0,
+      "inferred": 22,
+      "unassignedRoutes": 1,
+      "movingParts": 102,
+      "bytes": 2051240,
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674"
+    },
+    {
+      "id": "sanforizing",
+      "manufacturer": "Brückner",
+      "model": "POWER-SHRINK",
+      "routes": 13,
+      "motors": 12,
+      "confirmed": 0,
+      "inferred": 12,
+      "unassignedRoutes": 1,
+      "movingParts": 32,
+      "bytes": 1446496,
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31"
+    }
+  ]
+}

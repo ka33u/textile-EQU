@@ -1,0 +1,181 @@
+{
+  "checkedAt": "2026-11-16",
+  "scope": "5台现款公开资料参照模型；完整结构验收仍未通过",
+  "items": [
+    {
+      "id": "pretreatment",
+      "manufacturer": "Benninger",
+      "referenceModel": "BEN-BLEACH / REACTA",
+      "configuration": "INJECTA—EXTRACTA—IMPACTA—REACTA—EXTRACTA模块线",
+      "verified": [
+        "官网确认预处理、浸渍、汽蒸、后洗模块类型；公开照片显示高位反应箱、检修平台及下部洗涤段"
+      ],
+      "inferred": [
+        "所选1个预溶胀、1个预洗、1个浸渍、1个汽蒸、3个后洗模块为布置选择，非已核实厂家订单",
+        "整体尺寸、辊床、外部管线与柜体位置按公开照片估计"
+      ],
+      "missing": [
+        "完整订单总图与处理能力",
+        "REACTA单/双辊床及实际内部布路",
+        "全部泵阀、化学计量、蒸汽冷凝与过滤系统BOM"
+      ],
+      "selectedCounts": {
+        "pretreatmentModules": 7,
+        "washingModules": 4
+      },
+      "sources": [
+        {
+          "title": "BEN-BLEACH当前官方样本，p4–13",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Bleaching_Solutions/Broschuere_Bleaching_EN.pdf"
+        }
+      ],
+      "modelVersion": "3.0",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "geometryRebuilt": true,
+      "capacityMatchedLine": false
+    },
+    {
+      "id": "dyeing",
+      "manufacturer": "Benninger",
+      "referenceModel": "Küsters DyePad / CPB",
+      "configuration": "高进布架、双泳动辊、配液与堆置卷装；CPB后洗为独立步骤",
+      "verified": [
+        "厂家当前CPB系列及两根泳动辊",
+        "厂家整机照片中的高架导辊、双侧机座、低液槽和侧操作面板"
+      ],
+      "inferred": [
+        "2200mm幅宽为展示配置选择，整机尺寸及外部管线按照片推定",
+        "配液和堆置小车为辅助功能布置，未核实精确订单型号"
+      ],
+      "missing": [
+        "泳动辊内部支承与压力回路",
+        "精确配液计量单元、堆置站及后洗设备配置",
+        "电气、润滑与整套BOM"
+      ],
+      "selectedCounts": {
+        "workingRolls": 2,
+        "batchCarts": 1
+      },
+      "sources": [
+        {
+          "title": "Benninger当前DyePad CPB产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/dyeing-solutions"
+        }
+      ],
+      "modelVersion": "3.0",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "geometryRebuilt": true,
+      "capacityMatchedLine": false
+    },
+    {
+      "id": "stenter",
+      "manufacturer": "Monforts",
+      "referenceModel": "MONTEX — AEI 2026 reference",
+      "configuration": "6烘房、3.2m工作幅宽、全电加热、延长进布臂、集成热回收",
+      "verified": [
+        "2026-11-09厂家案例明确6烘房、3.2m、全电加热、延长入口及热回收",
+        "现场照片可见整高检修门、侧下部技术箱、黄色检修走道及分区电控柜"
+      ],
+      "inferred": [
+        "每房3m、具体进出口长度、风机/喷嘴数量、针链节距为布局推定",
+        "六房没有缩减，但外形不代表拿到该订单总图"
+      ],
+      "missing": [
+        "原订单总图与准确房长",
+        "完整风路、加热元件、喷嘴与针/铗链装配资料",
+        "热回收实装内部与全电控驱动清单"
+      ],
+      "selectedCounts": {
+        "chambers": 6,
+        "workingWidthMm": 3200,
+        "chainWorkingLinksPerSide": 256,
+        "chainReturnLinksPerSide": 256
+      },
+      "sources": [
+        {
+          "title": "Monforts AEI安装案例（2026-11-09）",
+          "url": "https://www.monforts.de/aktuelles/aei-reaps-the-benefits-of-all-electric-new-monforts-range/"
+        }
+      ],
+      "modelVersion": "3.0",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "geometryRebuilt": true,
+      "capacityMatchedLine": false
+    },
+    {
+      "id": "calender",
+      "manufacturer": "ANDRITZ",
+      "referenceModel": "teXcal s-roll",
+      "configuration": "双辊构型；2200mm辊面为所选配置",
+      "verified": [
+        "当前产品册p14的双辊、左侧全高控制柜、封闭侧架与进出布导辊",
+        "辊面1800–3600mm为公开标准范围，选择其中2200mm"
+      ],
+      "inferred": [
+        "各外包络尺寸、轴承、管线和油站布置按照片推定"
+      ],
+      "missing": [
+        "s-roll内部支承与准确轴承组件",
+        "完整液压、热介质与驱动系统BOM",
+        "选定辊面和辅助系统的总装图"
+      ],
+      "selectedCounts": {
+        "workingRolls": 2,
+        "selectedRollFaceWidthMm": 2200
+      },
+      "sources": [
+        {
+          "title": "ANDRITZ当前链接产品册p14",
+          "url": "https://www.andritz.com/resource/blob/299446/80243e217ab3aca4d81c1611e62ee64b/brochure-textile-keep-profits-rolling-with-calenders-2023--data.pdf"
+        }
+      ],
+      "modelVersion": "3.0",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "geometryRebuilt": true,
+      "capacityMatchedLine": false
+    },
+    {
+      "id": "inspection",
+      "manufacturer": "Uster",
+      "referenceModel": "Fabriq Vision 2",
+      "configuration": "2250mm检测幅宽；检测单元、控制台和Album复核工作站",
+      "verified": [
+        "2025-07技术资料p10：2250mm检测幅宽对应W3000mm，闭合H2150mm，D680mm配置",
+        "p11控制台W650×H1550×D440mm",
+        "SVC3、照明、编码器、控制台与复核工作站为已公开系统组成"
+      ],
+      "inferred": [
+        "门缝、机架型材、编码器和线缆的具体布置来自产品图比例",
+        "厂商未公开相机数量，不虚构一组相机来冒充完整光学配置"
+      ],
+      "missing": [
+        "2250mm订单的具体SVC3数量、镜头和安装图",
+        "内部光学、电气和全部零件BOM",
+        "完整验布卷装线的放卷与收卷机型号；本模型只对应检测系统"
+      ],
+      "selectedCounts": {
+        "inspectionWidthMm": 2250,
+        "publishedInspectionUnitWidthMm": 3000,
+        "publishedClosedHeightMm": 2150,
+        "publishedBodyDepthMm": 680,
+        "controlUnits": 1,
+        "reviewWorkstations": 1
+      },
+      "sources": [
+        {
+          "title": "Uster Fabriq Vision 2技术资料（2025-07），p2/10/11",
+          "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf"
+        }
+      ],
+      "modelVersion": "3.0",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "geometryRebuilt": true,
+      "capacityMatchedLine": false
+    }
+  ]
+}

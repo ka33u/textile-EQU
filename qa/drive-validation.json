@@ -1,0 +1,7187 @@
+{
+  "validationScope": "Motor exterior geometry, preserved anchor transforms, route-to-node links and explicit unmodeled steps; not OEM layout verification",
+  "models": [
+    {
+      "id": "opening",
+      "sha256": "ca3e698fd1522c3804ddf8806f48c902867163907e69a0a2f32319f94be6bc13",
+      "motorCount": 3,
+      "motors": [
+        {
+          "name": "A12_lift_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "A12_torque_direct_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "transport_fan_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "pluck",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "A12扭矩控制直驱电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "抓棉辊轴端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "抓棉辊工作筒体",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "全部取棉盘",
+              "matchedNodes": 32,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "lift",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "抓棉臂升降驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "输出轴—升降传递；隐藏机构未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "沿固定导轨升降的抓棉臂",
+              "matchedNodes": 10,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "travel",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "行走工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "行走传递机构；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "移动塔底轮组",
+              "matchedNodes": 4,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "clean_mix_open",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "B12/B72/A79各自驱动源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "各模块内部动力传递；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "B12清棉辊、B72输出罗拉、A79开松辊",
+              "matchedNodes": 8,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "pneumatic_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "输棉风机电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "风机输入轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "风机叶轮；当前仅表示电机与气路接口，叶轮未建",
+              "matchedNodes": 0,
+              "modeled": false
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "carding",
+      "sha256": "6805b808eb73c7df2256432f2008a12d06b0ce83710e6f4ca9ecc7be24dc1068",
+      "motorCount": 1,
+      "motors": [
+        {
+          "name": "C81_cylinder_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "cylinder",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "主锡林电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "锡林轴端；电机至轴端的实际传动未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "主锡林",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "flat",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "盖板工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "盖板链与回程导轮；结构推定",
+              "matchedNodes": 6,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "40个工作盖板及模型回程段",
+              "matchedNodes": 80,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "coiler",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "圈条工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "圈条盘传递机构；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "圈条盘",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "drawing",
+      "sha256": "42767e516a13657e835610e955682bc1ce0f85c9061a6a1e3592bceb00bc6bc4",
+      "motorCount": 3,
+      "motors": [
+        {
+          "name": "CLEANtube_coiler_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "D55_main_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "RSB_autolevel_servo",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "draft",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "D55主驱动电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "三组牵伸罗拉轴端；内部动力分配未建",
+              "matchedNodes": 3,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "三组下牵伸罗拉",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "autolevel",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "自调匀整伺服",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "伺服输出到牵伸调节；内部传递未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "受控牵伸罗拉工位",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "coiler",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "CLEANtube圈条驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "圈条驱动输出轴；后续联接未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "圈条盘",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "creel",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力导条架动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "导条架分配传动；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "主动喂入轮",
+              "matchedNodes": 8,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "combing",
+      "sha256": "d69888cdb9e76d04d7a57966ba6b2712c1dacfb63aa4b8c025ad9d210ea31d88",
+      "motorCount": 1,
+      "motors": [
+        {
+          "name": "E90_main_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "comb_cycle",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E90主驱动电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "8个圆梳轴端；周期传递机构未建",
+              "matchedNodes": 8,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "8个RiQ圆梳",
+              "matchedNodes": 8,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "detaching_cycle",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E90主驱动电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "16个分离罗拉轴端；周期传递机构未建",
+              "matchedNodes": 16,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "8头16只分离罗拉",
+              "matchedNodes": 16,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "nipper_cycle",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E90主驱动电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "8头钳板夹持组件；凸轮/连杆机构未建",
+              "matchedNodes": 8,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "draft_delivery",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E90车头主驱动位置",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "车头内部牵伸分配；真实独立动力配置待确认",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "车头上下牵伸辊",
+              "matchedNodes": 7,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "lap_winding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E40成卷工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "OMEGA环抱卷绕带",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "E40棉卷工作位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "lap_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "E26运输工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "轨道运行传动；实际驱动部件未建",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "棉卷吊运小车与夹持臂",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "roving",
+      "sha256": "5a82d5ebcd48cccf7540dd1038011a50aa9b58adece0389215f175b123588d8c",
+      "motorCount": 5,
+      "motors": [
+        {
+          "name": "F40_bobbin_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "F40_electronic_draft_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "F40_flyer_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "F40_rail_lift_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "F40_rail_lift_drive.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "flyer",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "锭翼驱动电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "车头输出—锭翼分配；内部长轴/带系未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "72锭锭翼及压掌",
+              "matchedNodes": 216,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "bobbin",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "筒管卷绕驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "筒管动力分配；内部传动未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "72个粗纱卷装工位",
+              "matchedNodes": 72,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "draft",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "电子牵伸驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "输出到各牵伸工位；完整分配轴系未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "72锭牵伸下罗拉与上胶辊",
+              "matchedNodes": 144,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "rail_lift",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "两组梁升降驱动",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "2组中央升降丝杆；电机到丝杆联接待核实",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "2组升降螺母座；筒管梁未独立运动约束",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "spinning",
+      "sha256": "6c4380ccd2dac531d969c04a6b76205466f39915e2d3810389005bd21fc89232",
+      "motorCount": 5,
+      "motors": [
+        {
+          "name": "FLEXIdraft_aircooled_motor",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "FLEXIdraft_aircooled_motor.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "G38_main_spindle_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "G38_ring_rail_servo",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "G38_suction_fan",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "spindle",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "主锭子电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "72组四锭传动带轮；主长轴/分配传动未建",
+              "matchedNodes": 72,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "72条四锭传动带",
+              "matchedNodes": 72,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "288个锭带盘；实际张紧、包角与接触待工程核实",
+              "matchedNodes": 288,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288根锭杆",
+              "matchedNodes": 288,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288个管纱卷绕工位",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "draft",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "两侧空冷牵伸电机",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "牵伸驱动输出与纵向分配；内部传动未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288锭牵伸罗拉及皮圈工位",
+              "matchedNodes": 576,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "ring_rail",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "钢领板升降伺服",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "伺服输出—升降传递；完整机构未建",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "双侧连续钢领板",
+              "matchedNodes": 13,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "suction",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "车尾吸风电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "风机输入轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "风机叶轮未建；现只保留吸风工位",
+              "matchedNodes": 0,
+              "modeled": false
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "winding",
+      "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "motorCount": 97,
+      "motors": [
+        {
+          "name": "X6_suction_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.001",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.002",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.003",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.004",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.005",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.006",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.007",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.008",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.009",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.010",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.011",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.012",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.013",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.014",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.015",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.016",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.017",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.018",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.019",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.020",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.021",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.022",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.023",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.024",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.025",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.026",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.027",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.028",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.029",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.030",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.031",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.032",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.033",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.034",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.035",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.036",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.037",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.038",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.039",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.040",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.041",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.042",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.043",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.044",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.045",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.046",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.047",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.048",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.049",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.050",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.051",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.052",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.053",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.054",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.055",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.056",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.057",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.058",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.059",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.060",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.061",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.062",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.063",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.064",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.065",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.066",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.067",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.068",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.069",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.070",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.071",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.072",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.073",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.074",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.075",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.076",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.077",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.078",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.079",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.080",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.081",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.082",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.083",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.084",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.085",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.086",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.087",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.088",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.089",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.090",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.091",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.092",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.093",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.094",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "X6_unit_motor.095",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "unit_winding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "96个单锭卷绕电机",
+              "matchedNodes": 96,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "96个槽筒轴端；电机到此连接未建",
+              "matchedNodes": 96,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "96个槽筒",
+              "matchedNodes": 96,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "96个交叉卷绕筒子；接触方案待工程核实",
+              "matchedNodes": 96,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "vacuum",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "中央负压驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "负压风机输入轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "风机叶轮未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            }
+          ]
+        },
+        {
+          "id": "package_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "各输送工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "各输送线内部传递；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "成品带与SmartTray供回送线",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "warping",
+      "sha256": "23268d362e4ad2c79b4f3391c7d7b0146b09b2d6c21351219bc09f0b7cf5208d",
+      "motorCount": 3,
+      "motors": [
+        {
+          "name": "motor_assembly",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "pressure_servo",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "pressure_servo.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "beam",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "整经轴主电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "整经轴联轴器",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "整经经轴",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "pressure",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "两端电动压辊执行器",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两端电动压辊丝杆",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两端进退滑座",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "共用压辊工作机构",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "sizing",
+      "sha256": "8d711333036d8b4fddc3f67ecf1181bf9e417677f3f47ed82f78d192ec2a3b1f",
+      "motorCount": 13,
+      "motors": [
+        {
+          "name": "motor_assembly",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.001",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.002",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.003",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.004",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.005",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.006",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.007",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.008",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.009",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.010",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.011",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "motor_assembly.012",
+          "meshNodes": 10,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "dryers",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "12个SoftDry烘筒电机",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "12组烘筒联轴器",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "12个SoftDry烘筒",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "beaming",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "出口织轴电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "织轴同轴联接",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "浆纱织轴",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "wet_squeeze",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "HSB牵引工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "湿区辊组传动；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "轧浆上下辊",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "drawing_in",
+      "sha256": "6cfcab870698364bf3b895268beafa973aae19fb4df9b623585c78c890ca8d59",
+      "motorCount": 0,
+      "motors": [],
+      "routes": [
+        {
+          "id": "drawing_head",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "固定头动作动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "末端导向组件；实际电机/气动传递待确认",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "穿经针工作端",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "truck_index",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "移动车定位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "行走传递机构；是否独立电驱待确认",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "移动车承重轮与车架",
+              "matchedNodes": 18,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "weaving",
+      "sha256": "b4fde3c4d8aa315281492412a40e09237cf3aa041e311d0b8ea586846304dc46",
+      "motorCount": 7,
+      "motors": [
+        {
+          "name": "feeder_motor",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "feeder_motor.001",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "feeder_motor.002",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "feeder_motor.003",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "integrated_axis_motor",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "integrated_axis_motor.001",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "integrated_axis_motor.002",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "rapier",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "主轴驱动外壳",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "左、右剑杆驱动轮箱；内部动力分配未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "左、右柔性剑带；轮箱内部联接待核实",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "传纬、接纬双剑头",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "shedding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "开口机构动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "综框连接杆",
+              "matchedNodes": 4,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "两片综框与综丝",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "let_off",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "电子送经电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "送经轴同轴联接",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "织机送经轴",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "take_up",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "电子卷取电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "布卷轴端联接",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "成品布卷与卷取牵引工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "weft_feeding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "4个储纬器电机",
+              "matchedNodes": 4,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "储纬器内部输出；具体传动未建",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "4个储纬滚筒",
+              "matchedNodes": 4,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "pretreatment",
+      "sha256": "e9e31c48bc00c2ee52431daeaa3cb758dee963b39086eaab8dc023a9549a45f3",
+      "motorCount": 6,
+      "motors": [
+        {
+          "name": "f3_external_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.002",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.003",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.004",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.005",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "wash_modules",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "6个模块牵引驱动",
+              "matchedNodes": 6,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "各模块驱动外伸轴",
+              "matchedNodes": 6,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "INJECTA、EXTRACTA与IMPACTA导布辊组",
+              "matchedNodes": 120,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "steamer",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "REACTA输布动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "反应箱内分配传动；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "模型反应箱导辊工位",
+              "matchedNodes": 70,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "dyeing",
+      "sha256": "991163c6023c69d4180a9d37a5513aa60946476d77d1b4cc7341b315b57ce72a",
+      "motorCount": 2,
+      "motors": [
+        {
+          "name": "f3_external_drive.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "padding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "轧辊主驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "驱动输出—工作辊轴端；完整联接未建",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "泳动工作辊",
+              "matchedNodes": 10,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "batch",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "堆置慢转驱动",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "小车驱动输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "染色卷装",
+              "matchedNodes": 5,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "liquor",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "配液泵/计量工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "泵及计量传递；泵体未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "供液管路接口",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "stenter",
+      "sha256": "b37222c90b5d5c7bdfea1aa9249374ce9c22a278a66b15482da76c25935532ce",
+      "motorCount": 12,
+      "motors": [
+        {
+          "name": "f3_external_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.001",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.002",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.003",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.004",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.005",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.006",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.007",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.008",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.009",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.010",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "f3_external_drive.011",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "12个循环风机电机",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "风机外伸轴",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "风机工位：检修盖定位，内部叶轮未建",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "chain",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "针链主驱动源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "端部链轮",
+              "matchedNodes": 4,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "针板工作链与下部回程",
+              "matchedNodes": 1024,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "width",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "调幅工位动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "横向调幅丝杆",
+              "matchedNodes": 10,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "链轨调幅支座",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "infeed",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "入口分段牵引/超喂动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "入口各工位内部传动；未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "入口牵引辊、轧液辊与上针压轮",
+              "matchedNodes": 26,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "calender",
+      "sha256": "ab9728c0a35d87552d86e536af785fb5f2f210f44428ba40ad316c9d40b2da5b",
+      "motorCount": 1,
+      "motors": [
+        {
+          "name": "f3_external_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "roll",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "主辊旋转动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "封闭柜内主传动；内部部件未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "s-roll复合辊与加热钢辊工位",
+              "matchedNodes": 10,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "pressure",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "油站泵电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "液压泵内部未建；压力管路显示能量传递接口",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "压紧液压缸",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "inspection",
+      "sha256": "1821472e3f6da1ed6b80f349d2905f24f72323362e9b6c7ce400277bf652fc38",
+      "motorCount": 0,
+      "motors": [],
+      "routes": [
+        {
+          "id": "external_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "外部放收卷/牵引动力源；该工位动力源未单独建模",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "外部张力与牵引机构；不在当前检测单元模型内",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "检测导布辊与布幅通过工位（随动）",
+              "matchedNodes": 10,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "compact_spinning",
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "motorCount": 5,
+      "motors": [
+        {
+          "name": "K48_drafting_drive_front",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "K48_drafting_drive_rear",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "K48_main_spindle_motor",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "K48_ringrail_motor",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "K48_single_suction_motor",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "spindle",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "主锭子电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机侧主带轮",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主传动皮带",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "纵轴侧带轮",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "全机纵向共轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "72组锭带驱动滚轮",
+              "matchedNodes": 72,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "72条四锭锭带",
+              "matchedNodes": 72,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "288锭带盘",
+              "matchedNodes": 288,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288锭子及管纱",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "drafting",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "两侧电子牵伸功能驱动",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧外部联轴器",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "牵伸/集聚纵向辊轴",
+              "matchedNodes": 8,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288工位的完整牵伸罗拉/胶辊工作组",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "compact",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "两侧电子牵伸功能驱动",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧外部联轴器",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "牵伸/集聚纵向辊轴",
+              "matchedNodes": 8,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288个多孔集聚筛鼓",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "suction",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "单侧吸风电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "外部风机轴联接",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "风机叶轮（内部尚未独立建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "抽吸风机工位外壳",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "两侧单通道总支路",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288个集聚抽吸支路",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "ringrail",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "钢领板升降电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "纵向升降传动轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "12组升降连杆",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "双侧各节钢领升降梁",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "全部288钢领及钢丝圈工作组",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "doffing",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "落纱动力源（未独立建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "落纱升降摆臂",
+              "matchedNodes": 12,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "288个完整落纱夹持工作组",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "coptransport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "输送动力源（未独立建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "隐藏输送传动（未建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "288个管纱输送托盘",
+              "matchedNodes": 288,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "twisting",
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "motorCount": 1,
+      "motors": [
+        {
+          "name": "CT_mechanical_main_motor",
+          "meshNodes": 7,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "twoforone",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "机械控制型单主电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主电机外部联轴器",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主切向带轮",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "闭合切向锭带",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "20个锭带盘",
+              "matchedNodes": 20,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "20个空心锭与储纱盘",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "overfeed",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "机械控制型单主电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主传动外部联轴器",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "机械分配立轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧机械分配横轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧超喂纵轴",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "20个超喂轮",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "winding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "机械控制型单主电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主传动外部联轴器",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "机械分配立轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧机械分配横轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧摩擦辊纵轴",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "20个摩擦卷绕辊",
+              "matchedNodes": 20,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "20个成品卷装",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "traverse",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "机械控制型单主电机",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "主传动外部联轴器",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "机械分配立轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧机械分配横轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "两侧横动联动杆",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "20个横动导纱滑块",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "texturing",
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "motorCount": 7,
+      "motors": [
+        {
+          "name": "EFK_camshaft_drive_A",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_camshaft_drive_B",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_friction_drive_A",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_friction_drive_B",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_oil_circulation_drive",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_W3_drive_A",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "EFK_W3_drive_B",
+          "meshNodes": 8,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "false_twist",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "模型中的两侧共用驱动工位；实机数量未核",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "外伸输出轴；下游机内联接未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "32个完整节侧切向带区段",
+              "matchedNodes": 32,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "384工位中的1152根摩擦盘轴",
+              "matchedNodes": 1152,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "feed_g1",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "G1集成驱动（具体数量/安装未核，未单独建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "G1内部传动（未建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "G1全部384个导丝盘",
+              "matchedNodes": 384,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "feed_g2",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "G2集成驱动（具体数量/安装未核，未单独建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "G2内部传动（未建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "G2全部384个导丝盘",
+              "matchedNodes": 384,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "w3",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "模型中的两侧共用驱动工位；实机数量未核",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "外伸输出轴；下游机内联接未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "32段W3共轴喂纱机构，每段12个纱位",
+              "matchedNodes": 32,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "camshaft_traverse",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "模型中的两侧共用驱动工位；实机数量未核",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "外伸输出轴；下游机内联接未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "96组分层凸轮轴（32节侧×3层）",
+              "matchedNodes": 96,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "384个横动导丝器",
+              "matchedNodes": 384,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "takeup",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "模型中的两侧共用驱动工位；实机数量未核",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "外伸输出轴；下游机内联接未建",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "卷绕接触辊的机内机械分配（未建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "384个卷绕接触辊",
+              "matchedNodes": 384,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "384个DTY卷装",
+              "matchedNodes": 384,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "oiling",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "模型中的循环泵驱动工位；真实泵选型未核",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "循环泵外伸输出轴",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "泵内工作机构（未独立建模）",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "两侧油剂分配管",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "384个上油接触位",
+              "matchedNodes": 384,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "rotor_spinning",
+      "sha256": "0333ae379f82cf457be515614b7347b9fd0746f23a2d544bc71e66cbc33e3ade",
+      "motorCount": 240,
+      "motors": [
+        {
+          "name": "R70_A01_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A01_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A01_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A01_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A01_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A02_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A02_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A02_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A02_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A02_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A03_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A03_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A03_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A03_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A03_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A04_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A04_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A04_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A04_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A04_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A05_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A05_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A05_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A05_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A05_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A06_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A06_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A06_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A06_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A06_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A07_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A07_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A07_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A07_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A07_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A08_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A08_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A08_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A08_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A08_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A09_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A09_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A09_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A09_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A09_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A10_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A10_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A10_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A10_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A10_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A11_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A11_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A11_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A11_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A11_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A12_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A12_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A12_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A12_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A12_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B01_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B01_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B01_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B01_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B01_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B02_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B02_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B02_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B02_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B02_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B03_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B03_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B03_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B03_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B03_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B04_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B04_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B04_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B04_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B04_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B05_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B05_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B05_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B05_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B05_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B06_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B06_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B06_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B06_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B06_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B07_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B07_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B07_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B07_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B07_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B08_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B08_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B08_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B08_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B08_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B09_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B09_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B09_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B09_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B09_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B10_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B10_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B10_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B10_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B10_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B11_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B11_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B11_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B11_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B11_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B12_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B12_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B12_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B12_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B12_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A13_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A13_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A13_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A13_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A13_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A14_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A14_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A14_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A14_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A14_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A15_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A15_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A15_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A15_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A15_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A16_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A16_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A16_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A16_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A16_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A17_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A17_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A17_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A17_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A17_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A18_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A18_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A18_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A18_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A18_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A19_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A19_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A19_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A19_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A19_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A20_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A20_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A20_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A20_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A20_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A21_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A21_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A21_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A21_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A21_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A22_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A22_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A22_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A22_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A22_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A23_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A23_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A23_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A23_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A23_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A24_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A24_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A24_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A24_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_A24_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B13_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B13_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B13_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B13_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B13_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B14_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B14_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B14_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B14_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B14_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B15_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B15_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B15_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B15_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B15_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B16_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B16_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B16_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B16_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B16_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B17_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B17_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B17_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B17_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B17_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B18_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B18_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B18_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B18_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B18_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B19_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B19_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B19_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B19_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B19_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B20_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B20_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B20_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B20_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B20_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B21_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B21_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B21_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B21_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B21_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B22_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B22_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B22_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B22_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B22_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B23_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B23_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B23_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B23_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B23_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B24_cup_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B24_feed_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B24_guide_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B24_opening_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "R70_B24_package_motor",
+          "meshNodes": 17,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "feed",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "喂条电机",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "喂给罗拉",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "opening",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "分梳电机",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "针布分梳辊",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "cup",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "转杯电机",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "纺纱转杯",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "package",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "卷绕电机",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "卷绕工作辊与筒子",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "guide",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "横动导纱电机",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 48,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "往复横动导纱器",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "delivery",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源归属待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "内部连接待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "引纱罗拉及压辊",
+              "matchedNodes": 48,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "vacuum",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源归属待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "内部连接待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "车尾过滤与排风接口",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "convey",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源归属待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "内部连接待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "双侧成筒输送带",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "doff",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源归属待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "内部连接待核实",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "两台机器人的夹持机构",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "assembly_winding",
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f",
+      "motorCount": 10,
+      "motors": [
+        {
+          "name": "CWXD_wind_01",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_02",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_03",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_04",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_05",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_06",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_07",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_08",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_09",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "CWXD_wind_10",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "assembly_drum",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 10,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 10,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "凹槽槽筒与合股筒子",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "assembly_supply",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "供纱卷装与并纱导纱区",
+              "matchedNodes": 20,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "airjet_spinning",
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202",
+      "motorCount": 84,
+      "motors": [
+        {
+          "name": "J70_conveyor_drive_A",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_conveyor_drive_B",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_robot_drive_A",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_robot_drive_B",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_01",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_01",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_02",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_02",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_03",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_03",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_04",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_04",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_05",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_05",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_06",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_06",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_07",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_07",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_08",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_08",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_09",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_09",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_10",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_10",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_11",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_11",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_12",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_12",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_13",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_13",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_14",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_14",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_15",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_15",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_16",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_16",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_17",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_17",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_18",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_18",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_19",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_19",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_20",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_20",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_21",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_21",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_22",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_22",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_23",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_23",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_24",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_24",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_25",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_25",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_26",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_26",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_27",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_27",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_28",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_28",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_29",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_29",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_30",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_30",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_31",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_31",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_32",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_32",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_33",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_33",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_34",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_34",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_35",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_35",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_36",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_36",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_37",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_37",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_38",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_38",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_39",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_39",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_draft_40",
+          "meshNodes": 22,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "J70_wind_40",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "airjet_drafting",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 40,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 40,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "牵伸罗拉组",
+              "matchedNodes": 40,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_winding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 40,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 40,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "卷绕工作辊、筒子",
+              "matchedNodes": 80,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_pneumatic_spinning",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "成纱喷嘴",
+              "matchedNodes": 40,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_delivery_traverse",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "引纱钳口、横动导纱器",
+              "matchedNodes": 80,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_piecing",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "自主接头工作口",
+              "matchedNodes": 40,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_doffing",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "2台落筒机器人",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_package_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "A/B侧成筒带",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "airjet_utilities",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "吸排风接口、废料压实与收集",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "warp_tying",
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1",
+      "motorCount": 1,
+      "motors": [
+        {
+          "name": "TIEPRO_main_motor",
+          "meshNodes": 20,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "separation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "内部主轴接口；具体分配未公开",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "上下锥形分纱器",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "knot_and_cut",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "内部主轴接口；具体分配未公开",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "打结钩与剪纱工作区",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "head_traverse",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "移动结经头",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "double_end_detection",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "电子双纱检测器",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "washing_range",
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565",
+      "motorCount": 18,
+      "motors": [
+        {
+          "name": "WASH_entry_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_exit_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_01_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_01_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_02_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_02_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_03_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_EXTRACTA_03_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_final_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_inlet_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_tempacta_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_tempacta_exit_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_tempacta_feed_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_tempacta_transport_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_TRIKO_01_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_TRIKO_01_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_TRIKO_02_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "WASH_TRIKO_02_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "WASH_entry",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "进布退卷减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布退卷作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_inlet",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "进布牵引减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布牵引作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_TRIKO_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "TRIKOFLEX 转鼓导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TRIKOFLEX 1 转鼓洗涤作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_TRIKO_01_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TRIKOFLEX 1 洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_TRIKO_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "TRIKOFLEX 转鼓导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TRIKOFLEX 2 转鼓洗涤作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_TRIKO_02_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TRIKOFLEX 2 洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "EXTRACTA 分段导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 1 分格输布作用工位",
+              "matchedNodes": 15,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_01_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 1 洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "EXTRACTA 分段导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 2 分格输布作用工位",
+              "matchedNodes": 15,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_02_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 2 洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_03",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "EXTRACTA 分段导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 3 分格输布作用工位",
+              "matchedNodes": 15,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_EXTRACTA_03_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "EXTRACTA 3 洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_tempacta_feed",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "停留段入布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TEMPACTA 入布作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_tempacta_transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "停留段托布输送减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TEMPACTA 托布输送作用工位",
+              "matchedNodes": 15,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_tempacta_exit",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "停留段出布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TEMPACTA 出布作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_tempacta_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "TEMPACTA 皂洗液循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_final",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "末端轧液减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "末端轧液作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "WASH_exit",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "出布卷绕减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "出布卷装作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "singeing",
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302",
+      "motorCount": 8,
+      "motors": [
+        {
+          "name": "SSG_combustion_air_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_dust_suction_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_exhaust_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_post_brush_1_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_post_brush_2_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_pre_brush_1_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_pre_brush_2_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SSG_transport_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "pre_brush",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "刷辊同轴直联接口",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "两根刷毛辊",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "post_brush",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "刷辊同轴直联接口",
+              "matchedNodes": 2,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "两根刷毛辊",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "combustion_air",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "离心叶轮",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "exhaust",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "离心叶轮",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "dust_suction",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "离心叶轮",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "transport",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "牵引辊联接接口",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "出口牵引辊",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "burner_retreat",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "燃烧器与点火电极",
+              "matchedNodes": 4,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "quench",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "蒸汽灭火喷管",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "mercerizing",
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674",
+      "motorCount": 22,
+      "motors": [
+        {
+          "name": "MERC_chain_motor_L",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_chain_motor_R",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_entry_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_exit_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_final_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_impregnation_01_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_impregnation_01_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_impregnation_02_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_impregnation_02_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_inlet_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_stabilizing_01_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_stabilizing_01_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_stabilizing_02_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_stabilizing_02_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_vacuum_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_wash_01_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_wash_01_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_wash_02_circulation",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_wash_02_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_width_motor_01",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_width_motor_02",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "MERC_width_motor_03",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "MERC_entry",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "进布退卷减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布退卷作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_inlet",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "进布牵引减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布牵引作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_impregnation_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "第一浸渍停留区减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "浸渍停留 1 导布作用工位",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_impregnation_01_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "浸渍停留 1 循环液作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_impregnation_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "第二浸渍停留区减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "浸渍停留 2 导布作用工位",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_impregnation_02_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "浸渍停留 2 循环液作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_stabilizing_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "第一稳定水洗区减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "稳定洗涤 1 导布作用工位",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_stabilizing_01_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "稳定洗涤 1 循环液作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_stabilizing_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "第二稳定水洗区减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "稳定洗涤 2 导布作用工位",
+              "matchedNodes": 12,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_stabilizing_02_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "稳定洗涤 2 循环液作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_chain_L",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "左侧夹链作用工位",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_chain_R",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "右侧夹链作用工位",
+              "matchedNodes": 3,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_width_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "夹链调幅 1作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_width_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "夹链调幅 2作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_width_03",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "夹链调幅 3作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_section_control",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "SECTION CONTROL 布边伸展作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_vacuum",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "真空抽碱作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_wash_01",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "TRIKOFLEX 转鼓导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "后洗转鼓 1作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_wash_01_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "后洗循环 1作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_wash_02",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "TRIKOFLEX 转鼓导布减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "后洗转鼓 2作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_wash_02_circulation",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "后洗循环 2作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_final",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "后洗轧液减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "后洗轧液作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "MERC_exit",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "出布卷绕减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "出布卷装作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    },
+    {
+      "id": "sanforizing",
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31",
+      "motorCount": 12,
+      "motors": [
+        {
+          "name": "SAN_cooling_drive",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_cooling_pump",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_cylinder_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_dust_motor",
+          "meshNodes": 30,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_entry_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_entry_scray_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_exit_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_exit_scray_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_felt_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_grinding_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_rubber_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        },
+        {
+          "name": "SAN_steam_motor",
+          "meshNodes": 24,
+          "forbiddenInteriorNodes": []
+        }
+      ],
+      "routes": [
+        {
+          "id": "SAN_entry",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "进布退卷减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布退卷作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_entry_scray",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "储布区牵引减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "进布储布牵引作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_steam",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "蒸汽滚筒输布示意减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "蒸汽滚筒输布作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_rubber",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "橡毯循环驱动示意减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "橡毯循环作用工位",
+              "matchedNodes": 4,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_cylinder",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "预缩滚筒驱动示意减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "预缩热滚筒作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_felt",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "毛毯烘筒驱动示意减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "毛毯干燥稳定作用工位",
+              "matchedNodes": 5,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_cooling",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "冷却区导布驱动示意减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "冷却段导布作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_exit_scray",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "储布区牵引减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "出布储布牵引作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_exit",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "出布卷绕减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "出布卷装作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_grinding",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "橡毯内置磨削减速输出示意",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "内置磨毯（维护）作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_cooling_pump",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "橡毯冷却水循环作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_dust",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 1,
+              "modeled": true
+            },
+            {
+              "role": "load",
+              "label": "磨毯抽屑（已选选件）作用工位",
+              "matchedNodes": 1,
+              "modeled": true
+            }
+          ]
+        },
+        {
+          "id": "SAN_pneumatic_dancers",
+          "steps": [
+            {
+              "role": "motor",
+              "label": "动力源",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "transmission",
+              "label": "电机外伸输出端",
+              "matchedNodes": 0,
+              "modeled": false
+            },
+            {
+              "role": "load",
+              "label": "进出布气动摆辊作用工位",
+              "matchedNodes": 2,
+              "modeled": true
+            }
+          ]
+        }
+      ],
+      "unassignedMotors": []
+    }
+  ],
+  "errors": [],
+  "structuralCompleteness": false,
+  "motorCount": 567,
+  "routeCount": 156,
+  "status": "pass"
+}

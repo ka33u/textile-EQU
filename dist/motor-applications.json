@@ -1,0 +1,5945 @@
+{
+  "title": "纺织设备电机应用与传动方案",
+  "checkedAt": "2026-11-19",
+  "jobs": {
+    "main": "整机主轴与同步",
+    "process": "抓棉、梳理及工艺执行",
+    "draft": "牵伸、匀整与集聚",
+    "feed": "喂入、超喂与牵引",
+    "twist": "加捻、假捻与成纱",
+    "wind": "卷绕、退绕与圈条",
+    "traverse": "横动、往复与卷装成形",
+    "tension": "材料张力控制",
+    "position": "定位、调幅与纠偏",
+    "transport": "物料输送与储布",
+    "logistics": "换卷、换筒与落纱",
+    "air": "吸风、气流输送、热风与排湿",
+    "liquid": "循环液、计量及加药",
+    "pressure": "轧点加压与压紧"
+  },
+  "motorIndex": [
+    {
+      "id": "induction",
+      "name": "异步电机（感应电机）",
+      "group": "电机类型",
+      "note": "浆纱牵引和卷染收放卷都有明确实例。伟创的卷染案例用两台三相异步电机经减速机交替收放。",
+      "refs": [
+        "dyeV",
+        "sizeJ"
+      ]
+    },
+    {
+      "id": "pm",
+      "name": "永磁同步电机（PMSM）",
+      "group": "电机类型",
+      "note": "经纬 JWF1366PRO 用盘式永磁同步电机直驱上下圈条。英威腾另有织机主轴的永磁同步直驱方案。",
+      "refs": [
+        "drawJ",
+        "loomPM"
+      ]
+    },
+    {
+      "id": "bldc",
+      "name": "无刷直流电机（BLDC）",
+      "group": "电机类型",
+      "note": "青岛宏大 VCRO-E 用无刷直流电机同轴带槽筒，从一个卷绕位即可追踪到筒子及铺纱动作。",
+      "refs": [
+        "windJ"
+      ]
+    },
+    {
+      "id": "dc",
+      "name": "直流电机（换向方式未披露）",
+      "group": "电机类型",
+      "note": "Kyang Yhe 的橡筋整经机用直流电机驱动滚筒，靠摩擦带动经轴。原厂未说明有刷或无刷。",
+      "refs": [
+        "kyWarp"
+      ]
+    },
+    {
+      "id": "synrm",
+      "name": "同步磁阻电机（SynRM）",
+      "group": "电机类型",
+      "note": "KAISER 提供无励磁同步磁阻电机，用于导丝盘或纺丝计量泵，可变频单独或成组驱动。",
+      "refs": [
+        "dtyKais"
+      ]
+    },
+    {
+      "id": "sr",
+      "name": "开关磁阻电机（SRM）",
+      "group": "电机类型",
+      "note": "Picanol 集团在 2021 年度报告中披露其喷气和剑杆织机使用自研开关磁阻主驱。追溯具体机批需核铭牌。",
+      "refs": [
+        "loomSR"
+      ]
+    },
+    {
+      "id": "step",
+      "name": "步进电机",
+      "group": "电机类型",
+      "note": "Picanol 的 QuickStep 每个模块用一台步进电机驱动呈纬针，ELSY 还用独立步进电机完成绞边。",
+      "refs": [
+        "loomSelect",
+        "loomStep"
+      ]
+    },
+    {
+      "id": "linear",
+      "name": "直线电机",
+      "group": "电机类型",
+      "note": "TMT 的卷绕专利以直线电机使导纱器往复。本次证据对应专利实施例，装机情况待核。",
+      "refs": [
+        "linearProto"
+      ]
+    },
+    {
+      "id": "sync",
+      "name": "同步电机（含未细分型式）",
+      "group": "电机类型",
+      "note": "Barmag 明确 eFK EvoSmart 平台采用 IE5 同步电机。该披露未给每个工位的转子型式。",
+      "refs": [
+        "dtyIE"
+      ]
+    },
+    {
+      "id": "brushless",
+      "name": "无刷电机（厂家未细分换向或供电）",
+      "group": "原厂用语",
+      "note": "Marzoli 粗纱牵伸罗拉和筒管梁、Savio 槽筒、E+L 跟边执行器均有无刷电机记录。",
+      "refs": [
+        "rovM",
+        "windPro",
+        "stenterEdge"
+      ]
+    },
+    {
+      "id": "servo",
+      "name": "伺服电机或伺服驱动",
+      "group": "控制及特性",
+      "note": "Trützschler 精梳机分离罗拉需要高动态往复，丰田的逐框开口要按织机角度协调。具体电磁类型须查单独规格。",
+      "refs": [
+        "combT",
+        "loomT"
+      ]
+    },
+    {
+      "id": "vfd",
+      "name": "变频调速",
+      "group": "控制及特性",
+      "note": "可用于梳棉锡林、拉幅超喂辊、排布提布轮等。变频器说明供电与调速方式，不能单凭这一项判定电机磁路。",
+      "refs": [
+        "cardJ",
+        "stentSW",
+        "dyeT"
+      ]
+    },
+    {
+      "id": "torque",
+      "name": "力矩电机与转矩控制",
+      "group": "控制及特性",
+      "note": "Reuland 把力矩类电机用于卷装张力。Rieter 抓棉头确认转矩控制直驱，但未给电机本体类型。",
+      "refs": [
+        "motorTorque",
+        "shaftT",
+        "opUni"
+      ]
+    },
+    {
+      "id": "direct",
+      "name": "直接驱动或同轴联接",
+      "group": "传动布置",
+      "note": "抓棉辊、倍捻电锭和槽筒都有可追查的直接驱动实例。沿设备确认负载端，直联只描述传力路径。",
+      "refs": [
+        "opUni",
+        "twistRf",
+        "windJ"
+      ]
+    },
+    {
+      "id": "geared",
+      "name": "减速传动",
+      "group": "传动布置",
+      "note": "可经减速箱驱动拉幅针链，也可经蜗杆减速和链条驱动轧光辊。",
+      "refs": [
+        "stentS",
+        "calI"
+      ]
+    },
+    {
+      "id": "group",
+      "name": "共用或分组驱动",
+      "group": "传动布置",
+      "note": "一台电机可带多个锭，也可由多台电机共同带一条长切向带。需查明每组覆盖的工位。",
+      "refs": [
+        "ringM",
+        "twistS"
+      ]
+    },
+    {
+      "id": "single",
+      "name": "独立工位、独立轴或分组独控",
+      "group": "传动布置",
+      "note": "可能按每锭、每侧、每框或每一功能组独立控制。每条记录都注明具体控制对象。",
+      "refs": [
+        "twistRf",
+        "loomT",
+        "stentS"
+      ]
+    },
+    {
+      "id": "integrated",
+      "name": "集成、随动或借用宿主动力",
+      "group": "传动布置",
+      "note": "机械集聚器借用罗拉运动，纱线也可直接带动随动牵伸辊。系统集成须检查宿主的动力来源。",
+      "refs": [
+        "compactM",
+        "dtyGod"
+      ]
+    },
+    {
+      "id": "fluid",
+      "name": "风机、泵及流体动力",
+      "group": "配套与执行",
+      "note": "查吸风、风送、热风循环、排湿、染液循环、计量泵和液压站。",
+      "refs": [
+        "stentS",
+        "dyeDose",
+        "dyeF"
+      ]
+    },
+    {
+      "id": "position",
+      "name": "位置调整与往复执行",
+      "group": "配套与执行",
+      "note": "横移机头、导边、丝杠调幅、经纱开口都是位置负载，具体动作及控制精度按机型核实。",
+      "refs": [
+        "warS",
+        "stentA",
+        "jact"
+      ]
+    },
+    {
+      "id": "handling",
+      "name": "换筒、落纱及输送",
+      "group": "配套与执行",
+      "note": "粗纱机自动落纱、络筒机的管纱分配和穿经车进给都有不同的物流驱动。",
+      "refs": [
+        "rovR",
+        "windPro",
+        "drawInS"
+      ]
+    },
+    {
+      "id": "pneumatic",
+      "name": "气动执行或供气",
+      "group": "配套与执行",
+      "note": "喷气引纬由压缩空气完成，某些浆纱机的压紧和穿经机的局部动作使用气缸。",
+      "refs": [
+        "loomAir",
+        "sizeP",
+        "drawInC"
+      ]
+    },
+    {
+      "id": "unspecified",
+      "name": "执行机构已知，电机型式待核",
+      "group": "原厂用语",
+      "note": "部分公开资料只说明主动辊、转鼓或执行机构。相邻机型可作结构参考，实装应以电气清单为准。",
+      "refs": [
+        "opT",
+        "rollEffects"
+      ]
+    },
+    {
+      "id": "ac",
+      "name": "交流电机（电磁型式未细分）",
+      "group": "厂家明示的电机类型",
+      "note": "本项收录厂家明确写为 AC motor 的工位。同步、异步等具体电磁结构需进一步核对铭牌。",
+      "refs": [
+        "singeingRef1",
+        "singeingRef2"
+      ]
+    }
+  ],
+  "market": {
+    "source": "itmf",
+    "scope": "ITMF 第 48 次调查统计 2025 年全球纺机出货，2026 年 7 月发布。调查覆盖逾 200 家纺织机械制造商。",
+    "observations": [
+      {
+        "title": "纺纱",
+        "figures": "短纤纺锭约 611 万锭，转杯约 64.5 万个。",
+        "meaning": "调查分别按锭和转杯统计。不同成纱单元的产出不同，无法据此计算纱线产量占比。"
+      },
+      {
+        "title": "机织",
+        "figures": "喷水织机约 8.85 万台，喷气约 5.46 万台，剑杆与片梭合计约 2.05 万台。",
+        "meaning": "这是不同纱种合在一起的全球出货量。用于选棉织机时，还需考虑纤维与引纬介质的适配。"
+      },
+      {
+        "title": "加弹",
+        "figures": "双热箱约 74.3 万锭，单热箱约 6.5 万锭。",
+        "meaning": "双热箱在这两个统计类别中约占 92%，以涤纶用途为主。调查没有按假捻电机或导丝盘驱动类型拆分。"
+      },
+      {
+        "title": "拉幅",
+        "figures": "连续整理设备中的拉幅机约 2,300 台。",
+        "meaning": "ITMF 对未参加调查的厂商作了估算，未拆分共用针链驱动和单侧伺服驱动。"
+      }
+    ]
+  },
+  "scope": "样本覆盖系统现有的棉纺、机织、染整及纱线加工设备。原厂配置、厂家技术披露、配套件、历史机型和专利实例分别标注。电磁类型、控制方式、传动布置可以同时描述同一台电机。 同时选择类型和场景时，仅显示资料能把两者对应到同一负载的记录。",
+  "stages": [
+    {
+      "id": "opening",
+      "question": "抓棉辊、移动机构和输棉风机分别怎样用动力？",
+      "coverage": "取棉头可用转矩控制直驱，也可由双电机分别经带传动带打手。进入管道后的棉束由输送风机提供动力。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "UNIfloc A 12",
+          "station": "往复抓棉头",
+          "path": "取棉单元以转矩控制的直接驱动配合抓棉辊，测力装置跟踪棉包表面。",
+          "electric": "原厂确认直驱与转矩控制，未列电机电磁类型。",
+          "work": "棉包高度变化时要控制取棉作用力，移动部件制动时可向电网回馈。",
+          "refs": [
+            "opUni"
+          ],
+          "filters": [
+            "direct",
+            "torque"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "direct": [
+              "process"
+            ],
+            "torque": [
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "经纬纺机",
+          "model": "JWF1013",
+          "station": "往复抓棉机双打手",
+          "path": "两台电机分别传动打手，联组 V 带把转矩送到辊。",
+          "electric": "双电机分开驱动，电机原理待核。",
+          "work": "对照直驱机时，应先沿皮带查明每台电机对应哪根打手。",
+          "refs": [
+            "opJ",
+            "opPage"
+          ],
+          "filters": [
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "single": [
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Trützschler",
+          "model": "BO-P / CL-C3",
+          "station": "门式取棉和多辊清棉",
+          "path": "门架上的双开松辊横跨棉包，后续可按原料配三级清洁辊的 CL-C3。",
+          "electric": "厂方确认辊组结构，未公布此组合的电机数量。",
+          "work": "多排棉包同时取料与逐级开松对辊速的要求不同。",
+          "refs": [
+            "opT",
+            "opClean"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Rieter",
+          "model": "VARIOline ECOrized",
+          "station": "管道输棉",
+          "path": "风机建立输送气流，管道和风量控制共同决定棉束能否连续送至下一级。",
+          "electric": "厂家公开风机系统及空气控制，未列电机型号。",
+          "work": "堵塞与过量风耗应对照管路阻力、风量和产量。",
+          "refs": [
+            "opAir"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air",
+            "transport"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air",
+              "transport"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "carding",
+      "question": "锡林、盖板、给棉和出条是否共用主传动？",
+      "coverage": "同一机型可以并用两种控制。经纬 JWF1217 的锡林、刺辊和回转盖板各自变频，给棉、道夫与圈条工位用独立伺服。隔距自动调节另看执行器。",
+      "rows": [
+        {
+          "maker": "青岛宏大",
+          "model": "JWF1217",
+          "station": "锡林、刺辊、回转盖板",
+          "path": "三类梳理部件各有变频传动，工艺速度可分别调整。",
+          "electric": "独立变频驱动。原厂未在该段表列异步或同步。",
+          "work": "改换原料时可分别匹配开松强度、锡林表面速度和盖板速度。",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "vfd"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "青岛宏大",
+          "model": "JWF1217",
+          "station": "给棉、道夫和圈条",
+          "path": "给棉罗拉、大压辊、道夫、三罗拉和圈条器采用独立伺服。手册另列直线换筒机的伺服。",
+          "electric": "原厂明确伺服，未给每根辊的电机铭牌。",
+          "work": "纤维从梳理区转为连续棉网和棉条时，需要相邻机构协调速度。",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "wind",
+            "logistics"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "wind",
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Rieter",
+          "model": "C 81",
+          "station": "梳理间隙与主梳区",
+          "path": "40 根工作盖板与主锡林形成梳理区，Carding Gap Control 随工况调整间隙。",
+          "electric": "公开自动调节和节能传动，间隙执行器的电机类型待核。",
+          "work": "间隙调节属于位置任务，锡林和道夫承担连续旋转。",
+          "refs": [
+            "cardR"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "position": [
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "Trützschler",
+          "model": "TC 30i",
+          "station": "盖板隔距与刺辊除杂",
+          "path": "T-GO 自动优化隔距，WASTECONTROL 监测刺辊处落物质量。",
+          "electric": "传感器用于检测。厂方未在产品页给出调节执行器的绕组或数量。",
+          "work": "可区分检测头、调节机构和梳理主传动。",
+          "refs": [
+            "cardT"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "position": [
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "Marzoli",
+          "model": "C702",
+          "station": "盖板速度与方向",
+          "path": "主锡林与道夫转移棉网，盖板支持速度和运行方向控制。",
+          "electric": "目录公开调速、换向，盖板传动形式及电机原理待核。",
+          "work": "在同为回转盖板梳棉机的条件下比较盖板速度、走向与维护。",
+          "refs": [
+            "cardM"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "drawing",
+      "question": "自调匀整用的是哪个轴，圈条上下盘又由谁带动？",
+      "coverage": "并条机上，牵伸匀整和圈条是两套任务。Rieter 公布匀整、输出两路交流伺服，经纬公布上下圈条盘各自的永磁同步直驱。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "RSB-D 55 / RSB-D 27",
+          "station": "牵伸区与匀整",
+          "path": "技术册标出匀整交流伺服与输出罗拉交流伺服。圈条单独驱动，吸风单独调频。55 为单眼，27 为双眼。",
+          "electric": "RSB 牵伸采用两台伺服的驱动方案。具体双眼机器须按配置表核数。",
+          "work": "熟条输出需要在短时间内修正速比，同时维持圈条和吸风。",
+          "refs": [
+            "drawR"
+          ],
+          "filters": [
+            "servo",
+            "vfd",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "feed",
+            "air"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft"
+            ],
+            "vfd": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "沈阳宏大华明",
+          "model": "JWF1366PRO",
+          "station": "上圈条、下圈条和吸风",
+          "path": "上下圈条分别由盘式电机直驱，取代带轮及轴系。风机另行调速。",
+          "electric": "原厂明确圈条使用永磁同步电机，风机使用变频电机。",
+          "work": "上下盘的速度关系决定圈绕比，吸风速度负责清洁。",
+          "refs": [
+            "drawJ"
+          ],
+          "filters": [
+            "pm",
+            "direct",
+            "vfd",
+            "fluid",
+            "sync"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "air"
+          ],
+          "motorJobs": {
+            "pm": [
+              "wind"
+            ],
+            "direct": [
+              "wind"
+            ],
+            "vfd": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ],
+            "sync": [
+              "wind"
+            ]
+          }
+        },
+        {
+          "maker": "Trützschler",
+          "model": "IDF 3",
+          "station": "梳棉机直接接牵伸",
+          "path": "棉条从梳棉机进入集成牵伸区，再送至条筒，缩短独立搬筒路线。",
+          "electric": "目录公开集成牵伸结构和应用，未给罗拉电机原理。",
+          "work": "厂方列出的用途包括转杯纱。需按原料和后续纺纱方式选择并条道数。",
+          "refs": [
+            "drawT"
+          ],
+          "filters": [
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "feed",
+            "transport"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "draft",
+              "feed",
+              "transport"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "combing",
+      "question": "每钳次哪些部件需要反向，哪些只需要连续转动？",
+      "coverage": "分离罗拉要周期性改变转向和速度，Trützschler 将双伺服与主轴运动解耦。棉卷退绕及圈条侧牵伸则要跟踪连续喂入。",
+      "rows": [
+        {
+          "maker": "Trützschler",
+          "model": "TCO 21",
+          "station": "分离罗拉与梳理主运动",
+          "path": "两台高动态伺服带分离罗拉，另外两套相互耦合的驱动生成梳理部件运动。",
+          "electric": "原厂明确分离罗拉双伺服，并说明它与主轴运动解耦。",
+          "work": "分离、倒转和搭接要求反复加减速及准确相位。",
+          "refs": [
+            "combT"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft",
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Rieter",
+          "model": "E 90",
+          "station": "棉卷退绕和换卷",
+          "path": "智能控制棉卷驱动，使喂入条件随卷径变化保持稳定。换卷、换筒另有机构。",
+          "electric": "原厂确认可控棉卷驱动。该说明未给出分离罗拉伺服数量。",
+          "work": "喂入稳定影响整段梳理的条重。比较机型时要独立核查棉卷轴。",
+          "refs": [
+            "combR"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "wind",
+            "logistics"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "wind",
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Marzoli",
+          "model": "CM7",
+          "station": "圆梳、钳板、分离罗拉与圈条侧牵伸",
+          "path": "圆梳在梳理段加速，分离罗拉配合搭接。圈条上方采用气动加压的三上四下牵伸。",
+          "electric": "厂方列 IE3 高效率电机。IE3 是效率等级，罗拉加压使用气动。",
+          "work": "可比较圆梳角度和分离运动规律，再核查传动分配。",
+          "refs": [
+            "combM"
+          ],
+          "filters": [
+            "pneumatic"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process",
+            "draft",
+            "pressure"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "pressure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "roving",
+      "question": "锭翼、筒管、牵伸罗拉和升降龙筋怎样同步？",
+      "coverage": "粗纱机要配合牵伸罗拉、锭翼、筒管和升降梁。可用齿轮或同步带分配动力，也可在多个工作轴上装电机并电子协调。",
+      "rows": [
+        {
+          "maker": "Marzoli",
+          "model": "FT60 / FT70",
+          "station": "牵伸、锭翼、锭子及筒管梁",
+          "path": "原厂传动图分别标出前罗拉、第二及第三罗拉、锭翼、锭子和筒管梁。独立电机电子协调。",
+          "electric": "图注明第二、第三罗拉和筒管梁使用无刷电机，其他轴只标电机。",
+          "work": "连续加捻与往复升降可分别设定，筒径变化时协调卷绕。",
+          "refs": [
+            "rovM"
+          ],
+          "filters": [
+            "brushless",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "twist",
+            "wind",
+            "traverse"
+          ],
+          "motorJobs": {
+            "brushless": [
+              "draft",
+              "traverse"
+            ],
+            "position": [
+              "traverse"
+            ]
+          }
+        },
+        {
+          "maker": "天津宏大",
+          "model": "JWF1458A",
+          "station": "牵伸和锭翼加捻",
+          "path": "车头向车尾单向传动。锭翼可选齿轮或同步带，牵伸可选机械、两电子或全电子。",
+          "electric": "厂家列四合一变频控制系统，多种传动配置可选。",
+          "work": "同一机型的选件就能改变齿轮组、带传动和独立轴的分布。",
+          "refs": [
+            "rovJ"
+          ],
+          "filters": [
+            "vfd",
+            "group"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "twist"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "draft",
+              "twist"
+            ],
+            "group": [
+              "draft",
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "Rieter",
+          "model": "F 20 / F 40",
+          "station": "筒管梁与落纱",
+          "path": "筒管梁采用居中驱动。F 20 有落纱辅助，F 40 的筒管梁退入机内自动交换满管和空管。",
+          "electric": "样本明确升降驱动与落纱结构，未逐轴披露电机型式。",
+          "work": "满管后的短时换管动作与纺纱时的连续驱动要分开核算。",
+          "refs": [
+            "rovR"
+          ],
+          "filters": [
+            "position",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "traverse",
+            "logistics"
+          ],
+          "motorJobs": {
+            "position": [
+              "traverse"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "spinning",
+      "question": "从粗纱或棉条到细纱，主电机最终带动什么？",
+      "coverage": "环锭分为锭带、分段切向带或共用长切向带传动。转杯纺和喷气纺另设独立设备。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "G 38",
+          "station": "锭子主传动",
+          "path": "主传动经四锭锭带带动锭子。单锭监测、落纱和管纱输送另有各自的功能。",
+          "electric": "原厂确认 IE4 主电机和四锭锭带。单锭监测只表示检测粒度。",
+          "work": "同侧沿锭列追踪传动时，四锭一条带比按每锭画电机更接近这套结构。",
+          "refs": [
+            "ring4",
+            "ringG"
+          ],
+          "filters": [
+            "group"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "Marzoli",
+          "model": "MDS2",
+          "station": "锭列、钢领板和牵伸",
+          "path": "MDS2 可选分段切向带，各段带由自己的电机驱动，每台最多带 192 锭。还可选多台电机共同驱动一条长切向带。钢领板和牵伸另有驱动。",
+          "electric": "原厂明确两种多电机方案。最多 192 锭对应分段带方案的单台电机。",
+          "work": "长机分段供动力，钢领板升降可独立配合卷装成形。",
+          "refs": [
+            "ringM"
+          ],
+          "filters": [
+            "group",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist",
+            "draft",
+            "traverse"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist"
+            ],
+            "position": [
+              "traverse"
+            ]
+          }
+        },
+        {
+          "maker": "经纬智能",
+          "model": "JWF1576 系列",
+          "station": "钢领板升降",
+          "path": "平台列出吊带式与丝杆式两种钢领板升降传动。",
+          "electric": "样本明确两种升降机构，电机本体应依订货配置核实。",
+          "work": "夜班落纱、启停及成形时尤其关注升降同步和传动间隙。",
+          "refs": [
+            "ringJ"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "traverse",
+            "position"
+          ],
+          "motorJobs": {
+            "position": [
+              "traverse",
+              "position"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "winding",
+      "question": "是槽筒同时负责卷绕与横动，还是独立机构摆纱？",
+      "coverage": "卷绕可以由电机直驱槽筒并靠槽形铺纱，也可以用独立导纱机构控制横动。接头、负压寻纱和供管分别有自己的动力需求。",
+      "rows": [
+        {
+          "maker": "青岛宏大",
+          "model": "VCRO-E",
+          "station": "单锭槽筒与筒子",
+          "path": "直流无刷电机同轴带槽筒，槽筒表面摩擦带动筒子，槽形引导纱线横动。托盘输送带另有电机。",
+          "electric": "原厂资料明确槽筒采用无刷直流电机。",
+          "work": "卷绕与横动在槽筒上机械耦合。排查时可将单锭故障与整段管纱输送故障分开。",
+          "refs": [
+            "windJ"
+          ],
+          "filters": [
+            "bldc",
+            "direct",
+            "single",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "traverse",
+            "logistics"
+          ],
+          "motorJobs": {
+            "bldc": [
+              "wind",
+              "traverse"
+            ],
+            "direct": [
+              "wind",
+              "traverse"
+            ],
+            "single": [
+              "wind",
+              "traverse",
+              "logistics"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Savio",
+          "model": "Proxima Smartconer / Multicone",
+          "station": "卷绕头、接头循环及横动选项",
+          "path": "机型手册分列槽筒无刷电机、锭位循环电机、管纱分配带电机。Multicone 用电子导纱形成卷装。",
+          "electric": "厂方只将槽筒电机写作 brushless，横动电机的电磁型式未列。",
+          "work": "槽筒卷绕和可编程摆纱各有成形用途。接头动作只在需要时启动。",
+          "refs": [
+            "windPro",
+            "windS"
+          ],
+          "filters": [
+            "brushless",
+            "single",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "traverse",
+            "logistics",
+            "process"
+          ],
+          "motorJobs": {
+            "brushless": [
+              "wind"
+            ],
+            "single": [
+              "wind",
+              "process"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Rieter",
+          "model": "Autoconer X6",
+          "station": "供纱、卷绕与电子铺纱",
+          "path": "RM 由人工向圆形纱库喂管，V 由细纱机直接送管。选配 Preci FX 时以电子横动控制铺纱。",
+          "electric": "厂方公开供纱方式及无槽筒铺纱技术，未公开横动电机型式。",
+          "work": "同一卷绕系统，采用细络联会增加跨机输送、分配及回管任务。",
+          "refs": [
+            "windR",
+            "windPrec"
+          ],
+          "filters": [
+            "position",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "traverse",
+            "logistics"
+          ],
+          "motorJobs": {
+            "position": [
+              "traverse"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Savio",
+          "model": "Proxima Smartconer",
+          "station": "接头器、吸纱风机与物流",
+          "path": "接头器关键动作由伺服电机按序执行。吸风电机由变频器按实际需要调速。管纱分配带有自己的电机。",
+          "electric": "厂方将接头伺服、变频吸风电机及带电机分别列出。",
+          "work": "断头后，寻纱依赖负压，接头依赖时序，补管依赖输送带。三项负载和故障观察点不同。",
+          "refs": [
+            "windPro"
+          ],
+          "filters": [
+            "servo",
+            "vfd",
+            "fluid",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "process",
+            "air",
+            "logistics"
+          ],
+          "motorJobs": {
+            "servo": [
+              "process"
+            ],
+            "vfd": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "warping",
+      "question": "整片卷经、分条整经和短经打样分别要控制哪些轴？",
+      "coverage": "分批整经要盯经轴和压辊，分条整经增加工作台横移和倒轴。窄幅弹性经纱还可用直流电机带摩擦滚筒，控制伸长。",
+      "rows": [
+        {
+          "maker": "KARL MAYER",
+          "model": "WARPDIRECT 2.0",
+          "station": "分批整经的经轴与压辊",
+          "path": "纱片直接卷上整经轴。厂方介绍 2.0 版采用电动压辊，断纱停车时压辊可退让。",
+          "electric": "压辊为电动，公开页未列其电机原理。经轴卷绕与压辊位置是两项任务。",
+          "work": "大批量同品种短纤经纱，需兼顾卷绕密度和停车时的纱层保护。",
+          "refs": [
+            "warK",
+            "warp2"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "pressure",
+            "position"
+          ],
+          "motorJobs": {
+            "position": [
+              "position",
+              "pressure"
+            ]
+          }
+        },
+        {
+          "maker": "Prashant Gamatex",
+          "model": "Lasertronic Plus",
+          "station": "分条整经工作台与机头",
+          "path": "纱片依次分条卷上滚筒再倒入织轴。三套伺服协调工作台横移、横向进给和机头移动。",
+          "electric": "原厂明确三套伺服系统，对应三项运动。",
+          "work": "色经或多品种经纱的条带宽度和起始位置需要重复定位。",
+          "refs": [
+            "warS"
+          ],
+          "filters": [
+            "servo",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "traverse",
+            "position"
+          ],
+          "motorJobs": {
+            "servo": [
+              "traverse",
+              "position"
+            ],
+            "position": [
+              "traverse",
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "KARL MAYER",
+          "model": "MULTI-MATIC 32 Compact",
+          "station": "短经及样品整经",
+          "path": "可移动筒子架配合碳纤维导纱件形成规定纱层和排列，再倒轴。",
+          "electric": "样本明确移动架与导纱结构，未确认每个导纱件配置一台电机。",
+          "work": "花型试织和短、中批量时，换色顺序与导纱运动比连续满幅卷绕更关键。",
+          "refs": [
+            "warShort"
+          ],
+          "filters": [
+            "handling",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "position",
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ],
+            "position": [
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "Jupiter Comtex",
+          "model": "Direct Warping",
+          "station": "经轴压靠与断纱退辊",
+          "path": "卷径增大时推回压辊以维持预定压力，断纱停车时压辊迅速摆开。",
+          "electric": "厂方列出压力与退辊动作，执行动力类型待核。",
+          "work": "相同退辊功能在不同厂家可有不同执行机构，应逐型号读图。",
+          "refs": [
+            "warJ"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "pressure",
+            "wind",
+            "position"
+          ],
+          "motorJobs": {
+            "position": [
+              "pressure",
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "Kyang Yhe",
+          "model": "Rubber Warper / WM300",
+          "station": "弹性带经纱的摩擦卷绕",
+          "path": "橡筋整经机由直流电机带滚筒，经表面摩擦带经轴，摩擦可调。普通 WM300 则由三相电机带摩擦传动，可正反转。",
+          "electric": "橡筋系列标为 DC motor，厂家未列电刷结构。普通机仅写三相电机。",
+          "work": "弹性经纱需限制伸长。小幅带织物的整经可与棉布大经轴的中心卷绕分开比较。",
+          "refs": [
+            "kyWarp",
+            "kyStd"
+          ],
+          "filters": [
+            "dc",
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "tension"
+          ],
+          "motorJobs": {
+            "dc": [
+              "wind"
+            ],
+            "integrated": [
+              "wind"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "sizing",
+      "question": "浆槽、烘筒与织轴怎样维持匹配的线速度？",
+      "coverage": "浆槽、拖引和车头要协调张力。厂家实例包括异步减速电机分别带各工艺辊、浆槽双伺服，以及烘筒段单独驱动。",
+      "rows": [
+        {
+          "maker": "KARL MAYER",
+          "model": "PROSIZE / SoftDry",
+          "station": "浆纱烘筒段",
+          "path": "烘燥段用单独驱动控制纱片在各筒间的张力。ISOSIZE 另提供三浸两轧的经典浆槽。",
+          "electric": "原厂确认 SoftDry 采用单独电机驱动方案，公开页未逐筒列出台数。蒸汽供热，电机带动旋转。",
+          "work": "湿纱容易被拉伸，可比较分段驱动与浆槽浸轧路径。",
+          "refs": [
+            "sizeK",
+            "sizeI"
+          ],
+          "filters": [
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed",
+              "tension"
+            ]
+          }
+        },
+        {
+          "maker": "Jupiter Comtex",
+          "model": "PLC High Speed Sizing",
+          "station": "下压浆辊、拖引辊与织轴",
+          "path": "异步减速电机带下压浆辊，拖引辊与可正反转织轴也采用异步减速驱动。经轴架张力可由气压制动。",
+          "electric": "原厂明确 asynchronous gear motor，并描述负荷传感器和气动制动。",
+          "work": "压浆区要保持片纱张力，织轴处还需随卷径调节转矩。",
+          "refs": [
+            "sizeJ"
+          ],
+          "filters": [
+            "induction",
+            "geared",
+            "pneumatic"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "wind",
+            "tension",
+            "pressure"
+          ],
+          "motorJobs": {
+            "induction": [
+              "feed",
+              "wind",
+              "tension"
+            ],
+            "geared": [
+              "feed",
+              "wind",
+              "tension"
+            ],
+            "pneumatic": [
+              "tension"
+            ]
+          }
+        },
+        {
+          "maker": "Prashant",
+          "model": "Pacesetter-F",
+          "station": "长丝浆槽与车头",
+          "path": "浆槽配双伺服系统，车头也用伺服控制。卷绕压紧另有气动装置。",
+          "electric": "厂家明确伺服控制与气动压紧，逐轴电机规格未公开。",
+          "work": "长丝上浆时要限制牵伸，分别核查湿区和车头的速度基准。",
+          "refs": [
+            "sizeP"
+          ],
+          "filters": [
+            "servo",
+            "pneumatic"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "wind",
+            "tension",
+            "pressure"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "wind",
+              "tension"
+            ],
+            "pneumatic": [
+              "pressure"
+            ]
+          }
+        },
+        {
+          "maker": "KARL MAYER",
+          "model": "FILSIZE-F",
+          "station": "长丝单轴与全幅上浆",
+          "path": "单轴浆纱以及全幅浆纱对应不同的喂入和并轴安排，张力传感器监控各纱片。",
+          "electric": "厂方公开流程、张力测量和供给范围，电机数量随配置核实。",
+          "work": "比较长丝和短纤路线时应保留张力测量点与后续并轴工位。",
+          "refs": [
+            "sizeF"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "drawing_in",
+      "question": "穿经时是机头移动、经纱车移动，还是先穿引纱？",
+      "coverage": "穿经工作站将经纱穿过停经片、综眼及钢筘。换轴时连接新旧经纱的工位见自动结经机。",
+      "rows": [
+        {
+          "maker": "Stäubli",
+          "model": "SAFIR PRO S67",
+          "station": "固定穿经头与移动经纱车",
+          "path": "机头固定，控制系统使移动经纱车在穿经过程中进给，按组织将纱穿入停经片、综丝和钢筘。",
+          "electric": "厂家确认受控平移。定位轴电机类型与台数未公布。",
+          "work": "衬衫等单经片品种，需跟踪经车位置与穿经循环的协调。",
+          "refs": [
+            "drawInS"
+          ],
+          "filters": [
+            "position",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "transport",
+            "logistics"
+          ],
+          "motorJobs": {
+            "position": [
+              "position"
+            ],
+            "handling": [
+              "transport",
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "日发纺机",
+          "model": "RFAD10 / RFAD20",
+          "station": "穿经执行机构与移动机头",
+          "path": "RFAD10 规格列伺服电机与气缸。RFAD20 长丝平台采用移动穿经机和一个或多个固定工位。",
+          "electric": "气缸与电机分别计。RFAD10 的伺服配置仅按该机资料记录。",
+          "work": "比较多个备经工位时，先确认横移的是经车还是机头，再定位动作轴。",
+          "refs": [
+            "drawInC"
+          ],
+          "filters": [
+            "servo",
+            "pneumatic",
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "logistics"
+          ],
+          "motorJobs": {
+            "servo": [
+              "position"
+            ],
+            "pneumatic": [
+              "position"
+            ],
+            "handling": [
+              "logistics"
+            ]
+          }
+        },
+        {
+          "maker": "Groz-Beckert",
+          "model": "WarpMaster",
+          "station": "单筒引纱预穿",
+          "path": "从一只筒子引出纱线，夹纱针穿过停经片、综丝和钢筘，可在真实经轴到场前备好组织。",
+          "electric": "资料给出夹纱针及供纱方式，未披露各执行轴电机。",
+          "work": "复杂组织提前备综时，驱动任务集中到穿引、分综和暂存管理。",
+          "refs": [
+            "drawInG"
+          ],
+          "filters": [
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "feed"
+          ],
+          "motorJobs": {
+            "position": [
+              "position"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "weaving",
+      "question": "织机主轴、引纬介质、开口轴和布边小电机怎样区分？",
+      "coverage": "主轴、开口、引纬与布边有不同的动作节拍。可分别查主轴直驱、逐框伺服、呈纬针步进以及气流或水流输送纬纱。",
+      "rows": [
+        {
+          "maker": "Picanol",
+          "model": "Ultimax",
+          "station": "剑杆织机主传动",
+          "path": "SUMO 主电机直接驱动整机，机械机构驱动剑杆往返并与打纬同步。",
+          "electric": "手册确认 SUMO 直驱。现款具体转子结构需查该型号铭牌。",
+          "work": "适用于用剑头握持传递纬纱的工况，观察机械引纬与主轴相位。",
+          "refs": [
+            "loomP"
+          ],
+          "filters": [
+            "direct"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "main",
+            "process"
+          ],
+          "motorJobs": {
+            "direct": [
+              "main",
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Toyota",
+          "model": "JAT910 / E-shed",
+          "station": "喷气引纬、逐框开口",
+          "path": "喷气系统送纬。选配 E-shed 时每片综框各有伺服电机，可按组织分别控制升降。另有曲柄开口方案。",
+          "electric": "原厂明确 E-shed 的逐框伺服。织机用气来自压缩空气供给系统。",
+          "work": "多品种织造时，可直接比较逐框电子开口与机械曲柄的传动布置。",
+          "refs": [
+            "loomT",
+            "loomAir"
+          ],
+          "filters": [
+            "servo",
+            "single",
+            "fluid",
+            "pneumatic"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air",
+            "process",
+            "position"
+          ],
+          "motorJobs": {
+            "servo": [
+              "process",
+              "position"
+            ],
+            "single": [
+              "process",
+              "position"
+            ],
+            "fluid": [
+              "air"
+            ],
+            "pneumatic": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "津田驹 / Toyota",
+          "model": "ZW8200 / LWT810 资料",
+          "station": "喷水引纬与产生水脉冲",
+          "path": "ZW8200 展示喷水引纬。Toyota 泵部手册给出凸轮经杠杆驱动柱塞、喷嘴按时送水的具体实现。",
+          "electric": "泵的往复来自凸轮。独立泵电机不能仅凭机上有喷嘴来确定。",
+          "work": "喷水主要对应适宜用水的长丝织物。对照喷水与喷气，应追踪水脉冲与气阀各自的来源。",
+          "refs": [
+            "loomW",
+            "loomPump"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "liquid",
+            "process"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid",
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "英威腾",
+          "model": "GD350-12",
+          "station": "喷气或喷水织机主轴配套",
+          "path": "专用变频器配永磁同步直驱电机驱动主轴。WS900 应用还把送经和卷取作为独立控制功能。",
+          "electric": "厂方明确永磁同步主轴电机。这是驱动配套方案。",
+          "work": "织机主轴需要配合节拍启停和调速。经轴张力、纬密调节另由送经和卷取功能处理。",
+          "refs": [
+            "loomPM",
+            "weftSup"
+          ],
+          "filters": [
+            "pm",
+            "direct",
+            "vfd",
+            "sync"
+          ],
+          "level": "驱动商应用",
+          "jobs": [
+            "main",
+            "feed",
+            "wind"
+          ],
+          "motorJobs": {
+            "pm": [
+              "main"
+            ],
+            "direct": [
+              "main"
+            ],
+            "vfd": [
+              "main"
+            ],
+            "sync": [
+              "main"
+            ]
+          }
+        },
+        {
+          "maker": "Picanol",
+          "model": "GTMax-i / ELSY",
+          "station": "绞边",
+          "path": "每套电子绞边动作由独立步进电机驱动，形成纬端边组织。",
+          "electric": "原厂样本明确步进电机，适用所列 ELSY 配置。",
+          "work": "绞边只需按纬次控制交叉时刻，功率和任务均与主轴不同。",
+          "refs": [
+            "loomStep"
+          ],
+          "filters": [
+            "step",
+            "single"
+          ],
+          "level": "具名型号样本",
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "step": [
+              "position",
+              "process"
+            ],
+            "single": [
+              "position",
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Picanol",
+          "model": "喷气及剑杆平台历史披露",
+          "station": "主传动电机的另一种磁路",
+          "path": "公司年度报告记载在喷气、剑杆织机上长期使用自研开关磁阻电机。",
+          "electric": "原厂集团披露 SR 电机，具体机龄与批次需核铭牌。",
+          "work": "适合识别存量织机上的开关磁阻方案，不能据此指定每款新机。",
+          "refs": [
+            "loomSR"
+          ],
+          "filters": [
+            "sr"
+          ],
+          "level": "厂商历史实装",
+          "jobs": [
+            "main"
+          ],
+          "motorJobs": {
+            "sr": [
+              "main"
+            ]
+          }
+        },
+        {
+          "maker": "IRO",
+          "model": "1131 CAN plus",
+          "station": "储纬器绕纱",
+          "path": "储纬器由电机补充纬纱储量，接受织机控制信号。",
+          "electric": "原厂服役机型手册写明无刷永磁电机。",
+          "work": "多色织造要分清每路预储纬与织机的主引纬动作。",
+          "refs": [
+            "loomWeft"
+          ],
+          "filters": [
+            "brushless",
+            "single"
+          ],
+          "level": "原厂服役机型资料",
+          "jobs": [
+            "feed",
+            "wind"
+          ],
+          "motorJobs": {
+            "brushless": [
+              "feed",
+              "wind"
+            ],
+            "single": [
+              "feed",
+              "wind"
+            ]
+          }
+        },
+        {
+          "maker": "Picanol",
+          "model": "QuickStep",
+          "station": "多色纬纱的呈纬针",
+          "path": "每个选纬模块由一台电子控制的步进电机驱动自己的呈纬针，在剑杆取纬前送入选定纬纱。",
+          "electric": "原厂明确逐模块步进电机，同厂 ELSY 绞边另有步进驱动。",
+          "work": "多色或不同材料纬纱依花型切换时，需按织机角度定位呈纬针。",
+          "refs": [
+            "loomSelect"
+          ],
+          "filters": [
+            "step",
+            "position",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "feed"
+          ],
+          "motorJobs": {
+            "step": [
+              "position",
+              "feed"
+            ],
+            "position": [
+              "position"
+            ],
+            "single": [
+              "position",
+              "feed"
+            ]
+          }
+        },
+        {
+          "maker": "Stäubli",
+          "model": "LX PRO / UNIVAL 100",
+          "station": "提花开口的共用刀架与单经执行器",
+          "path": "LX PRO 从一侧驱动刀架系统。UNIVAL 100 则为每根经纱分配独立 JACTUATOR，与控制器逐个通信。",
+          "electric": "厂家公开刀架传动与单纱执行器。执行器的电磁类型、功率需单独核对。",
+          "work": "常规或毛巾提花可用 LX PRO，技术织物和三维预成形可逐根定制经纱轨迹。",
+          "refs": [
+            "jacLX",
+            "jact"
+          ],
+          "filters": [
+            "group",
+            "single",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "group": [
+              "process"
+            ],
+            "single": [
+              "position",
+              "process"
+            ],
+            "position": [
+              "position"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pretreatment",
+      "question": "平幅连续线中，哪套驱动牵布，哪套负责洗液和加药？",
+      "coverage": "连续线可用主动导布辊、多级洗槽或穿孔转鼓。间歇平幅机则靠双电机交替收放卷，按张力反馈改变两侧速度。",
+      "rows": [
+        {
+          "maker": "Benninger",
+          "model": "BEN-BLEACH / REACTA",
+          "station": "连续退浆、漂白与水洗",
+          "path": "布匹经浸渍、反应和水洗，各模块按选定布路衔接。导布、停留及洗液循环要分别核查。",
+          "electric": "原厂公开组合流程与驱动设计，未逐台指定电机。",
+          "work": "长批量平幅棉布需要在规定停留时间内稳定输送。",
+          "refs": [
+            "prepB"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "liquid",
+            "transport"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "Menzel",
+          "model": "Combi / OPTIBLEACH L",
+          "station": "主动上辊与计量泵",
+          "path": "Combi 洗槽的上辊分别驱动，其余导辊可随布转。OPTIBLEACH L 在浸液及汽蒸段使用受控计量泵。",
+          "electric": "厂方确认主动上辊与计量泵，未列各电机原理。",
+          "work": "敏感织物宜关注导布张力。药液配方变化要追踪泵流量。",
+          "refs": [
+            "prepM",
+            "dwellM"
+          ],
+          "filters": [
+            "single",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "liquid",
+            "tension"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed",
+              "tension"
+            ],
+            "fluid": [
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "FONG’S Europe / Goller",
+          "model": "SINTENSA CYCLONE TANDEM",
+          "station": "穿孔转鼓和内转子",
+          "path": "织物贴在受驱动的穿孔外鼓上，内部转子搅动液体，使洗液穿透布面。",
+          "electric": "原厂确认内外运动，未公开每个转子的电机和传动比。",
+          "work": "与多辊导布洗槽比较，要同时考虑鼓速、液流和织物滑移。",
+          "refs": [
+            "prepF"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "liquid"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "Mezzera",
+          "model": "Jigger",
+          "station": "双卷辊间歇平幅退浆、煮练或漂白",
+          "path": "两台调速电机分别由独立交流矢量变频器控制，两根卷布辊交替收放。槽内负荷传感器反馈布面张力。",
+          "electric": "原厂明确两台变速电机和独立变频控制。电机的同步或异步类型未列。",
+          "work": "小批平幅机以往复处理控制停留时间，宽幅敏感织物可按布种调整张力。",
+          "refs": [
+            "prepJig"
+          ],
+          "filters": [
+            "vfd",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "wind",
+            "tension",
+            "liquid"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "wind",
+              "tension"
+            ],
+            "single": [
+              "wind",
+              "tension"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "dyeing",
+      "question": "布动、液动、还是气流带布，主要动力分别落在哪？",
+      "coverage": "平幅卷染控制卷辊的速度与转矩，气流染色把送风机用于带布，卷轴染色让染液穿透固定布卷。计量泵承担加药。",
+      "rows": [
+        {
+          "maker": "Benninger / Erbatech",
+          "model": "Küsters DyePad / SCOUT COLOR 转架",
+          "station": "平幅浸轧、打卷与缓转堆置",
+          "path": "Küsters 浸轧后将布打卷堆置。另一厂 Erbatech SCOUT COLOR 的液压转架可在固色时按各卷所需速度缓转。",
+          "electric": "Benninger 公布轧辊结构。Erbatech 公布液压转架，两者的动力接口须按各自选配核对。",
+          "work": "纤维素织物活性染料冷轧堆时，轧液、卷绕、堆置和后洗是不同环节。",
+          "refs": [
+            "dyeB",
+            "cpbTurn"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "pressure",
+            "wind",
+            "liquid"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "wind"
+            ]
+          }
+        },
+        {
+          "maker": "A.T.E.",
+          "model": "CPB 连续配液系统",
+          "station": "染液和化学品的比例给料",
+          "path": "两路泵在 PLC 与流量反馈下同步。药液泵可采用螺杆泵或齿轮泵。",
+          "electric": "厂方写明泵配电机。该部件实例可与浸轧主机独立选配。",
+          "work": "液位补充与配比变化时，控制量为两路实际流量。",
+          "refs": [
+            "dyeDose"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "liquid"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "Monforts",
+          "model": "THERMEX / Econtrol",
+          "station": "平幅连续轧烘固色",
+          "path": "织物经浸轧后进入循环热风区连续固色，布速与温湿条件共同决定作用时间。",
+          "electric": "厂家给出热风和导布方案，未逐辊公开电机类型。",
+          "work": "连续活性染色需核循环风与织物牵引两类负载。",
+          "refs": [
+            "dyeContinuous",
+            "dyeHot"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air",
+            "transport",
+            "feed"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "MCS / 伟创电气",
+          "model": "Double Jigger C4-143 / AC200T 应用",
+          "station": "双卷辊往返与卷径补偿",
+          "path": "MCS 的双布段四辊卷染机使用无刷驱动，放卷侧制动时可把部分能量供给牵引侧。伟创的另一台卷染机用两台三相异步电机经减速机交替收放。",
+          "electric": "MCS 明示 brushless system，未细分换向或磁路。两台三相异步电机对应伟创的应用案例。",
+          "work": "布速接近恒定时，卷径增大意味着卷轴角速度降低，维持张力所需力矩上升。",
+          "refs": [
+            "dyeM",
+            "dyeV"
+          ],
+          "filters": [
+            "induction",
+            "geared",
+            "vfd",
+            "brushless"
+          ],
+          "level": "整机与独立应用案例",
+          "jobs": [
+            "wind",
+            "tension"
+          ],
+          "motorJobs": {
+            "induction": [
+              "wind",
+              "tension"
+            ],
+            "geared": [
+              "wind",
+              "tension"
+            ],
+            "vfd": [
+              "wind",
+              "tension"
+            ],
+            "brushless": [
+              "wind",
+              "tension"
+            ]
+          }
+        },
+        {
+          "maker": "Thies",
+          "model": "iMaster 系列",
+          "station": "绳状染色的提布与染液循环",
+          "path": "机内提布轮调频控速，配合染液泵和摆布机构循环织物。",
+          "electric": "原厂明确变频提布轮。染液泵、摆布和提布分列。",
+          "work": "低张力绳状染色关注提升速度、喷流与布速匹配。",
+          "refs": [
+            "dyeT"
+          ],
+          "filters": [
+            "vfd",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "liquid",
+            "feed",
+            "transport"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "feed",
+              "transport"
+            ],
+            "fluid": [
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "FONG’S Europe / THEN",
+          "model": "AIRFLOW SYNERGY",
+          "station": "气流带布、循环及加料",
+          "path": "送风机建立运输气流，染液另行供给。工艺记录分列鼓风机、主提布轮、主泵和加料泵。",
+          "electric": "厂家分别列出风机、轮和泵，未给上述电机的磁路型式。",
+          "work": "用气流输送的布匹在排液或进液期间也可保持运行。",
+          "refs": [
+            "dyeF",
+            "dyebatchAir"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air",
+            "liquid",
+            "transport"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air",
+              "liquid",
+              "transport"
+            ]
+          }
+        },
+        {
+          "maker": "FONG’S",
+          "model": "CBS",
+          "station": "布卷固定、染液穿透",
+          "path": "平幅布卷绕在有孔卷轴上，泵使染液穿过织物卷层，装卸时更换卷轴。",
+          "electric": "主要工艺负载是循环泵。CBS 产品页及卷轴染色原理资料相互补充。",
+          "work": "适合要求平幅处理且卷层允许液体均匀穿透的品种。",
+          "refs": [
+            "beamF",
+            "dyeBeam"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "liquid"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "stenter",
+      "question": "同一台拉幅定型机，谁带链条，谁管超喂，谁推动热风？",
+      "coverage": "针链可共用减速传动，也可左右各用伺服。进布超喂辊、跟边执行器、调幅丝杠、循环风机和排湿风机分别控制不同变量。",
+      "rows": [
+        {
+          "maker": "Swastik Textile Engineers",
+          "model": "OPTIMA 2510",
+          "station": "左右针链的共用传动与分侧驱动",
+          "path": "标准配置用变频三相交流驱动，经花键轴和链轨上的减速箱带动布链。可选左右链轨各用一个伺服驱动。",
+          "electric": "样本分别列出标准和选配。交流驱动的磁路型式、伺服电机铭牌待查。",
+          "work": "链速决定布在烘房的停留时间。分侧驱动允许分别控制两条链。",
+          "refs": [
+            "stentS"
+          ],
+          "filters": [
+            "vfd",
+            "geared",
+            "servo",
+            "group",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "main",
+            "transport"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "main",
+              "transport"
+            ],
+            "geared": [
+              "main",
+              "transport"
+            ],
+            "servo": [
+              "transport"
+            ],
+            "group": [
+              "main",
+              "transport"
+            ],
+            "single": [
+              "transport"
+            ]
+          }
+        },
+        {
+          "maker": "Swastik Textile Engineers",
+          "model": "OPTIMA 系列",
+          "station": "进布超喂、布面张力与布边张力辊",
+          "path": "变频交流减速电机调超喂辊速度。布面张力辊和布边张力辊各有独立驱动。",
+          "electric": "原厂确认交流减速驱动和独立张力驱动。",
+          "work": "针织布在上针前可预留收缩量。该厂公开超喂调节范围为 −10% 至 +50%，以进布与链条的速度关系实现。",
+          "refs": [
+            "stentSW"
+          ],
+          "filters": [
+            "vfd",
+            "geared",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "feed",
+              "tension"
+            ],
+            "geared": [
+              "feed",
+              "tension"
+            ],
+            "single": [
+              "tension"
+            ]
+          }
+        },
+        {
+          "maker": "Monforts",
+          "model": "MONTEX",
+          "station": "烘房热风循环与排湿",
+          "path": "循环风机电机在升温段与保温段可采用不同转速。另一套排风机调节排湿，厂方给出随排气湿度调速的方式。",
+          "electric": "原厂对循环风机电机和排风电机分别给出调节方法，铭牌、热区数及每区台数按订单核对。",
+          "work": "布在入口升温和随后保持温度所需的风量不同，排湿量又取决于布带入的水分。",
+          "refs": [
+            "montex",
+            "montexFans"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "Swastik Textile Engineers",
+          "model": "RDB-3000 烘房",
+          "station": "循环风机的电机安装位置",
+          "path": "离心风机与装在烘箱外侧的交流电机直接联接，变频器调节转速，上下喷嘴风量还可通过风门分配。",
+          "electric": "厂家明确电机在箱外、风机直联、变频调速。",
+          "work": "热空气循环时，风量调节与加热元件供热分别处理，箱外电机也便于检修。",
+          "refs": [
+            "stentS"
+          ],
+          "filters": [
+            "vfd",
+            "direct",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "air"
+            ],
+            "direct": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "Aigle",
+          "model": "RAM/S",
+          "station": "进布轨纠偏、各室调幅与上下循环风机",
+          "path": "两台独立变频交流电机接收传感器信号，控制入口渐开段。各室电动横向丝杠调幅，烘房上下区各设循环风机。",
+          "electric": "入口驱动明示为交流变频。厂家标注每台循环风机 5.5–7.5 kW，横向丝杠电机和风机的磁路待查。",
+          "work": "布边位置、定型幅宽和热风循环是三项不同的控制任务。",
+          "refs": [
+            "stentA"
+          ],
+          "filters": [
+            "vfd",
+            "position",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "air"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "position"
+            ],
+            "position": [
+              "position"
+            ],
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-FRAME",
+          "station": "热风区与出布幅宽",
+          "path": "交替布置的热区用分流循环风均匀送风。出口增设第二根调幅丝杠，承受横向张力。",
+          "electric": "原厂公开风路和调幅结构，电机形式及装机台数需按幅宽和箱数核对。",
+          "work": "厚重或宽幅织物既要求横向均匀加热，也对出口导轨的支承能力有要求。",
+          "refs": [
+            "stentB"
+          ],
+          "filters": [
+            "fluid",
+            "position"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "position",
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "position": [
+              "position"
+            ]
+          }
+        },
+        {
+          "maker": "Erhardt+Leimer",
+          "model": "ELFEED KRS 62 / ELCUT",
+          "station": "入口跟边执行器与出口切边刀",
+          "path": "ELFEED 用传感器驱动纠偏机构，KR 62 执行器为无刷电机配行星齿轮。ELCUT 用减速电机带上刀，上刀再带下刀，另有跟边执行器。",
+          "electric": "两套原厂配套装置分别对应纠偏和剪切，资料明确到执行器和刀具驱动。",
+          "work": "在针链入口使布边对中，在出口按布边位置修剪。两装置是否配套要查订单。",
+          "refs": [
+            "stenterEdge",
+            "cutEdge"
+          ],
+          "filters": [
+            "brushless",
+            "geared",
+            "position"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "brushless": [
+              "position"
+            ],
+            "geared": [
+              "position",
+              "process"
+            ],
+            "position": [
+              "position"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "calender",
+      "question": "压光时，哪套动力转辊，哪套建立轧点压力？",
+      "coverage": "转辊和加压必须分别追查。五辊机可用交流变频主传动加液压站，L 形双轧点机可分别设置两道线压力。",
+      "rows": [
+        {
+          "maker": "Gayatri",
+          "model": "Hydraulic Calander，五辊",
+          "station": "主传动、五辊辊组和加压装置",
+          "path": "变频交流电机经蜗杆减速箱和链传动带辊组。三根棉辊配两根加热镜面辊，独立液压动力单元向两个油缸供压。",
+          "electric": "仅主传动明示为交流变频。液压缸的数量与主传动电机数量分别统计。",
+          "work": "线速度影响布面处理时间，油缸承担轧点载荷，可分别调整。",
+          "refs": [
+            "calI"
+          ],
+          "filters": [
+            "vfd",
+            "geared",
+            "group",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "main",
+            "pressure"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "main"
+            ],
+            "geared": [
+              "main"
+            ],
+            "group": [
+              "main"
+            ],
+            "fluid": [
+              "pressure"
+            ]
+          }
+        },
+        {
+          "maker": "ANDRITZ Küsters",
+          "model": "teXcal s-roll / Raconip L",
+          "station": "单次压光与 L 形双轧点",
+          "path": "s-roll 用可控挠度辊施加压光效果。Raconip L 让布在一次通过中经过两个轧点，上方和后方的线压力可分别调节。",
+          "electric": "公开资料说明轧点和压力调节，未披露每个辊的电机类型。",
+          "work": "同时要求光泽和柔软手感时，可比较双轧点和单轧点的布路与压力设置。",
+          "refs": [
+            "rollEffects"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "pressure",
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "pressure",
+              "process"
+            ]
+          }
+        },
+        {
+          "maker": "Prabhat Textile Corporation",
+          "model": "PTC 007 / PTC H005",
+          "station": "高压辊组与自动液压加压",
+          "path": "样本给出交流变频主传动和自动液压加压。PTC 007 有多种辊数组合，H005 为五辊机。",
+          "electric": "型号表把变速驱动和液压压力分开列，辊数不能直接用作电机数。",
+          "work": "不同辊组组合通过接触次序和压力取得不同压光效果，选型时同时核对传动和压力参数。",
+          "refs": [
+            "calP"
+          ],
+          "filters": [
+            "vfd",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "main",
+            "pressure"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "main"
+            ],
+            "fluid": [
+              "pressure"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "inspection",
+      "question": "验布线上，哪台电机牵布、哪台控制成卷，检测头是否需要动力？",
+      "coverage": "独立验布台需要牵引和收卷动力。检测设备也可以安装在已有整理线或织机上，输布由宿主负责。",
+      "rows": [
+        {
+          "maker": "RVR Machinery",
+          "model": "HFI-W-2H",
+          "station": "独立验布台的双驱动",
+          "path": "电子验布台用两套交流变频驱动。厂家列出两台四极电机，额定功率分别为 0.75 kW 和 0.37 kW。",
+          "electric": "原表未把各功率逐一映射到轴，四极描述极数，电磁类型待厂家确认。",
+          "work": "查看坯布一面时要稳定展布，并在缺陷处减速或停车复查。",
+          "refs": [
+            "inspRT"
+          ],
+          "filters": [
+            "vfd"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "transport",
+            "wind"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "transport",
+              "wind"
+            ]
+          }
+        },
+        {
+          "maker": "Erhardt+Leimer",
+          "model": "Inspection rewinder",
+          "station": "牵引辊、张力段与上升式卷绕机",
+          "path": "入口 J 形储布槽缓冲换卷，牵引辊与上升式卷绕机之间闭环控制张力，卷绕前设展幅辊。",
+          "electric": "厂家明确驱动辊、卷绕与张力控制区段，未列电机磁路。",
+          "work": "保持检视区布面平整，并通过收卷设置调节卷装硬度。",
+          "refs": [
+            "inspEL"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "wind",
+            "tension"
+          ],
+          "motorJobs": {
+            "handling": [
+              "feed",
+              "wind",
+              "tension"
+            ]
+          }
+        },
+        {
+          "maker": "Uster Technologies",
+          "model": "Fabriq Vision 2 / Q-Bar 2",
+          "station": "整理线检测头与织机上的检测位置",
+          "path": "Fabriq Vision 2 用相机和光源检测运行中的布。Q-Bar 2 装在织机上监测成布区域，布料由宿主设备输送。",
+          "electric": "原厂列出的检测单元是光学组件，资料未列检测头专用牵布电机。",
+          "work": "选机时区分独立验布复卷线和在线检测头，后者应沿宿主机查送布动力。",
+          "refs": [
+            "inspU",
+            "inspectQ"
+          ],
+          "filters": [
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "transport"
+            ]
+          }
+        },
+        {
+          "maker": "Reuland",
+          "model": "纺织用电机 / Constant Tension Winder",
+          "station": "受张力约束的卷轴动力",
+          "path": "该厂将交流永磁同步电机用于线速度同步，将力矩类产品用于要求稳定卷绕张力的场合，并提供专用恒张力卷绕电机。",
+          "electric": "电机厂公开的是可采购的部件和用途，未指定上列验布机的配套品牌。",
+          "work": "中心驱动卷绕时，同一布面张力下卷径增大需要更大轴端转矩。",
+          "refs": [
+            "motorTorque",
+            "shaftT"
+          ],
+          "filters": [
+            "pm",
+            "torque",
+            "sync"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "wind",
+            "tension",
+            "main"
+          ],
+          "motorJobs": {
+            "pm": [
+              "main"
+            ],
+            "torque": [
+              "wind",
+              "tension"
+            ],
+            "sync": [
+              "main"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "compact_spinning",
+      "question": "紧密纺靠什么集聚须条，新增动力装在哪里？",
+      "coverage": "负压筛鼓、主动网格圈和机械集聚器是三种可追查的结构。筛鼓型要看吸风，EST4 要看输出下罗拉伺服，机械集聚则沿用下罗拉运动。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "K 48",
+          "station": "锭子传动、筛网鼓与集聚吸风",
+          "path": "主电机驱动锭子，厂家样本列四锭带传动。单风道负压在筛网鼓集聚区内引导须条。",
+          "electric": "厂家明确主电机 IE4 能效等级、筛网鼓和吸风系统。筛网鼓或锭位的个数均不能直接换算成电机数。",
+          "work": "细纱连续生产要同时维持锭速和各位置的集聚负压。",
+          "refs": [
+            "compactR",
+            "cmpK"
+          ],
+          "filters": [
+            "group",
+            "fluid"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist",
+            "air"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist"
+            ],
+            "fluid": [
+              "air"
+            ]
+          }
+        },
+        {
+          "maker": "Toyota Industries",
+          "model": "RX300 · EST3 / EST4",
+          "station": "网格圈和输出下罗拉",
+          "path": "EST3 用输出下罗拉主动带网格圈。EST4 将输出下罗拉交给伺服电机独立控制，构成四线独立传动。",
+          "electric": "EST4 明确伺服，EST3 公开主动驱动，伺服类型的结论仅适用于资料明示的配置。",
+          "work": "改变集聚区牵伸比时，EST4 可以独立调节输出速度，适配不同纤维和纱质。",
+          "refs": [
+            "cmpT"
+          ],
+          "filters": [
+            "servo",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft",
+            "feed"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft",
+              "feed"
+            ],
+            "single": [
+              "draft",
+              "feed"
+            ]
+          }
+        },
+        {
+          "maker": "Saurer",
+          "model": "Impact FX pro",
+          "station": "多孔网格圈集聚改装",
+          "path": "原厂短纤集聚装置用多孔网格圈，改善中细支纱线的集聚及自清洁。",
+          "electric": "原厂公布了工作表面和适配范围，单锭是否另有驱动、负压源配置须查对应改装单。",
+          "work": "老机升级时同时核实现有牵伸、集聚负压及改装接口。",
+          "refs": [
+            "compactS"
+          ],
+          "filters": [
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "draft"
+            ]
+          }
+        },
+        {
+          "maker": "Suessen / Rieter",
+          "model": "COMPACTeasy",
+          "station": "机械式集聚器",
+          "path": "弹簧把带 Y 形通道的集聚器压在下罗拉上，须条经过通道时机械集聚，沿用原牵伸机构提供的运动。",
+          "electric": "厂家明确集聚过程无需额外能源，这一集聚工位无需新增负压风机。",
+          "work": "适合核查既有环锭细纱机的改装空间，以及希望减少集聚附加用能的场合。",
+          "refs": [
+            "compactM"
+          ],
+          "filters": [
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "draft"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "twisting",
+      "question": "倍捻的锭子、超喂、卷绕和横动是共用还是独立驱动？",
+      "coverage": "短纤倍捻可按锭组、超喂卷绕和横动三项分配电机，工业长丝机型还可按锭直驱。地毯纱方案可一侧共用滚筒轴、各锭再由短带受力。",
+      "rows": [
+        {
+          "maker": "Saurer",
+          "model": "CompactTwister",
+          "station": "短纤倍捻锭列",
+          "path": "主电机经锭带带动一列锭子。查看传动时应沿带路确认覆盖哪些锭，再区分卷绕与导纱。",
+          "electric": "原厂列出高效率主驱动和锭带。各订单的电机数量及磁路未公开。",
+          "work": "相同工艺的多锭连续作业，可由共用带路传递动力。",
+          "refs": [
+            "twistC"
+          ],
+          "filters": [
+            "group"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "Savio",
+          "model": "Sirius · EDS",
+          "station": "锭子、超喂及卷绕、导纱横动",
+          "path": "电子传动配置明确采用三台独立电机，分别带锭组、超喂及卷绕滚筒、往复导纱机构。",
+          "electric": "三台对应三个功能组，同组中的锭位共用动力。原厂未给这三台的电磁类型。",
+          "work": "改捻度或卷装形状时，需要协调锭速、出纱速度与横动速度。",
+          "refs": [
+            "twistS"
+          ],
+          "filters": [
+            "group",
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist",
+            "feed",
+            "wind",
+            "traverse"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist",
+              "feed",
+              "wind",
+              "traverse"
+            ],
+            "single": [
+              "twist",
+              "feed",
+              "wind",
+              "traverse"
+            ]
+          }
+        },
+        {
+          "maker": "浙江日发",
+          "model": "RFTI11 电锭倍捻机",
+          "station": "工业长丝单锭",
+          "path": "锭子由电机直接驱动，按锭位独立控制。停启和监控落实到该锭。",
+          "electric": "厂方明确电锭直驱和单锭单控，电机磁路及卷绕是否与电锭共用待查。",
+          "work": "工业长丝批次需要单锭设定或监控时，可与锭带集中传动比较。",
+          "refs": [
+            "twistRf"
+          ],
+          "filters": [
+            "single",
+            "direct"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist"
+            ],
+            "direct": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "Saurer",
+          "model": "CarpetTwister / CarpetCabler",
+          "station": "地毯纱锭列的分侧驱动",
+          "path": "每侧配置一根滚筒轴，再由各锭自己的传动带向锭子送力。单锭传动带与每侧共用轴同时存在。",
+          "electric": "原厂样本明确每侧滚筒轴和单锭传动带。",
+          "work": "重纱包和地毯纱工位可逐锭检查皮带传力，同时沿整侧轴系追查共用动力。",
+          "refs": [
+            "twistCar"
+          ],
+          "filters": [
+            "group"
+          ],
+          "level": "原厂系列技术手册",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "group": [
+              "twist"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "texturing",
+      "question": "在加弹机上，哪台电机决定喂纱速度、假捻强度及卷装成形？",
+      "coverage": "沿喂入与牵伸导丝盘、假捻器、W3 和横动卷绕分别找动力。仅假捻位就有带传摩擦盘、同步电机单独驱动的摩擦单元，以及皮圈夹纱机构。",
+      "rows": [
+        {
+          "maker": "Barmag",
+          "model": "eFK · 标准样本",
+          "station": "喂入、牵伸、卷绕前喂纱与卷绕",
+          "path": "工艺区前后可用导丝盘输送。型号表还列轴式方案，进入卷绕前为 W3。卷绕横动列 ATT 或凸轮轴。16 节标准机列 384 个卷绕位。",
+          "electric": "厂家确认工作轴与卷绕位置数。现有三维演示的 7 个共用动力位置是建模选定，实机电机类型、台数及逐轴对应仍待电气清单核实。",
+          "work": "比较卷绕、牵伸或假捻速度时，先核对所选纱路和 G／W 配置。G1、G2 的集成动力在现有演示里随机构运动。",
+          "refs": [
+            "dtyE",
+            "dtySheet",
+            "efk26"
+          ],
+          "filters": [
+            "integrated",
+            "group"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "draft",
+            "wind",
+            "traverse"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "feed",
+              "draft"
+            ],
+            "group": [
+              "feed",
+              "wind",
+              "traverse"
+            ]
+          }
+        },
+        {
+          "maker": "Barmag",
+          "model": "DTY 产品系列 · 2026 年技术册",
+          "station": "摩擦假捻器的切向带与独立同步驱动",
+          "path": "摩擦假捻器有机侧皮带传动和单元独立驱动两种方案。独立方案在假捻单元使用同步电机。",
+          "electric": "2026 年系列技术册明确同步电机。eFK 型号表另将 8E 列为部分粗旦工艺的要求，具体订单的假捻头配置待核。",
+          "work": "常规大批量产品可选带传动。需要提高锭间假捻速度一致性时，厂家提供同步电机单驱。",
+          "refs": [
+            "efk26",
+            "dtySheet"
+          ],
+          "filters": [
+            "sync",
+            "single",
+            "group"
+          ],
+          "jobs": [
+            "twist"
+          ],
+          "level": "原厂系列技术手册",
+          "motorJobs": {
+            "sync": [
+              "twist"
+            ],
+            "single": [
+              "twist"
+            ],
+            "group": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "浙江越剑",
+          "model": "全直接主传动结构",
+          "station": "多个罗拉轴从车头和车尾受驱",
+          "path": "两端配置传动端，各罗拉轴经弹性联轴器与电机直接连接。厂商同时披露了用锭带张紧装置稳定带传锭速的另一类机构。",
+          "electric": "罗拉轴直联和锭带张紧分属不同负载，资料未将该方案绑定到具体在售机型配置或电机类型。",
+          "work": "罗拉牵伸要求稳定的线速度，假捻锭要求稳定的转速。两处带路和动力源应沿不同工作轴追踪。",
+          "refs": [
+            "dtyYueTech"
+          ],
+          "filters": [
+            "direct"
+          ],
+          "level": "厂家技术披露",
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "direct": [
+              "feed",
+              "draft"
+            ]
+          }
+        },
+        {
+          "maker": "Barmag",
+          "model": "eFK EvoSmart",
+          "station": "导丝盘的逐位调速",
+          "path": "Smart Godet 使用独立变频器，各位置可以单独调节。厂方另确认该机平台使用 IE5 同步电机。",
+          "electric": "导丝盘独立变频和整机平台电机为两项公开信息。尚无逐轴铭牌能证明每根导丝盘的转子材料。",
+          "work": "需要按纱位适配负荷和工艺速度时，比较逐位供电与共用传动。",
+          "refs": [
+            "dtyEvo",
+            "dtyIE"
+          ],
+          "filters": [
+            "single",
+            "vfd",
+            "sync"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed",
+              "draft"
+            ],
+            "vfd": [
+              "feed",
+              "draft"
+            ],
+            "sync": []
+          }
+        },
+        {
+          "maker": "Temco",
+          "model": "FTS525M",
+          "station": "摩擦盘假捻单元",
+          "path": "单元电机与假捻头同轴，经联轴器送力，头内有齿形带。另一类 Temco 单元由机侧切向带向各锭传力。",
+          "electric": "厂家明确单元电机、联轴器和带路，未披露电机磁路。该产品可用于新机或改造。",
+          "work": "假捻区按设定盘速运行，控制该纱位的摩擦加捻与解捻过程。",
+          "refs": [
+            "temcoB",
+            "dtyTemco",
+            "dtyBelt"
+          ],
+          "filters": [
+            "single",
+            "direct"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist"
+            ],
+            "direct": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "浙江越剑",
+          "model": "单锭假捻电机电气控制机构",
+          "station": "假捻装置的两种电机方案",
+          "path": "公司公开的单锭方案可用多台小功率异步电机或永磁同步电机，直接驱动各假捻装置。",
+          "electric": "出自该公司公开申报资料的核心技术披露。具体在售机型、年份及订单采用哪种电机须另核。",
+          "work": "比较同一假捻负载的两种电机原理时，可固定纱速和假捻工艺再对照不同供电方案。",
+          "refs": [
+            "dtyYueTech",
+            "dtyYueAR"
+          ],
+          "filters": [
+            "induction",
+            "pm",
+            "direct",
+            "single",
+            "sync"
+          ],
+          "level": "厂家技术披露",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "induction": [
+              "twist"
+            ],
+            "pm": [
+              "twist"
+            ],
+            "direct": [
+              "twist"
+            ],
+            "single": [
+              "twist"
+            ],
+            "sync": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "TMT Machinery",
+          "model": "ATF 系列 · Nip Twister",
+          "station": "皮圈夹持式假捻",
+          "path": "TMT 列单向、S/Z 型 Nip Twister。该厂公开技术中的两条交叉皮圈直接夹纱并使纱线回转，与摩擦盘接触纱线的结构不同。",
+          "electric": "原厂产品页确认 Nip 系列，专利说明夹纱原理。ATF 各版本的电机规格需查选配表。",
+          "work": "切换捻向或加工特定长丝时，需识别皮圈夹纱的动作，避免将夹纱皮圈计作整列传动带。",
+          "refs": [
+            "dtyTmt",
+            "dtyAlt"
+          ],
+          "filters": [
+            "integrated"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "integrated": [
+              "twist"
+            ]
+          }
+        },
+        {
+          "maker": "KAISER Motoren",
+          "model": "导丝盘专用同步磁阻电机",
+          "station": "导丝盘或纺丝计量泵",
+          "path": "厂家提供无励磁同步磁阻电机，可在变频供电下用作单轴驱动或成组驱动，并提供适配热导丝盘的轴系。",
+          "electric": "是电机厂明示的负载与电磁原理，尚无证据将其绑定到某台 eFK。",
+          "work": "恒速牵伸的导丝盘需要稳定转速。同一电机产品族还覆盖计量泵，具体转速和冷却按工位选。",
+          "refs": [
+            "dtyKais"
+          ],
+          "filters": [
+            "synrm",
+            "sync",
+            "vfd",
+            "group",
+            "single"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "feed",
+            "draft",
+            "liquid"
+          ],
+          "motorJobs": {
+            "synrm": [
+              "feed",
+              "draft",
+              "liquid"
+            ],
+            "sync": [
+              "feed",
+              "draft",
+              "liquid"
+            ],
+            "vfd": [
+              "feed",
+              "draft",
+              "liquid"
+            ],
+            "group": [
+              "feed",
+              "draft",
+              "liquid"
+            ],
+            "single": [
+              "feed",
+              "draft",
+              "liquid"
+            ]
+          }
+        },
+        {
+          "maker": "Retech",
+          "model": "Rotating heated draw pins / draw rolls",
+          "station": "加热牵伸辊的主动或随动配置",
+          "path": "厂家提供纱线带动的随动辊，也可经皮带轮、联轴器、电机或减速装置从外部驱动。",
+          "electric": "原厂列出的选项适用于该加热辊部件。辊加热方式与辊轴旋转动力分别核查。",
+          "work": "需要很小的导纱摩擦或需要主动设定辊面速度时，可比较随动和外驱。",
+          "refs": [
+            "dtyGod"
+          ],
+          "filters": [
+            "geared",
+            "integrated"
+          ],
+          "level": "驱动或工艺配套",
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "geared": [
+              "feed",
+              "draft"
+            ],
+            "integrated": [
+              "feed",
+              "draft"
+            ]
+          }
+        },
+        {
+          "maker": "TMT Machinery",
+          "model": "纱线卷绕装置 EP3315441B1",
+          "station": "卷绕导纱器横动",
+          "path": "发明实施例用两台直线电机移动滑块带动导纱器，让导纱器沿卷装轴向往复。",
+          "electric": "本条仅作专利实施例，不代表 ATF、eFK 或其他在售机型的实际配套。",
+          "work": "可将这种往复导纱的运动与凸轮轴横动作对照。",
+          "refs": [
+            "linearProto"
+          ],
+          "filters": [
+            "linear",
+            "position"
+          ],
+          "level": "专利实施例",
+          "jobs": [
+            "wind",
+            "traverse"
+          ],
+          "motorJobs": {
+            "linear": [
+              "traverse"
+            ],
+            "position": [
+              "traverse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "rotor_spinning",
+      "question": "每个转杯纺位有哪些独立电机？",
+      "coverage": "逐项对照 R 70 的五类工位，并列出 Autocoro 11 的另一家厂家实例。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "R 70",
+          "station": "纺纱箱下部喂入区 · 喂条",
+          "path": "喂条电机 → 喂给罗拉。按给定供纤量喂入棉条。",
+          "electric": "厂家列为独立电机，未公开电磁类型和铭牌。 喂条采用数字控制。",
+          "work": "调整棉条喂入量。",
+          "refs": [
+            "rotorR70"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "整机或原厂配置"
+        },
+        {
+          "maker": "Rieter",
+          "model": "R 70",
+          "station": "纺纱箱内，喂条口上方 · 分梳",
+          "path": "分梳电机 → 针布分梳辊。针布把条子进一步分离为纤维，纤维随气流进入输纤通道。",
+          "electric": "厂家列为独立电机，未公开电磁类型和铭牌。 分梳辊可在 6 000–11 000 r/min 范围内电子调速。",
+          "work": "按原料调节梳解强度。",
+          "refs": [
+            "rotorR70"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "single": [
+              "process"
+            ]
+          },
+          "level": "整机或原厂配置"
+        },
+        {
+          "maker": "Rieter",
+          "model": "R 70",
+          "station": "纺纱箱上部，凝聚槽与引纱嘴处 · 转杯",
+          "path": "转杯电机 → 纺纱转杯。带动转杯高速回转，使纤维在内壁凝聚槽汇聚并连续成纱。",
+          "electric": "厂家列为独立电机，未公开电磁类型和铭牌。 转杯采用磁轴承，设计上限 180 000 r/min。磁轴承描述支承方式。",
+          "work": "转杯高速稳定成纱。",
+          "refs": [
+            "rotorR70"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "twist"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist"
+            ]
+          },
+          "level": "整机或原厂配置"
+        },
+        {
+          "maker": "Rieter",
+          "model": "R 70",
+          "station": "上层卷绕单元 · 卷绕",
+          "path": "卷绕电机 → 卷绕工作辊与筒子。使卷装转动，配合摇架的接触压力形成圆柱形纱筒。",
+          "electric": "厂家列为独立电机，未公开电磁类型和铭牌。",
+          "work": "按纱支和用途设置成筒条件。",
+          "refs": [
+            "rotorR70"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "single": [
+              "wind"
+            ]
+          },
+          "level": "整机或原厂配置"
+        },
+        {
+          "maker": "Rieter",
+          "model": "R 70",
+          "station": "卷绕工作辊下方 · 横动导纱",
+          "path": "横动导纱电机 → 往复横动导纱器。沿卷装轴向来回布纱，控制卷装成形。",
+          "electric": "厂家列为独立电机，未公开电磁类型和铭牌。",
+          "work": "控制铺纱位置与卷装外形。",
+          "refs": [
+            "rotorR70"
+          ],
+          "filters": [
+            "single",
+            "position"
+          ],
+          "jobs": [
+            "traverse"
+          ],
+          "motorJobs": {
+            "single": [
+              "traverse"
+            ],
+            "position": [
+              "traverse"
+            ]
+          },
+          "level": "整机或原厂配置"
+        },
+        {
+          "maker": "Saurer",
+          "model": "Autocoro 11",
+          "station": "转杯纺纱单元",
+          "path": "棉条经开松进转杯形成纱，再引出卷绕。Autocoro 11 采用独立驱动的纺纱位。",
+          "electric": "厂方确认单元独立驱动，未在此条为各轴指定电机类型。",
+          "work": "可按纺位运行、接头。与环锭纺比较时，输入用棉条且直接形成卷装。",
+          "refs": [
+            "rotorS"
+          ],
+          "filters": [
+            "single"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist",
+            "wind",
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist",
+              "wind",
+              "feed"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "assembly_winding",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 10 处电机位置。厂家资料支持其中 10 处的工位驱动归属，另有 0 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "SSM",
+          "model": "CWX-D",
+          "station": "每个并纱位上部槽筒侧端 · 10锭独立槽筒与接触卷绕",
+          "path": "带动槽筒旋转；槽沟完成横动排纱，接触传动带动合股卷装",
+          "electric": "每锭独立电动驱动；功率和电机型式未披露",
+          "work": "凹槽槽筒与合股筒子",
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "wind",
+            "traverse"
+          ],
+          "refs": [
+            "assembly_windingRef1",
+            "assembly_windingRef2"
+          ],
+          "motorJobs": {
+            "single": [
+              "wind",
+              "traverse"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "maker": "SSM",
+          "model": "CWX-D",
+          "station": "下部供纱架与中部单纱处理区 · 二股静止退绕、张力与并合",
+          "path": "两根单纱经张力和检测后平行并合；不加规定捻度",
+          "electric": "供纱卷装端部退绕，不设置供纱旋转电机",
+          "work": "供纱卷装与并纱导纱区",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "assembly_windingRef1",
+            "assembly_windingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        }
+      ]
+    },
+    {
+      "id": "airjet_spinning",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 84 处电机位置。厂家资料支持其中 40 处的工位驱动归属，另有 44 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "各自主纺纱单元下部牵伸区 · 40纺位牵伸功能驱动",
+          "path": "驱动牵伸下罗拉形成不同表面速度，控制纤维束牵伸",
+          "electric": "独立纺纱单元已证实；本图每位1处外形表示牵伸功能，实际各罗拉电机分配未披露",
+          "work": "牵伸罗拉组",
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "draft",
+            "feed"
+          ],
+          "refs": [
+            "jet",
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "single": [
+              "draft",
+              "feed"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "每个纺位上部卷装区 · 40个独立卷绕单元",
+          "path": "带动卷绕工作辊并形成成纱卷装",
+          "electric": "每卷绕单元独立驱动；电机实型及轴端联接未披露",
+          "work": "卷绕工作辊、筒子",
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "refs": [
+            "jet",
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "single": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "牵伸出口上方的两片式喷嘴 · 40个压缩空气成纱喷嘴",
+          "path": "气流使纤维端部围绕纱芯形成包缠结构",
+          "electric": "压缩空气；空压机为外部公用系统，本机未虚构喷嘴电机",
+          "work": "成纱喷嘴",
+          "filters": [
+            "pneumatic"
+          ],
+          "jobs": [
+            "process",
+            "air"
+          ],
+          "refs": [
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "process",
+              "air"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "喷嘴至卷装之间 · 引纱与直线横动（驱动分配未公开）",
+          "path": "引出成纱并横向排纱；直线横动功能已有原厂依据",
+          "electric": "真实驱动归属、独立电机数量未核；不补造横动电机",
+          "work": "引纱钳口、横动导纱器",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "traverse"
+          ],
+          "refs": [
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "traverse"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "每纺位喷嘴出口与控制面板之间 · 自主纺位接头（执行器未核）",
+          "path": "各纺位独立处理自然断头和清纱切断，不必等待落筒机器人",
+          "electric": "各执行器为电动或气动及其数量未披露",
+          "work": "自主接头工作口",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "position"
+          ],
+          "refs": [
+            "jet",
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "position"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "机器上方纵轨和各侧卷绕位置 · 双侧机器人行走与落筒",
+          "path": "沿纺位移动并完成落筒、辅助纱与清洁任务",
+          "electric": "行走驱动外观为功能推定；其他执行轴与气动件不补造",
+          "work": "2台落筒机器人",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position",
+            "logistics"
+          ],
+          "refs": [
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position",
+              "logistics"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "卷绕区后方纵向皮带 · 双侧成筒输送",
+          "path": "把落下的成筒送到机端",
+          "electric": "每带一处驱动外观为示意，实际电机与减速件未披露",
+          "work": "A/B侧成筒带",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "logistics"
+          ],
+          "refs": [
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "logistics"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "车头服务柜和机节吸风主通道 · 吸排风与自动废料处理（驱动未核）",
+          "path": "汇集排风、压实并移出软废料",
+          "electric": "未取得风机与压实器驱动清单，保留未知动力源",
+          "work": "吸排风接口、废料压实与收集",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "air",
+            "pressure"
+          ],
+          "refs": [
+            "airjet_spinningRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "air",
+              "pressure"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Rieter",
+          "model": "J 70",
+          "station": "喷气纺纱单元",
+          "path": "纤维条经牵伸，喷嘴气流参与成纱，独立纺位完成输出与卷绕。",
+          "electric": "原厂公开自主纺位。压缩空气供应与牵伸、卷绕轴分列。",
+          "work": "在适纺原料范围内比较成纱路线时，应计入压缩空气与卷装产出的差别。",
+          "refs": [
+            "jet"
+          ],
+          "filters": [
+            "single",
+            "pneumatic"
+          ],
+          "level": "整机或原厂配置",
+          "jobs": [
+            "twist",
+            "wind",
+            "air"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist",
+              "wind"
+            ],
+            "pneumatic": [
+              "twist",
+              "air"
+            ]
+          },
+          "legacyComparison": true
+        }
+      ]
+    },
+    {
+      "id": "warp_tying",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 1 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 1 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "Stäubli 史陶比尔",
+          "model": "TIEPRO + TPF",
+          "station": "结经头前部的上下分纱工作区 · 新旧经纱的锥形分纱",
+          "path": "旋转锥形分纱工作面；双纱信号要求退回重分",
+          "electric": "内部动力型式和轴数未披露；1个模型主驱动功能位置",
+          "work": "上下锥形分纱器",
+          "filters": [
+            "unspecified",
+            "group"
+          ],
+          "jobs": [
+            "process",
+            "feed"
+          ],
+          "refs": [
+            "warp_tyingRef1",
+            "warp_tyingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "feed"
+            ],
+            "group": [
+              "process",
+              "feed"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Stäubli 史陶比尔",
+          "model": "TIEPRO + TPF",
+          "station": "结经头前下方 · 有效配对后的打结与切纱",
+          "path": "打结与剪尾；具体凸轮、齿轮、独立执行器及相位未建",
+          "electric": "内部执行轴/电机数量未公开；共享主驱动仅为功能推定",
+          "work": "打结钩与剪纱工作区",
+          "filters": [
+            "unspecified",
+            "group"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "warp_tyingRef1",
+            "warp_tyingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ],
+            "group": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Stäubli 史陶比尔",
+          "model": "TIEPRO + TPF",
+          "station": "TPF导轨上的移动结经头 · 沿经纱幅宽定位进给",
+          "path": "移动至下一对经纱；不伪造与主电机的机械连接",
+          "electric": "实际横移执行动力未公开，未单独建模电机",
+          "work": "移动结经头",
+          "filters": [
+            "position",
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "refs": [
+            "warp_tyingRef1",
+            "warp_tyingRef2"
+          ],
+          "motorJobs": {
+            "position": [
+              "position"
+            ],
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Stäubli 史陶比尔",
+          "model": "TIEPRO + TPF",
+          "station": "上下分纱器附近检测窗口 · 双纱检测与退回逻辑",
+          "path": "识别双纱并发出Auto-Reverse命令；该检测头本身不驱动分纱器",
+          "electric": "电子传感与控制逻辑，不是电机",
+          "work": "电子双纱检测器",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "warp_tyingRef1",
+            "warp_tyingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Stäubli",
+          "model": "TIEPRO",
+          "station": "同组织换轴的结经机",
+          "path": "将新旧经纱逐根打结，利用原有综筘穿法换轴。改变穿法须重新安排穿经。",
+          "electric": "产品页确认结经机构和电子控制，未列电机原理。",
+          "work": "保留原穿法的换轴路线。打结机头和移动机构承担穿经机以外的工作。",
+          "refs": [
+            "drawKnot"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "level": "工艺替代路线",
+          "jobs": [
+            "logistics",
+            "process"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ]
+          },
+          "legacyComparison": true
+        }
+      ]
+    },
+    {
+      "id": "washing_range",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 18 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 18 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "进布卷轴端 · 进布退卷",
+          "path": "退卷供布示意；主动或制动退卷形式需按订单确认。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布退卷作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "高位牵引轴端 · 进布牵引",
+          "path": "牵引辊建立连续布速，配合后续张力控制。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布牵引作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "第 1 转鼓洗槽驱动侧 · TRIKOFLEX 1 转鼓洗涤",
+          "path": "覆盖本模块两个输布转鼓；实际共轴、独立驱动和随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TRIKOFLEX 1 转鼓洗涤作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "该转鼓模块前下方 · TRIKOFLEX 1 洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TRIKOFLEX 1 洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "第 2 转鼓洗槽驱动侧 · TRIKOFLEX 2 转鼓洗涤",
+          "path": "覆盖本模块两个输布转鼓；实际共轴、独立驱动和随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TRIKOFLEX 2 转鼓洗涤作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "该转鼓模块前下方 · TRIKOFLEX 2 洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TRIKOFLEX 2 洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "第 1 辊槽出布侧 · EXTRACTA 1 分格输布",
+          "path": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 1 分格输布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "该辊槽模块前下方 · EXTRACTA 1 洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 1 洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "第 2 辊槽出布侧 · EXTRACTA 2 分格输布",
+          "path": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 2 分格输布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "该辊槽模块前下方 · EXTRACTA 2 洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 2 洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "第 3 辊槽出布侧 · EXTRACTA 3 分格输布",
+          "path": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 3 分格输布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "该辊槽模块前下方 · EXTRACTA 3 洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "EXTRACTA 3 洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "停留段入口塔 · TEMPACTA 入布",
+          "path": "控制进入停留区的布速和供布量。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TEMPACTA 入布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "停留段低位 · TEMPACTA 托布输送",
+          "path": "驱动托带输送湿布，支承辊随带运动，不是 12 个独立电机。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TEMPACTA 托布输送作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "process"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "停留区出口塔 · TEMPACTA 出布",
+          "path": "牵出已停留的织物；独立轴分配为示意。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TEMPACTA 出布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "停留段前下方 · TEMPACTA 皂洗液循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "TEMPACTA 皂洗液循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "末端轧辊轴端 · 末端轧液",
+          "path": "牵引轧辊与随动压辊配合；不把未知气液加载伪作电机。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "末端轧液作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "pressure"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "pressure"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+          "station": "出布卷轴端 · 出布卷装",
+          "path": "卷装匹配布速和张力，实际控制方式未公开。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "出布卷装作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind",
+            "tension"
+          ],
+          "refs": [
+            "washing_rangeRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        }
+      ]
+    },
+    {
+      "id": "singeing",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 8 处电机位置。厂家资料支持其中 4 处的工位驱动归属，另有 4 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "入口刷毛吸尘箱 · 烧毛前刷毛",
+          "path": "刷辊旋转起毛/去除浮尘，接触量可调",
+          "electric": "交流电机直联；电磁转子类型未披露",
+          "work": "两根刷毛辊",
+          "filters": [
+            "ac",
+            "direct",
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "ac": [
+              "process"
+            ],
+            "direct": [
+              "process"
+            ],
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "出口刷毛吸尘箱 · 烧毛后刷毛",
+          "path": "刷辊旋转起毛/去除浮尘，接触量可调",
+          "electric": "交流电机直联；电磁转子类型未披露",
+          "work": "两根刷毛辊",
+          "filters": [
+            "ac",
+            "direct",
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "ac": [
+              "process"
+            ],
+            "direct": [
+              "process"
+            ],
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "烧毛室顶部助燃风机 · 助燃空气",
+          "path": "向燃烧器气路供给助燃空气",
+          "electric": "电机驱动风机的功能推定；型式/安装未核",
+          "work": "离心叶轮",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "烧毛室上方集气罩与蜗壳风机 · 燃烧废气排风",
+          "path": "抽走烧毛区废气",
+          "electric": "电机驱动风机的功能推定；型式/安装未核",
+          "work": "离心叶轮",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "前后刷毛箱连接的独立吸尘系统 · 刷毛绒尘抽吸",
+          "path": "抽吸刷毛绒尘至独立收集器，不把该电机归给刷毛辊",
+          "electric": "电机驱动风机的功能推定；型式/安装未核",
+          "work": "离心叶轮",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "出口牵引辊轴端 · 织物出口牵引",
+          "path": "维持织物前进；压辊接触配合，未虚构独立压辊电机",
+          "electric": "动力型式与传动比未公开，1个功能工位",
+          "work": "出口牵引辊",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "两组燃烧器、转轴和点火杆 · 燃烧器点火与失电退避",
+          "path": "正常工作对布烧毛；失电时燃烧器转离织物并切断燃气",
+          "electric": "点火为高压火花；退避执行方式未完整公开，不是已确认旋转电机",
+          "work": "燃烧器与点火电极",
+          "filters": [
+            "position",
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "position"
+          ],
+          "refs": [
+            "singeingRef1",
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "position": [
+              "process",
+              "position"
+            ],
+            "unspecified": [
+              "process",
+              "position"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "SWASTIK Textile Engineers",
+          "model": "Super Singe",
+          "station": "烧毛之后的蒸汽喷管 · 蒸汽灭火",
+          "path": "熄灭残留火星；未选可选退浆槽",
+          "electric": "外部蒸汽供给，无本机旋转电机归属",
+          "work": "蒸汽灭火喷管",
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "singeingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "process"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        }
+      ]
+    },
+    {
+      "id": "mercerizing",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 22 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 22 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "进布卷轴端 · 进布退卷",
+          "path": "退卷功能示意，实际制动或主动形式待订单。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布退卷作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "高位进布轴端 · 进布牵引",
+          "path": "牵引织物进入浸渍。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布牵引作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "浸渍停留区驱动侧 · 浸渍停留 1 导布",
+          "path": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "浸渍停留 1 导布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "浸渍停留区前下方 · 浸渍停留 1 循环液",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "浸渍停留 1 循环液作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "浸渍停留区驱动侧 · 浸渍停留 2 导布",
+          "path": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "浸渍停留 2 导布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "浸渍停留区前下方 · 浸渍停留 2 循环液",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "浸渍停留 2 循环液作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "稳定洗涤区驱动侧 · 稳定洗涤 1 导布",
+          "path": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "稳定洗涤 1 导布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "稳定洗涤区前下方 · 稳定洗涤 1 循环液",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "稳定洗涤 1 循环液作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "稳定洗涤区驱动侧 · 稳定洗涤 2 导布",
+          "path": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "稳定洗涤 2 导布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "稳定洗涤区前下方 · 稳定洗涤 2 循环液",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "稳定洗涤 2 循环液作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区左侧端部 · 左侧夹链",
+          "path": "夹链牵引布边并约束幅宽；两侧是否独立电机为示意。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "左侧夹链作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区右侧端部 · 右侧夹链",
+          "path": "夹链牵引布边并约束幅宽；两侧是否独立电机为示意。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "右侧夹链作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区第 1 横向丝杆 · 夹链调幅 1",
+          "path": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "夹链调幅 1作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区第 2 横向丝杆 · 夹链调幅 2",
+          "path": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "夹链调幅 2作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区第 3 横向丝杆 · 夹链调幅 3",
+          "path": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "夹链调幅 3作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "展幅区两侧布边 · SECTION CONTROL 布边伸展",
+          "path": "机械伸展功能有厂家证据，独立动力未公开，不借用夹链电机假定机械连接。",
+          "electric": "不指定电机；能源及真实动力分配见动作说明。",
+          "work": "SECTION CONTROL 布边伸展作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "tension"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "tension"
+            ]
+          },
+          "level": "执行方式与资料边界"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "夹链出口狭缝与机外动力 · 真空抽碱",
+          "path": "动力经抽吸管作用于布面狭缝；设备类型、数量和位置为功能示意。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "真空抽碱作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air",
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air",
+              "liquid"
+            ],
+            "unspecified": [
+              "air",
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "后洗第 1 模块 · 后洗转鼓 1",
+          "path": "转鼓输布功能驱动示意，保持低张力。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "后洗转鼓 1作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "后洗模块前下方 · 后洗循环 1",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "后洗循环 1作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "后洗第 2 模块 · 后洗转鼓 2",
+          "path": "转鼓输布功能驱动示意，保持低张力。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "后洗转鼓 2作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "后洗模块前下方 · 后洗循环 2",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "后洗循环 2作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "出布前轧辊轴端 · 后洗轧液",
+          "path": "牵引轧辊；加载能源未知，不补造加载电机。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "后洗轧液作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "pressure"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "pressure"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Benninger",
+          "model": "BEN-DIMENSA",
+          "station": "出布卷轴端 · 出布卷装",
+          "path": "洗净湿布卷装，功能位置为示意。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "出布卷装作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind",
+            "tension"
+          ],
+          "refs": [
+            "mercerizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        }
+      ]
+    },
+    {
+      "id": "sanforizing",
+      "question": "哪些工位由电机驱动，动力传到哪些机构？",
+      "coverage": "模型标出 12 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 12 处按机构功能推定。",
+      "rows": [
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "进布卷轴端 · 进布退卷",
+          "path": "供布功能示意；实际主动或制动方式待核。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布退卷作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "sanforizingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "进布架顶部 · 进布储布牵引",
+          "path": "主动牵引辊供布进入储布槽，气动摆辊单列。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "进布储布牵引作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "refs": [
+            "sanforizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "润湿滚筒轴端 · 蒸汽滚筒输布",
+          "path": "输布驱动示意，蒸汽另由管路提供。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "蒸汽滚筒输布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "sanforizingRef2"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "橡毯回程驱动侧 · 橡毯循环",
+          "path": "橡毯循环与接触辊随动；主动辊及张紧分配未公开。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "橡毯循环作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "main",
+            "process"
+          ],
+          "refs": [
+            "sanforizingRef1",
+            "sanforizingRef6"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "main",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "热滚筒轴端 · 预缩热滚筒",
+          "path": "与橡毯速度配合；独立电机图标为功能拆解，厂家独立轴数未知。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "预缩热滚筒作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "main",
+            "process"
+          ],
+          "refs": [
+            "sanforizingRef1",
+            "sanforizingRef6"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "main",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "毛毯烘筒轴端 · 毛毯干燥稳定",
+          "path": "烘筒和毛毯输送热湿布，导辊随毛毯转动；蒸汽热源另列。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "毛毯干燥稳定作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process",
+            "transport"
+          ],
+          "refs": [
+            "sanforizingRef1",
+            "sanforizingRef4"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "冷却辊轴端 · 冷却段导布",
+          "path": "冷却稳定后进入出布储布架；主动与随动分配未知。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "冷却段导布作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "sanforizingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "出布架顶部 · 出布储布牵引",
+          "path": "牵引并暂存下游换卷期间的布幅。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "出布储布牵引作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "refs": [
+            "sanforizingRef2",
+            "sanforizingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "出布卷轴端 · 出布卷装",
+          "path": "匹配布速与张力收卷，控制参数未公开。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "出布卷装作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind",
+            "tension"
+          ],
+          "refs": [
+            "sanforizingRef5"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind",
+              "tension"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "预缩主机下部 · 内置磨毯（维护）",
+          "path": "停产维护时磨削橡毯，不表示正常过布时同时磨毯。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "内置磨毯（维护）作用工位",
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "refs": [
+            "sanforizingRef1",
+            "sanforizingRef3"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "预缩主机前下方 · 橡毯冷却水循环",
+          "path": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "橡毯冷却水循环作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid"
+          ],
+          "refs": [
+            "sanforizingRef1",
+            "sanforizingRef3"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "liquid"
+            ],
+            "unspecified": [
+              "liquid"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "机外抽屑箱 · 磨毯抽屑（已选选件）",
+          "path": "配合磨毯维护抽吸粉尘，不属于正常工艺循环风。",
+          "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+          "work": "磨毯抽屑（已选选件）作用工位",
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "refs": [
+            "sanforizingRef3"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "maker": "Brückner",
+          "model": "POWER-SHRINK",
+          "station": "进出储布架摆臂 · 进出布气动摆辊",
+          "path": "厂家明确气动加载；摆辊由织物带动转动，气缸调节加载，不设置伺服电机。",
+          "electric": "不指定电机；能源及真实动力分配见动作说明。",
+          "work": "进出布气动摆辊作用工位",
+          "filters": [
+            "pneumatic"
+          ],
+          "jobs": [
+            "tension",
+            "pressure"
+          ],
+          "refs": [
+            "sanforizingRef2"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "tension",
+              "pressure"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "opUni": {
+      "title": "Rieter · UNIfloc A 12",
+      "locator": "取棉单元直接驱动与转矩控制",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/bale-opener-unifloc-a-12"
+    },
+    "opJ": {
+      "title": "经纬纺机 · JWF1013 产品展示",
+      "locator": "首页产品栏，双打手与联组 V 带",
+      "url": "https://www.jwgf.com/"
+    },
+    "opPage": {
+      "title": "经纬纺机 · JWF1013 型号页",
+      "locator": "2026 年 10 月产品条目",
+      "url": "https://www.jwgf.com/cpfw/mfjx/202608/t20260805_649372.html"
+    },
+    "opT": {
+      "title": "Trützschler · Bale openers",
+      "locator": "BO-P 门式开包及双辊",
+      "url": "https://www.truetzschler.com/en/spinning/products/blow-room/detailed-information/bale-openers/"
+    },
+    "opClean": {
+      "title": "Trützschler · Cleaner",
+      "locator": "CL-C3 和多级清洁辊",
+      "url": "https://www.truetzschler.com/en/spinning/products/blow-room/detailed-information/cleaner/"
+    },
+    "opAir": {
+      "title": "Rieter · VARIOline",
+      "locator": "ECOrized 空气与风机管理",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline"
+    },
+    "cardJ": {
+      "title": "青岛宏大 · JWF1217 梳棉机样本",
+      "locator": "多点单独传动、伺服和变频工位",
+      "url": "https://www.jwgf.com/cpfw/mfjx/smj/qdlmj/202608/P020260805395973820951.pdf"
+    },
+    "cardR": {
+      "title": "Rieter · C 81",
+      "locator": "Carding Gap Control 和工作盖板",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81"
+    },
+    "cardT": {
+      "title": "Trützschler · TC 30i",
+      "locator": "T-GO 和 WASTECONTROL",
+      "url": "https://www.truetzschler.com/en/spinning/products/card/detailed-information/card-tc-30i/"
+    },
+    "cardM": {
+      "title": "Marzoli · C702",
+      "locator": "锡林、道夫与盖板速度和方向",
+      "url": "https://en.marzoli.camozzi.com/products/opening-and-carding/all-products/card-c702.kl"
+    },
+    "drawR": {
+      "title": "Rieter · Draw Frames 技术册",
+      "locator": "RSB 匀整原理图、牵伸和圈条驱动",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v1-100158-en.pdf"
+    },
+    "drawJ": {
+      "title": "经纬纺机 · JWF1366PRO",
+      "locator": "上下圈条盘式永磁驱动、变频风机",
+      "url": "https://www.jwgf.com/xwzx/jwps/202603/t20260331_625505.html"
+    },
+    "drawT": {
+      "title": "Trützschler · IDF 3",
+      "locator": "梳棉后集成牵伸",
+      "url": "https://www.truetzschler.com/en/spinning/products/draw-frames/detailed-information/integrated-draw-frame-idf-3/"
+    },
+    "combT": {
+      "title": "Trützschler · Airjet 系统技术册",
+      "locator": "TCO 21 分离罗拉和梳理运动",
+      "url": "https://www.truetzschler.com/fileadmin/user_upload/truetzschler_spinning/downloads/broschuere/Anwendungen/Airjet_EN.pdf"
+    },
+    "combR": {
+      "title": "Rieter · E 90",
+      "locator": "棉卷驱动与换卷",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90"
+    },
+    "combM": {
+      "title": "Marzoli · CM7",
+      "locator": "圆梳、分离罗拉和气动加压",
+      "url": "https://en.marzoli.camozzi.com/products/combing/all-products/comber-cm7.kl"
+    },
+    "rovM": {
+      "title": "Marzoli · FT60／FT70 技术册",
+      "locator": "驱动示意图及 brushless motor 标注",
+      "url": "https://media.marzoli.com/technical-information-roving-frame-ft60-ft70-brochure.pdf"
+    },
+    "rovJ": {
+      "title": "经纬纺机 · JWF1458A",
+      "locator": "锭翼、牵伸及电控配置",
+      "url": "https://www.jwgf.com/cpfw/mfjx/csj/jwzn/202608/t20260805_649278.html"
+    },
+    "rovR": {
+      "title": "Rieter · F 20／F 40 样本",
+      "locator": "筒管梁驱动与落纱系统",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf"
+    },
+    "ring4": {
+      "title": "Rieter · G 38 技术册",
+      "locator": "四锭锭带和主驱动",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf"
+    },
+    "ringG": {
+      "title": "Rieter · G 38 产品页",
+      "locator": "主驱动效率、落纱及监测",
+      "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38"
+    },
+    "ringM": {
+      "title": "Marzoli · MDS2 技术册",
+      "locator": "分段切向带与共用长切向带",
+      "url": "https://en.marzoli.camozzi.com/kdocs/2085978/mds2_ring_spinning_frame_2023.pdf"
+    },
+    "ringJ": {
+      "title": "经纬纺机 · JWF1576 系列样本",
+      "locator": "钢领板升降机构选项",
+      "url": "https://www.ctmtc.com/Public/Uploads/uploadfile/files/20250923/68fc6958916c0.pdf"
+    },
+    "rotorS": {
+      "title": "Saurer · Autocoro 11",
+      "locator": "独立纺纱位和转杯纺架构",
+      "url": "https://saurer.com/en/products/machines/spinning/rotor-spinning/autocoro"
+    },
+    "jet": {
+      "title": "Rieter · J 70",
+      "locator": "喷气纺纱及自主纺位",
+      "url": "https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70"
+    },
+    "windJ": {
+      "title": "青岛宏大 · VCRO-E 样本",
+      "locator": "槽筒同轴 BLDC、托盘皮带输送",
+      "url": "https://www.ctmtc.com/Public/Uploads/uploadfile/files/20250923/2AutowinderwithtrayVCROE.pdf"
+    },
+    "windPro": {
+      "title": "Savio · Proxima Smartconer 技术册",
+      "locator": "槽筒、接头循环、捻接器、吸风及供管电机",
+      "url": "https://saviospa.com/public/savio/PDF/Savio_Proxima_09-2025_EN-2.pdf"
+    },
+    "windS": {
+      "title": "Savio · Multicone",
+      "locator": "电子导纱和筒子成形",
+      "url": "https://saviospa.com/en/company/research-and-development/multicone-thread-guide"
+    },
+    "windR": {
+      "title": "Rieter · Autoconer X6",
+      "locator": "RM、V 等供纱配置",
+      "url": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer"
+    },
+    "windPrec": {
+      "title": "Rieter · Preci FX 技术册",
+      "locator": "软件控制横动和卷装形式",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/after-sales/Winding/rieter-preci-fx-brochure-en.pdf"
+    },
+    "warK": {
+      "title": "KARL MAYER · WARPDIRECT",
+      "locator": "整经轴及压辊的压力控制与退让",
+      "url": "https://www.karlmayer.com/en/products/warp-preparation/beaming-machines-and-direct-warpers/warpdirect/"
+    },
+    "warp2": {
+      "title": "KARL MAYER · 2026 整经产品说明",
+      "locator": "2026 年 10 月，压辊由液压改为电动",
+      "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/karl-mayer-at-the-weaving-hall-of-itma-asia-2026-high-performance-warp-preparation-for-high-quality-fabrics-made-from-staple-fibers-and-new-horizons-in-textiles/"
+    },
+    "warS": {
+      "title": "Prashant · Lasertronic Plus",
+      "locator": "分条整经机的三套伺服系统",
+      "url": "https://www.prashantgroup.com/products/sectional-warping-machine/lasertronic-plus"
+    },
+    "warShort": {
+      "title": "KARL MAYER · MULTI-MATIC 32 Compact",
+      "locator": "短经整经机、移动纱架和导纱件",
+      "url": "https://www.parts.karlmayer.com/ecomaXL/files/KM_FS_MULTI-MATIC_32_Compact_en.pdf"
+    },
+    "warJ": {
+      "title": "Jupiter Comtex · Direct Warping",
+      "locator": "压辊随卷径调整及退辊机构",
+      "url": "https://jupitercomtex.com/product/direct-warping/"
+    },
+    "kyWarp": {
+      "title": "Kyang Yhe · Rubber Warping",
+      "locator": "直流电机、摩擦滚筒及可调压力",
+      "url": "https://www.kyangyhe.com/en/category/CATE-rubber-warping-machine.html"
+    },
+    "kyStd": {
+      "title": "Kyang Yhe · WM300",
+      "locator": "三相电机及可正反转的摩擦卷绕",
+      "url": "https://www.kyangyhe.com/en/product/WM300_warping-machine.html"
+    },
+    "sizeK": {
+      "title": "KARL MAYER · PROSIZE",
+      "locator": "SoftDry 烘筒驱动与湿区张力",
+      "url": "https://www.karlmayer.com/en/products/warp-preparation/sizing-and-assembling-machines/prosize/"
+    },
+    "sizeI": {
+      "title": "KARL MAYER · ISOSIZE 样本",
+      "locator": "浆槽浸轧结构",
+      "url": "https://www.downloadcenter.karlmayer.com/ecomaXL/files/KM_FS_ISOSIZE_en.pdf"
+    },
+    "sizeJ": {
+      "title": "Jupiter Comtex · Sizing 技术册",
+      "locator": "异步减速电机与经轴架制动",
+      "url": "https://jupitercomtex.com/wp-content/uploads/2022/09/Sizing.pdf"
+    },
+    "sizeP": {
+      "title": "Prashant · Pacesetter-F",
+      "locator": "长丝浆槽双伺服与气动压紧",
+      "url": "https://www.prashantgroup.com/products/sizing-machine/pacesetter-f"
+    },
+    "sizeF": {
+      "title": "KARL MAYER · FILSIZE-F",
+      "locator": "单轴、全幅及张力测量",
+      "url": "https://www.karlmayer.com/en/products/warp-preparation/sizing-and-assembling-machines/filsize-f/"
+    },
+    "drawInS": {
+      "title": "Stäubli · SAFIR PRO S67",
+      "locator": "固定机头与移动穿经车",
+      "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-pro-s67.html"
+    },
+    "drawInC": {
+      "title": "日发 · 自动穿经机技术册",
+      "locator": "RFAD10 执行件、RFAD20 工位布局",
+      "url": "https://www.rifatextile.com/uploads/file/2023-automatic-drawing-machine.pdf"
+    },
+    "drawInG": {
+      "title": "Groz-Beckert · WarpMaster",
+      "locator": "单筒引纱与穿经针",
+      "url": "https://www.groz-beckert.com/mm/media/en/web/pdf/WarpMaster.pdf"
+    },
+    "drawKnot": {
+      "title": "Stäubli · TIEPRO",
+      "locator": "换轴时自动结经",
+      "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine.html"
+    },
+    "loomP": {
+      "title": "Picanol · Ultimax 样本",
+      "locator": "SUMO 主电机与整机直驱",
+      "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Ultimax_brochure_2024_EN.pdf"
+    },
+    "loomT": {
+      "title": "Toyota · JAT910 选配",
+      "locator": "E-shed 独立逐框伺服",
+      "url": "https://textile-machinery.toyota-industries.com/en/products/JAT910/purpose.html"
+    },
+    "loomAir": {
+      "title": "Toyota · JAT910 技术册",
+      "locator": "主喷嘴、辅喷嘴和电磁阀",
+      "url": "https://textile-machinery.toyota-industries.com/en/catalog2022/catalog/jat910_e.pdf"
+    },
+    "loomW": {
+      "title": "Tsudakoma · ZW8200 样本",
+      "locator": "喷水引纬结构",
+      "url": "https://www.tsudakoma.co.jp/english/download/data/textile/zw8200/ZW8200_E.pdf"
+    },
+    "loomPump": {
+      "title": "Toyota · LWT810 泵组手册",
+      "locator": "凸轮、杠杆、柱塞与喷嘴",
+      "url": "https://www.toyotatextilemachinery.com/LW0909/HTML/app/data/html/IM/pdf/05E/LW810E05010.pdf"
+    },
+    "loomPM": {
+      "title": "英威腾 · 工业自动化产品目录",
+      "locator": "GD350-12 织机专用永磁同步驱动",
+      "url": "https://www.invt.com/uploads/file1/20240822/INVT%20Industrial%20Automation%20Product%20Catalog-V2.0.pdf"
+    },
+    "weftSup": {
+      "title": "英威腾 · WS900 织机应用案例",
+      "locator": "喷水织机送经和卷取电控",
+      "url": "https://www.invt.com/electronics-solution/32.html"
+    },
+    "loomStep": {
+      "title": "Picanol · GTMax-i 技术册",
+      "locator": "ELSY 独立步进电机",
+      "url": "https://picanol.com.cn/sites/default/files/2019-07/brochure_gtmax-i_en.pdf"
+    },
+    "loomSR": {
+      "title": "Picanol Group · 2021 可持续发展报告",
+      "locator": "织机开关磁阻主驱，企业历史披露",
+      "url": "https://cdn.financialreports.eu/financialreports/media/filings/3988/2022/SR/3988_sr_2022-04-06_aaec19d0-6a2b-44ef-a057-4eb3f7366a08.pdf"
+    },
+    "loomWeft": {
+      "title": "IRO · 1131 CAN plus 服役产品手册",
+      "locator": "储纬器控制板与无刷永磁电机",
+      "url": "https://iroab.com/public/iro/Earlier-products/1131-CAN-plus/31-8931-0201-06_OPI-1131-CAN-plus-PFT.pdf"
+    },
+    "loomSelect": {
+      "title": "Picanol · QuickStep",
+      "locator": "每个呈纬模块的步进电机",
+      "url": "https://www.picanol.be/en/machines-features/featurePlus/digital-insertion-0"
+    },
+    "jacLX": {
+      "title": "Stäubli · LX PRO",
+      "locator": "刀架传动与提花开口",
+      "url": "https://www.staubli.com/global/en/textile/products/jacquard-machine/reliability-power-saving-lx-pro.html"
+    },
+    "jact": {
+      "title": "Stäubli · UNIVAL 100",
+      "locator": "单经控制与 JACTUATOR",
+      "url": "https://www.staubli.com/global/en/textile/products/jacquard-machine/technical-fabrics-3d-weaving-unival-100.html"
+    },
+    "prepB": {
+      "title": "Benninger · Bleaching Solutions",
+      "locator": "BEN-BLEACH、REACTA 及水洗配置",
+      "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Bleaching_Solutions/Broschuere_Bleaching_EN.pdf"
+    },
+    "prepM": {
+      "title": "Menzel · Combi",
+      "locator": "水洗机各上辊独立驱动",
+      "url": "https://menzel-maschinenbau.de/en/produkte/wet-finishing/waschanlage-kombi/"
+    },
+    "dwellM": {
+      "title": "Menzel · OPTIBLEACH L",
+      "locator": "浸液、汽蒸及计量泵",
+      "url": "https://menzel-maschinenbau.de/en/produkte/wet-finishing/optibleach-l/"
+    },
+    "prepF": {
+      "title": "Goller · SINTENSA",
+      "locator": "CYCLONE TANDEM 转鼓与内转子",
+      "url": "https://www.fongs.eu/machines/goller-sintensa/"
+    },
+    "prepJig": {
+      "title": "Mezzera · Jigger 技术册",
+      "locator": "往复退浆、煮练、漂白及双电机张力反馈",
+      "url": "https://www.efi.com/wp-content/uploads/sites/2/2023/10/EFI-Mezzera-Jigger-Brochure-UK.pdf"
+    },
+    "dyeB": {
+      "title": "Benninger · DyePad 与 CPB",
+      "locator": "Küsters 轧辊与平幅冷轧堆",
+      "url": "https://benningergroup.com/en/textile-finishing/dyeing-solutions"
+    },
+    "cpbTurn": {
+      "title": "Erbatech · SCOUT COLOR 样本",
+      "locator": "Turning Stations and A-Frames，原厂样本由供应商托管",
+      "url": "https://momtekstil.com/uploads/1613--erbatech-scout-color-brochure.pdf"
+    },
+    "dyeDose": {
+      "title": "A.T.E. · CPB Dosing System",
+      "locator": "双路配液泵与反馈",
+      "url": "https://www.ategroup.com/wp-content/uploads/brochures/TEG-Automation-CPB-dosing-system-brochure_V1-Dec-2021.pdf"
+    },
+    "dyeContinuous": {
+      "title": "Monforts · Advanced Technology Center",
+      "locator": "THERMEX 和连续染色线配置",
+      "url": "https://www.monforts.de/wp-content/uploads/2025/06/ATC.pdf"
+    },
+    "dyeHot": {
+      "title": "Monforts · Econtrol",
+      "locator": "活性染料及循环空气温湿工艺",
+      "url": "https://www.monforts.de/en/products/dyeing-ranges/dyeing-process/"
+    },
+    "dyeM": {
+      "title": "MCS · Double Jigger C4-143",
+      "locator": "双布段四辊、Brushless system 和制动能量回用",
+      "url": "https://www.mcstextile.it/mcstextile/pdf/MCS_double_jigger_143_C4_en_pt.pdf"
+    },
+    "dyeV": {
+      "title": "伟创电气 · AC200T 卷染机案例",
+      "locator": "两台三相异步电机、减速机与收放卷",
+      "url": "https://www.veichi.com/cases/textile-printing/application-of-veichi-ac200t-in-dye-jigger.html"
+    },
+    "dyeT": {
+      "title": "Thies · iMaster 技术册",
+      "locator": "变频调速提布轮和循环",
+      "url": "https://www.thiestextilmaschinen.de/wp-content/uploads/2024/09/iMaster_2024_DE_EN_ES.pdf"
+    },
+    "dyeF": {
+      "title": "THEN · AIRFLOW SYNERGY",
+      "locator": "绳状织物的空气输送和加料",
+      "url": "https://www.fongs.eu/machines/then-airflow-synergy/"
+    },
+    "dyebatchAir": {
+      "title": "THEN · AIRFLOW 工艺报告",
+      "locator": "服役工艺实例中的风机、泵与提布轮",
+      "url": "https://www.fongs.eu/site/assets/files/1055/81-co-005-syn_co_bleach-60_c_reactive_dyeing-clariant-me.pdf"
+    },
+    "beamF": {
+      "title": "FONG’S · CBS",
+      "locator": "卷轴染色机",
+      "url": "https://www.fongs.eu/machines/fongs-cbs/"
+    },
+    "dyeBeam": {
+      "title": "欧盟联合研究中心 · 纺织工业技术参考",
+      "locator": "织物卷轴染色原理及循环示意，图 10.9",
+      "url": "https://bureau-industrial-transformation.jrc.ec.europa.eu/sites/default/files/2019-11/txt_bref_0703.pdf"
+    },
+    "stentS": {
+      "title": "Swastik · Stenter 技术样本",
+      "locator": "针链标准及伺服选配、超喂、RDB 风机",
+      "url": "https://www.swastiktextile.com/Download%20Catalogue/Stenter%201-8.pdf"
+    },
+    "stentSW": {
+      "title": "Swastik · Stenter 产品页",
+      "locator": "超喂辊与独立张力辊驱动",
+      "url": "https://www.swastiktextile.com/stenter/"
+    },
+    "montex": {
+      "title": "Monforts · MONTEX",
+      "locator": "拉幅定型机及烘房配置",
+      "url": "https://www.monforts.de/en/products/stenters/"
+    },
+    "montexFans": {
+      "title": "Monforts · 节能运行指引",
+      "locator": "循环风机与排风机转速控制",
+      "url": "https://2025.monforts.de/wp-content/uploads/2025/09/EnergySavings.pdf"
+    },
+    "stentA": {
+      "title": "Aigle · RAM/S 技术样本",
+      "locator": "入口电机、横向丝杠与上下循环风机，单台风机功率",
+      "url": "https://www.aiglemacchine.com/pdf2/?id=1580&lang=en"
+    },
+    "stentB": {
+      "title": "Brückner · POWER-FRAME",
+      "locator": "分流热风与双调幅丝杠",
+      "url": "https://www.brueckner-textile.com/en/products/details/power-frame-stenter.html"
+    },
+    "stenterEdge": {
+      "title": "Erhardt+Leimer · ELFEED",
+      "locator": "KR 62 无刷行星减速执行器",
+      "url": "https://www.erhardt-leimer.com/content/dam/erhardtandleimergmbhprogram/landingpages/campaigns/fair-downloads/textile/pdfs/EL%20ELFEED_EN-08_05_2023-363835.pdf.coredownload.pdf"
+    },
+    "cutEdge": {
+      "title": "Erhardt+Leimer · ELCUT",
+      "locator": "上刀减速电机和边位跟踪执行器",
+      "url": "https://www.erhardt-leimer.com/global/en/products/cutting-technology/cutting-systems-for-the-textile-industry/elcut-edge-cut-on-the-stenter.html"
+    },
+    "calI": {
+      "title": "Gayatri · Hydraulic Calander",
+      "locator": "五辊、变频交流主传动及液压站",
+      "url": "https://gayatriengs.com/calander-machine.html"
+    },
+    "rollEffects": {
+      "title": "ANDRITZ · teXcal 产品系列",
+      "locator": "s-roll、Raconip L 及其轧点排列",
+      "url": "https://www.andritz.com/products-en/thermal-power/nonwoven-textile/textile/textile-calendering-nonwoven-and-textile"
+    },
+    "calP": {
+      "title": "Prabhat · 压光机技术册",
+      "locator": "PTC 007 与 H005 的驱动及压力配置",
+      "url": "https://www.prabhattextile.com/pdf/Prabhat_Catalog.pdf"
+    },
+    "inspRT": {
+      "title": "RVR · HFI-W-2H",
+      "locator": "Drive 和 Motor Specs 两组规格",
+      "url": "https://www.rvrmachinery.in/hfi-w-2h"
+    },
+    "inspEL": {
+      "title": "Erhardt+Leimer · Inspection machine",
+      "locator": "储布、牵引、张力与上升式卷绕",
+      "url": "https://www.erhardt-leimer.com/global/en/products/stand-alone-machines/machines-for-the-textile-industry/inspection-machine-for-the-textile-industry/inspection-machine.html"
+    },
+    "inspU": {
+      "title": "Uster · Fabriq Vision 2 技术数据",
+      "locator": "相机、光源和检测单元",
+      "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf"
+    },
+    "inspectQ": {
+      "title": "Uster · Fabric Inspection 技术册",
+      "locator": "Q-Bar 2 在织机上的检测位置",
+      "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabric_Inspection_brochure_web_en_25.pdf"
+    },
+    "motorTorque": {
+      "title": "Reuland · Textile Motors",
+      "locator": "永磁同步与力矩类产品的纺织用途",
+      "url": "https://www.reuland.com/textile-motors"
+    },
+    "shaftT": {
+      "title": "Reuland · Constant Tension Winder Motors",
+      "locator": "卷绕张力与卷径变化",
+      "url": "https://www.reuland.com/constant-tension-motors"
+    },
+    "compactR": {
+      "title": "Rieter · K 48",
+      "locator": "主电机能效等级、集聚吸风",
+      "url": "https://www.rieter.com/products/systems/compact-spinning-machines/compact-spinning-machine-k-48"
+    },
+    "cmpK": {
+      "title": "Rieter · K 48 技术册",
+      "locator": "四锭带、筛鼓及吸风配置",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-k-48-compact-spinning-machine-brochure-3237-v5-95005-en.pdf"
+    },
+    "cmpT": {
+      "title": "Toyota · RX300 EST3／EST4",
+      "locator": "输出下罗拉、网格圈和四线传动",
+      "url": "https://textile-machinery.toyota-industries.com/en/products/RX300/purpose.html"
+    },
+    "compactS": {
+      "title": "Saurer · Impact FX pro",
+      "locator": "多孔网格圈改装",
+      "url": "https://saurer.com/en/services/sun-service-unlimited/service-spinning/ring-spinning/impact-fx-pro-upgrade"
+    },
+    "compactM": {
+      "title": "Suessen · COMPACTeasy 样本",
+      "locator": "Y 形机械集聚器及下罗拉",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/components/compact-spinning/compact-easy/suessen-compacteasy-brochure-3340-en.pdf"
+    },
+    "twistC": {
+      "title": "Saurer · CompactTwister",
+      "locator": "短纤倍捻主驱及锭带",
+      "url": "https://saurer.com/en/products/machines/twisting-and-cabling/staple/compacttwister"
+    },
+    "twistS": {
+      "title": "Savio · Sirius 技术册",
+      "locator": "Electronic Drive System 三台电机的分工",
+      "url": "https://saviospa.com/public/savio/PDF/Savio_Sirius_ENG.pdf"
+    },
+    "twistRf": {
+      "title": "日发 · 工业长丝加捻设备样本",
+      "locator": "RFTI11 电锭单锭独立驱动",
+      "url": "https://www.rifatextile.com/uploads/file/2023-industrial-chemical-fiber-twisting-machine.pdf"
+    },
+    "twistCar": {
+      "title": "Saurer · CarpetTwister／CarpetCabler",
+      "locator": "每侧滚筒轴与独立锭带",
+      "url": "https://saurer.com/media/420/download/2019_Carpet_802_en.pdf?v=2"
+    },
+    "dtyE": {
+      "title": "Barmag · eFK 产品页",
+      "locator": "工艺区前后导丝盘及卷绕",
+      "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk/"
+    },
+    "dtySheet": {
+      "title": "Barmag · Manual DTY (PET) 技术表",
+      "locator": "2023-05，eFK 喂入、横动和卷绕位数",
+      "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_05_datasheet_manual_en.pdf?download=true"
+    },
+    "efk26": {
+      "title": "Barmag · DTY Manufacturing 产品册",
+      "locator": "2026-04 版，加弹、假捻组件及产品范围",
+      "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true"
+    },
+    "dtyYueTech": {
+      "title": "浙江越剑 · 招股说明书申报稿",
+      "locator": "核心技术表第 7、10 项，历史技术披露",
+      "url": "https://spdf.askci.com/pdf/%E6%B5%99%E6%B1%9F%E8%B6%8A%E5%89%91%E6%99%BA%E8%83%BD%E8%A3%85%E5%A4%87%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8.pdf"
+    },
+    "dtyEvo": {
+      "title": "Barmag · EvoSmart Smart Godets",
+      "locator": "单位置导丝盘和独立变频器",
+      "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk-evosmart/smart-godets-with-individual-inverters/"
+    },
+    "dtyIE": {
+      "title": "Barmag · EvoSmart IE5",
+      "locator": "厂方披露的同步电机平台",
+      "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk-evosmart/ie5-motor-technology-efficiency-at-the-highest-level/"
+    },
+    "temcoB": {
+      "title": "Temco · FTS525M",
+      "locator": "电机、联轴器与摩擦盘单元",
+      "url": "https://www.temco.de/products-old/textile-applications/texturing-dty/texturing-units"
+    },
+    "dtyTemco": {
+      "title": "Temco · Textile Solutions 样本",
+      "locator": "FTS525M 与齿形带",
+      "url": "https://www.temco.de/fileadmin/user_upload/products/documents/components/filament-processing/temco/temco-textile-solutions-brochure-97877-en.pdf"
+    },
+    "dtyBelt": {
+      "title": "Temco · LAG 技术样本",
+      "locator": "切向带输入与轴承单元",
+      "url": "https://www.temco.de/fileadmin/temco/Services/documents/temco-bearing-assemblies-lag-product-range-en.pdf"
+    },
+    "dtyYueAR": {
+      "title": "浙江越剑 · 2025 年年度报告",
+      "locator": "加弹机产品及业务，巨潮资讯原始公告",
+      "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225092185.PDF"
+    },
+    "dtyTmt": {
+      "title": "TMT · ATF 产品系列",
+      "locator": "Nip Twister-Single 与 Nip Twister-SZ",
+      "url": "https://www.tmt-machinery.jp/en/products/02/index.html"
+    },
+    "dtyAlt": {
+      "title": "TMT · WO2010029852A1",
+      "locator": "皮圈夹持式假捻原理，专利文本",
+      "url": "https://patents.google.com/patent/WO2010029852A1/en"
+    },
+    "dtyKais": {
+      "title": "KAISER Motoren · 产品技术册",
+      "locator": "Reluctance Motors，无励磁同步型导丝盘驱动",
+      "url": "https://www.kaiser-motoren.de/en/downloads/Product%20brochure.pdf"
+    },
+    "dtyGod": {
+      "title": "Retech · Externally-Driven Heated Godet Rolls",
+      "locator": "加热牵伸辊的随动与外驱方案",
+      "url": "https://www.retech.ch/externally-driven-heated-godet-rolls"
+    },
+    "linearProto": {
+      "title": "TMT · EP3315441B1",
+      "locator": "直线电机驱动往复导纱器的专利实施例",
+      "url": "https://patents.google.com/patent/EP3315441B1/en"
+    },
+    "itmf": {
+      "title": "国际纺织制造商联合会 · 第 48 次全球纺机出货统计",
+      "locator": "2025 年出货，2026 年 7 月发布",
+      "url": "https://itmf.org/images/dl/press-releases/2026/2026-07-24-ITMSS-48-2025.pdf"
+    },
+    "rotorR70": {
+      "title": "立达 R 70 原厂技术册",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-r-70-v2-rotor-spinning-machine-brochure-3313-v4-95393-en.pdf",
+      "locator": "第 8–10 页，基础机和纺位驱动"
+    },
+    "assembly_windingRef1": {
+      "title": "SSM 当前并纱机产品页：CWX-D",
+      "url": "https://www.ssm.ch/products/winding-solutions/assembly-winding-machines",
+      "locator": "单锭独立驱动，2/3股，槽筒排纱，152 mm，10–80锭。"
+    },
+    "assembly_windingRef2": {
+      "title": "SSM Product portfolio，p.20，当前官网版本",
+      "url": "https://www.ssm.ch/fileadmin/ssm/documents/products/winding/ssm-product-range-3615-en.pdf",
+      "locator": "CWX-D技术表与整机照片；公开最小10锭双面配置。"
+    },
+    "airjet_spinningRef2": {
+      "title": "Rieter J70 brochure 3584-v1 en 2305，p.18–19",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+      "locator": "40纺位2节2机器人基础配置、11113×3029×3100 mm、255 mm、1070 mm条筒及驱动/物流参数。"
+    },
+    "warp_tyingRef1": {
+      "title": "Stäubli TIEPRO 当前产品页",
+      "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html",
+      "locator": "当前在列；锥形分纱、最高600结/分、电子双纱检测和先退回重分纱再切纱。未披露电机数量或内部传动。"
+    },
+    "warp_tyingRef5": {
+      "title": "Stäubli ITM FLASH 2024 原厂资料，第4页",
+      "url": "https://www.staubli.com/content/dam/textile/showpad/fairs/itm-2024/FLASH_2024_ITM-T%C3%BCrkiye_ENG.pdf",
+      "locator": "2024展会资料确认锥形分纱、无分纱针、无油浴及自动退回；未把电子检测说成电机。"
+    },
+    "warp_tyingRef2": {
+      "title": "Stäubli TPF 结经架当前产品页",
+      "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/warp-tying-frame-tpf.html",
+      "locator": "支持TIEPRO；可选100–560cm结经宽度；A式平直夹紧和B式90度转杆夹紧。"
+    },
+    "washing_rangeRef2": {
+      "title": "Benninger Washing Solutions 官方技术册",
+      "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Washing_Solutions/Broschuere_Washing_EN.pdf",
+      "locator": "印刷页 4：组合线；6–9：EXTRACTA / TRIKOFLEX；12：TEMPACTA。未提供本模型电机总表。"
+    },
+    "singeingRef1": {
+      "title": "SWASTIK Super Singe 当前产品页",
+      "url": "https://www.swastiktextile.com/gas-singening-machine-super-singe/",
+      "locator": "当前官网在列；明确交流电机直接连接刷毛辊、独立吸尘、2个狭缝水冷燃烧器、单/双面烧毛、失电退避、80–150m/min。"
+    },
+    "singeingRef2": {
+      "title": "SWASTIK Super Singe 原厂4页样本",
+      "url": "https://www.swastiktextile.com/Download%20Catalogue/gas_singeing_machine.pdf",
+      "locator": "已下载并逐页查看：第1/4页整机照片；第2–3页完整布路、前后双刷辊、助燃及排风风机、4个水冷导布辊、2燃烧器及安全退避。第4页说明未配退浆槽时采用蒸汽灭火。封面有1937–2012周年标记，不称2026新型号。"
+    },
+    "mercerizingRef2": {
+      "title": "Benninger Mercerizing Solutions 2024 官方技术册",
+      "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Mercerizing_Solutions/Broschuere_Mercerizing_EN_2024.pdf",
+      "locator": "印刷页 6–13：工艺分区、碱液系统、夹链、SECTION CONTROL、真空抽碱、稳定和后洗。"
+    },
+    "sanforizingRef5": {
+      "title": "POWER-SHRINK 官方样本页 10",
+      "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page10.html",
+      "locator": "衬衫／裤料线含进出储布架，重磅牛仔另选整纬及预拉幅。"
+    },
+    "sanforizingRef2": {
+      "title": "POWER-SHRINK 官方样本页 5",
+      "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page5.html",
+      "locator": "储布架气动摆辊和蒸汽滚筒。"
+    },
+    "sanforizingRef1": {
+      "title": "Brückner POWER-SHRINK 当前产品页",
+      "url": "https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html",
+      "locator": "当前机型、橡毯、水冷、内置磨毯及毛毯组合。"
+    },
+    "sanforizingRef6": {
+      "title": "POWER-SHRINK 官方样本页 4",
+      "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page4.html",
+      "locator": "橡毯、压辊和预缩热滚筒的作用。"
+    },
+    "sanforizingRef4": {
+      "title": "POWER-SHRINK 官方样本页 8（英／西版）",
+      "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-es/files/basic-html/page8.html",
+      "locator": "毛毯干燥稳定及 800/1500/2000/2500 mm 烘筒选项。"
+    },
+    "sanforizingRef3": {
+      "title": "POWER-SHRINK 官方样本页 6",
+      "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page6.html",
+      "locator": "水冷、内置磨毯与选配抽屑。"
+    }
+  }
+}

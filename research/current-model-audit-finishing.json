@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-11-16",
+  "scope": "厂家公开产品与有日期的发布资料；不等于取得厂家完整设计资料",
+  "items": [
+    {
+      "id": "pretreatment",
+      "previousReference": "Benninger BEN-BLEACH 官方照片，未锁定整线配置",
+      "currentFinding": "厂家当前仍列 BEN-BLEACH，整线按面料、速度和布局组合退浆、浸渍、汽蒸、水洗和漂白模块。不能用系列名称验证当前短模型完整。",
+      "latestGeneration": "未找到可证明统一最新代号的发布证据",
+      "sources": [{"url":"https://benningergroup.com/en/textile-finishing/bleaching-solutions","publicationDate":null,"supports":"当前系列及模块化配置"}],
+      "requiredBeforeFaithfulRebuild": ["具体订单或样本配置的整线布置图", "全部工艺模块及数量", "布路图、管路图和传动装配图", "BOM与辅助系统边界"],
+      "fullStructureEvidenceAvailable": false
+    },
+    {
+      "id": "dyeing",
+      "previousReference": "Benninger Küsters DyePad / BEN-Colour 公开产品照片",
+      "currentFinding": "DyePad仍在厂家当前CPB染色产品线中。持续在售不证明为新发布机型；CPB与连续固色是不同配置，不能拼装其模块后声称复刻。",
+      "latestGeneration": "未确认新的完整设备代号或精确版本",
+      "sources": [{"url":"https://benningergroup.com/en/textile-finishing/dyeing-solutions","publicationDate":null,"supports":"当前DyePad与CPB路线"}],
+      "requiredBeforeFaithfulRebuild": ["确定CPB或连续固色路线及具体配置", "轧辊与液压装配图", "完整配液、循环、堆置或固色水洗系统资料", "BOM及控制柜接线/布局资料"],
+      "fullStructureEvidenceAvailable": false
+    },
+    {
+      "id": "stenter",
+      "previousReference": "Monforts MONTEX 8500，2025年图片路径；仅据外形，未确定烘房数量和加热配置",
+      "currentFinding": "厂家当前MONTEX仍为定制模块系统。2026-11-09案例明确是一套6烘房、3.2m工作幅宽、全电加热、延长进布臂与集成热回收的具体设备；这个案例不是全系列统一最新配置。",
+      "latestGeneration": "当前MONTEX系列可确认，精确订单版本仍待选择",
+      "sources": [
+        {"url":"https://www.monforts.de/produkte/spannrahmen/","publicationDate":null,"supports":"当前MONTEX、模块化配置和官方交互3D入口"},
+        {"url":"https://www.monforts.de/aktuelles/aei-reaps-the-benefits-of-all-electric-new-monforts-range/","publicationDate":"2026-11-09","supports":"6烘房、3.2m、全电加热、延长进布臂与热回收案例"},
+        {"url":"https://platform.govie.de/share/revision/JBuwfZJ48Fzriv6J7?Monforts-Montex=","publicationDate":null,"supports":"厂家产品页链接的官方3D展示入口；本轮未检查其中装配结构"}
+      ],
+      "requiredBeforeFaithfulRebuild": ["选定烘房数、幅宽、针/铗链及加热方式", "整线总图和各烘房风路/喷嘴装配图", "热回收、排风处理、调幅及驱动的BOM与接口图"],
+      "fullStructureEvidenceAvailable": false
+    },
+    {
+      "id": "calender",
+      "previousReference": "ANDRITZ 2023产品册中的teXcal s-roll与Raconip L；模型为自行组合的双辊构型",
+      "currentFinding": "厂家当前同时列s-roll、Raconip L、trike、Raconip TT等用途不同的产品。TT的有日期发布证据早至2019-04-10，不能因网页写new就称2026最新款，也不能把两辊、L形三辊和不同内部辊系混用。",
+      "latestGeneration": "无法据当前页面确认唯一最新款；需按棉机织面料整理效果锁定一种配置",
+      "sources": [
+        {"url":"https://www.andritz.com/products-en/power-to-x/nonwoven-textile/textile/textile-calendering-nonwoven-and-textile","publicationDate":null,"supports":"当前多种轧光机用途与辊组差异"},
+        {"url":"https://www.andritz.com/newsroom-en/nonwoven-and-textile/2019-04-10-techtextil","publicationDate":"2019-04-10","supports":"Raconip TT发布年代"},
+        {"url":"https://www.andritz.com/resource/blob/299446/80243e217ab3aca4d81c1611e62ee64b/brochure-textile-keep-profits-rolling-with-calenders-2023--data.pdf","publicationDate":"2023-09","supports":"上一版所据产品册，不能当作工程装配图"}
+      ],
+      "requiredBeforeFaithfulRebuild": ["精确型号、辊面宽、辊数和选件配置", "辊内部支承、轴承、液压与加热介质工程图", "整机与油站等辅助模块BOM"],
+      "fullStructureEvidenceAvailable": false
+    },
+    {
+      "id": "inspection",
+      "previousReference": "Uster EVS Fabriq Vision与Q-Bar 2的旧资料，现模型为自行构造的验布卷装台",
+      "currentFinding": "已确认新一代Fabriq Vision 2于2025-10-24官方发布稿中作为新品介绍。其2025-07技术资料给出SVC3检测单元、控制台、照明、编码器、工作站、选件和外形尺寸。Q-Bar 2为织造区在线检测，不能替代成品验布整线；Fabriq Vision 2也不能单独代表未指定的放卷/收卷机。",
+      "latestGeneration": "Fabriq Vision 2为已证实的新一代参考候选，现GLB并未复刻该机型",
+      "sources": [
+        {"url":"https://www.uster.com/fileadmin/user_upload/Images/AboutUster/News_and_Media/2025/251024_Uster_press_release_ITMA_Asia_2025_novelties_and_news.pdf","publicationDate":"2025-10-24","supports":"Fabriq Vision 2新品与SVC3检测平台"},
+        {"url":"https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf","publicationDate":"2025-07","supports":"安装单元、尺寸、选件；不足以穷尽内部装配"}
+      ],
+      "requiredBeforeFaithfulRebuild": ["检测幅宽、照明方式、相机配置和在线/离线安装方式", "配套放卷/收卷机的独立品牌型号及总图", "相机数量和位置图、柜内布局、线缆与全部机械BOM"],
+      "fullStructureEvidenceAvailable": false
+    }
+  ]
+}

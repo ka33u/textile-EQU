@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "modelVersion": "3.0",
+  "driveRevision": "5.0",
+  "checkedAt": "2026-11-17",
+  "units": "metres",
+  "structuralCompleteness": false,
+  "fidelityStatus": "partial_public_reference",
+  "selectionPolicy": "选定明确完整配置并全量建立工位；公开证据不足处保留缺口，不以常见布局冒充厂家全装配。",
+  "items": [
+    {
+      "id": "compact_spinning",
+      "name": "紧密纺机",
+      "manufacturer": "Rieter",
+      "model": "K 48",
+      "configuration": "288锭；6节×48锭；70mm锭距；单侧吸风；无中间传动；C3直联型14.260m；34mm钢领、LENA28/DUI16 High-Speed Package；210mm纱管",
+      "currentFinding": "当前官网K 48，现挂2025-04版v6样本。厂家同型号已有迭代；本模型锁定该公开版本和选定配置，不声称厂家最新订单的全部细节。",
+      "verified": [
+        "标准最少288锭，144锭仅按要求；每节48锭，所选6节两面各144锭。",
+        "70mm锭距、单侧吸风、无中间传动和C3直联配置可组合；长度=(288/2×70)+4180=14260mm。",
+        "公开主驱为一台大电机经主皮带、纵向共轴及四锭锭带驱动；288锭对应72组四锭带。",
+        "紧密单元采用筛鼓、Bright吸风嵌件与Detect导流监测；并非通用集聚皮圈。",
+        "High-Speed Package可选34mm钢领、LENA28锭子和DUI16纱管；70mm锭距允许180–230mm管长。",
+        "样本明确集体自动落纱、SERVOdisc与ISM premium；ROBOspin为可选接头机器人，本配置不选。"
+      ],
+      "inferred": [
+        "210mm管长为公开范围内的项目选定值，不是默认唯一规格。",
+        "头尾箱外形、牵伸/集聚机构精确尺寸、风道分支和外部电机安装位置按公开图示功能重建。",
+        "粗纱卷装与288锭逐一对应；吊架排列、工作中的卷装余量和全部防护件细部未获订单确认。",
+        "孔型和孔数用于可见筛鼓结构表达，不是厂家孔径、节距或加工公差。"
+      ],
+      "missing": [
+        "整机CAD、BOM及完整隐藏传动总图。",
+        "各牵伸电机精确数量、型号、分配箱内部齿轮和速比。",
+        "落纱气动/机械驱动全图、联锁和电气线缆。",
+        "与具体络筒机配套的订单级直联输送布置。"
+      ],
+      "selectedCounts": {
+        "sections": 6,
+        "spindlesPerSection": 48,
+        "spindles": 288,
+        "spindlesPerSide": 144,
+        "compactingUnits": 288,
+        "rovingPackages": 288,
+        "fourSpindleTapeGroups": 72,
+        "doffingGrippers": 288,
+        "suctionUnits": 1
+      },
+      "selectedCountLabels": {
+        "sections": "节数",
+        "spindlesPerSection": "每节锭数",
+        "spindles": "完整锭位",
+        "spindlesPerSide": "每侧锭位",
+        "compactingUnits": "集聚单元",
+        "rovingPackages": "粗纱卷装",
+        "fourSpindleTapeGroups": "四锭锭带组",
+        "doffingGrippers": "落纱夹持器",
+        "suctionUnits": "单侧吸风单元"
+      },
+      "dimensions": {
+        "machineLengthM": 14.26,
+        "spindleGaugeM": 0.07,
+        "spindleRowWidthM": 0.66,
+        "dofferRetractedWidthM": 1.062,
+        "dofferExtendedWidthM": 1.38,
+        "ringDiameterM": 0.034,
+        "tubeLengthM": 0.21,
+        "evidence": "总体长度依官方公式；非所有外廓高度均有尺寸依据。"
+      },
+      "sources": [
+        {
+          "title": "Rieter K 48 当前产品页",
+          "url": "https://www.rieter.com/products/systems/compact-spinning-machines/compact-spinning-machine-k-48",
+          "publicationDate": null,
+          "evidence": "当前官网读取；不以抓取日替代发布年份"
+        },
+        {
+          "title": "K 48 3237-v6 英文技术册；第12/16/30/31页",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-k-48-compact-spinning-machine-brochure-3237-v6-95005-en.pdf",
+          "publicationDate": "2025-04",
+          "evidence": "PDF末页版号3237-v6 en 2504；原文件下载及实际页面视觉检查"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "localPdf": "research/visual-sources-v5/k48.pdf",
+        "pages": [
+          12,
+          16
+        ],
+        "images": [
+          "research/visual-sources-v5/k48-drive-p12.png",
+          "research/visual-sources-v5/k48-compact-p16.png"
+        ]
+      },
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "K 48",
+      "referenceConfiguration": "288锭；6节×48锭；70mm锭距；单侧吸风；无中间传动；C3直联型14.260m；34mm钢领、LENA28/DUI16 High-Speed Package；210mm纱管",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实",
+      "technicalPagesRead": [
+        12,
+        14,
+        16,
+        18,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "texturing",
+      "name": "牵伸假捻加弹机",
+      "manufacturer": "Barmag",
+      "model": "eFK",
+      "configuration": "eFK Standard；PET单股；V型；16节×24=384工位；固定筒架；godet喂纱；type 8切向带假捻；Camshaft三层卷绕；手动落筒",
+      "currentFinding": "eFK当前官网仍列售；eFK EvoSmart是另一个更近期平台。用户明确选择具有公开完整配置参数的eFK，不把384工位eFK称为EvoSmart或最新一代。2023技术表当前原链接失效，数字从官方URL搜索索引复核；当前2026通用册未重新给出该整机表。",
+      "verified": [
+        "当前官网明确eFK为手动落筒加弹平台，godet用于加弹区前后的喂纱。",
+        "官方2023_02/05技术表搜索索引给出Standard、PET、Single、V型、16节、384卷绕工位；每节24工位由384÷16得出。",
+        "同表给出总长27406mm、机顶宽7944mm、机底宽4764mm、固定筒架宽6724mm、机高5678mm、节距1440mm、纱距110mm。",
+        "同表主加热2.0m、冷轨1.1m、二热1.46m；喂纱可选G1/G1.X/G2/G2X或轴系，卷前W3，卷绕可选ATT或Camshaft。",
+        "当前通用册确认假捻摩擦单元存在单独电机或切向带两种驱动形式，不能把两者混称同一标准装配。"
+      ],
+      "inferred": [
+        "选定PET单股、固定筒架、godet喂纱和Camshaft，属于表列可配置选项；不代表取得了某客户的整机订单BOM。",
+        "每侧每节12工位、三层卷绕每层4位为模型选定的完整排布；尚未取得该配置截面图完成视觉核验。单元门板、机架和局部轴承尺寸按功能与比例表达。",
+        "图中的电机外壳和传动位置用于说明实际工位功能，具体型号与安装尺寸待核实。",
+        "摩擦盘叠片数、POY卷装尺寸是建模选择或待核值，不冒充原厂精确选配。",
+        "模型以7个共用电机工位分别表达两侧假捻、W3、卷绕与油剂循环；真实电机台数及机内分配未核。G1/G2集成驱动未独立建模。",
+        "固定筒架建立384个工作POY卷装，不声称已包含未核实的备用卷装系统；摩擦假捻选type 8切向带形式。"
+      ],
+      "missing": [
+        "2023_02/05参数表的当前可下载原文件；已确认旧域404、迁移路径转错误页。",
+        "同一384工位订单的安装图、剖面、BOM、箱内电机与全部机械传动。",
+        "固定筒架每个工作位的备用POY卷装数量和精确分层，不能把备用包数当成已证实额定数量。",
+        "摩擦盘的选定材料、盘片配比、喷嘴、油轮、传感器和具体驱动选配清单。",
+        "尚未实际取得清晰eFK V型截面原图，左右模块、走纱高度和局部工位位置属于功能/比例推定，不声称已视觉核实整机截面。"
+      ],
+      "selectedCounts": {
+        "sections": 16,
+        "positionsPerSection": 24,
+        "positions": 384,
+        "sides": 2,
+        "positionsPerSide": 192,
+        "windingDecksPerSide": 3,
+        "windersPerDeckPerSection": 4,
+        "primaryHeaterPaths": 384,
+        "coolingPaths": 384,
+        "secondaryHeaterPaths": 384,
+        "activePOYPackages": 384,
+        "reservePOYPackages": 0,
+        "DTYPackages": 384,
+        "continuousYarnPaths": 384,
+        "frictionUnits": 384,
+        "frictionShafts": 1152,
+        "commonDriveStations": 7
+      },
+      "selectedCountLabels": {
+        "sections": "完整节数",
+        "positionsPerSection": "每节工位",
+        "positions": "完整加弹工位",
+        "sides": "工作侧数",
+        "positionsPerSide": "每侧工位",
+        "windingDecksPerSide": "每侧卷绕层数",
+        "windersPerDeckPerSection": "每节每层卷绕位",
+        "primaryHeaterPaths": "主加热纱路",
+        "coolingPaths": "冷却纱路",
+        "secondaryHeaterPaths": "二热纱路",
+        "activePOYPackages": "工作POY卷装",
+        "reservePOYPackages": "未建备用POY卷装",
+        "DTYPackages": "DTY卷装",
+        "continuousYarnPaths": "独立连续纱路",
+        "frictionUnits": "假捻单元",
+        "frictionShafts": "三轴摩擦盘轴",
+        "commonDriveStations": "模型中推定的共用驱动工位"
+      },
+      "dimensions": {
+        "machineLengthM": 27.406,
+        "topWidthM": 7.944,
+        "bottomWidthM": 4.764,
+        "widthWithStationaryCreelM": 6.724,
+        "machineHeightM": 5.678,
+        "sectionPitchM": 1.44,
+        "yarnPitchM": 0.11,
+        "primaryHeaterLengthM": 2.0,
+        "coolingRailLengthM": 1.1,
+        "secondaryHeaterLengthM": 1.46,
+        "evidence": "2023官方PDF URL的搜索索引；原文件当前下载失败，当前在售性另外由官网确认。"
+      },
+      "sources": [
+        {
+          "title": "Barmag eFK 当前产品页",
+          "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk/",
+          "publicationDate": null,
+          "evidence": "现售平台；与eFK EvoSmart并列，不能称最新一代"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_02 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_02_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-02",
+          "evidence": "日期来自文件名；官方URL的搜索索引全文读取，原链接当前404；未取得该版原PDF，参数置信度受此限制"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_05 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_05_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-05",
+          "evidence": "同一384工位参数搜索索引交叉核对；原链接当前404；日期来自文件名"
+        },
+        {
+          "title": "Barmag DTY manufacturing 当前通用册",
+          "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true",
+          "publicationDate": "2026-04",
+          "evidence": "当前官网真实下载链接，PDF末页BBA205 04/2026；实际下载并查看11、13页机构照片，非eFK专用整机图"
+        },
+        {
+          "title": "eFK EvoSmart 2026官方新闻：用于与选定eFK区分",
+          "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+          "publicationDate": "2026-01-08",
+          "evidence": "更近期平台另有SmartGodets/EvoHeater；本模型不套用其技术名称"
+        },
+        {
+          "title": "原厂2017期刊：eFK卷绕与导纱局部图，不作为当前容量依据",
+          "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_28_en.pdf?download=true",
+          "publicationDate": "2017-10",
+          "evidence": "PDF下载并实际查看第24页；仅部件外观参考"
+        },
+        {
+          "title": "早期原厂eFK brochure文本副本：type 8切向带与type 8E单独驱动的区别",
+          "url": "https://www.yumpu.com/en/document/view/4112004/efk-oerlikon-barmag-oerlikon-textile",
+          "publicationDate": null,
+          "evidence": "原厂作者资料的第三方历史转存，2012上传时间不等于厂家出版年；仅搜索索引文本核对，不宣称实际看到了V型截面。用于识别驱动形式，非当前订单BOM。"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "scope": "当前通用册部件照片，非eFK专用V型整机截面",
+        "localPdf": "research/visual-sources-v5/barmag-dty2026.pdf",
+        "pages": [
+          11,
+          13
+        ],
+        "images": [
+          "research/visual-sources-v5/dty2026-p11.png",
+          "research/visual-sources-v5/dty2026-p13.png"
+        ],
+        "configurationCrossSectionInspected": false
+      },
+      "referenceManufacturer": "Barmag",
+      "referenceModel": "eFK",
+      "referenceConfiguration": "eFK Standard；PET单股；V型；16节×24=384工位；固定筒架；godet喂纱；type 8切向带假捻；Camshaft三层卷绕；手动落筒",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实"
+    },
+    {
+      "id": "twisting",
+      "name": "倍捻机",
+      "manufacturer": "Saurer",
+      "model": "CompactTwister Series 8",
+      "configuration": "机械控制型；1节20锭（双面各10）；207mm锭距；VTS-07；长4.895m、机宽0.620m；并合筒纱喂入；机械分配传动；选用Volcojet气动穿纱附件",
+      "currentFinding": "当前官网仍列CompactTwister Series 8，并挂06/2019技术册；PrimeTwister为当前并列平台。本模型选择有完整公开最小配置表的CompactTwister机械版，不声称这是2026新发布型号。",
+      "verified": [
+        "机械控制技术表第18页明确1节20锭、207mm节距、总长4895mm；一节2100mm，驱动箱2167mm，尾箱628mm。",
+        "公开机宽620mm，驱动箱高1540mm、机节1601mm、尾箱1400mm。",
+        "VTS-07圆柱喂入卷装直径最高180mm、锥形最高185mm；这是卷装尺寸，不是罐外径。",
+        "机械控制机与电子控制机配置表不同；电子版第19页最少6节120锭，不能将其伺服装配套入20锭。",
+        "官方截面明确静止罐、锭转子、锭带、气圈导纱、超喂轮、横动机构、摩擦辊与卷绕架。",
+        "每转在锭子内部和外部气圈各加一捻，形成两次真捻；与加弹机的假捻热定型不同。"
+      ],
+      "inferred": [
+        "所选20锭按双面各10完整布置；锭罐外径、气圈及支承细部按截面比例建立，非精确厂家尺寸。",
+        "主电机经机械分配驱动锭带、超喂和卷绕；分配箱内部未公开，不虚构齿数和减速比。",
+        "喂入选择已并合筒纱，不选TwinPack直接双筒喂入；因此上游需并纱/并合络筒。",
+        "模型选160mm喂入卷装、220mm成品卷装，均为公开范围内的展示状态；Volcojet作为明确选择的气动穿纱附件，而非默认标准件。"
+      ],
+      "missing": [
+        "选定VTS-07锭罐、锭盘和刹车总装CAD及BOM。",
+        "机械控制版本实际电机规格、机械变速分配和切向锭带张紧细节。",
+        "气路、联锁、Volcojet等全部选件配置；未选附件不冒充标准。",
+        "当前订单是否对2019技术表有未公开尺寸更新。"
+      ],
+      "selectedCounts": {
+        "sections": 1,
+        "spindlesPerSection": 20,
+        "spindles": 20,
+        "spindlesPerSide": 10,
+        "spindlePots": 20,
+        "feedPackages": 20,
+        "balloons": 20,
+        "overfeedUnits": 20,
+        "windingPositions": 20,
+        "feedPackageDiameterMm": 160,
+        "deliveryPackageDiameterMm": 220
+      },
+      "selectedCountLabels": {
+        "sections": "完整节数",
+        "spindlesPerSection": "每节锭数",
+        "spindles": "完整倍捻锭位",
+        "spindlesPerSide": "每侧锭位",
+        "spindlePots": "静止锭罐",
+        "feedPackages": "并合喂入卷装",
+        "balloons": "外部气圈",
+        "overfeedUnits": "超喂工位",
+        "windingPositions": "卷绕工位",
+        "feedPackageDiameterMm": "选定喂入卷装直径（毫米）",
+        "deliveryPackageDiameterMm": "选定成品卷装直径（毫米）"
+      },
+      "dimensions": {
+        "machineLengthM": 4.895,
+        "machineWidthM": 0.62,
+        "sectionHeightM": 1.601,
+        "headHeightM": 1.54,
+        "tailHeightM": 1.4,
+        "sectionLengthM": 2.1,
+        "headLengthM": 2.167,
+        "tailLengthM": 0.628,
+        "spindleGaugeM": 0.207,
+        "feedPackageMaximumDiameterM": 0.18,
+        "evidence": "当前官网仍挂的2019-06原厂样本第18页机械控制配置。"
+      },
+      "sources": [
+        {
+          "title": "Saurer CompactTwister 当前产品页",
+          "url": "https://saurer.com/en/products/machines/twisting-and-cabling/staple/compacttwister",
+          "publicationDate": null,
+          "evidence": "当前页面仍挂Series 8和2019技术册"
+        },
+        {
+          "title": "CompactTwister 原厂技术册：机械版第18页、电子版第19页、截面第8/9页",
+          "url": "https://saurer.com/media/266/download/2019_CompactTwister_EN.pdf?v=2",
+          "publicationDate": "2019-06",
+          "evidence": "从当前官网HTML实际下载链接取得PDF；末页Copyright 06.2019；实看第8与18页"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "localPdf": "research/visual-sources-v5/compacttwister.pdf",
+        "pages": [
+          8,
+          18
+        ],
+        "images": [
+          "research/visual-sources-v5/compacttwister-p8.png",
+          "research/visual-sources-v5/compacttwister-tech-p18.png"
+        ]
+      },
+      "referenceManufacturer": "Saurer / Volkmann",
+      "referenceModel": "CompactTwister series 8",
+      "referenceConfiguration": "机械控制型；1节20锭（双面各10）；207mm锭距；VTS-07；长4.895m、机宽0.620m；并合筒纱喂入；机械分配传动；选用Volcojet气动穿纱附件",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实",
+      "selectedOptions": {
+        "Volcojet": true,
+        "TwinPack": false,
+        "electronicServoControl": false,
+        "packageConveyor": false,
+        "balloonLimiter": false
+      }
+    }
+  ],
+  "driveMappingVerifiedAt": "2026-11-18"
+}

@@ -1,0 +1,53 @@
+{
+  "status": "pass",
+  "scope": "Actual selected position counts, identity, exterior drive anchors and preservation of previous assets; not OEM hidden assembly completeness",
+  "models": [
+    {
+      "id": "compact_spinning",
+      "referenceModel": "K 48",
+      "positions": 288,
+      "motors": 5,
+      "nodes": 10757,
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "bytes": 5271448
+    },
+    {
+      "id": "twisting",
+      "referenceModel": "CompactTwister series 8",
+      "positions": 20,
+      "motors": 1,
+      "nodes": 835,
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "bytes": 1441236
+    },
+    {
+      "id": "texturing",
+      "referenceModel": "eFK",
+      "positions": 384,
+      "motors": 7,
+      "nodes": 24927,
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "bytes": 15098372
+    }
+  ],
+  "preservedOriginalEquipment": [
+    "calender",
+    "carding",
+    "combing",
+    "drawing",
+    "drawing_in",
+    "dyeing",
+    "inspection",
+    "opening",
+    "pretreatment",
+    "roving",
+    "sizing",
+    "spinning",
+    "stenter",
+    "warping",
+    "weaving",
+    "winding"
+  ],
+  "structuralCompleteness": false,
+  "errors": []
+}

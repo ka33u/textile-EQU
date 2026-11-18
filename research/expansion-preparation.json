@@ -1,0 +1,556 @@
+[
+  {
+    "id": "warp_tying",
+    "name": "自动结经",
+    "equipment": "TIEPRO 自动结经机与 TPF 结经架",
+    "en": "Automatic warp tying machine",
+    "section": "weaving",
+    "maker": "Stäubli 史陶比尔",
+    "model": "TIEPRO + TPF",
+    "configuration": "1台TIEPRO结经头；TPF A式平直夹纱；模型选定2.16m有效经纱片、上下各480根经纱；非厂家固定纱数/订单尺寸。",
+    "summary": "把新经轴的经纱与旧经纱逐根打结，保留原有穿综穿筘关系以完成换轴；不代替变更组织时的自动穿经。",
+    "input": "按对应顺序夹持的旧经纱片和新经纱片",
+    "output": "逐根相接的新旧经纱接头，待牵引通过原织造机构",
+    "process": [
+      "夹持并平行整理新旧经纱片。",
+      "锥形分纱器分别取出对应纱线，电子检测是否双纱。",
+      "检测到双纱时先退回重分纱，不能先切断纱线。",
+      "有效配对后打结、修剪，并沿经纱幅宽推进至下一对。"
+    ],
+    "quality": [
+      "对应次序与漏结/双纱检测",
+      "接头牢度、短尾长度与通过性",
+      "新旧经纱张力和夹持均匀性"
+    ],
+    "verified": [
+      "当前官方产品页仍列TIEPRO；可处理标准短纤、纯棉及棉混纺经纱，NeB 3–100，最高600结/分。",
+      "官方明确锥形分纱、电子双纱检测、Auto-Reverse先退回再切纱。",
+      "TPF公开结经宽度范围100–560cm及A/B两种夹持原理；本模型选A式。",
+      "已下载并实际查看原厂TIEPRO和TPF照片，外形、提手、上盖、双立柱和四脚轮据图重构。"
+    ],
+    "inferred": [
+      "上下各480根为完整展示用选定经纱片，不是厂家标准或最高纱数；2.16m在TPF公开范围内但不是已确认订单规格。",
+      "结经头尺寸、分纱器局部比例、轴承/刀片外形及安装位置按照片比例表达。",
+      "模型只有1个主驱动功能定位锚点，不宣称TIEPRO实机只有1台电机；分纱/打结/切纱的共享关系待厂家内部图核实。",
+      "移动结经头演示为沿幅宽进给功能，实际横移驱动没有归给主电机。"
+    ],
+    "missing": [
+      "TIEPRO电气BOM、电机总数/电磁型式/功率和逐轴驱动归属。",
+      "分纱、打结、切纱、横移之间的原厂传动图和时序相位。",
+      "该选定宽度TPF及TIEPRO精确安装尺寸。"
+    ],
+    "counts": {
+      "结经头": 1,
+      "新经纱展示根数": 480,
+      "旧经纱展示根数": 480,
+      "模型主驱动工位": 1,
+      "锥形分纱工作区": 2,
+      "夹纱架脚轮": 4
+    },
+    "sources": [
+      {
+        "title": "Stäubli TIEPRO 当前产品页",
+        "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html",
+        "supports": "当前在列；锥形分纱、最高600结/分、电子双纱检测和先退回重分纱再切纱。未披露电机数量或内部传动。"
+      },
+      {
+        "title": "Stäubli TPF 结经架当前产品页",
+        "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/warp-tying-frame-tpf.html",
+        "supports": "支持TIEPRO；可选100–560cm结经宽度；A式平直夹紧和B式90度转杆夹紧。"
+      },
+      {
+        "title": "Stäubli TIEPRO 原厂整机照片",
+        "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--5020de82-55f0-4449-be0d-9831cf2d7355/warp-tying-machine-all-type-yarn-tiepro-hip.jpg?preferwebp=true&quality=75",
+        "supports": "已实际查看：青绿上盖、顶部屏幕/提手、金属下机身、前露分纱与打结工作区。无尺寸标注。"
+      },
+      {
+        "title": "Stäubli TPF 原厂照片",
+        "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--a4f4e34e-c016-4e9a-b328-9a051adc9320/tpf-tying-frame-hip-2x.jpg?preferwebp=true&quality=75",
+        "supports": "已实际查看：双立柱、四脚轮、窄长夹纱框、横杆、手动夹持与托钩。"
+      },
+      {
+        "title": "Stäubli ITM FLASH 2024 原厂资料，第4页",
+        "url": "https://www.staubli.com/content/dam/textile/showpad/fairs/itm-2024/FLASH_2024_ITM-T%C3%BCrkiye_ENG.pdf",
+        "supports": "2024展会资料确认锥形分纱、无分纱针、无油浴及自动退回；未把电子检测说成电机。"
+      }
+    ],
+    "referenceStatus": "partial_public_reference",
+    "structuralCompleteness": false,
+    "checkedAt": "2026-11-19",
+    "currentFinding": "当前官网仍在列；不把网页抓取时间当作机型发布年，不声称已证明绝对最新代际。",
+    "routes": [
+      {
+        "id": "separation",
+        "label": "新旧经纱的锥形分纱",
+        "location": "结经头前部的上下分纱工作区",
+        "electric": "内部动力型式和轴数未披露；1个模型主驱动功能位置",
+        "action": "旋转锥形分纱工作面；双纱信号要求退回重分",
+        "loadLabel": "上下锥形分纱器",
+        "status": "inferred",
+        "sources": [
+          0,
+          4
+        ],
+        "groups": [
+          {
+            "motor": "TIEPRO_main_motor",
+            "via": [
+              "TIEPRO_main_motor_out",
+              "TIEPRO_main_interface"
+            ],
+            "loads": [
+              "TIEPRO_upper_separator",
+              "TIEPRO_lower_separator"
+            ]
+          }
+        ],
+        "filters": [
+          "unspecified",
+          "group"
+        ],
+        "jobs": [
+          "process",
+          "feed"
+        ]
+      },
+      {
+        "id": "knot_and_cut",
+        "label": "有效配对后的打结与切纱",
+        "location": "结经头前下方",
+        "electric": "内部执行轴/电机数量未公开；共享主驱动仅为功能推定",
+        "action": "打结与剪尾；具体凸轮、齿轮、独立执行器及相位未建",
+        "loadLabel": "打结钩与剪纱工作区",
+        "status": "inferred",
+        "sources": [
+          0,
+          4
+        ],
+        "groups": [
+          {
+            "motor": "TIEPRO_main_motor",
+            "via": [
+              "TIEPRO_main_motor_out",
+              "TIEPRO_main_interface"
+            ],
+            "loads": [
+              "TIEPRO_knotter",
+              "TIEPRO_cutter"
+            ]
+          }
+        ],
+        "filters": [
+          "unspecified",
+          "group"
+        ],
+        "jobs": [
+          "process"
+        ]
+      },
+      {
+        "id": "head_traverse",
+        "label": "沿经纱幅宽定位进给",
+        "location": "TPF导轨上的移动结经头",
+        "electric": "实际横移执行动力未公开，未单独建模电机",
+        "action": "移动至下一对经纱；不伪造与主电机的机械连接",
+        "loadLabel": "移动结经头",
+        "status": "unassigned",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "TIEPRO_carriage"
+            ]
+          }
+        ],
+        "filters": [
+          "position",
+          "unspecified"
+        ],
+        "jobs": [
+          "position"
+        ]
+      },
+      {
+        "id": "double_end_detection",
+        "label": "双纱检测与退回逻辑",
+        "location": "上下分纱器附近检测窗口",
+        "electric": "电子传感与控制逻辑，不是电机",
+        "action": "识别双纱并发出Auto-Reverse命令；该检测头本身不驱动分纱器",
+        "loadLabel": "电子双纱检测器",
+        "status": "unassigned",
+        "sources": [
+          0,
+          4
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "TIEPRO_double_end_sensor"
+            ]
+          }
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "singeing",
+    "name": "织物烧毛",
+    "equipment": "Super Singe 双面织物气体烧毛机",
+    "en": "Fabric gas singeing machine",
+    "section": "finishing",
+    "maker": "SWASTIK Textile Engineers",
+    "model": "Super Singe",
+    "configuration": "选定1.8m布幅/2.0m辊面；前后各2刷辊、2狭缝燃烧器、4水冷导布辊；独立刷毛吸尘、助燃和燃烧排风；蒸汽灭火；不选可选预烘及退浆浸渍槽。尺寸为模型选定、非已确认OEM安装图。",
+    "summary": "以短时火焰处理去除织物表面毛羽，前后刷毛清洁并及时灭火；为后续退浆、精练和染整提供较洁净布面。",
+    "input": "平幅坯布或经整理的待烧毛织物",
+    "output": "经刷毛、烧毛和灭火的平幅织物",
+    "process": [
+      "张力控制后导入预刷毛区，毛刷起毛并抽走浮尘。",
+      "按所选双面布路绕过4个水冷导布辊，以2个狭缝燃烧器处理织物两面。",
+      "火焰由燃气与助燃空气形成；冷却水保护燃烧器和导布辊。",
+      "进入蒸汽灭火与后刷毛，出口牵引至下一工序。"
+    ],
+    "quality": [
+      "去毛均匀性与残留毛羽",
+      "车速、火焰强度、布火距离与布面损伤",
+      "水流/温度、抽风、燃气比例及失电退避联锁",
+      "灭火效果、边部余火及运行张力"
+    ],
+    "verified": [
+      "当前厂家网站仍列Super Singe且链接4页原厂样本；样本封面带1937–2012周年标记，属于历史公开图样仍在官网使用。",
+      "厂家明确刷毛辊由交流电机直接连接；交流供电不等于已确认异步、永磁或伺服类型。",
+      "厂家明确2个狭缝燃烧器及水冷配置；PDF图示4个水冷导布辊与前后各2个刷辊。",
+      "样本展示独立刷毛抽尘、助燃空气风机和燃烧排气；本模型保持三类气流功能分开。",
+      "不配可选退浆浸渍槽时，厂家提供蒸汽灭火装置；停电时两燃烧器同时退避并切断燃气。"
+    ],
+    "inferred": [
+      "1.8m布幅、2m辊面、框架间距和所有安装尺寸为选定演示比例，样本没有提供该订单外形尺寸。",
+      "4个刷辊的4个直联电机按所选前后双刷配置完整展示；确切电机品牌、功率及机批数量未取到BOM。",
+      "助燃、燃烧排风和刷毛吸尘各显示1个功能电机，叶轮/电机位置根据照片和功能重构，不宣称原厂精确风路。",
+      "出口牵引采用1个模型驱动工位；电机类型与减速结构未公开，壳体样式仅说明机械接口。",
+      "水冷辊被动转动与布速关系由工艺功能表达，未新增无依据的水泵或逐辊电机。"
+    ],
+    "missing": [
+      "该选定整机的电气BOM、全部电机型号、功率和厂家安装总图。",
+      "燃烧器退避执行器的电磁/气动具体型号及机械联锁细节；不归为旋转电机。",
+      "吸尘过滤器、风机、出口牵引在实际客户订单中的选型与布置。",
+      "受控燃烧、热传递、真实张力、燃气压力和安全联锁工程仿真。"
+    ],
+    "counts": {
+      "选定布幅毫米": 1800,
+      "选定辊面毫米": 2000,
+      "狭缝燃烧器": 2,
+      "水冷导布辊": 4,
+      "前刷毛辊": 2,
+      "后刷毛辊": 2,
+      "模型刷辊电机": 4,
+      "模型风机工位": 3,
+      "模型牵引电机": 1,
+      "模型电机合计": 8,
+      "蒸汽灭火管": 1
+    },
+    "sources": [
+      {
+        "title": "SWASTIK Super Singe 当前产品页",
+        "url": "https://www.swastiktextile.com/gas-singening-machine-super-singe/",
+        "supports": "当前官网在列；明确交流电机直接连接刷毛辊、独立吸尘、2个狭缝水冷燃烧器、单/双面烧毛、失电退避、80–150m/min。"
+      },
+      {
+        "title": "SWASTIK Super Singe 原厂4页样本",
+        "url": "https://www.swastiktextile.com/Download%20Catalogue/gas_singeing_machine.pdf",
+        "supports": "已下载并逐页查看：第1/4页整机照片；第2–3页完整布路、前后双刷辊、助燃及排风风机、4个水冷导布辊、2燃烧器及安全退避。第4页说明未配退浆槽时采用蒸汽灭火。封面有1937–2012周年标记，不称2026新型号。"
+      }
+    ],
+    "referenceStatus": "partial_public_reference",
+    "structuralCompleteness": false,
+    "checkedAt": "2026-11-19",
+    "currentFinding": "当前官网列售Super Singe；官网样本带2012周年标识，没有证据称其为2026最新一代。选择依据是原厂明确公开刷辊交流直联及完整机构布路。",
+    "routes": [
+      {
+        "id": "pre_brush",
+        "label": "烧毛前刷毛",
+        "location": "入口刷毛吸尘箱",
+        "electric": "交流电机直联；电磁转子类型未披露",
+        "action": "刷辊旋转起毛/去除浮尘，接触量可调",
+        "loadLabel": "两根刷毛辊",
+        "status": "confirmed",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_pre_brush_1_motor",
+            "via": [
+              "SSG_pre_brush_1_motor_out",
+              "SSG_pre_brush_1_coupling"
+            ],
+            "loads": [
+              "SSG_pre_brush_1"
+            ]
+          },
+          {
+            "motor": "SSG_pre_brush_2_motor",
+            "via": [
+              "SSG_pre_brush_2_motor_out",
+              "SSG_pre_brush_2_coupling"
+            ],
+            "loads": [
+              "SSG_pre_brush_2"
+            ]
+          }
+        ],
+        "filters": [
+          "ac",
+          "direct",
+          "single"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "transmissionKnown": true
+      },
+      {
+        "id": "post_brush",
+        "label": "烧毛后刷毛",
+        "location": "出口刷毛吸尘箱",
+        "electric": "交流电机直联；电磁转子类型未披露",
+        "action": "刷辊旋转起毛/去除浮尘，接触量可调",
+        "loadLabel": "两根刷毛辊",
+        "status": "confirmed",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_post_brush_1_motor",
+            "via": [
+              "SSG_post_brush_1_motor_out",
+              "SSG_post_brush_1_coupling"
+            ],
+            "loads": [
+              "SSG_post_brush_1"
+            ]
+          },
+          {
+            "motor": "SSG_post_brush_2_motor",
+            "via": [
+              "SSG_post_brush_2_motor_out",
+              "SSG_post_brush_2_coupling"
+            ],
+            "loads": [
+              "SSG_post_brush_2"
+            ]
+          }
+        ],
+        "filters": [
+          "ac",
+          "direct",
+          "single"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "transmissionKnown": true
+      },
+      {
+        "id": "combustion_air",
+        "label": "助燃空气",
+        "location": "烧毛室顶部助燃风机",
+        "electric": "电机驱动风机的功能推定；型式/安装未核",
+        "action": "向燃烧器气路供给助燃空气",
+        "loadLabel": "离心叶轮",
+        "status": "inferred",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_combustion_air_motor",
+            "via": [
+              "SSG_combustion_air_motor_out"
+            ],
+            "loads": [
+              "SSG_combustion_air_impeller"
+            ]
+          }
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ]
+      },
+      {
+        "id": "exhaust",
+        "label": "燃烧废气排风",
+        "location": "烧毛室上方集气罩与蜗壳风机",
+        "electric": "电机驱动风机的功能推定；型式/安装未核",
+        "action": "抽走烧毛区废气",
+        "loadLabel": "离心叶轮",
+        "status": "inferred",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_exhaust_motor",
+            "via": [
+              "SSG_exhaust_motor_out"
+            ],
+            "loads": [
+              "SSG_exhaust_impeller"
+            ]
+          }
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ]
+      },
+      {
+        "id": "dust_suction",
+        "label": "刷毛绒尘抽吸",
+        "location": "前后刷毛箱连接的独立吸尘系统",
+        "electric": "电机驱动风机的功能推定；型式/安装未核",
+        "action": "抽吸刷毛绒尘至独立收集器，不把该电机归给刷毛辊",
+        "loadLabel": "离心叶轮",
+        "status": "inferred",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_dust_suction_motor",
+            "via": [
+              "SSG_dust_suction_motor_out"
+            ],
+            "loads": [
+              "SSG_dust_suction_impeller"
+            ]
+          }
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ]
+      },
+      {
+        "id": "transport",
+        "label": "织物出口牵引",
+        "location": "出口牵引辊轴端",
+        "electric": "动力型式与传动比未公开，1个功能工位",
+        "action": "维持织物前进；压辊接触配合，未虚构独立压辊电机",
+        "loadLabel": "出口牵引辊",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "motor": "SSG_transport_motor",
+            "via": [
+              "SSG_transport_motor_out",
+              "SSG_transport_coupling"
+            ],
+            "loads": [
+              "SSG_exit_pull"
+            ]
+          }
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ]
+      },
+      {
+        "id": "burner_retreat",
+        "label": "燃烧器点火与失电退避",
+        "location": "两组燃烧器、转轴和点火杆",
+        "electric": "点火为高压火花；退避执行方式未完整公开，不是已确认旋转电机",
+        "action": "正常工作对布烧毛；失电时燃烧器转离织物并切断燃气",
+        "loadLabel": "燃烧器与点火电极",
+        "status": "unassigned",
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "SSG_burner_1",
+              "SSG_burner_2",
+              "SSG_igniter_1",
+              "SSG_igniter_2"
+            ]
+          }
+        ],
+        "filters": [
+          "position",
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "position"
+        ]
+      },
+      {
+        "id": "quench",
+        "label": "蒸汽灭火",
+        "location": "烧毛之后的蒸汽喷管",
+        "electric": "外部蒸汽供给，无本机旋转电机归属",
+        "action": "熄灭残留火星；未选可选退浆槽",
+        "loadLabel": "蒸汽灭火喷管",
+        "status": "unassigned",
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "SSG_steam_quench"
+            ]
+          }
+        ],
+        "filters": [
+          "fluid"
+        ],
+        "jobs": [
+          "process"
+        ]
+      }
+    ]
+  }
+]

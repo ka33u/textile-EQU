@@ -1,0 +1,1602 @@
+{
+  "title": "纺织装备工艺与传动交互演示系统",
+  "route": "棉纺—机织—染整主线；紧密纺、转杯纺、倍捻及化纤加弹分支",
+  "researchedAt": "2026-11-19",
+  "schemaVersion": 1,
+  "stages": [
+    {
+      "id": "opening",
+      "name": "开清棉",
+      "en": "Opening & cleaning",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "已轧花、打包的皮棉",
+      "output": "混合均匀的小棉束",
+      "summary": "把压实棉包逐步开松，混合配棉并清除杂质，为连续喂棉建立稳定料流。",
+      "process": [
+        "抓棉与称量配棉",
+        "逐级开松、混合与除杂",
+        "气流输送至梳棉喂棉箱"
+      ],
+      "drive": [
+        "典型配置：变频电机驱动打手或开松辊；转速影响开松强度。",
+        "输棉风机与喂入驱动协同维持稳定供棉。"
+      ],
+      "quality": [
+        "杂质去除与纤维损伤的平衡",
+        "配棉一致性、落棉与供棉波动"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜VARIOline 开清棉系统",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline"
+        },
+        {
+          "title": "Rieter｜短纤纺纱手册目录与工艺范围",
+          "url": "https://www.rieter.com/services/expertise/the-rieter-manual-of-spinning/"
+        }
+      ],
+      "modelFeatures": [
+        "棉包/抓棉臂",
+        "开松箱体",
+        "架空输棉管",
+        "外置风机与传动电机"
+      ],
+      "optional": false,
+      "note": "展示起点是皮棉，不包括种植、采棉和轧花；这些属于上游原料生产。"
+    },
+    {
+      "id": "carding",
+      "name": "梳棉",
+      "en": "Carding",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "松散棉束",
+      "output": "生条（梳棉条）",
+      "summary": "刺辊、锡林和盖板逐步分梳纤维，道夫把纤维网输出并汇成条。",
+      "process": [
+        "均匀喂入并经刺辊开松",
+        "锡林与盖板完成分梳和清除棉结",
+        "道夫剥取纤维网，集束后圈条入筒"
+      ],
+      "drive": [
+        "典型配置：主电机带动锡林；喂入、道夫和圈条按工艺协调。",
+        "吸风单元排出尘杂；电机与皮带传动在模型侧面可见。"
+      ],
+      "quality": [
+        "针布状态、梳理隔距",
+        "棉结、条子定量与条干均匀度"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜梳棉机部件与纤维路径",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/after-sales/parts/rieter-card-enhancements-brochure-en.pdf"
+        },
+        {
+          "title": "Rieter｜短纤纺纱手册目录与工艺范围",
+          "url": "https://www.rieter.com/services/expertise/the-rieter-manual-of-spinning/"
+        }
+      ],
+      "modelFeatures": [
+        "大锡林",
+        "小刺辊与道夫",
+        "顶部盖板",
+        "出条喇叭口与条筒"
+      ],
+      "optional": false,
+      "note": ""
+    },
+    {
+      "id": "drawing",
+      "name": "并条",
+      "en": "Drawing",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "多根生条或精梳条",
+      "output": "较均匀、伸直平行的棉条",
+      "summary": "把多根棉条并合，通过前后罗拉速度差牵伸，改善均匀度与纤维平行度。",
+      "process": [
+        "条筒列喂入多根棉条",
+        "罗拉牵伸与自调匀整",
+        "出条、圈条并换筒"
+      ],
+      "drive": [
+        "进给与输出驱动形成牵伸速度比；自调匀整系统按检测信号修正。",
+        "圈条、吸风与换筒各有驱动；本模型展示典型组合。"
+      ],
+      "quality": [
+        "条干不匀与定量偏差",
+        "罗拉隔距、压力和自调匀整设定"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜并条机官方技术手册",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v1-100158-en.pdf"
+        },
+        {
+          "title": "Rieter｜并条、精梳准备与粗纱设备",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation"
+        }
+      ],
+      "modelFeatures": [
+        "成列条筒",
+        "导条架",
+        "多对牵伸罗拉",
+        "紧凑机头与出条筒"
+      ],
+      "optional": false,
+      "note": "并条可以出现多次。精梳路线包含精梳准备中的预并条以及精梳后的并条；此节点代表设备类型，并非规定只做一道。"
+    },
+    {
+      "id": "combing",
+      "name": "精梳",
+      "en": "Combing",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "预并条后制成的棉卷",
+      "output": "精梳条与精梳落棉",
+      "summary": "在精梳路线中，先制备棉卷，再用钳板、圆梳和顶梳进一步去除短纤维与棉结。",
+      "process": [
+        "预并条后，经条并卷设备制成棉卷",
+        "多梳理头周期性夹持、梳理和分离接合",
+        "各头棉网汇合成条，随后再经并条"
+      ],
+      "drive": [
+        "主驱动协调钳板、圆梳和分离罗拉的周期运动。",
+        "受控棉卷喂入维持稳定定量；具体传动随机型不同。"
+      ],
+      "quality": [
+        "精梳落棉率与原料利用率",
+        "短绒、棉结与精梳条均匀度"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜E 90 精梳机",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90"
+        },
+        {
+          "title": "Rieter｜并条、精梳准备与粗纱设备",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation"
+        }
+      ],
+      "modelFeatures": [
+        "多组棉卷",
+        "周期钳持与梳理区",
+        "集条台",
+        "落棉吸风与条筒"
+      ],
+      "optional": true,
+      "note": "普梳纱可以跳过精梳；精梳纱的完整局部路线为：预并条→条并卷→精梳→精梳后并条。"
+    },
+    {
+      "id": "roving",
+      "name": "粗纱",
+      "en": "Roving",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "并条后的熟条",
+      "output": "带少量捻度的粗纱卷装",
+      "summary": "把棉条进一步牵细，加少量捻度后卷绕，为环锭细纱提供便于输送的喂入卷装。",
+      "process": [
+        "熟条喂入牵伸区",
+        "锭翼加捻并引导粗纱",
+        "筒管卷绕、升降成形与落纱"
+      ],
+      "drive": [
+        "典型配置：牵伸、锭翼、筒管及升降驱动协同控制。",
+        "锭翼与筒管的相对运动决定卷绕；电子牵伸可用于调整粗纱定量。"
+      ],
+      "quality": [
+        "粗纱定量、捻度与张力",
+        "卷绕密度及筒管成形"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜F 40 / F 20 粗纱机",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/roving-frame-f-40f-20/"
+        }
+      ],
+      "modelFeatures": [
+        "上部牵伸罗拉",
+        "两列锭翼",
+        "大粗纱筒管",
+        "升降龙筋"
+      ],
+      "optional": false,
+      "note": ""
+    },
+    {
+      "id": "spinning",
+      "name": "环锭细纱",
+      "en": "Ring spinning",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "粗纱",
+      "output": "细纱管纱",
+      "summary": "通过精细牵伸获得目标线密度，利用锭子、钢领和钢丝圈形成捻度并卷绕管纱。",
+      "process": [
+        "粗纱架喂入与牵伸",
+        "锭子带动管纱，钢丝圈沿钢领运行形成加捻与卷绕",
+        "钢领板升降成形，满管后落纱"
+      ],
+      "drive": [
+        "主驱动带动锭子传动系统；牵伸驱动控制输出速度及牵伸比。",
+        "钢领板升降和吸风分别驱动；模型不把钢丝圈误画为独立电机驱动。"
+      ],
+      "quality": [
+        "纱支、捻度、条干和毛羽",
+        "断头、钢领钢丝圈状态及锭子振动"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜G 38 环锭细纱机",
+          "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38"
+        },
+        {
+          "title": "Rieter｜短纤纺纱手册目录与工艺范围",
+          "url": "https://www.rieter.com/services/expertise/the-rieter-manual-of-spinning/"
+        }
+      ],
+      "modelFeatures": [
+        "长条双面机架",
+        "悬挂粗纱管",
+        "牵伸罗拉",
+        "密集锭子与钢领板"
+      ],
+      "optional": false,
+      "note": "本项目选环锭纺路线。转杯纺、喷气纺是替代路线，工序配置不同。"
+    },
+    {
+      "id": "winding",
+      "name": "自动络筒",
+      "en": "Automatic winding",
+      "section": "spinning",
+      "group": "spinning",
+      "input": "细纱管纱",
+      "output": "适合后续使用的筒子纱",
+      "summary": "把小管纱卷成大筒子，检测并处理纱疵，接头后形成均匀、可稳定退绕的卷装。",
+      "process": [
+        "管纱退绕与张力控制",
+        "电子清纱、切除疵点与捻接",
+        "交叉卷绕成筒并自动落筒"
+      ],
+      "drive": [
+        "单锭卷绕驱动带动槽筒或无槽筒导纱系统。",
+        "吸嘴、接头与落筒机构协同；卷绕张力和成形需匹配。"
+      ],
+      "quality": [
+        "清纱门限与接头质量",
+        "筒子密度、成形和定长"
+      ],
+      "sources": [
+        {
+          "title": "Rieter｜Autoconer X6 自动络筒机",
+          "url": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer"
+        },
+        {
+          "title": "Rieter｜Autoconer X6 卷绕与清纱部件",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-automatic-material-flow-type-d-v-brochure-3563-v1-98521-en.pdf"
+        }
+      ],
+      "modelFeatures": [
+        "重复络筒单元",
+        "锥形筒子",
+        "下方管纱供给",
+        "清纱器和吸嘴"
+      ],
+      "optional": false,
+      "note": "筒子纱分成经纱与纬纱两路：经纱去整经浆纱；纬纱可经相应准备后送入织机，不经过经纱浆纱流程。"
+    },
+    {
+      "id": "warping",
+      "name": "整经",
+      "en": "Warping",
+      "section": "weaving",
+      "group": "weaving",
+      "input": "经纱筒子",
+      "output": "平行排列的经轴纱层",
+      "summary": "按设计根数、长度和排列，把筒子纱平行卷绕到经轴，建立均匀张力的经纱片。",
+      "process": [
+        "筒子架退绕并控制各纱张力",
+        "经导纱机构平行排列",
+        "按定长、张力与卷绕密度形成经轴"
+      ],
+      "drive": [
+        "经轴电机调速以适应卷径变化；张力和制动控制影响均匀性。",
+        "筒子架张力器不等同于每个筒子都有电机；模型采用集中整经驱动。"
+      ],
+      "quality": [
+        "总经根数、纱线次序与长度",
+        "片纱张力、断头及经轴密度"
+      ],
+      "sources": [
+        {
+          "title": "KARL MAYER｜WARPDIRECT 分批整经机",
+          "url": "https://www.karlmayer.com/ecomaXL/files/KM_FS_WARPDIRECT_encn.pdf"
+        },
+        {
+          "title": "CottonWorks｜机织前准备",
+          "url": "https://cottonworks.com/learning-hub/weaving/preparation-for-weaving/"
+        }
+      ],
+      "modelFeatures": [
+        "大面积筒子架",
+        "梳状导纱架",
+        "宽经轴及挡盘",
+        "主驱动与控制台"
+      ],
+      "optional": false,
+      "note": "模型采用分批整经的概念布局；分条整经为另一种常用路线，尤其适合花色、短批量产品。"
+    },
+    {
+      "id": "sizing",
+      "name": "浆纱",
+      "en": "Sizing",
+      "section": "weaving",
+      "group": "weaving",
+      "input": "整经轴上的经纱",
+      "output": "上浆、烘干并卷成的织轴",
+      "summary": "使浆料附着于经纱并烘干，提高经纱抵抗织造摩擦的能力，随后分纱并卷成织轴。",
+      "process": [
+        "多经轴合并为纱片",
+        "浸浆与轧浆控制上浆",
+        "烘燥、分纱与织轴卷绕"
+      ],
+      "drive": [
+        "分区传动协调浆槽、烘筒与卷绕速度，控制伸长和张力。",
+        "浆泵和烘燥辅助设备另有驱动；热源与电机作用应分别理解。"
+      ],
+      "quality": [
+        "上浆率与浆液均匀性",
+        "回潮率、伸长率和分纱效果"
+      ],
+      "sources": [
+        {
+          "title": "KARL MAYER｜PROSIZE 浆纱工艺",
+          "url": "https://www.karlmayer.com/ecomaXL/files/KM_FS_PROSIZE_en.pdf"
+        },
+        {
+          "title": "CottonWorks｜机织前准备",
+          "url": "https://cottonworks.com/learning-hub/weaving/preparation-for-weaving/"
+        }
+      ],
+      "modelFeatures": [
+        "经轴架",
+        "浆槽和双轧辊",
+        "多只烘筒",
+        "出纱梳与织轴"
+      ],
+      "optional": false,
+      "note": "是否上浆取决于纱线与织造要求；此主路线按常见短纤棉经纱展示。"
+    },
+    {
+      "id": "drawing_in",
+      "name": "穿综穿筘",
+      "en": "Drawing-in",
+      "section": "weaving",
+      "group": "weaving",
+      "input": "浆纱织轴与织造组织设计",
+      "output": "穿过停经片、综丝和钢筘的经纱系统",
+      "summary": "将经纱按组织次序穿过停经片、综丝和钢筘，使后续开口运动形成预定织物组织。",
+      "process": [
+        "分离、排序并检测单根经纱",
+        "按组织循环穿入停经片、综眼和筘齿",
+        "连同织轴及织造组件转运上机"
+      ],
+      "drive": [
+        "自动穿经机以受控执行机构完成选纱、穿引和定位。",
+        "模型用伺服定位模块表达运动关系，不宣称特定厂商的内部轴系配置。"
+      ],
+      "quality": [
+        "错综、错筘、双根和漏穿",
+        "色纱或捻向排列与设计一致性"
+      ],
+      "sources": [
+        {
+          "title": "Stäubli｜SAFIR S80 穿综穿筘",
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-s80.html"
+        },
+        {
+          "title": "CottonWorks｜机织前准备",
+          "url": "https://cottonworks.com/learning-hub/weaving/preparation-for-weaving/"
+        }
+      ],
+      "modelFeatures": [
+        "织轴移动小车",
+        "竖直综框组",
+        "横向钢筘",
+        "穿经头与导轨"
+      ],
+      "optional": false,
+      "note": "连续生产同组织品种时，可采用结经换轴；更换组织时按实际工艺穿综穿筘。"
+    },
+    {
+      "id": "weaving",
+      "name": "机织",
+      "en": "Weaving",
+      "section": "weaving",
+      "group": "weaving",
+      "input": "织轴经纱 + 纬纱筒子",
+      "output": "坯布",
+      "summary": "开口、引纬和打纬循环交织经纬纱，送经与卷取共同维持张力和纬密。",
+      "process": [
+        "综框开口形成梭口",
+        "引纬机构把纬纱送过梭口",
+        "钢筘打纬，织轴送经与布辊卷取"
+      ],
+      "drive": [
+        "主电机驱动主轴和打纬；现代机型可采用直接驱动。",
+        "电子送经与卷取驱动调节经纱张力和纬密，开口驱动随机型而异。"
+      ],
+      "quality": [
+        "经纬断头、缺纬和双纬",
+        "经纱张力、纬密及布面疵点"
+      ],
+      "sources": [
+        {
+          "title": "Picanol｜OmniPlus-i Connect 织机官方样本",
+          "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Omniplus-i-Connect_brochure_2024_EN.pdf"
+        }
+      ],
+      "modelFeatures": [
+        "后方织轴",
+        "综框和钢筘",
+        "侧面主电机",
+        "前方布辊与纬纱供给"
+      ],
+      "optional": false,
+      "note": "本模型为机织原理示意；喷气、剑杆等引纬技术是设备选型分支。喷气引纬还需要压缩空气系统。"
+    },
+    {
+      "id": "pretreatment",
+      "name": "前处理",
+      "en": "Pretreatment",
+      "section": "finishing",
+      "group": "finishing",
+      "input": "带浆料与天然杂质的坯布",
+      "output": "可均匀染色的准备布",
+      "summary": "通过退浆、煮练和漂白等处理，去除影响润湿与染色的物质，获得所需吸水性和底白。",
+      "process": [
+        "按品种安排烧毛、退浆",
+        "煮练、漂白与反应停留",
+        "充分水洗、轧水，按下一步要求处理"
+      ],
+      "drive": [
+        "导布辊分区调速维持低张力；轧辊驱动保障稳定布速。",
+        "循环泵、计量泵与排风机辅助液流和环境控制。"
+      ],
+      "quality": [
+        "退浆效果、毛效和白度",
+        "幅宽、强力保留与均匀性"
+      ],
+      "sources": [
+        {
+          "title": "Benninger｜BEN-BLEACH 连续前处理",
+          "url": "https://benningergroup.com/en/textile-finishing/bleaching-solutions"
+        }
+      ],
+      "modelFeatures": [
+        "连续浸渍水洗槽",
+        "蛇形导布辊",
+        "汽蒸反应箱",
+        "循环泵及管路"
+      ],
+      "optional": false,
+      "note": "烧毛和丝光依品种选配。丝光通常用于改善棉织物光泽、吸染及尺寸表现；实际工序顺序需配合产品与设备配置。"
+    },
+    {
+      "id": "dyeing",
+      "name": "冷轧堆染色",
+      "en": "Cold pad-batch dyeing",
+      "section": "finishing",
+      "group": "finishing",
+      "input": "前处理后的棉织物",
+      "output": "堆置固色的卷装（后洗另配）",
+      "summary": "选择 Küsters DyePad 冷轧堆（CPB）路线：平幅浸轧后卷装堆置，再独立后洗完成染色；堆置不等同连续汽蒸。",
+      "process": [
+        "配液、计量和浸轧，在低浴量槽及两根泳动辊之间均匀给液。",
+        "卷装后按选定工艺堆置固色；慢转用于保持卷装状态。",
+        "堆置后另配水洗、皂洗及干燥；当前模型未把后洗接成一台设备。"
+      ],
+      "drive": [
+        "轧辊、导布和卷装驱动协调张力；堆置慢转与轧车生产是不同阶段。",
+        "配液、循环与计量泵服务供液；具体驱动和压力回路待核实。"
+      ],
+      "quality": [
+        "浸轧均匀性与左右/前后色差",
+        "堆置固色、充分后洗及洗涤/摩擦色牢度"
+      ],
+      "sources": [
+        {
+          "title": "Benninger | Küsters DyePad 冷轧堆染色",
+          "url": "https://benningergroup.com/en/textile-finishing/dyeing-solutions"
+        },
+        {
+          "title": "Benninger｜机织物染色系统样本",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Dyeing_Solutions/EN/Broschuere_Dyeing_EN.pdf"
+        }
+      ],
+      "modelFeatures": [
+        "高进布架",
+        "低浴量染液槽",
+        "双泳动轧液辊",
+        "配液辅助单元（布置推定）",
+        "堆置小车（订单待核实）"
+      ],
+      "optional": false,
+      "note": "当前参照为 DyePad CPB 单元与选定堆置辅助布局。水洗是堆置后的独立步骤，不是即进即出的连续汽蒸固色线；配液、堆置与后洗订单仍待核实。"
+    },
+    {
+      "id": "stenter",
+      "name": "拉幅热定型",
+      "en": "STENTERING / HEAT SETTING",
+      "section": "finishing",
+      "group": "finishing",
+      "input": "湿态或待整理织物",
+      "output": "达到目标幅宽、含湿率与整理状态的织物",
+      "summary": "兼具烘干与幅宽控制功能。全棉主要进行干燥、幅宽调整及适用整理；热塑性纤维可按对应条件进行热定型。",
+      "process": [
+        "整纬、上针或上铗并控制超喂",
+        "链轨带布通过分区热风室",
+        "冷却与落布，检测幅宽和含湿率"
+      ],
+      "drive": [
+        "链条与喂入驱动协调控制速度、张力及超喂。",
+        "循环风机和排风电机分别调节送风、循环及排湿。"
+      ],
+      "quality": [
+        "幅宽、纬斜、克重和残余含湿率",
+        "热风均匀性与整理效果"
+      ],
+      "sources": [
+        {
+          "title": "Monforts｜MONTEX 拉幅机",
+          "url": "https://www.monforts.de/en/products/stenters/"
+        }
+      ],
+      "modelFeatures": [
+        "长型分区烘房",
+        "两侧链轨",
+        "循环风机及风道",
+        "入口轧车和出口落布"
+      ],
+      "optional": false,
+      "note": "全棉路线用于拉幅、烘干和整理；涤纶等热塑性纤维可进一步通过热定型稳定尺寸。温度、时间和张力随纤维与整理要求确定。",
+      "equipment": "拉幅热定型机（兼烘干）"
+    },
+    {
+      "id": "calender",
+      "name": "轧光整理",
+      "en": "Calendering",
+      "section": "finishing",
+      "group": "finishing",
+      "input": "干燥并调湿的织物",
+      "output": "获得平整度、光泽或纹理的织物",
+      "summary": "织物通过受控压力的辊隙，利用压力、温度与辊面特征调整表面外观和手感。",
+      "process": [
+        "导布、调湿与张力控制",
+        "经过硬/软辊形成的轧点",
+        "冷却并卷绕或落布"
+      ],
+      "drive": [
+        "主电机经传动系统驱动辊组；不同轧光方式可采用不同表面速度。",
+        "液压系统提供轧点压力，不能把压力作用等同于主电机转矩。"
+      ],
+      "quality": [
+        "光泽、手感和布面压痕",
+        "轧点压力、温度与洗后效果"
+      ],
+      "sources": [
+        {
+          "title": "CottonWorks｜机械整理与轧光",
+          "url": "https://cottonworks.com/learning-hub/finishing/mechanical-finishing/"
+        }
+      ],
+      "modelFeatures": [
+        "竖直排列的轧辊",
+        "粗壮侧机架",
+        "侧面减速电机",
+        "液压加载组件"
+      ],
+      "optional": true,
+      "note": "轧光是可选外观整理，不等于预缩。棉织物若要求低洗涤缩水率，可另配橡胶毯预缩机；不同整理顺序按产品确定。"
+    },
+    {
+      "id": "inspection",
+      "name": "织物疵点检测",
+      "en": "Fabric defect inspection",
+      "section": "finishing",
+      "group": "finishing",
+      "input": "稳定走布的整理织物",
+      "output": "疵点位置、图像与复核记录",
+      "summary": "参照 Uster Fabriq Vision 2 检测系统：在受控照明与编码器同步下记录布面疵点，由控制台及复核工作站处理信息。",
+      "process": [
+        "检测单元在稳定走布条件下采集布面信息。",
+        "编码器同步长度与位置，记录疵点供分类和复核。",
+        "在控制台与 Album 工作站处理结果；放卷、收卷和包装另由配套设备完成。"
+      ],
+      "drive": [
+        "计长编码器使检测信息与走布位置对应。",
+        "张力与牵引由配套布路设备提供；此模型未包含已确定型号的收放卷驱动。"
+      ],
+      "quality": [
+        "疵点定位、图像质量与复核一致性",
+        "检测幅宽、照明和走布稳定性；物理化学性能仍需相应检验"
+      ],
+      "sources": [
+        {
+          "title": "Uster | Fabriq Vision 2 技术资料（2025-07）",
+          "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf"
+        },
+        {
+          "title": "Uster | Fabriq Vision 2 新品资料（2025-10-24）",
+          "url": "https://www.uster.com/fileadmin/user_upload/Images/AboutUster/News_and_Media/2025/251024_Uster_press_release_ITMA_Asia_2025_novelties_and_news.pdf"
+        }
+      ],
+      "modelFeatures": [
+        "2250 mm 检测幅宽的主机外形",
+        "SVC3 光学安装区域（相机配置待核实）",
+        "照明和编码器安装端",
+        "独立控制台",
+        "Album 复核工作站"
+      ],
+      "optional": false,
+      "note": "当前参照仅为检测系统、控制台与复核工作站，不是完整验布卷装线。未确定配套收放卷机，也未虚构相机数量；内部光学和电气仍待订单资料核实。"
+    },
+    {
+      "id": "compact_spinning",
+      "name": "紧密纺",
+      "en": "Compact spinning",
+      "input": "粗纱",
+      "output": "低毛羽的紧密纱管纱",
+      "summary": "在环锭加捻前，用多孔筛鼓和受控负压把牵伸后的纤维束横向集聚，再经钢领、钢丝圈和锭子加捻卷绕。",
+      "process": [
+        "粗纱喂入与罗拉/皮圈牵伸",
+        "筛鼓、Bright吸风嵌件与Detect导流元件集聚纤维束",
+        "钢领与钢丝圈配合锭子完成真捻及管纱卷绕",
+        "集体落纱后进入络筒"
+      ],
+      "drive": [
+        "一台主锭子电机经主带、纵向共轴和72组四锭锭带带动288锭。",
+        "电子牵伸系统控制牵伸比和筛鼓运动；单通道抽吸产生集聚负压。",
+        "钢领板升降控制卷绕成形；外部驱动布局与隐藏分配部分明确为推定。"
+      ],
+      "quality": [
+        "集聚负压与Detect状态",
+        "条干、毛羽、强力和捻度一致性",
+        "逐锭断头监测、牵伸区压力和落纱可靠性"
+      ],
+      "sources": [
+        {
+          "title": "Rieter K 48 当前产品页",
+          "url": "https://www.rieter.com/products/systems/compact-spinning-machines/compact-spinning-machine-k-48",
+          "publicationDate": null,
+          "evidence": "当前官网读取；不以抓取日替代发布年份"
+        },
+        {
+          "title": "K 48 3237-v6 英文技术册；第12/16/30/31页",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-k-48-compact-spinning-machine-brochure-3237-v6-95005-en.pdf",
+          "publicationDate": "2025-04",
+          "evidence": "PDF末页版号3237-v6 en 2504；原文件下载及实际页面视觉检查"
+        }
+      ],
+      "optional": true,
+      "note": "紧密纺是传统环锭细纱工位的替代分支，并非在普通环锭纺完成后再串接一道工序。完整选定K48为288锭；不把集聚单元等同于加弹或倍捻。",
+      "branchType": "alternative",
+      "linkTo": "spinning",
+      "routeLabel": "粗纱 → 紧密纺（替代环锭细纱）→ 络筒",
+      "branchFrom": "roving",
+      "branchTo": "winding",
+      "modelFeatures": [
+        "288完整集聚锭位",
+        "多孔筛鼓与Detect",
+        "72组四锭锭带",
+        "集体落纱与单通道吸风"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    },
+    {
+      "id": "twisting",
+      "name": "倍捻",
+      "en": "Two-for-one twisting",
+      "input": "已并纱/并合络筒的多根单纱卷装",
+      "output": "具有规定真捻的股线筒子",
+      "summary": "并合纱从静止锭罐内经空心锭子和储纱盘引出，形成罐外气圈；每转在内外两个区段各加一捻，再经超喂和卷绕制成股线。",
+      "process": [
+        "上游先完成并纱/并合络筒，本配置不选TwinPack双筒直喂",
+        "静止罐内退绕，经张力制动进入空心锭子",
+        "转子径向出纱形成外部气圈，每转实现两次真捻",
+        "气圈导纱、超喂和横动摩擦卷绕形成股线筒子"
+      ],
+      "drive": [
+        "主电机经机械分配和切向锭带驱动20个锭转子，静止锭罐不随转子旋转。",
+        "机械分配控制超喂、摩擦辊与横动；隐藏齿轮和精确传动比未公开。",
+        "所选为20锭机械控制型，不借用最少120锭电子控制型的伺服配置。"
+      ],
+      "quality": [
+        "合股根数、单纱张力与捻度/捻向",
+        "气圈稳定性、毛羽及断头",
+        "卷绕密度、卷装成形和各工位一致性"
+      ],
+      "sources": [
+        {
+          "title": "Saurer CompactTwister 当前产品页",
+          "url": "https://saurer.com/en/products/machines/twisting-and-cabling/staple/compacttwister",
+          "publicationDate": null,
+          "evidence": "当前页面仍挂Series 8和2019技术册"
+        },
+        {
+          "title": "CompactTwister 原厂技术册：机械版第18页、电子版第19页、截面第8/9页",
+          "url": "https://saurer.com/media/266/download/2019_CompactTwister_EN.pdf?v=2",
+          "publicationDate": "2019-06",
+          "evidence": "从当前官网HTML实际下载链接取得PDF；末页Copyright 06.2019；实看第8与18页"
+        }
+      ],
+      "optional": true,
+      "note": "倍捻是股线生产中的可选支线。普通络筒后的单纱必须先并合，不能直接视作合股喂入；本模型未另建并纱机。真捻保留在成品股线中，区别于加弹机的假捻。",
+      "branchType": "optional_branch",
+      "linkTo": "winding",
+      "routeLabel": "络筒 → 并纱/并合络筒（未建模）→ 倍捻 → 股线筒子",
+      "branchFrom": "assembly_winding",
+      "branchTo": "plied_yarn",
+      "requiresUnmodeledStage": "assembly_winding",
+      "modelFeatures": [
+        "完整20锭双面机节",
+        "静止锭罐与锭转子",
+        "完整外部气圈",
+        "超喂、横动及摩擦卷绕"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    },
+    {
+      "id": "texturing",
+      "name": "牵伸假捻加弹",
+      "en": "Draw texturing",
+      "input": "聚酯预取向长丝 POY",
+      "output": "具有卷曲和蓬松性的牵伸变形丝 DTY",
+      "summary": "利用喂纱速度差牵伸长丝，经过加热、冷却和摩擦假捻形成热定型卷曲，退捻后的丝束再经二热、上油与卷绕成为DTY。",
+      "process": [
+        "固定筒架POY退绕并经G1喂入",
+        "2.0m主加热与1.1m冷轨控制丝束温度",
+        "摩擦盘假捻与G2牵伸配合形成卷曲结构",
+        "1.46m二热调节收缩与扭矩，再经W3喂纱",
+        "上油、横动卷绕，完整384工位手动落筒"
+      ],
+      "drive": [
+        "喂入与牵伸godet控制速度比及张力，不能把加热器当电机。",
+        "摩擦盘驱动在加弹区引入假捻；所选驱动形式需与模型节点及配置对应。",
+        "W3、Camshaft横动/卷绕驱动控制成形；具体机内传动未获OEM总图。"
+      ],
+      "quality": [
+        "牵伸比、张力、D/Y比与断丝",
+        "主加热/冷却/二热状态及丝束热历史",
+        "卷曲、沸水收缩、残余扭矩、染色均匀性与筒子成形"
+      ],
+      "sources": [
+        {
+          "title": "Barmag eFK 当前产品页",
+          "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk/",
+          "publicationDate": null,
+          "evidence": "现售平台；与eFK EvoSmart并列，不能称最新一代"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_02 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_02_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-02",
+          "evidence": "日期来自文件名；官方URL的搜索索引全文读取，原链接当前404；未取得该版原PDF，参数置信度受此限制"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_05 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_05_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-05",
+          "evidence": "同一384工位参数搜索索引交叉核对；原链接当前404；日期来自文件名"
+        },
+        {
+          "title": "Barmag DTY manufacturing 当前通用册",
+          "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true",
+          "publicationDate": "2026-04",
+          "evidence": "当前官网真实下载链接，PDF末页BBA205 04/2026；实际下载并查看11、13页机构照片，非eFK专用整机图"
+        },
+        {
+          "title": "eFK EvoSmart 2026官方新闻：用于与选定eFK区分",
+          "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+          "publicationDate": "2026-01-08",
+          "evidence": "更近期平台另有SmartGodets/EvoHeater；本模型不套用其技术名称"
+        },
+        {
+          "title": "原厂2017期刊：eFK卷绕与导纱局部图，不作为当前容量依据",
+          "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_28_en.pdf?download=true",
+          "publicationDate": "2017-10",
+          "evidence": "PDF下载并实际查看第24页；仅部件外观参考"
+        },
+        {
+          "title": "早期原厂eFK brochure文本副本：type 8切向带与type 8E单独驱动的区别",
+          "url": "https://www.yumpu.com/en/document/view/4112004/efk-oerlikon-barmag-oerlikon-textile",
+          "publicationDate": null,
+          "evidence": "原厂作者资料的第三方历史转存，2012上传时间不等于厂家出版年；仅搜索索引文本核对，不宣称实际看到了V型截面。用于识别驱动形式，非当前订单BOM。"
+        }
+      ],
+      "optional": true,
+      "note": "这是化纤POY→DTY独立路线，不能直接串入全棉纺纱主线。假捻使纱在加工区暂时加捻再退捻，留下热定型卷曲；不是倍捻机每转两次的永久真捻。采用当前列售eFK公开384工位配置，不称EvoSmart。",
+      "branchType": "independent",
+      "linkTo": null,
+      "routeLabel": "化纤支线：POY → 牵伸假捻加弹 → DTY",
+      "branchFrom": "POY",
+      "branchTo": "DTY",
+      "modelFeatures": [
+        "16节384完整工位",
+        "V型加热冷却区",
+        "双面三层卷绕",
+        "固定POY筒架"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    },
+    {
+      "id": "rotor_spinning",
+      "name": "气流纺（转杯纺）",
+      "equipment": "气流纺（转杯纺纱机）",
+      "en": "ROTOR / OPEN-END SPINNING",
+      "section": "yarn_processing",
+      "group": "yarn_processing",
+      "branchType": "alternative_branch",
+      "input": "经准备的棉条或适纺短纤维条",
+      "output": "转杯纱筒子",
+      "summary": "棉条由分梳辊开松，纤维经气流送入高速转杯，在凝聚槽内汇聚成纱。纱线连续引出并直接卷成筒子。",
+      "process": [
+        "条筒 → 喂给罗拉与给棉板，控制供纤量",
+        "针布分梳辊 → 输纤通道 → 转杯凝聚槽，纤维汇聚并加入引出的纱尾",
+        "引纱嘴 → 引纱罗拉 → 导纱器与卷绕工作辊，形成圆柱筒子",
+        "接头和清杯由纺位自动化完成；机器人落筒后，经同侧输送带向机端输出"
+      ],
+      "drive": [
+        "每位各设喂条、分梳、转杯、卷绕和横动导纱五项独立驱动。选择一类电机和一个纺位可查看对应负载。",
+        "引纱罗拉可以定位。其动力归属和公用辅机的电机数量在所查技术册中未逐项列出。"
+      ],
+      "quality": [
+        "喂条均匀性、分梳状态与排杂",
+        "转杯凝聚槽清洁、纱条条干、捻度和接头质量",
+        "卷绕密度、横动成形及筒子退绕性能"
+      ],
+      "note": "转杯纺从条子直接成筒；经纱可进入整经，纬纱可按织机要求供纬。这条路线绕过粗纱、环锭细纱及管纱络筒。",
+      "routeLabel": "并条 → 转杯纺 → 筒子纱 → 整经或供纬",
+      "branchFrom": "drawing",
+      "branchTo": "warping",
+      "optional": true,
+      "sources": [
+        {
+          "title": "立达 R 70 全自动转杯纺纱机",
+          "url": "https://www.rieter.com/products/systems/rotor-spinning-machines/rotor-spinning-machine-r-70",
+          "supports": "当前在列型号、逐位自动化与吸风设计。"
+        },
+        {
+          "title": "立达 R 70 原厂技术册",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-r-70-v2-rotor-spinning-machine-brochure-3313-v4-95393-en.pdf",
+          "printedPages": [
+            2,
+            6,
+            8,
+            9,
+            10
+          ],
+          "supports": "整机照片、纺纱箱正面、基础机尺寸、五项单电机驱动以及选配边界。"
+        },
+        {
+          "title": "立达转杯纺成套工艺路线",
+          "url": "https://www.rieter.com/products/system-applications/rotor-spinning-system",
+          "supports": "从纤维准备、梳理和条子准备到转杯成纱及卷装的流程。"
+        }
+      ]
+    },
+    {
+      "id": "assembly_winding",
+      "name": "并纱",
+      "equipment": "SSM CWX-D 槽筒并纱机",
+      "en": "Assembly winding",
+      "section": "yarn_processing",
+      "input": "两根短纤单纱及其供纱卷装",
+      "output": "二股平行合股卷装（尚需按产品要求加捻）",
+      "process": [
+        "两只静止供纱卷装分别从端部退绕",
+        "各单纱经过独立导纱、张力与断纱检测位置",
+        "两根纱在导纱器并合，缺股时停止卷绕",
+        "独立锭位驱动槽筒，其槽形让纱横向往复分布",
+        "槽筒与筒子接触形成合股交叉卷装"
+      ],
+      "quality": [
+        "缺股与单根断纱监控",
+        "两根纱的张力均衡",
+        "卷装密度与退绕性能",
+        "避免把并纱误认为加捻工序"
+      ],
+      "summary": "把两根短纤单纱按可控张力平行并合并卷成适于后续捻线的卷装，本工序不赋予规定捻度。每锭独立驱动槽筒，槽沟同时完成排纱，筒子通过表面接触卷绕。",
+      "sources": [
+        {
+          "title": "SSM 当前并纱机产品页：CWX-D",
+          "url": "https://www.ssm.ch/products/winding-solutions/assembly-winding-machines",
+          "supports": "单锭独立驱动，2/3股，槽筒排纱，152 mm，10–80锭。"
+        },
+        {
+          "title": "SSM Product portfolio，p.20，当前官网版本",
+          "url": "https://www.ssm.ch/fileadmin/ssm/documents/products/winding/ssm-product-range-3615-en.pdf",
+          "supports": "CWX-D技术表与整机照片；公开最小10锭双面配置。"
+        }
+      ],
+      "group": "yarn_processing",
+      "optional": true,
+      "drive": [
+        "每锭独立电动驱动；功率和电机型式未披露",
+        "供纱卷装端部退绕，不设置供纱旋转电机"
+      ],
+      "note": "公开最小完整10锭，双面5+5；选用2股供纱，20只静止退绕供纱卷装；152 mm槽筒排纱；圆柱合股卷装。"
+    },
+    {
+      "id": "airjet_spinning",
+      "name": "喷气纺",
+      "equipment": "Rieter J 70 自主喷气纺纱机",
+      "en": "Air-jet spinning",
+      "section": "yarn_processing",
+      "input": "适用原料及纱支范围内的充分准备熟条；示例为纤维素短纤熟条",
+      "output": "喷气纱圆柱卷装",
+      "process": [
+        "条筒喂入熟条并通过牵伸钳口",
+        "压缩空气进入两片式喷嘴壳体，在陶瓷纺纱尖端形成包缠纱结构",
+        "成纱通过接头工作区、Q30A与引纱钳口",
+        "直线横动导纱与卷绕单元形成圆柱卷装",
+        "单纺位处理断头接头；落筒机器人换筒及辅助接头",
+        "双侧成筒带输送卷装，空管供给箱补给；废料自动压实移出"
+      ],
+      "quality": [
+        "牵伸均匀性与喂条准备",
+        "喷嘴气压、纺纱尖端与纤维适配",
+        "Q30A清纱与弱纱检测选项按订货配置",
+        "接头质量与筒子退绕品质",
+        "不能把气流成纱解释成电动转杯或实体锭子加捻"
+      ],
+      "summary": "熟条经过牵伸形成纤维束，再由压缩空气在喷嘴内成纱，随后引纱、清纱和卷绕。每个纺位可自主接头，机器人负责落筒、空管辅助纱等工作。",
+      "sources": [
+        {
+          "title": "Rieter J70 当前产品页",
+          "url": "https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70",
+          "supports": "独立纺纱及卷绕单元，气流纺平台、双面分节配置、Q30A与圆柱卷装。"
+        },
+        {
+          "title": "Rieter J70 brochure 3584-v1 en 2305，p.18–19",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+          "supports": "40纺位2节2机器人基础配置、11113×3029×3100 mm、255 mm、1070 mm条筒及驱动/物流参数。"
+        },
+        {
+          "title": "Rieter J70 brochure，p.4、11、13–14",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+          "supports": "实际整机/纺位近景，压缩空气喷嘴、可开启外壳，自主接头、机器人职责及废料处理。"
+        }
+      ],
+      "group": "yarn_processing",
+      "optional": true,
+      "drive": [
+        "独立纺纱单元已证实；本图每位1处外形表示牵伸功能，实际各罗拉电机分配未披露",
+        "每卷绕单元独立驱动；电机实型及轴端联接未披露",
+        "压缩空气；空压机为外部公用系统，本机未虚构喷嘴电机",
+        "真实驱动归属、独立电机数量未核；不补造横动电机",
+        "各执行器为电动或气动及其数量未披露",
+        "行走驱动外观为功能推定；其他执行轴与气动件不补造",
+        "每带一处驱动外观为示意，实际电机与减速件未披露",
+        "未取得风机与压实器驱动清单，保留未知动力源"
+      ],
+      "note": "官方p.18基础40纺位、2机节、2落筒机器人；255 mm节距；1070 mm条筒；机长11113 mm、宽3029 mm、高3100 mm。圆柱卷装，选用Q30A；不选择上蜡或VARIOlot。"
+    },
+    {
+      "id": "warp_tying",
+      "name": "自动结经",
+      "equipment": "TIEPRO 自动结经机与 TPF 结经架",
+      "en": "Automatic warp tying machine",
+      "section": "weaving",
+      "input": "按对应顺序夹持的旧经纱片和新经纱片",
+      "output": "逐根相接的新旧经纱接头，待牵引通过原织造机构",
+      "process": [
+        "夹持并平行整理新旧经纱片。",
+        "锥形分纱器分别取出对应纱线，电子检测是否双纱。",
+        "检测到双纱时先退回重分纱，不能先切断纱线。",
+        "有效配对后打结、修剪，并沿经纱幅宽推进至下一对。"
+      ],
+      "quality": [
+        "对应次序与漏结/双纱检测",
+        "接头牢度、短尾长度与通过性",
+        "新旧经纱张力和夹持均匀性"
+      ],
+      "summary": "把新经轴的经纱与旧经纱逐根打结，保留原有穿综穿筘关系以完成换轴；不代替变更组织时的自动穿经。",
+      "sources": [
+        {
+          "title": "Stäubli TIEPRO 当前产品页",
+          "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html",
+          "supports": "当前在列；锥形分纱、最高600结/分、电子双纱检测和先退回重分纱再切纱。未披露电机数量或内部传动。"
+        },
+        {
+          "title": "Stäubli TPF 结经架当前产品页",
+          "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/warp-tying-frame-tpf.html",
+          "supports": "支持TIEPRO；可选100–560cm结经宽度；A式平直夹紧和B式90度转杆夹紧。"
+        },
+        {
+          "title": "Stäubli TIEPRO 原厂整机照片",
+          "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--5020de82-55f0-4449-be0d-9831cf2d7355/warp-tying-machine-all-type-yarn-tiepro-hip.jpg?preferwebp=true&quality=75",
+          "supports": "已实际查看：青绿上盖、顶部屏幕/提手、金属下机身、前露分纱与打结工作区。无尺寸标注。"
+        },
+        {
+          "title": "Stäubli TPF 原厂照片",
+          "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--a4f4e34e-c016-4e9a-b328-9a051adc9320/tpf-tying-frame-hip-2x.jpg?preferwebp=true&quality=75",
+          "supports": "已实际查看：双立柱、四脚轮、窄长夹纱框、横杆、手动夹持与托钩。"
+        },
+        {
+          "title": "Stäubli ITM FLASH 2024 原厂资料，第4页",
+          "url": "https://www.staubli.com/content/dam/textile/showpad/fairs/itm-2024/FLASH_2024_ITM-T%C3%BCrkiye_ENG.pdf",
+          "supports": "2024展会资料确认锥形分纱、无分纱针、无油浴及自动退回；未把电子检测说成电机。"
+        }
+      ],
+      "group": "weaving",
+      "optional": true,
+      "drive": [
+        "内部动力型式和轴数未披露；1个模型主驱动功能位置",
+        "内部执行轴/电机数量未公开；共享主驱动仅为功能推定",
+        "实际横移执行动力未公开，未单独建模电机",
+        "电子传感与控制逻辑，不是电机"
+      ],
+      "note": "1台TIEPRO结经头；TPF A式平直夹纱；模型选定2.16m有效经纱片、上下各480根经纱；非厂家固定纱数/订单尺寸。"
+    },
+    {
+      "id": "washing_range",
+      "name": "平幅水洗与皂洗",
+      "equipment": "BEN-WASH 连续平幅水洗／皂洗线",
+      "en": "Open-width Washing and Soaping Range",
+      "section": "finishing",
+      "input": "染后或印后待皂洗的平幅织物",
+      "output": "洗净浮色与助剂、经轧液的湿态平幅织物",
+      "process": [
+        "进布退卷、展布与分段张力控制",
+        "第一 TRIKOFLEX 与两个 EXTRACTA 逐步换液洗涤",
+        "TEMPACTA 输送、堆置和停留皂洗",
+        "第二 TRIKOFLEX 与末端 EXTRACTA 继续洗涤",
+        "轧液与出布卷装，后续烘干另选设备"
+      ],
+      "quality": [
+        "洗液浓度与逆流方向",
+        "停留时间、温度与配方",
+        "张力和折皱",
+        "色牢度与残留助剂",
+        "末端轧余率"
+      ],
+      "summary": "转鼓正反面洗涤、分格逆流水洗与停留皂洗串联；完整观察布路及牵引、输送和洗液泵的工位关系。",
+      "sources": [
+        {
+          "title": "Benninger BEN-WASH 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/washing-solutions",
+          "supports": "当前产品系列与模块化范围。"
+        },
+        {
+          "title": "Benninger Washing Solutions 官方技术册",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Washing_Solutions/Broschuere_Washing_EN.pdf",
+          "supports": "印刷页 4：组合线；6–9：EXTRACTA / TRIKOFLEX；12：TEMPACTA。未提供本模型电机总表。"
+        }
+      ],
+      "group": "finishing",
+      "optional": true,
+      "drive": [
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。"
+      ],
+      "note": "采用官方技术册第 4 页中间的染后／印后组合流程：2 个 TRIKOFLEX、3 个 EXTRACTA、1 个 TEMPACTA，配进布、分段牵引、末端轧液和卷装。各 EXTRACTA 选择 5 个 EA 单穿布带压辊回环。辊数、尺寸及 18 个电机位置为本次功能示意，不是原厂 BOM；该组合未选烘筒。"
+    },
+    {
+      "id": "singeing",
+      "name": "织物烧毛",
+      "equipment": "Super Singe 双面织物气体烧毛机",
+      "en": "Fabric gas singeing machine",
+      "section": "finishing",
+      "input": "平幅坯布或经整理的待烧毛织物",
+      "output": "经刷毛、烧毛和灭火的平幅织物",
+      "process": [
+        "张力控制后导入预刷毛区，毛刷起毛并抽走浮尘。",
+        "按所选双面布路绕过4个水冷导布辊，以2个狭缝燃烧器处理织物两面。",
+        "火焰由燃气与助燃空气形成；冷却水保护燃烧器和导布辊。",
+        "进入蒸汽灭火与后刷毛，出口牵引至下一工序。"
+      ],
+      "quality": [
+        "去毛均匀性与残留毛羽",
+        "车速、火焰强度、布火距离与布面损伤",
+        "水流/温度、抽风、燃气比例及失电退避联锁",
+        "灭火效果、边部余火及运行张力"
+      ],
+      "summary": "以短时火焰处理去除织物表面毛羽，前后刷毛清洁并及时灭火；为后续退浆、精练和染整提供较洁净布面。",
+      "sources": [
+        {
+          "title": "SWASTIK Super Singe 当前产品页",
+          "url": "https://www.swastiktextile.com/gas-singening-machine-super-singe/",
+          "supports": "当前官网在列；明确交流电机直接连接刷毛辊、独立吸尘、2个狭缝水冷燃烧器、单/双面烧毛、失电退避、80–150m/min。"
+        },
+        {
+          "title": "SWASTIK Super Singe 原厂4页样本",
+          "url": "https://www.swastiktextile.com/Download%20Catalogue/gas_singeing_machine.pdf",
+          "supports": "已下载并逐页查看：第1/4页整机照片；第2–3页完整布路、前后双刷辊、助燃及排风风机、4个水冷导布辊、2燃烧器及安全退避。第4页说明未配退浆槽时采用蒸汽灭火。封面有1937–2012周年标记，不称2026新型号。"
+        }
+      ],
+      "group": "finishing",
+      "optional": true,
+      "drive": [
+        "交流电机直联；电磁转子类型未披露",
+        "交流电机直联；电磁转子类型未披露",
+        "电机驱动风机的功能推定；型式/安装未核",
+        "电机驱动风机的功能推定；型式/安装未核",
+        "电机驱动风机的功能推定；型式/安装未核",
+        "动力型式与传动比未公开，1个功能工位",
+        "点火为高压火花；退避执行方式未完整公开，不是已确认旋转电机",
+        "外部蒸汽供给，无本机旋转电机归属"
+      ],
+      "note": "选定1.8m布幅/2.0m辊面；前后各2刷辊、2狭缝燃烧器、4水冷导布辊；独立刷毛吸尘、助燃和燃烧排风；蒸汽灭火；不选可选预烘及退浆浸渍槽。尺寸为模型选定、非已确认OEM安装图。"
+    },
+    {
+      "id": "mercerizing",
+      "name": "丝光",
+      "equipment": "BEN-DIMENSA 有链／无链联合丝光机",
+      "en": "Combined Chain and Chainless Mercerizing Range",
+      "section": "finishing",
+      "input": "待丝光的棉机织物",
+      "output": "经过展幅稳定、抽碱及后洗的丝光湿布",
+      "process": [
+        "双浸渍与受控停留",
+        "张力补偿后进入短夹链展幅区",
+        "SECTION CONTROL 布边伸展，真空抽碱并配弱碱喷淋",
+        "稳定区正反面洗涤，保持经纬尺寸并降低含碱量",
+        "TRIKOFLEX 后洗、轧液与出布"
+      ],
+      "quality": [
+        "碱浓度和温度",
+        "浸渍与停留均匀性",
+        "幅宽、经向伸长和边中差",
+        "稳定区入布含碱量",
+        "后洗残碱与尺寸稳定"
+      ],
+      "summary": "追踪碱液浸渍、夹链展幅、稳定抽碱和后洗全过程，区分输布、夹链、调幅以及碱液／真空动力。",
+      "sources": [
+        {
+          "title": "Benninger BEN-DIMENSA 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/mercerizing-solutions",
+          "supports": "当前系列及有链／无链组合原理。"
+        },
+        {
+          "title": "Benninger Mercerizing Solutions 2024 官方技术册",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Mercerizing_Solutions/Broschuere_Mercerizing_EN_2024.pdf",
+          "supports": "印刷页 6–13：工艺分区、碱液系统、夹链、SECTION CONTROL、真空抽碱、稳定和后洗。"
+        }
+      ],
+      "group": "finishing",
+      "optional": true,
+      "drive": [
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "不指定电机；能源及真实动力分配见动作说明。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。"
+      ],
+      "note": "选择棉机织物有链／无链组合功能线：双浸渍及停留、短夹链展幅、SECTION CONTROL、真空抽碱、两区稳定、两模块 TRIKOFLEX 后洗、轧液及进出布。22 个电机位置、辊数、调幅轴数及尺寸为功能示意，不作为原厂标准 BOM。"
+    },
+    {
+      "id": "sanforizing",
+      "name": "橡毯预缩",
+      "equipment": "POWER-SHRINK 橡毯预缩整理线",
+      "en": "Rubber-belt Sanforizing Range",
+      "section": "finishing",
+      "input": "待降低缩水率的机织物",
+      "output": "经过预缩、稳定及冷却的成品织物",
+      "process": [
+        "储布架连续供布，气动摆辊控制张力",
+        "蒸汽滚筒润湿",
+        "橡毯压缩与回复使织物机械预缩",
+        "毛毯包覆蒸汽烘筒干燥稳定",
+        "冷却、出布储布和卷装；磨毯属于停产维护"
+      ],
+      "quality": [
+        "残余缩水率",
+        "润湿率和温度",
+        "橡毯压缩量、速度及表面状态",
+        "毛毯张力与烘筒温度",
+        "冷却后的张力与手感"
+      ],
+      "summary": "观察橡毯在压辊与热滚筒间形变压缩布幅，然后毛毯干燥稳定、冷却与卷装；维护磨毯单列。",
+      "sources": [
+        {
+          "title": "Brückner POWER-SHRINK 当前产品页",
+          "url": "https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html",
+          "supports": "当前机型、橡毯、水冷、内置磨毯及毛毯组合。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 5",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page5.html",
+          "supports": "储布架气动摆辊和蒸汽滚筒。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 6",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page6.html",
+          "supports": "水冷、内置磨毯与选配抽屑。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 8（英／西版）",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-es/files/basic-html/page8.html",
+          "supports": "毛毯干燥稳定及 800/1500/2000/2500 mm 烘筒选项。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 10",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page10.html",
+          "supports": "衬衫／裤料线含进出储布架，重磅牛仔另选整纬及预拉幅。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 4",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page4.html",
+          "supports": "橡毯、压辊和预缩热滚筒的作用。"
+        }
+      ],
+      "group": "finishing",
+      "optional": true,
+      "drive": [
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "不指定电机；能源及真实动力分配见动作说明。"
+      ],
+      "note": "选择衬衫／裤料连续整理功能线：进布卷及储布架、蒸汽滚筒、单橡毯预缩、1500 mm 毛毯烘筒、2 只冷却辊、出布储布架和卷装。保留内置磨毯与水冷，选择磨屑抽吸选件。未选重磅牛仔线的额外整纬／预拉幅模块。12 个电机点和传动拆分为功能示意，非原厂轴数。"
+    }
+  ],
+  "routeNotes": [
+    "范围：已轧花皮棉→棉环锭纱→机织坯布→匹染/整理→成品布。16个节点代表设备与工艺模块，不是所有订单都逐一经过的固定配方。",
+    "普梳路线：开清棉→梳棉→并条（一道或多道，按工艺）→粗纱→环锭细纱→络筒。",
+    "精梳路线：开清棉→梳棉→预并条→条并卷→精梳→精梳后并条→粗纱→环锭细纱→络筒。界面中的并条设备可在不同位置复用。",
+    "织造准备分为两路：经纱筒子→整经→浆纱→穿综穿筘/结经→织机；纬纱筒子按需要准备后直接供纬。",
+    "染整按产品选配：前处理→染色及充分水洗（白布可跳过染色）→烘干/定幅→所需机械或化学整理→验布。烧毛、丝光、轧光、预缩均需按品种组合。",
+    "橡胶毯预缩通过受控机械压缩改善经向残余缩水；它与轧光是不同工艺。预缩可作为后整理独立模块，不应以轧光代替。",
+    "模型的实际版本、厂家参考与所选配置见「型号与配置」。未证实的尺寸、内部装配和辅助系统逐项保留待核实；动画仅表达原理，通用电机不代表各设备原装驱动。",
+    "本轮染色选择 CPB：浸轧、卷装堆置、独立后洗。最终检测参照 Fabriq Vision 2；未确定的收放卷机不并入该模型。",
+    "紧密纺替代普通环锭细纱：粗纱→紧密纺→络筒，不是环锭细纱后的追加工序。",
+    "倍捻用于并纱准备后的选配加捻；加弹是化纤POY到DTY的独立路线。两者不串接到棉纺主线末尾。",
+    "拉幅设备兼有烘干功能。全棉的干燥和幅宽整理与热塑性纤维的热定型需按材料分别理解。",
+    "转杯纺从条子直接成筒；经纱可进入整经，纬纱可按织机要求供纬。这条路线绕过粗纱、环锭细纱及管纱络筒。"
+  ],
+  "notes": [
+    "范围：已轧花皮棉→棉环锭纱→机织坯布→匹染/整理→成品布。16个节点代表设备与工艺模块，不是所有订单都逐一经过的固定配方。",
+    "普梳路线：开清棉→梳棉→并条（一道或多道，按工艺）→粗纱→环锭细纱→络筒。",
+    "精梳路线：开清棉→梳棉→预并条→条并卷→精梳→精梳后并条→粗纱→环锭细纱→络筒。界面中的并条设备可在不同位置复用。",
+    "织造准备分为两路：经纱筒子→整经→浆纱→穿综穿筘/结经→织机；纬纱筒子按需要准备后直接供纬。",
+    "染整按产品选配：前处理→染色及充分水洗（白布可跳过染色）→烘干/定幅→所需机械或化学整理→验布。烧毛、丝光、轧光、预缩均需按品种组合。",
+    "橡胶毯预缩通过受控机械压缩改善经向残余缩水；它与轧光是不同工艺。预缩可作为后整理独立模块，不应以轧光代替。",
+    "模型的实际版本、厂家参考与所选配置见「型号与配置」。未证实的尺寸、内部装配和辅助系统逐项保留待核实；动画仅表达原理，通用电机不代表各设备原装驱动。",
+    "本轮染色选择 CPB：浸轧、卷装堆置、独立后洗。最终检测参照 Fabriq Vision 2；未确定的收放卷机不并入该模型。"
+  ],
+  "motor": {
+    "title": "通用三相感应电机结构",
+    "scope": "用于理解典型工业驱动结构；并非宣称所有纺机都采用同一种电机。",
+    "parts": [
+      {
+        "id": "housing",
+        "name": "机座与散热鳍",
+        "role": "承载定子并提供散热表面。"
+      },
+      {
+        "id": "stator",
+        "name": "定子铁心与绕组",
+        "role": "通电后建立旋转磁场；外观用叠片和铜色端部绕组表达。"
+      },
+      {
+        "id": "rotor",
+        "name": "转子与输出轴",
+        "role": "通过电磁作用产生转矩，将机械功输出到负载。"
+      },
+      {
+        "id": "bearing",
+        "name": "两端轴承",
+        "role": "支承转轴并限制不必要的位移。"
+      },
+      {
+        "id": "endshield",
+        "name": "前后端盖",
+        "role": "定位轴承并封闭机体端部。"
+      },
+      {
+        "id": "fan",
+        "name": "冷却风扇与风罩",
+        "role": "典型自扇冷结构引导空气流过机座；不是所有专用电机均有此部件。"
+      },
+      {
+        "id": "terminal",
+        "name": "接线盒与电缆入口",
+        "role": "容纳电气连接，并与驱动柜连接。"
+      },
+      {
+        "id": "mount",
+        "name": "底脚、紧固件与铭牌",
+        "role": "固定电机并承载额定信息；本模型不虚构实际型号铭牌数值。"
+      },
+      {
+        "id": "coupling",
+        "name": "联轴器/带轮（外部传动）",
+        "role": "把轴转矩传到负载；按设备可使用直联、齿轮或皮带，并非电机内置件。"
+      }
+    ],
+    "controlNotes": [
+      "变频器调节驱动频率等量以控制适用电机的运行；具体控制方式取决于电机和驱动系统。",
+      "伺服驱动与反馈用于精确位置/速度协同。模型中的通用感应电机爆炸图不代表专用伺服或直驱电机的全部内部构造。",
+      "动画只表示运动关系，不表示额定转速、功率、同步相位或真实产能。"
+    ],
+    "sources": [
+      {
+        "title": "ABB｜低压电机结构与爆炸图（2022样本）",
+        "url": "https://library.e.abb.com/public/212f71af40014ca9bcd3788187292dbc/ABB%20Low%20voltage%20Process%20performance%20motors%20400%20V%2050%20Hz%2C%20460%20V%2060%20Hz_12-2022_v2.pdf"
+      },
+      {
+        "title": "Picanol｜OmniPlus-i Connect 织机官方样本",
+        "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Omniplus-i-Connect_brochure_2024_EN.pdf"
+      },
+      {
+        "title": "Rieter｜并条机官方技术手册",
+        "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v1-100158-en.pdf"
+      },
+      {
+        "title": "Rieter｜G 38 环锭细纱机",
+        "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38"
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "manual",
+      "title": "Rieter｜短纤纺纱手册目录与工艺范围",
+      "url": "https://www.rieter.com/services/expertise/the-rieter-manual-of-spinning/"
+    },
+    {
+      "id": "opening",
+      "title": "Rieter｜VARIOline 开清棉系统",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline"
+    },
+    {
+      "id": "card",
+      "title": "Rieter｜梳棉机部件与纤维路径",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/after-sales/parts/rieter-card-enhancements-brochure-en.pdf"
+    },
+    {
+      "id": "draw",
+      "title": "Rieter｜并条机官方技术手册",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v1-100158-en.pdf"
+    },
+    {
+      "id": "comber",
+      "title": "Rieter｜E 90 精梳机",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90"
+    },
+    {
+      "id": "prep",
+      "title": "Rieter｜并条、精梳准备与粗纱设备",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation"
+    },
+    {
+      "id": "roving",
+      "title": "Rieter｜F 40 / F 20 粗纱机",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/roving-frame-f-40f-20/"
+    },
+    {
+      "id": "ring",
+      "title": "Rieter｜G 38 环锭细纱机",
+      "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38"
+    },
+    {
+      "id": "wind",
+      "title": "Rieter｜Autoconer X6 自动络筒机",
+      "url": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer"
+    },
+    {
+      "id": "windDrive",
+      "title": "Rieter｜Autoconer X6 卷绕与清纱部件",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-automatic-material-flow-type-d-v-brochure-3563-v1-98521-en.pdf"
+    },
+    {
+      "id": "warp",
+      "title": "KARL MAYER｜WARPDIRECT 分批整经机",
+      "url": "https://www.karlmayer.com/ecomaXL/files/KM_FS_WARPDIRECT_encn.pdf"
+    },
+    {
+      "id": "warpPrep",
+      "title": "CottonWorks｜机织前准备",
+      "url": "https://cottonworks.com/learning-hub/weaving/preparation-for-weaving/"
+    },
+    {
+      "id": "size",
+      "title": "KARL MAYER｜PROSIZE 浆纱工艺",
+      "url": "https://www.karlmayer.com/ecomaXL/files/KM_FS_PROSIZE_en.pdf"
+    },
+    {
+      "id": "drawingIn",
+      "title": "Stäubli｜SAFIR S80 穿综穿筘",
+      "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-s80.html"
+    },
+    {
+      "id": "weave",
+      "title": "Picanol｜OmniPlus-i Connect 织机官方样本",
+      "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Omniplus-i-Connect_brochure_2024_EN.pdf"
+    },
+    {
+      "id": "pre",
+      "title": "Benninger｜BEN-BLEACH 连续前处理",
+      "url": "https://benningergroup.com/en/textile-finishing/bleaching-solutions"
+    },
+    {
+      "title": "Benninger | Küsters DyePad 冷轧堆染色",
+      "url": "https://benningergroup.com/en/textile-finishing/dyeing-solutions"
+    },
+    {
+      "title": "Benninger｜机织物染色系统样本",
+      "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Dyeing_Solutions/EN/Broschuere_Dyeing_EN.pdf"
+    },
+    {
+      "id": "stenter",
+      "title": "Monforts｜MONTEX 拉幅机",
+      "url": "https://www.monforts.de/en/products/stenters/"
+    },
+    {
+      "id": "calender",
+      "title": "CottonWorks｜机械整理与轧光",
+      "url": "https://cottonworks.com/learning-hub/finishing/mechanical-finishing/"
+    },
+    {
+      "id": "shrink",
+      "title": "Monforts｜MONFORTEX 橡胶毯预缩",
+      "url": "https://www.monforts.de/en/products/shrinkage-ranges/"
+    },
+    {
+      "id": "inspect",
+      "title": "Uster｜织物在线与最终检验",
+      "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Q-Bar/Uster_Fabric_Inspection_Q-Bar_brochure_web_en_23.pdf"
+    },
+    {
+      "id": "motor",
+      "title": "ABB｜低压电机结构与爆炸图（2022样本）",
+      "url": "https://library.e.abb.com/public/212f71af40014ca9bcd3788187292dbc/ABB%20Low%20voltage%20Process%20performance%20motors%20400%20V%2050%20Hz%2C%20460%20V%2060%20Hz_12-2022_v2.pdf"
+    },
+    {
+      "title": "Uster | Fabriq Vision 2 技术资料（2025-07）",
+      "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf"
+    },
+    {
+      "title": "Uster | Fabriq Vision 2 新品资料（2025-10-24）",
+      "url": "https://www.uster.com/fileadmin/user_upload/Images/AboutUster/News_and_Media/2025/251024_Uster_press_release_ITMA_Asia_2025_novelties_and_news.pdf"
+    }
+  ],
+  "evidencePolicy": "工艺范围与设备部件参考所列厂商/行业组织的一手公开资料；质量关注点和通用传动配置为工程性归纳。没有资料支持的额定功率、转速、尺寸和产能不填入模型。",
+  "assetVersion": "20261119-stations",
+  "coverageReview": {
+    "finding": "已将此次核查的七类设备分别建模，点击名称可直达各机的电机和工作机构。",
+    "modeled": [
+      {
+        "id": "assembly_winding",
+        "name": "并纱",
+        "position": "SSM CWX-D",
+        "reason": "模型标出 10 处电机位置。厂家资料支持其中 10 处的工位驱动归属，另有 0 处按机构功能推定。",
+        "source": {
+          "title": "SSM 当前并纱机产品页：CWX-D",
+          "url": "https://www.ssm.ch/products/winding-solutions/assembly-winding-machines",
+          "supports": "单锭独立驱动，2/3股，槽筒排纱，152 mm，10–80锭。"
+        }
+      },
+      {
+        "id": "airjet_spinning",
+        "name": "喷气纺",
+        "position": "Rieter J 70",
+        "reason": "模型标出 84 处电机位置。厂家资料支持其中 40 处的工位驱动归属，另有 44 处按机构功能推定。",
+        "source": {
+          "title": "Rieter J70 当前产品页",
+          "url": "https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70",
+          "supports": "独立纺纱及卷绕单元，气流纺平台、双面分节配置、Q30A与圆柱卷装。"
+        }
+      },
+      {
+        "id": "warp_tying",
+        "name": "自动结经",
+        "position": "Stäubli 史陶比尔 TIEPRO + TPF",
+        "reason": "模型标出 1 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 1 处按机构功能推定。",
+        "source": {
+          "title": "Stäubli TIEPRO 当前产品页",
+          "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html",
+          "supports": "当前在列；锥形分纱、最高600结/分、电子双纱检测和先退回重分纱再切纱。未披露电机数量或内部传动。"
+        }
+      },
+      {
+        "id": "washing_range",
+        "name": "平幅水洗与皂洗",
+        "position": "Benninger BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+        "reason": "模型标出 18 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 18 处按机构功能推定。",
+        "source": {
+          "title": "Benninger BEN-WASH 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/washing-solutions",
+          "supports": "当前产品系列与模块化范围。"
+        }
+      },
+      {
+        "id": "singeing",
+        "name": "织物烧毛",
+        "position": "SWASTIK Textile Engineers Super Singe",
+        "reason": "模型标出 8 处电机位置。厂家资料支持其中 4 处的工位驱动归属，另有 4 处按机构功能推定。",
+        "source": {
+          "title": "SWASTIK Super Singe 当前产品页",
+          "url": "https://www.swastiktextile.com/gas-singening-machine-super-singe/",
+          "supports": "当前官网在列；明确交流电机直接连接刷毛辊、独立吸尘、2个狭缝水冷燃烧器、单/双面烧毛、失电退避、80–150m/min。"
+        }
+      },
+      {
+        "id": "mercerizing",
+        "name": "丝光",
+        "position": "Benninger BEN-DIMENSA",
+        "reason": "模型标出 22 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 22 处按机构功能推定。",
+        "source": {
+          "title": "Benninger BEN-DIMENSA 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/mercerizing-solutions",
+          "supports": "当前系列及有链／无链组合原理。"
+        }
+      },
+      {
+        "id": "sanforizing",
+        "name": "橡毯预缩",
+        "position": "Brückner POWER-SHRINK",
+        "reason": "模型标出 12 处电机位置。厂家资料支持其中 0 处的工位驱动归属，另有 12 处按机构功能推定。",
+        "source": {
+          "title": "Brückner POWER-SHRINK 当前产品页",
+          "url": "https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html",
+          "supports": "当前机型、橡毯、水冷、内置磨毯及毛毯组合。"
+        }
+      }
+    ],
+    "candidates": [],
+    "covered": [
+      "精梳准备的条并卷机已在 E 90 精梳组合模型内，包含 OMEGAlap E 40 和 SERVOlap E 26。",
+      "拉幅烘干、热定型共用已有 MONTEX 条目。紧密纺、倍捻和假捻加弹均有独立模型。"
+    ]
+  }
+}

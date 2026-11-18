@@ -1,0 +1,512 @@
+{
+  "auditDate": "2026-11-16",
+  "scope": "7类棉纺设备及1项电机；供全项目17项核查合并。只做资料/代际/缺口审计，未修改模型。",
+  "method": [
+    "仅使用厂家当前产品页、厂家有日期新闻/报告/刊物。",
+    "核查日、爬取日、搜索引擎Published字段和页脚版权年均不作为产品发布日期。",
+    "current_catalog_product表示官网当前列示/推广；不表示已核实地区库存、交期或全球绝对最新。",
+    "首发年份、同名产品改版、自动化配置、选件与整条生产线分别记录。",
+    "完整复建必须绑定精确型号/版本/配置和全装配清单；资料未证实的部分保持未知，不能以想象补齐。"
+  ],
+  "overallConclusion": "不能把现有模型称作厂家最新完整设备。参考大多是当前仍展示的产品系列，但包含明确的C80/C81混代、X6旧手册、多个自动化版本未定，以及2022通用电机资料。几何连贯与外观通过上一轮审查，不代表型号、部件完整性或制造级准确性已通过。",
+  "noOmissionAssessment": {
+    "satisfied": false,
+    "reason": "现有公开图片/营销样本和原创示意模型不足以证明没有遗漏；8项均未取得完整厂家装配CAD和BOM。",
+    "requiredInputs": [
+      "精确机型及当前修订/地区/订单配置",
+      "完整装配树/BOM与标准/选配边界",
+      "有尺寸的总装、分装和关键剖面图",
+      "驱动、电控、传感、气路、润滑/吸风连接及运动时序",
+      "厂家可核对的外形、检修开盖及内部照片/视频"
+    ]
+  },
+  "items": [
+    {
+      "id": "opening",
+      "name": "开清棉/抓棉",
+      "originalReference": "Rieter VARIOline / UNIfloc A 12",
+      "currentManufacturerModel": "UNIfloc A 12；所属系统VARIOline",
+      "availabilityStatus": "current_catalog_product",
+      "latestAssessment": "当前目录在列；本次无法确认绝对最新或2026新款。A12至少2017已存在。",
+      "datedEvidence": [
+        "a12-2017"
+      ],
+      "publicConfigurationAvailable": [
+        "产品图、取棉单元与整机外形尺寸、驱动原理、2页信息表、VARIOline样本；整线须另定清洁/混棉/除尘模块。"
+      ],
+      "generationAndConfigurationMixing": "单台A12抓棉机不能等同整个VARIOline开清棉联合线；现模型仅保留抓棉塔与悬臂。",
+      "modelEvidenceGaps": [
+        "未建立整线模块清单、风管/风机/除尘/落杂连接及选定产能配置。",
+        "未取得取棉辊盘、直驱/升降/行走传动的工程图、隐藏内构和BOM。",
+        "不能用同一通用电机替代未核实的扭矩控制直接驱动。"
+      ],
+      "sourceIds": [
+        "a12-current",
+        "a12-2017",
+        "fiber-current"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "carding",
+      "name": "梳棉",
+      "originalReference": "Rieter C 80剖面 + C 81外形/样本",
+      "currentManufacturerModel": "C 81；目录同时列C 77",
+      "availabilityStatus": "current_newer_generation_documented",
+      "latestAssessment": "C81相对C80为已证实的后继新代（2023推出）；当前在列。未声称所有厂家或所有地区的绝对最新。",
+      "datedEvidence": [
+        "c81-date"
+      ],
+      "publicConfigurationAvailable": [
+        "公开整机尺寸、40个工作盖板、CGC/TLM/IGS、棉箱、圈条及可联RSB-Module55信息。"
+      ],
+      "generationAndConfigurationMixing": "明确混用了C80内部示意和C81外观，不能称单一C81完整复刻。",
+      "modelEvidenceGaps": [
+        "现模型盖板数量/回程和原33根示意未与厂家40个工作盖板逐一对应。",
+        "缺CGC传感与执行机构、TLM检测、IGS、完整纤维/废气路径及圈条换筒机构。",
+        "无C81全装配CAD、部件尺寸/针布/间隙/标准配置BOM。"
+      ],
+      "sourceIds": [
+        "c81-current",
+        "c81-date",
+        "fiber-current"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "drawing",
+      "name": "并条",
+      "originalReference": "Rieter RSB-D 55 / draw-frames brochure 3690-v1",
+      "currentManufacturerModel": "RSB-D 55（自调匀整）/SB-D 55（无匀整）；双眼另为RSB-D27/SB-D27",
+      "availabilityStatus": "current_generation_documented",
+      "latestAssessment": "2023公开为新代；当前目录仍将55称最新单眼系列。只能作此范围内的厂家声明，未确认所有配置修订的时间。",
+      "datedEvidence": [
+        "d55-date"
+      ],
+      "publicConfigurationAvailable": [
+        "当前产品页、55/27样本、喂入配置、圈条/筒径、RQM和CLEANtube等选项；RSB与SB须选一。"
+      ],
+      "generationAndConfigurationMixing": "单眼/双眼、RSB/SB不能混为同一设备；原模型未绑定确定型号与选件。",
+      "modelEvidenceGaps": [
+        "现有宽幅共用罗拉台不等于真实紧凑牵伸头与导条架构造。",
+        "缺自调匀整检测/伺服链、RQM、圈条驱动、换筒动作/防护与完整吸风系统。",
+        "当前网页与旧样本喂入并合数存在口径差异，需按目标订单配置核对，不能拼接参数。"
+      ],
+      "sourceIds": [
+        "d55-current",
+        "d55-date",
+        "prep-current"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "combing",
+      "name": "精梳",
+      "originalReference": "Rieter E 90",
+      "currentManufacturerModel": "E 90；目录同时列E 86，前道可选OMEGAlap E40/E36",
+      "availabilityStatus": "current_catalog_product",
+      "latestAssessment": "E90于2019公开发布，当前仍在列；尚无足够资料证明本次目标配置为2026最新改版。",
+      "datedEvidence": [
+        "itma2019"
+      ],
+      "publicConfigurationAvailable": [
+        "E90有/无ROBOlap两种配置、8并合、RQM选项、E17/E26棉卷运输、条筒规格及产品样本。"
+      ],
+      "generationAndConfigurationMixing": "E90本体、OMEGAlap成卷准备、ROBOlap与运输系统是不同模块；不能以一个简化台面覆盖全部。",
+      "modelEvidenceGaps": [
+        "现模型只有4个示意梳理头，未对应8并合的全头配置。",
+        "缺精梳头完整钳板/分离辊/传动同步、选定换卷/棉卷运输、集条/牵伸/换筒机构。",
+        "需完整装配图、运动时序、齿轮/连杆与BOM才可不遗漏。"
+      ],
+      "sourceIds": [
+        "e90-current",
+        "itma2019",
+        "prep-current"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "roving",
+      "name": "粗纱",
+      "originalReference": "Rieter F 40 / F 20图片混用",
+      "currentManufacturerModel": "F 40全自动；F20半自动；目录另列F37",
+      "availabilityStatus": "current_catalog_product",
+      "latestAssessment": "F40于ITMA2019上市（2022新闻再次确认）；当前目录存在不等于2026新款，绝对最新无法确认。",
+      "datedEvidence": [
+        "itma2019",
+        "f40-date"
+      ],
+      "publicConfigurationAvailable": [
+        "F40集成自动落纱、F20半自动落纱辅助；电子牵伸可选，需定锭数、输送与转运站配置。"
+      ],
+      "generationAndConfigurationMixing": "F40/F20主要是自动化配置差别，不应合并成无落纱机构的通用粗纱机。",
+      "modelEvidenceGaps": [
+        "现12锭示意不是确定交付配置；须按选定锭数/节距/节段建全。",
+        "缺完整落纱器、转运站、SERVOtrail接口、中央齿轮升降、牵伸加压和锭翼压掌结构。",
+        "无准确传动/升降装配CAD、所有机构尺寸和BOM。"
+      ],
+      "sourceIds": [
+        "f40-current",
+        "f40-date",
+        "itma2019",
+        "prep-current"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "spinning",
+      "name": "环锭细纱",
+      "originalReference": "Rieter G38图片 + 3236-v5-100402样本",
+      "currentManufacturerModel": "当前G38新版本，FE全电子或SE半电子",
+      "availabilityStatus": "current_same_name_updated_generation",
+      "latestAssessment": "2024刊物明确新一代G38。原v5样本仍由当前官网提供，所以资料本身不能一概判旧；但模型没有复现该版本完整结构。",
+      "datedEvidence": [
+        "g38-date"
+      ],
+      "publicConfigurationAvailable": [
+        "FE/SE、锭数/节距、SERVOdisc、短气圈、ISM premium；高速包、快速落纱、ROBOspin、紧密纺和特殊纱装置须逐项定配置。"
+      ],
+      "generationAndConfigurationMixing": "同名G38存在新代更新；FE与SE驱动不同，可选件不得无依据叠加。原模型未声明是哪一套。",
+      "modelEvidenceGaps": [
+        "现长机身和36个示意锭位未绑定实际订单节段与尺寸。",
+        "缺90秒落纱机构、SERVOdisc管纱输送、真实四锭驱动链、ISM/粗纱止喂等，ROBOspin若选配亦须完整。",
+        "照片和样本不能提供全部内部装配尺寸、线束/气路、伺服/传动BOM。"
+      ],
+      "sourceIds": [
+        "g38-current",
+        "g38-date",
+        "g38-current-pdf"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "winding",
+      "name": "自动络筒",
+      "originalReference": "Autoconer X6照片 + 3563-v1 D/V样本",
+      "currentManufacturerModel": "当前Autoconer X6；RM/D/V，TypeV有新Cop Exchanger",
+      "availabilityStatus": "current_same_name_updated_generation",
+      "latestAssessment": "2025刊物明确新Cop Exchanger及紧凑设计；当前产品页指向v3样本，原v1不能当作当前全配置。v3正文抓取超时，未核实其全部修订。",
+      "datedEvidence": [
+        "x6-date"
+      ],
+      "publicConfigurationAvailable": [
+        "官网明确RM人工供管、D独立自动供管、V直联；RFID/SmartTrays、OZ1/OZ2、包纱器、Multilink/Multilot等可核查。"
+      ],
+      "generationAndConfigurationMixing": "混用D/V样本与通用6单元模型，未确定整机供料、落筒及环锭直联配置；旧v1到当前v3是已知版本差异。",
+      "modelEvidenceGaps": [
+        "缺当前Cop Exchanger、完整管纱/空管物流、落筒器、寻纱/接头/张力/检测机构和选定直联。",
+        "未以精确单元数、机头/机尾和模块版本建完整装配树。",
+        "v3链接已确认但正文未取回；无完整整机CAD/BOM，不能宣称最新完整复刻。"
+      ],
+      "sourceIds": [
+        "x6-current",
+        "x6-date",
+        "x6-v2",
+        "x6-v3-link"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    },
+    {
+      "id": "motor",
+      "name": "电动机",
+      "originalReference": "ABB Process performance目录12-2022 v2，第104页通用爆炸结构；模型为自定义24槽教学绕组",
+      "currentManufacturerModel": "未确定精确订货号；ABB当前Process performance induction系列效率至IE5",
+      "availabilityStatus": "generic_reference_not_specific_current_model",
+      "latestAssessment": "不能称现款ABB电机，也不能称任一纺机原装驱动。已证实2025有新IE5范围，但其功率/区域/安装形式必须选型，不能直接套用。",
+      "datedEvidence": [
+        "abb-old",
+        "abb-2025"
+      ],
+      "publicConfigurationAvailable": [
+        "ABB当前系列选型入口、数据表/外形图渠道；需选功率、极数、电压、频率、效率等级、机座/安装方式、冷却/防护及订货号。"
+      ],
+      "generationAndConfigurationMixing": "2022目录通用装配图＋自行构造槽/线圈不构成一台有型号的厂家电机；感应电机、伺服或其他直驱也不能互换。",
+      "modelEvidenceGaps": [
+        "未取得某一订货号定子/转子叠片、槽数/极数、真实端部绕组与接线、轴承/风扇的设计数据。",
+        "现24槽/线圈几何为教学原创，不能声称厂家准确绕组、BOM或性能。",
+        "ABB可提供部分配置图纸不等于公开内部完整CAD；也无各纺机实际配套电机清单。"
+      ],
+      "sourceIds": [
+        "abb-old",
+        "abb-current",
+        "abb-2025"
+      ],
+      "fullCadObtained": false,
+      "fullBomObtained": false,
+      "completeManufacturerReplicaSupported": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "a12-current",
+      "publisher": "Rieter",
+      "title": "Automatic Bale Opener UNIfloc A 12",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/bale-opener-unifloc-a-12",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前产品页；明确扭矩控制直接驱动、抓取力扫描、取棉罗拉和规格；未给此页面发布日期。"
+    },
+    {
+      "id": "a12-2017",
+      "publisher": "Rieter",
+      "title": "Rieter Annual Report 2017",
+      "url": "https://www.rieter.com/fileadmin/user_upload/investor-relations/reports/2017/rieter-annual-report-2017-en.pdf",
+      "publishedDate": "2017",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "annual_report",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "封面/页眉为 Annual Report 2017；第17页讨论UNIfloc A 12。此为报告年度，非本次确认的首发日。",
+      "supports": "A 12至少在2017报告期已经存在；不能称2026新推出。"
+    },
+    {
+      "id": "fiber-current",
+      "publisher": "Rieter",
+      "title": "Fiber Preparation Machines",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前目录列A 12、VARIOline、C 81、C 77；目录展示不等于订单可交付或绝对最新。"
+    },
+    {
+      "id": "c81-current",
+      "publisher": "Rieter",
+      "title": "High-Performance Card C 81",
+      "url": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前C 81页面列40个工作盖板、CGC、TLM、IGS与RSB-Module 55。"
+    },
+    {
+      "id": "c81-date",
+      "publisher": "Rieter",
+      "title": "Card C 80: A Game-Changer in Fiber Preparation",
+      "url": "https://www.rieter.com/sustainability/sustainability-stories/details/card-c-80-a-game-changer-in-fiber-preparation",
+      "publishedDate": "2024-05-31",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "dated_manufacturer_article",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "正文页首 May 31, 2024；正文明确C 81于2023年推出。",
+      "supports": "C 81是基于C 80后推出的机型，原C 80/C 81并用属于混代参考。"
+    },
+    {
+      "id": "prep-current",
+      "publisher": "Rieter",
+      "title": "Spinning Preparation Machines",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前目录并列RSB-D/SB-D55、RSB-D/SB-D27、E90/E86、OMEGAlap E40/E36、F40/F20/F37；并列产品不可仅按型号数字判断先后。"
+    },
+    {
+      "id": "d55-current",
+      "publisher": "Rieter",
+      "title": "Autoleveler Draw Frame RSB-D 55 and Draw Frame SB-D 55",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前单眼新一代页面；区分自调匀整RSB与无匀整SB，列ECOrized、RQM、CLEANtube与单电机圈条相关配置。"
+    },
+    {
+      "id": "d55-date",
+      "publisher": "Rieter",
+      "title": "Rieter customer magazine link 79/2023",
+      "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/79/rieter-customer-magazine-link-no-79-en.pdf",
+      "publishedDate": "2023",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "manufacturer_magazine",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "刊内页眉 link 79 / 2023；第14页Raising the Bar介绍新一代55/27。无精确月日。",
+      "supports": "2023刊物将RSB-D/SB-D55与RSB-D/SB-D27作为新一代介绍。"
+    },
+    {
+      "id": "e90-current",
+      "publisher": "Rieter",
+      "title": "Comber E 90",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前在列；公开8并合、ROBOlap有/无版本、RQM选项、SERVOtrolley E17/SERVOlap E26等。"
+    },
+    {
+      "id": "itma2019",
+      "publisher": "Rieter",
+      "title": "ITMA 2019 in Barcelona – Highlights of Day 2",
+      "url": "https://www.rieter.com/company/news-and-success-stories/details/itma-2019-in-barcelona-highlights-of-day-2",
+      "publishedDate": "2019-06-21",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "dated_manufacturer_article",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "页面日期June 21, 2019，正文发布E90与F40。",
+      "supports": "E90和F40当时作为新机发布；目前仍在目录不表示2026首发。"
+    },
+    {
+      "id": "f40-current",
+      "publisher": "Rieter",
+      "title": "Fully-automated F 40 and Semi-automated F 20",
+      "url": "https://www.rieter.com/products/systems/spinning-preparation/roving-frame-f-40f-20",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "F40全自动、F20半自动是并列配置，不应笼统合为同一完整机型；公开252锭上限、电子牵伸选项和输送接口。"
+    },
+    {
+      "id": "f40-date",
+      "publisher": "Rieter",
+      "title": "ITM 2022 Media Release",
+      "url": "https://www.rieter.com/fileadmin/user_upload/media/2022/en/rieter-media-release-2022-04-27-en.pdf",
+      "publishedDate": "2022-04-27",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "media_release",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "PDF抬头Winterthur – April 27, 2022；正文明确F40在ITMA2019上市。",
+      "supports": "补证F40首次市场介绍在2019；2022为继续展示，非首次发布。"
+    },
+    {
+      "id": "g38-current",
+      "publisher": "Rieter",
+      "title": "Ring Spinning Machine G 38",
+      "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前明确为G38新版本、FE/SE，含SERVOdisc、短气圈、ISM premium及可选高速包/ROBOspin。"
+    },
+    {
+      "id": "g38-date",
+      "publisher": "Rieter",
+      "title": "Rieter customer magazine link 80/2024",
+      "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/80/rieter-customer-magazine-link-no-80-en.pdf",
+      "publishedDate": "2024",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "manufacturer_magazine",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "刊内 link 80 / 2024，第10页新一代G38专题；未确认精确月日。",
+      "supports": "同名G38在2024资料中已有新代版本，90秒落纱、SERVOdisc等须按配置核对。"
+    },
+    {
+      "id": "g38-current-pdf",
+      "publisher": "Rieter",
+      "title": "G38 brochure 3236-v5-100402",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "current_product_download",
+      "checkedOn": "2026-11-16",
+      "supports": "本次从当前G38产品页点击下载，仍为原参考所用v5；不能仅按原照片年份判G38资料过时。版本号不是发布日期。"
+    },
+    {
+      "id": "x6-current",
+      "publisher": "Rieter",
+      "title": "Automatic Winding Machine Autoconer X6",
+      "url": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前页面有RM/D/V物料供给区别、新Cop Exchanger、RFID/SmartTrays与Ring-Winder-Connect；目前产品页下载链接指向v3手册。"
+    },
+    {
+      "id": "x6-date",
+      "publisher": "Rieter",
+      "title": "Rieter customer magazine link 81/2025",
+      "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/81/rieter-customer-magazine-link-no-81-en.pdf",
+      "publishedDate": "2025",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "manufacturer_magazine",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "刊内 link 81/2025，第13页One Step Closer to Autonomous Winding；无精确月日。",
+      "supports": "当前Type V新增自动剔除问题管纱的Cop Exchanger，且有紧凑机身更新。"
+    },
+    {
+      "id": "x6-v2",
+      "publisher": "Rieter",
+      "title": "Autoconer X6 brochure 3563-v2-98521",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-automatic-material-flow-type-d-v-brochure-3563-v2-98521-en.pdf",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "manufacturer_brochure",
+      "checkedOn": "2026-11-16",
+      "supports": "已读取的v2内容含Type V、Ring-Winder-Connect及Cop Exchanger。版本号不等同发布年。"
+    },
+    {
+      "id": "x6-v3-link",
+      "publisher": "Rieter",
+      "title": "Autoconer X6 current linked brochure 3563-v3-98521",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-type-d-v-brochure-3563-v3-98521-en.pdf",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "current_product_download_link",
+      "checkedOn": "2026-11-16",
+      "supports": "链接由当前官网产品页点击获得；本次连续两次抓取超时，不能据此声称已核对v3全部内容。"
+    },
+    {
+      "id": "abb-old",
+      "publisher": "ABB",
+      "title": "ABB Low voltage Process performance motors 12-2022 v2",
+      "url": "https://library.e.abb.com/public/212f71af40014ca9bcd3788187292dbc/ABB%20Low%20voltage%20Process%20performance%20motors%20400%20V%2050%20Hz%2C%20460%20V%2060%20Hz_12-2022_v2.pdf",
+      "publishedDate": "2022-12",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "manufacturer_catalog",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "原研究下载目录标注12-2022；此前实际查看第104页通用爆炸结构。",
+      "supports": "原电机模型参考源为2022年12月系列目录，不是确定订货号的最新电机CAD。"
+    },
+    {
+      "id": "abb-current",
+      "publisher": "ABB",
+      "title": "ABB Process performance induction motors",
+      "url": "https://www.abb.com/global/en/areas/motion/motors-generators/low-voltage-motors/iec-low-voltage-motors/process-performance-motors/process-performance-induction-motors",
+      "publishedDate": null,
+      "dateKind": "not_stated",
+      "sourceType": "product_page",
+      "checkedOn": "2026-11-16",
+      "supports": "当前系列页效率至IE5；提供按条件选型的GoSelect/Optimizer与图纸资料入口，不等同已获得内部整机CAD/BOM。"
+    },
+    {
+      "id": "abb-2025",
+      "publisher": "ABB",
+      "title": "ABB launch of IE5 motor range in India",
+      "url": "https://new.abb.com/news/detail/129326/abb-accelerates-industrial-energy-efficiency-with-strategic-investment-and-launch-of-ie5-motor-range-in-india",
+      "publishedDate": "2025-09-25",
+      "dateKind": "printed_publication_or_article_date",
+      "sourceType": "media_release",
+      "checkedOn": "2026-11-16",
+      "dateEvidence": "页面明确Press release | Bengaluru, India | 2025-09-25。",
+      "supports": "此新闻证实印度本地制造IE5感应电机45–1000kW新范围；不代表所有小功率纺机均配该系列。"
+    }
+  ],
+  "fetchLimitations": [
+    {
+      "sourceId": "x6-v3-link",
+      "issue": "当前页链接明确；两次PDF请求超时，仅验证链接身份。无据将版本号v3换算为发布时间。"
+    }
+  ]
+}

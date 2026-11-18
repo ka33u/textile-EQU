@@ -1,0 +1,687 @@
+{
+  "version": "3.0",
+  "date": "2026-11-16",
+  "scope": "New seven-stage cotton preparation/spinning configuration and geometry module",
+  "sourceScript": "blender/current_spinning_v3.py",
+  "sourceSha256": "7d7d31ced0d3feb8e677e8795852bcfaf82d87a394c06e3d5a33cb26e9b23339",
+  "execution": "exec after industrial_v2.py and motor_precision.py; definitions only; parent runs Blender/export/visual QA",
+  "syntaxValidation": "Python ast.parse passed; no Blender runtime or export claims at handoff",
+  "structuralCompleteness": false,
+  "notAnOrder": "Published options/counts are modeling selections, not an OEM approved production line or sales order.",
+  "dimensionPolicy": "Retain verified full counts/pitches; unmeasured local forms carry inferred_geometry, not manufacturing accuracy.",
+  "performance": {
+    "preserveAllPositions": true,
+    "geometry": "Shared Blender Mesh datablocks, ordinary linked-copy object hierarchies; no EXT_mesh_gpu_instancing requirement.",
+    "staticUnitMerge": "Static direct-child meshes merged by semantic group/material without deleting geometry; rotating/process subassemblies remain independent.",
+    "semanticExtras": [
+      "label",
+      "group",
+      "description",
+      "positionIndex",
+      "componentLabels",
+      "mergedWithoutOmission"
+    ]
+  },
+  "items": [
+    {
+      "equipmentId": "opening",
+      "manufacturer": "Rieter",
+      "referenceModel": "UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79",
+      "referenceConfiguration": "Cotton module chain; A49 solid matter extractor and A21 condenser interface. Site arrangement is inferred.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Current catalog modules",
+          "value": [
+            "A12",
+            "B12",
+            "B72",
+            "A79",
+            "A49",
+            "A21"
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline",
+          "section": "VARIOline Machines"
+        },
+        {
+          "item": "B12 outer dimensions mm",
+          "value": [
+            2227,
+            1040,
+            2020
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/fiber-preparation/varioline/rieter-varioline-brochure-2303-v9-96282-en.pdf",
+          "section": "Machine and technical data",
+          "printedPage": 50
+        },
+        {
+          "item": "B12 working width and cleaner diameter mm",
+          "value": [
+            1600,
+            750
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/fiber-preparation/varioline/rieter-varioline-brochure-2303-v9-96282-en.pdf",
+          "section": "Machine data",
+          "printedPage": 50
+        },
+        {
+          "item": "A12 drive principle",
+          "value": "Torque-controlled direct drive",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/fiber-preparation/bale-opener-unifloc-a-12",
+          "section": "Product details"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "Module ordering, interconnection routing and site spacing are a proposed installation, not an OEM approved line.",
+          "status": "inferred"
+        },
+        {
+          "item": "Twelve-metre track and twenty bales are site stock layout, not a reduced fixed machine specification.",
+          "status": "inferred"
+        },
+        {
+          "item": "A12 plucking disks/lift/travel, B72 chamber partitions and A79/A49/A21 casing proportions lack engineering dimensions.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "No selected raw-cotton quality, trash rate, plant output or OEM line configuration.",
+          "status": "missing"
+        },
+        {
+          "item": "External filtration station, airflow, spark/metal/foreign-fibre extraction selections and fan sizing remain unverified interfaces.",
+          "status": "missing"
+        },
+        {
+          "item": "No complete plucking disk, drivetrain, lift, pneumatic or control BOM.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "Travelling tower, separate cantilever head and direct drive envelope",
+        "Lift guides and travel wheels",
+        "B12 cleaning roller and waste cavity",
+        "B72 mixing enclosure and chambers",
+        "A79 storage/opening module",
+        "A49 solid matter extractor",
+        "A21 condenser interface",
+        "Material ducts and waste-air header"
+      ]
+    },
+    {
+      "equipmentId": "carding",
+      "manufacturer": "Rieter",
+      "referenceModel": "C 81",
+      "referenceConfiguration": "40 working flats; CGC/TLM/IGS function locations; separate single-head coiler; no RSB-Module 55 selected.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Working flats",
+          "value": 40,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81",
+          "section": "Active carding area / features"
+        },
+        {
+          "item": "Published functions",
+          "value": [
+            "CGC",
+            "TLM",
+            "IGS"
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81",
+          "section": "Technology features"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "C81-only exterior proportions; internal bearing positions and dimensions inferred from public views.",
+          "status": "inferred"
+        },
+        {
+          "item": "Forty working flats are verified. Forty return flats are a visual discretization, not a verified OEM total flat count.",
+          "status": "inferred"
+        },
+        {
+          "item": "CGC/TLM/IGS are represented by function locations and external envelopes, not verified sensor counts or actuator internals.",
+          "status": "inferred"
+        },
+        {
+          "item": "900mm coiler can is an unverified display selection.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Full return-flat chain/sprocket/cleaner assembly and total flat count.",
+          "status": "missing"
+        },
+        {
+          "item": "Card clothing wire geometry, density, exact clearances, CGC/IGS internal mechanisms.",
+          "status": "missing"
+        },
+        {
+          "item": "Complete autoleveling feed, web stripping, coiling/can-change and suction controls.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "Feed chute",
+        "Main cylinder, licker-in and doffer",
+        "All 40 working flats plus visible return route",
+        "Segmented panel casing",
+        "CGC/TLM/IGS function envelopes",
+        "Web condensation path",
+        "Separate coiler and reserve can",
+        "Suction branches and main"
+      ]
+    },
+    {
+      "equipmentId": "drawing",
+      "manufacturer": "Rieter",
+      "referenceModel": "RSB-D 55",
+      "referenceConfiguration": "8-fold, single delivery, autoleveler; RQM and optional CLEANtube; 600mm display can train.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Doubling",
+          "value": 8,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+          "section": "Technical specifications"
+        },
+        {
+          "item": "Delivery count",
+          "value": 1,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+          "section": "Machine data"
+        },
+        {
+          "item": "Functions",
+          "value": [
+            "Autoleveler",
+            "RQM",
+            "CLEANtube optional"
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+          "section": "Product details / FAQ"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "Compact head/hood from current photos; roller diameters, pressure system and motor envelopes inferred.",
+          "status": "inferred"
+        },
+        {
+          "item": "All 8 input cans retained; creel geometry and output-can change train inferred.",
+          "status": "inferred"
+        },
+        {
+          "item": "Output can size and exact changer specification not yet bound to a sales configuration.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Full autolevel measurement/servo electrical chain.",
+          "status": "missing"
+        },
+        {
+          "item": "CLEANtube/coiler internals, drafting pressure and bearing BOM.",
+          "status": "missing"
+        },
+        {
+          "item": "Engineering drawing of selected can changer and creel arrangement.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "8-can powered creel",
+        "Compact drafting head",
+        "Scanning/autolevel location",
+        "Separate coiler drive",
+        "Can-change queue and rails",
+        "Suction interface",
+        "RQM operating display"
+      ]
+    },
+    {
+      "equipmentId": "combing",
+      "manufacturer": "Rieter",
+      "referenceModel": "E 90 + OMEGAlap E 40 + SERVOlap E 26",
+      "referenceConfiguration": "E90 complete 8-head ROBOlap configuration with 300mm laps; separate E40 28-can/600mm preparation; E26 logistics.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Combing heads/doubling",
+          "value": 8,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+          "section": "Technical specification"
+        },
+        {
+          "item": "ROBOlap lap width / maximum diameter mm",
+          "value": [
+            300,
+            550
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+          "section": "Technological data"
+        },
+        {
+          "item": "Delivery drafting",
+          "value": "4-over-3 with pressure bar",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+          "section": "Machine data"
+        },
+        {
+          "item": "Automatic lap transport",
+          "value": "SERVOlap E 26",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+          "section": "Lap transport systems"
+        },
+        {
+          "item": "E40 feed cans / diameter mm",
+          "value": [
+            28,
+            600
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/omegalap-e-40",
+          "section": "Dimensions"
+        },
+        {
+          "item": "Published E40 envelope with these cans mm",
+          "value": [
+            7685,
+            3925,
+            2840
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/spinning-preparation/omegalap-e-40",
+          "section": "Dimensions"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "E90 head pitch, casing and logistics layout inferred; all eight process heads retained.",
+          "status": "inferred"
+        },
+        {
+          "item": "All 28 E40 feed cans retained, but internal layout has not been measured to reproduce the full published envelope.",
+          "status": "inferred"
+        },
+        {
+          "item": "ROBOlap/E26 gripper geometry and Omega belt thickness/width/roller arrangement are public-function reconstructions.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Circular/top comb wire density, teeth, detaching/feed timing, full pressure-bar assembly.",
+          "status": "missing"
+        },
+        {
+          "item": "E40 complete lap winding belt/rollers, automatic lap-change and drafting pressure BOM.",
+          "status": "missing"
+        },
+        {
+          "item": "E26 actual sensor/gripper internals and production matching across preparation/combing.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "8 lap supports, circular combs, nippers and detaching roll sets",
+        "ROBOlap work positions",
+        "Eight-head sliver table",
+        "4-over-3 delivery drafting rollers",
+        "Delivery/reserve cans",
+        "Separate E40 with all 28 feed cans",
+        "E40 drafting and lap belt",
+        "E26 overhead rail/carrier/gripper",
+        "Central noil extraction"
+      ]
+    },
+    {
+      "equipmentId": "roving",
+      "manufacturer": "Rieter",
+      "referenceModel": "F 40",
+      "referenceConfiguration": "Complete published 72-spindle/4-section/10.485m configuration; integrated automatic doffer and internal transport; electronic drafting and monitoring options selected.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/spinning-preparation/roving-frame-f-40f-20",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Spindles / sections / machine length mm",
+          "value": [
+            72,
+            4,
+            10485
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "section": "Machine length table F40",
+          "printedPage": 9
+        },
+        {
+          "item": "Section length mm",
+          "value": 2080,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "section": "Dimension formula",
+          "printedPage": 9
+        },
+        {
+          "item": "Gauge / bobbin diameter / winding height mm",
+          "value": [
+            115,
+            152,
+            406
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "section": "Technical data",
+          "printedPage": 10
+        },
+        {
+          "item": "Automatic doffing",
+          "value": "Bobbin rail retracts into machine; internal exchange and transport to end transfer station.",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "section": "Integrated automatic doffer",
+          "printedPage": 4
+        },
+        {
+          "item": "Central lift",
+          "value": "One centred screw for every two sections",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "section": "Bobbin rail movement",
+          "printedPage": 7
+        }
+      ],
+      "inferred": [
+        {
+          "item": "Two staggered rows of nine positions per section; section count, pitch and main-machine length preserve public specifications.",
+          "status": "inferred"
+        },
+        {
+          "item": "All 72 feed cans retained; five-row 508mm can layout inferred from published creel description.",
+          "status": "inferred"
+        },
+        {
+          "item": "Separate flyer, bobbin, drafting, lift and transport drive envelopes; no claimed OEM motor shape or internal gear design.",
+          "status": "inferred"
+        },
+        {
+          "item": "72 internal exchange positions and transfer route express the public sequence but are not a validated doffer mechanism.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Actual differential/gear/screw drivetrain and full internal doffing exchange mechanism/timing.",
+          "status": "missing"
+        },
+        {
+          "item": "HP4080 internal pressure elements, flyer presser/crown dimensions and tolerances.",
+          "status": "missing"
+        },
+        {
+          "item": "Complete belt/gear/bearing, air/electrical BOM and ratings.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "72 positions and 72 cans",
+        "72 drafting/apron/weighting assemblies",
+        "Flyers/pressers/crowns",
+        "4 full casing sections",
+        "72 internal empty tubes and exchange positions",
+        "2 central lift units",
+        "Internal transport rail",
+        "End lifting/transfer station",
+        "SERVOtrail interface",
+        "Suction and separated drive functions"
+      ]
+    },
+    {
+      "equipmentId": "spinning",
+      "manufacturer": "Rieter",
+      "referenceModel": "G 38 FE",
+      "referenceConfiguration": "288-spindle standard minimum, 6 sections, 70mm gauge, single-sided suction, C3 link endstock, 14.260m; 42mm ring; no 34mm high-speed option.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Standard minimum / positions per section",
+          "value": [
+            288,
+            48
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "section": "Machine data",
+          "printedPage": 31
+        },
+        {
+          "item": "Selected gauge mm",
+          "value": 70,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "section": "Spindle gauge",
+          "printedPage": 31
+        },
+        {
+          "item": "Selected ring diameter mm",
+          "value": 42,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "section": "70mm gauge options",
+          "printedPage": 31
+        },
+        {
+          "item": "C3 single-suction endstock constant mm",
+          "value": 4180,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "section": "Endstock table",
+          "printedPage": 30
+        },
+        {
+          "item": "Length formula mm",
+          "value": "288/2*70 + 4180 = 14260",
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "section": "Without intermediate drive",
+          "printedPage": 30
+        },
+        {
+          "item": "Current features",
+          "value": [
+            "FLEXIdraft FE",
+            "ISM premium",
+            "SERVOdisc"
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38",
+          "section": "Specifications/current features"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "All 288 spindles with cops, rings, travellers, lappets, drafting, doffer positions and roving feed retained.",
+          "status": "inferred"
+        },
+        {
+          "item": "All 72 four-spindle tape groups included; exact tape/drive geometry is inferred, not OEM verified.",
+          "status": "inferred"
+        },
+        {
+          "item": "Head/tail length distribution, drafting motor envelopes, pressure arms and suction flutes inferred from public photos.",
+          "status": "inferred"
+        },
+        {
+          "item": "Public overall length formula retained; selected X6 interface and rates not engineered as one matched line.",
+          "status": "inferred"
+        },
+        {
+          "item": "Six-row 152mm roving creel uses 210mm longitudinal spacing to avoid package overlap at 70mm spindle pitch; actual OEM row layout remains unverified.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Exact FE motor count/location, gear/shaft/belt and four-spindle assembly.",
+          "status": "missing"
+        },
+        {
+          "item": "Collective doffer and SERVOdisc mechanism, motion control, electrical/pneumatic BOM.",
+          "status": "missing"
+        },
+        {
+          "item": "Production and interface matching with the selected X6.",
+          "status": "missing"
+        },
+        {
+          "item": "ROBOspin, compact/slub/high-speed options not selected; not omissions from every standard machine.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "All 288 spinning positions",
+        "6 full 48-position sections",
+        "Per-position drafting/roving hanger",
+        "Per-position ring/traveller/short-balloon path",
+        "72 four-spindle drive groups",
+        "Per-position ISM envelope",
+        "Collective doffer rail/grippers/links",
+        "SERVOdisc trays and empty tubes",
+        "FE function drive envelopes",
+        "Single-end extraction with all flute paths",
+        "Full head/tail enclosure and link interfaces"
+      ]
+    },
+    {
+      "equipmentId": "winding",
+      "manufacturer": "Rieter",
+      "referenceModel": "Autoconer X6 Type V",
+      "referenceConfiguration": "96 units at 320mm, the currently published maximum configuration; Type V SmartTray feed/return, Cop Exchanger and automatic package doffer. Independent model, not capacity matched to G38 288.",
+      "currentCatalogEvidence": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+      "currentCatalogCheckedOn": "2026-11-16",
+      "currentCatalogMeaning": "Currently listed by manufacturer; does not mean first introduced in 2026 or absolute newest worldwide.",
+      "structuralCompleteness": false,
+      "fidelityStatus": "partial_public_reference",
+      "verified": [
+        {
+          "item": "Published maximum winding units",
+          "value": 96,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+          "section": "Machine specifications"
+        },
+        {
+          "item": "Unit gauge mm",
+          "value": 320,
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+          "section": "Machine specifications"
+        },
+        {
+          "item": "Current Type V features",
+          "value": [
+            "Cop Exchanger",
+            "RFID SmartTray",
+            "Ring-Winder-Connect"
+          ],
+          "status": "verified",
+          "evidenceUrl": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+          "section": "Product details/system extensions"
+        }
+      ],
+      "inferred": [
+        {
+          "item": "Published maximum chosen, not evidence of a specific delivered order or suitable pairing to 288 spindles.",
+          "status": "inferred"
+        },
+        {
+          "item": "Working length 30.720m equals 96*320; head/tail length and 16 six-position support sections inferred.",
+          "status": "inferred"
+        },
+        {
+          "item": "Current 3563-v3 PDF timed out. Current page proves features exist; new component geometry still inferred from public photos/functions.",
+          "status": "inferred"
+        },
+        {
+          "item": "Cop rejection, doffer grippers and tube magazine visible structures included; hidden internals unverified.",
+          "status": "inferred"
+        }
+      ],
+      "missing": [
+        {
+          "item": "Current 3563-v3 contents and exact ordered configuration.",
+          "status": "missing"
+        },
+        {
+          "item": "Full unit tensioner/clearer/splicer/suction/pneumatic and electrical assemblies.",
+          "status": "missing"
+        },
+        {
+          "item": "Actual doffer kinematics and external ring-machine logistics timing.",
+          "status": "missing"
+        },
+        {
+          "item": "Selected traverse/grooved-drum and yarn-specific options not fully verified.",
+          "status": "missing"
+        }
+      ],
+      "implementedPublicSubsystems": [
+        "All 96 units",
+        "96 active cops/SmartTrays and return trays",
+        "Individual tension/clearer/splicer envelopes",
+        "Upper/lower suction arms",
+        "Packages/drums/cradles",
+        "Individual drive envelopes",
+        "Feed and return rails",
+        "Cop Exchanger and rejection bin",
+        "Automatic doffer/carriage/rail/grippers",
+        "Upper tube reserve",
+        "Package conveyor",
+        "Vacuum and compressed-air headers"
+      ]
+    }
+  ]
+}

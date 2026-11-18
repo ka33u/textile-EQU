@@ -1,0 +1,21 @@
+{
+  "testedAt": "2026-11-18T23:41:22.234Z",
+  "result": "pass",
+  "legacyEquipment": 16,
+  "catalogEquipment": 27,
+  "branchIDs": [
+    "compact_spinning",
+    "twisting",
+    "texturing",
+    "rotor_spinning",
+    "assembly_winding",
+    "airjet_spinning",
+    "warp_tying",
+    "washing_range",
+    "singeing",
+    "mercerizing",
+    "sanforizing"
+  ],
+  "hashCases": 33,
+  "dynamicFutureCount": 28
+}

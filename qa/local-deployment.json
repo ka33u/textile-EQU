@@ -1,0 +1,649 @@
+{
+  "checkedAt": "2026-11-18T23:46:06.292512+00:00",
+  "url": "http://127.0.0.1:4173/",
+  "assetVersion": "20261119-stations",
+  "status": "pass",
+  "files": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 16587,
+      "sha256": "c4534148c2bda3161c6a6e530d74c290c3e53643aaaa761d38a1689be9bb699b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "bytes": 81494,
+      "sha256": "be1ad8c190f2687a37c6cbada21c2dd6a2007921b02c77e7ca49d5d87e2b9f3b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "style.css",
+      "status": 200,
+      "bytes": 46632,
+      "sha256": "1e79d22f4227f0573b34b3c6fc919c683d4051340ffdd75d448addb80d913a3e",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "ui-data.js",
+      "status": 200,
+      "bytes": 10224,
+      "sha256": "9be4f17c2a9eed94ffa0d9569c265dcf9fa7f2ad39f4ce3478b1559212379f4c",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "drive-view.js",
+      "status": 200,
+      "bytes": 28868,
+      "sha256": "2f95a1c1459565112cc264c1de54091886026613b3e184c4d27d5ec6fdfa24a4",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "drive-chains.json",
+      "status": 200,
+      "bytes": 990170,
+      "sha256": "352ce70ab1c42fbf861e150c14fd86ef40d995b3751e83d6abcbd560dd52dca2",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "equipment-provenance.json",
+      "status": 200,
+      "bytes": 134391,
+      "sha256": "83c2510babbc69ab957574f4475f6cd16d3b86e59bf34c90e900b8b1fb9c3e75",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "process-data.json",
+      "status": 200,
+      "bytes": 77867,
+      "sha256": "6190338bce26bf4b09a2a843210fbbddc8e502626e638106596a60ae1f200dc1",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "camera-fit.js",
+      "status": 200,
+      "bytes": 1789,
+      "sha256": "107d340413385c64935bb6e95900e1f87251e85445884f657c4d790590240211",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "scene-geometry.js",
+      "status": 200,
+      "bytes": 1050,
+      "sha256": "201f9426ad5faf7c544a49b68d4b6e931abec981e440cbe776e35e9366296708",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "texturing-motion.js",
+      "status": 200,
+      "bytes": 23462,
+      "sha256": "a54e112bb7ffedc9a84ea6354d9179416f70f2d4be892d575a1e43e9a5fd3a0e",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "model-rendering.js",
+      "status": 200,
+      "bytes": 8435,
+      "sha256": "8b42f6e604b44e852843f8bfa8d20da646c953b99b3237c234b68a5aeb3d6190",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "rotor-motion.js",
+      "status": 200,
+      "bytes": 3513,
+      "sha256": "bcb1ad7486aca38c041c1240ec39ea881595dc357525e2f600fc4d18cee8aa8b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "station-motion.js",
+      "status": 200,
+      "bytes": 2493,
+      "sha256": "8c0cc1e45b6249156109db8f3ee40caee62ffc13db1cf644521384859f9ea697",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/process-route.svg",
+      "status": 200,
+      "bytes": 20603,
+      "sha256": "f9ce1ae2ec53b461d77b3d0348a7d2998d56cc4c4aa40951c212eef13a906ac0",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "motor-applications.html",
+      "status": 200,
+      "bytes": 300202,
+      "sha256": "d7d12599f261b15a800f360563bbbc5fe44c91fc6a53eb3a36f894cf49d828c8",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "motor-applications.json",
+      "status": 200,
+      "bytes": 203289,
+      "sha256": "4299d96f7f30aa77e24f5cda0e4c376fc4e4ce4adb820660b346006c14adb192",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/airjet_spinning.glb",
+      "status": 200,
+      "bytes": 3696624,
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/assembly_winding.glb",
+      "status": 200,
+      "bytes": 924260,
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/calender.glb",
+      "status": 200,
+      "bytes": 1272376,
+      "sha256": "ab9728c0a35d87552d86e536af785fb5f2f210f44428ba40ad316c9d40b2da5b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/carding.glb",
+      "status": 200,
+      "bytes": 941500,
+      "sha256": "6805b808eb73c7df2256432f2008a12d06b0ce83710e6f4ca9ecc7be24dc1068",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/combing.glb",
+      "status": 200,
+      "bytes": 1277740,
+      "sha256": "d69888cdb9e76d04d7a57966ba6b2712c1dacfb63aa4b8c025ad9d210ea31d88",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/compact_spinning.glb",
+      "status": 200,
+      "bytes": 5271448,
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/drawing.glb",
+      "status": 200,
+      "bytes": 1076812,
+      "sha256": "42767e516a13657e835610e955682bc1ce0f85c9061a6a1e3592bceb00bc6bc4",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/drawing_in.glb",
+      "status": 200,
+      "bytes": 24523588,
+      "sha256": "6cfcab870698364bf3b895268beafa973aae19fb4df9b623585c78c890ca8d59",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/dyeing.glb",
+      "status": 200,
+      "bytes": 1400476,
+      "sha256": "991163c6023c69d4180a9d37a5513aa60946476d77d1b4cc7341b315b57ce72a",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/inspection.glb",
+      "status": 200,
+      "bytes": 475688,
+      "sha256": "1821472e3f6da1ed6b80f349d2905f24f72323362e9b6c7ce400277bf652fc38",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/mercerizing.glb",
+      "status": 200,
+      "bytes": 2051240,
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/motor.glb",
+      "status": 200,
+      "bytes": 1772924,
+      "sha256": "143ff81e95e725d83ea599fe6b53adde49ad91770189896676efe1a8f5ab76f5",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/opening.glb",
+      "status": 200,
+      "bytes": 1442200,
+      "sha256": "ca3e698fd1522c3804ddf8806f48c902867163907e69a0a2f32319f94be6bc13",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/pretreatment.glb",
+      "status": 200,
+      "bytes": 1760516,
+      "sha256": "e9e31c48bc00c2ee52431daeaa3cb758dee963b39086eaab8dc023a9549a45f3",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/rotor_spinning.glb",
+      "status": 200,
+      "bytes": 3250220,
+      "sha256": "0333ae379f82cf457be515614b7347b9fd0746f23a2d544bc71e66cbc33e3ade",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/roving.glb",
+      "status": 200,
+      "bytes": 1870192,
+      "sha256": "5a82d5ebcd48cccf7540dd1038011a50aa9b58adece0389215f175b123588d8c",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/sanforizing.glb",
+      "status": 200,
+      "bytes": 1446496,
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/singeing.glb",
+      "status": 200,
+      "bytes": 1883888,
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/sizing.glb",
+      "status": 200,
+      "bytes": 2786488,
+      "sha256": "8d711333036d8b4fddc3f67ecf1181bf9e417677f3f47ed82f78d192ec2a3b1f",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/spinning.glb",
+      "status": 200,
+      "bytes": 3348820,
+      "sha256": "6c4380ccd2dac531d969c04a6b76205466f39915e2d3810389005bd21fc89232",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/stenter.glb",
+      "status": 200,
+      "bytes": 1927620,
+      "sha256": "b37222c90b5d5c7bdfea1aa9249374ce9c22a278a66b15482da76c25935532ce",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/texturing.glb",
+      "status": 200,
+      "bytes": 15098372,
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/twisting.glb",
+      "status": 200,
+      "bytes": 1441236,
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/warp_tying.glb",
+      "status": 200,
+      "bytes": 942412,
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/warping.glb",
+      "status": 200,
+      "bytes": 2690584,
+      "sha256": "23268d362e4ad2c79b4f3391c7d7b0146b09b2d6c21351219bc09f0b7cf5208d",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/washing_range.glb",
+      "status": 200,
+      "bytes": 1595964,
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/weaving.glb",
+      "status": 200,
+      "bytes": 24709972,
+      "sha256": "b4fde3c4d8aa315281492412a40e09237cf3aa041e311d0b8ea586846304dc46",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/winding.glb",
+      "status": 200,
+      "bytes": 1929012,
+      "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/airjet_spinning.glb",
+      "fingerprint": "c0ac9933f0d196ab",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/airjet_spinning.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/assembly_winding.glb",
+      "fingerprint": "c090499bf33bf5b6",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/assembly_winding.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/calender.glb",
+      "fingerprint": "ab9728c0a35d8755",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/calender.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/carding.glb",
+      "fingerprint": "6805b808eb73c7df",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/carding.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/combing.glb",
+      "fingerprint": "d69888cdb9e76d04",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/combing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/compact_spinning.glb",
+      "fingerprint": "2798544940e7d610",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/compact_spinning.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/drawing.glb",
+      "fingerprint": "42767e516a13657e",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/drawing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/drawing_in.glb",
+      "fingerprint": "6cfcab870698364b",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/drawing_in.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/dyeing.glb",
+      "fingerprint": "991163c6023c69d4",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/dyeing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/inspection.glb",
+      "fingerprint": "1821472e3f6da1ed",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/inspection.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/mercerizing.glb",
+      "fingerprint": "3703b8b3b42f0836",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/mercerizing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/motor.glb",
+      "fingerprint": "143ff81e95e725d8",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/motor.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/opening.glb",
+      "fingerprint": "ca3e698fd1522c38",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/opening.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/pretreatment.glb",
+      "fingerprint": "e9e31c48bc00c2ee",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/pretreatment.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/rotor_spinning.glb",
+      "fingerprint": "0333ae379f82cf45",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/rotor_spinning.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/roving.glb",
+      "fingerprint": "5a82d5ebcd48cccf",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/roving.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/sanforizing.glb",
+      "fingerprint": "84fda51b49683f25",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/sanforizing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/singeing.glb",
+      "fingerprint": "d049a211b7dbd644",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/singeing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/sizing.glb",
+      "fingerprint": "8d711333036d8b4f",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/sizing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/spinning.glb",
+      "fingerprint": "6c4380ccd2dac531",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/spinning.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/stenter.glb",
+      "fingerprint": "b37222c90b5d5c7b",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/stenter.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/texturing.glb",
+      "fingerprint": "1ce7ff136bfdc193",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/texturing.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/twisting.glb",
+      "fingerprint": "4ff10aad88cd3fe0",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/twisting.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/warp_tying.glb",
+      "fingerprint": "c3ac433a1d5ff7ae",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/warp_tying.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/warping.glb",
+      "fingerprint": "23268d362e4ad2c7",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/warping.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/washing_range.glb",
+      "fingerprint": "84cc202e65f3b1a2",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/washing_range.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/weaving.glb",
+      "fingerprint": "b4fde3c4d8aa3152",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/weaving.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/models/winding.glb",
+      "fingerprint": "31711dd42c69a378",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/models/winding.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    }
+  ],
+  "errors": []
+}

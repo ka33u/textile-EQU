@@ -1,0 +1,1939 @@
+[
+  {
+    "id": "washing_range",
+    "name": "平幅水洗与皂洗",
+    "equipment": "BEN-WASH 连续平幅水洗／皂洗线",
+    "en": "Open-width Washing and Soaping Range",
+    "section": "finishing",
+    "maker": "Benninger",
+    "model": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+    "configuration": "采用官方技术册第 4 页中间的染后／印后组合流程：2 个 TRIKOFLEX、3 个 EXTRACTA、1 个 TEMPACTA，配进布、分段牵引、末端轧液和卷装。各 EXTRACTA 选择 5 个 EA 单穿布带压辊回环。辊数、尺寸及 18 个电机位置为本次功能示意，不是原厂 BOM；该组合未选烘筒。",
+    "summary": "转鼓正反面洗涤、分格逆流水洗与停留皂洗串联；完整观察布路及牵引、输送和洗液泵的工位关系。",
+    "input": "染后或印后待皂洗的平幅织物",
+    "output": "洗净浮色与助剂、经轧液的湿态平幅织物",
+    "process": [
+      "进布退卷、展布与分段张力控制",
+      "第一 TRIKOFLEX 与两个 EXTRACTA 逐步换液洗涤",
+      "TEMPACTA 输送、堆置和停留皂洗",
+      "第二 TRIKOFLEX 与末端 EXTRACTA 继续洗涤",
+      "轧液与出布卷装，后续烘干另选设备"
+    ],
+    "quality": [
+      "洗液浓度与逆流方向",
+      "停留时间、温度与配方",
+      "张力和折皱",
+      "色牢度与残留助剂",
+      "末端轧余率"
+    ],
+    "verified": [
+      "官网当前列有 BEN-WASH、EXTRACTA 与 TRIKOFLEX。",
+      "官方册第 4 页展示转鼓、辊槽与停留组合的染后／印后洗涤线。",
+      "第 6–9 页给出分格逆流、单／双穿布、压辊变型和转鼓正反面洗涤；第 12 页说明 TEMPACTA 停留皂洗用途。"
+    ],
+    "inferred": [
+      "模块尺寸、检修罩、泵位置与传动联接按功能重建。",
+      "各 EXTRACTA 完整展示所选 5 个 EA 回环；此数量不代表厂家统一标准。",
+      "分段驱动连接表达功能从属，不能据此认定每根辊都是机械主动轴。",
+      "TEMPACTA 托布段的 12 个支承辊和 2 个端辊为选定连续路径表达。"
+    ],
+    "missing": [
+      "原厂电机总表、独立轴数、电磁类型、功率和电气图。",
+      "模块尺寸、泵流量和传动比。",
+      "具体订单洗槽数量与停留容量。"
+    ],
+    "counts": {
+      "TRIKOFLEX 模块": 2,
+      "EXTRACTA EA 模块": 3,
+      "TEMPACTA 模块": 1,
+      "转鼓": 4,
+      "EXTRACTA 浸液回环（示意）": 15,
+      "EXTRACTA 辊体（示意）": 45,
+      "示意电机工位": 18,
+      "循环泵示意工位": 6,
+      "烘筒（未选）": 0
+    },
+    "sources": [
+      {
+        "title": "Benninger BEN-WASH 当前产品页",
+        "url": "https://benningergroup.com/en/textile-finishing/washing-solutions",
+        "supports": "当前产品系列与模块化范围。"
+      },
+      {
+        "title": "Benninger Washing Solutions 官方技术册",
+        "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Washing_Solutions/Broschuere_Washing_EN.pdf",
+        "supports": "印刷页 4：组合线；6–9：EXTRACTA / TRIKOFLEX；12：TEMPACTA。未提供本模型电机总表。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "WASH_entry",
+        "label": "进布退卷",
+        "location": "进布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "退卷供布示意；主动或制动退卷形式需按订单确认。",
+        "loadLabel": "进布退卷作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_entry_motor",
+            "via": [
+              "WASH_entry_motor_gear"
+            ],
+            "loads": [
+              "WASH_entry_roll"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_inlet",
+        "label": "进布牵引",
+        "location": "高位牵引轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵引辊建立连续布速，配合后续张力控制。",
+        "loadLabel": "进布牵引作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_inlet_motor",
+            "via": [
+              "WASH_inlet_motor_gear"
+            ],
+            "loads": [
+              "WASH_inlet_pull"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_TRIKO_01",
+        "label": "TRIKOFLEX 1 转鼓洗涤",
+        "location": "第 1 转鼓洗槽驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "覆盖本模块两个输布转鼓；实际共轴、独立驱动和随动分配待核。",
+        "loadLabel": "TRIKOFLEX 1 转鼓洗涤作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_TRIKO_01_motor",
+            "via": [
+              "WASH_TRIKO_01_motor_gear"
+            ],
+            "loads": [
+              "WASH_TRIKO_01_drum_01",
+              "WASH_TRIKO_01_drum_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_TRIKO_01_circulation",
+        "label": "TRIKOFLEX 1 洗液循环",
+        "location": "该转鼓模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "TRIKOFLEX 1 洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_TRIKO_01_circulation",
+            "via": [],
+            "loads": [
+              "WASH_TRIKO_01_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_TRIKO_02",
+        "label": "TRIKOFLEX 2 转鼓洗涤",
+        "location": "第 2 转鼓洗槽驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "覆盖本模块两个输布转鼓；实际共轴、独立驱动和随动分配待核。",
+        "loadLabel": "TRIKOFLEX 2 转鼓洗涤作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_TRIKO_02_motor",
+            "via": [
+              "WASH_TRIKO_02_motor_gear"
+            ],
+            "loads": [
+              "WASH_TRIKO_02_drum_01",
+              "WASH_TRIKO_02_drum_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_TRIKO_02_circulation",
+        "label": "TRIKOFLEX 2 洗液循环",
+        "location": "该转鼓模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "TRIKOFLEX 2 洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_TRIKO_02_circulation",
+            "via": [],
+            "loads": [
+              "WASH_TRIKO_02_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_01",
+        "label": "EXTRACTA 1 分格输布",
+        "location": "第 1 辊槽出布侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+        "loadLabel": "EXTRACTA 1 分格输布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_01_motor",
+            "via": [
+              "WASH_EXTRACTA_01_motor_gear"
+            ],
+            "loads": [
+              "WASH_EXTRACTA_01_upper_01",
+              "WASH_EXTRACTA_01_upper_02",
+              "WASH_EXTRACTA_01_upper_03",
+              "WASH_EXTRACTA_01_upper_04",
+              "WASH_EXTRACTA_01_upper_05",
+              "WASH_EXTRACTA_01_lower_01",
+              "WASH_EXTRACTA_01_lower_02",
+              "WASH_EXTRACTA_01_lower_03",
+              "WASH_EXTRACTA_01_lower_04",
+              "WASH_EXTRACTA_01_lower_05",
+              "WASH_EXTRACTA_01_press_01",
+              "WASH_EXTRACTA_01_press_02",
+              "WASH_EXTRACTA_01_press_03",
+              "WASH_EXTRACTA_01_press_04",
+              "WASH_EXTRACTA_01_press_05"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_01_circulation",
+        "label": "EXTRACTA 1 洗液循环",
+        "location": "该辊槽模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "EXTRACTA 1 洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_01_circulation",
+            "via": [],
+            "loads": [
+              "WASH_EXTRACTA_01_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_02",
+        "label": "EXTRACTA 2 分格输布",
+        "location": "第 2 辊槽出布侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+        "loadLabel": "EXTRACTA 2 分格输布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_02_motor",
+            "via": [
+              "WASH_EXTRACTA_02_motor_gear"
+            ],
+            "loads": [
+              "WASH_EXTRACTA_02_upper_01",
+              "WASH_EXTRACTA_02_upper_02",
+              "WASH_EXTRACTA_02_upper_03",
+              "WASH_EXTRACTA_02_upper_04",
+              "WASH_EXTRACTA_02_upper_05",
+              "WASH_EXTRACTA_02_lower_01",
+              "WASH_EXTRACTA_02_lower_02",
+              "WASH_EXTRACTA_02_lower_03",
+              "WASH_EXTRACTA_02_lower_04",
+              "WASH_EXTRACTA_02_lower_05",
+              "WASH_EXTRACTA_02_press_01",
+              "WASH_EXTRACTA_02_press_02",
+              "WASH_EXTRACTA_02_press_03",
+              "WASH_EXTRACTA_02_press_04",
+              "WASH_EXTRACTA_02_press_05"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_02_circulation",
+        "label": "EXTRACTA 2 洗液循环",
+        "location": "该辊槽模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "EXTRACTA 2 洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_02_circulation",
+            "via": [],
+            "loads": [
+              "WASH_EXTRACTA_02_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_03",
+        "label": "EXTRACTA 3 分格输布",
+        "location": "第 3 辊槽出布侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "覆盖五回环的上、下导布和压辊；只表示模块功能对应，并非每辊均为主动轴。",
+        "loadLabel": "EXTRACTA 3 分格输布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_03_motor",
+            "via": [
+              "WASH_EXTRACTA_03_motor_gear"
+            ],
+            "loads": [
+              "WASH_EXTRACTA_03_upper_01",
+              "WASH_EXTRACTA_03_upper_02",
+              "WASH_EXTRACTA_03_upper_03",
+              "WASH_EXTRACTA_03_upper_04",
+              "WASH_EXTRACTA_03_upper_05",
+              "WASH_EXTRACTA_03_lower_01",
+              "WASH_EXTRACTA_03_lower_02",
+              "WASH_EXTRACTA_03_lower_03",
+              "WASH_EXTRACTA_03_lower_04",
+              "WASH_EXTRACTA_03_lower_05",
+              "WASH_EXTRACTA_03_press_01",
+              "WASH_EXTRACTA_03_press_02",
+              "WASH_EXTRACTA_03_press_03",
+              "WASH_EXTRACTA_03_press_04",
+              "WASH_EXTRACTA_03_press_05"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_EXTRACTA_03_circulation",
+        "label": "EXTRACTA 3 洗液循环",
+        "location": "该辊槽模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "EXTRACTA 3 洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_EXTRACTA_03_circulation",
+            "via": [],
+            "loads": [
+              "WASH_EXTRACTA_03_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_tempacta_feed",
+        "label": "TEMPACTA 入布",
+        "location": "停留段入口塔",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "控制进入停留区的布速和供布量。",
+        "loadLabel": "TEMPACTA 入布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_tempacta_feed_motor",
+            "via": [
+              "WASH_tempacta_feed_motor_gear"
+            ],
+            "loads": [
+              "WASH_tempacta_inlet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_tempacta_transport",
+        "label": "TEMPACTA 托布输送",
+        "location": "停留段低位",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "驱动托带输送湿布，支承辊随带运动，不是 12 个独立电机。",
+        "loadLabel": "TEMPACTA 托布输送作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_tempacta_transport_motor",
+            "via": [
+              "WASH_tempacta_transport_motor_gear"
+            ],
+            "loads": [
+              "WASH_tempacta_conveyor",
+              "WASH_tempacta_end_01",
+              "WASH_tempacta_end_02",
+              "WASH_tempacta_support_01",
+              "WASH_tempacta_support_02",
+              "WASH_tempacta_support_03",
+              "WASH_tempacta_support_04",
+              "WASH_tempacta_support_05",
+              "WASH_tempacta_support_06",
+              "WASH_tempacta_support_07",
+              "WASH_tempacta_support_08",
+              "WASH_tempacta_support_09",
+              "WASH_tempacta_support_10",
+              "WASH_tempacta_support_11",
+              "WASH_tempacta_support_12"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_tempacta_exit",
+        "label": "TEMPACTA 出布",
+        "location": "停留区出口塔",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵出已停留的织物；独立轴分配为示意。",
+        "loadLabel": "TEMPACTA 出布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_tempacta_exit_motor",
+            "via": [
+              "WASH_tempacta_exit_motor_gear"
+            ],
+            "loads": [
+              "WASH_tempacta_outlet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_tempacta_circulation",
+        "label": "TEMPACTA 皂洗液循环",
+        "location": "停留段前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "TEMPACTA 皂洗液循环作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_tempacta_circulation",
+            "via": [],
+            "loads": [
+              "WASH_tempacta_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_final",
+        "label": "末端轧液",
+        "location": "末端轧辊轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵引轧辊与随动压辊配合；不把未知气液加载伪作电机。",
+        "loadLabel": "末端轧液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "pressure"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_final_motor",
+            "via": [
+              "WASH_final_motor_gear"
+            ],
+            "loads": [
+              "WASH_final_nip_01",
+              "WASH_final_nip_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "WASH_exit",
+        "label": "出布卷装",
+        "location": "出布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "卷装匹配布速和张力，实际控制方式未公开。",
+        "loadLabel": "出布卷装作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "WASH_exit_motor",
+            "via": [
+              "WASH_exit_motor_gear"
+            ],
+            "loads": [
+              "WASH_exit_roll"
+            ]
+          }
+        ]
+      }
+    ],
+    "checkedAt": "2026-11-19",
+    "structuralCompleteness": false
+  },
+  {
+    "id": "mercerizing",
+    "name": "丝光",
+    "equipment": "BEN-DIMENSA 有链／无链联合丝光机",
+    "en": "Combined Chain and Chainless Mercerizing Range",
+    "section": "finishing",
+    "maker": "Benninger",
+    "model": "BEN-DIMENSA",
+    "configuration": "选择棉机织物有链／无链组合功能线：双浸渍及停留、短夹链展幅、SECTION CONTROL、真空抽碱、两区稳定、两模块 TRIKOFLEX 后洗、轧液及进出布。22 个电机位置、辊数、调幅轴数及尺寸为功能示意，不作为原厂标准 BOM。",
+    "summary": "追踪碱液浸渍、夹链展幅、稳定抽碱和后洗全过程，区分输布、夹链、调幅以及碱液／真空动力。",
+    "input": "待丝光的棉机织物",
+    "output": "经过展幅稳定、抽碱及后洗的丝光湿布",
+    "process": [
+      "双浸渍与受控停留",
+      "张力补偿后进入短夹链展幅区",
+      "SECTION CONTROL 布边伸展，真空抽碱并配弱碱喷淋",
+      "稳定区正反面洗涤，保持经纬尺寸并降低含碱量",
+      "TRIKOFLEX 后洗、轧液与出布"
+    ],
+    "quality": [
+      "碱浓度和温度",
+      "浸渍与停留均匀性",
+      "幅宽、经向伸长和边中差",
+      "稳定区入布含碱量",
+      "后洗残碱与尺寸稳定"
+    ],
+    "verified": [
+      "官网当前明确 BEN-DIMENSA 有链与无链组合。",
+      "2024 册第 6–8 页给出浸渍、停留、展幅、稳定并允许单或双浸渍。",
+      "第 9 页给出槽下碱液配制、过滤与加热；第 10–13 页涵盖真空抽碱、弱碱喷淋、SECTION CONTROL、稳定和后洗。"
+    ],
+    "inferred": [
+      "水平模块各保留 6 对辊，属于本次选定表达。",
+      "左右夹链驱动、3 根调幅丝杆、真空动力及循环泵位置均为推定。",
+      "SECTION CONTROL 保留两侧作用点，不将未披露的独立动力归属给邻近电机。",
+      "两区稳定与两区后洗为功能组合，实际订单须按织物和产能确定。"
+    ],
+    "missing": [
+      "原厂电机和传动 BOM、独立轴数、电磁类型与功率。",
+      "SECTION CONTROL 及调幅执行机构详图。",
+      "尺寸、传动比和真空系统选型。",
+      "客户后洗、烘干配置。"
+    ],
+    "counts": {
+      "浸渍及停留区": 2,
+      "夹链导轨": 2,
+      "展示夹链链节": 72,
+      "调幅丝杆（示意）": 3,
+      "稳定洗涤区": 2,
+      "TRIKOFLEX 后洗模块": 2,
+      "水平浸渍及稳定辊（示意）": 48,
+      "示意电机工位": 22,
+      "液体循环泵示意工位": 6,
+      "真空动力示意工位": 1
+    },
+    "sources": [
+      {
+        "title": "Benninger BEN-DIMENSA 当前产品页",
+        "url": "https://benningergroup.com/en/textile-finishing/mercerizing-solutions",
+        "supports": "当前系列及有链／无链组合原理。"
+      },
+      {
+        "title": "Benninger Mercerizing Solutions 2024 官方技术册",
+        "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Mercerizing_Solutions/Broschuere_Mercerizing_EN_2024.pdf",
+        "supports": "印刷页 6–13：工艺分区、碱液系统、夹链、SECTION CONTROL、真空抽碱、稳定和后洗。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "MERC_entry",
+        "label": "进布退卷",
+        "location": "进布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "退卷功能示意，实际制动或主动形式待订单。",
+        "loadLabel": "进布退卷作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_entry_motor",
+            "via": [
+              "MERC_entry_motor_gear"
+            ],
+            "loads": [
+              "MERC_entry_roll"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_inlet",
+        "label": "进布牵引",
+        "location": "高位进布轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵引织物进入浸渍。",
+        "loadLabel": "进布牵引作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_inlet_motor",
+            "via": [
+              "MERC_inlet_motor_gear"
+            ],
+            "loads": [
+              "MERC_inlet_pull"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_impregnation_01",
+        "label": "浸渍停留 1 导布",
+        "location": "浸渍停留区驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+        "loadLabel": "浸渍停留 1 导布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_impregnation_01_motor",
+            "via": [
+              "MERC_impregnation_01_motor_gear"
+            ],
+            "loads": [
+              "MERC_impregnation_01_upper_01",
+              "MERC_impregnation_01_upper_02",
+              "MERC_impregnation_01_upper_03",
+              "MERC_impregnation_01_upper_04",
+              "MERC_impregnation_01_upper_05",
+              "MERC_impregnation_01_upper_06",
+              "MERC_impregnation_01_lower_01",
+              "MERC_impregnation_01_lower_02",
+              "MERC_impregnation_01_lower_03",
+              "MERC_impregnation_01_lower_04",
+              "MERC_impregnation_01_lower_05",
+              "MERC_impregnation_01_lower_06"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_impregnation_01_circulation",
+        "label": "浸渍停留 1 循环液",
+        "location": "浸渍停留区前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "浸渍停留 1 循环液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_impregnation_01_circulation",
+            "via": [],
+            "loads": [
+              "MERC_impregnation_01_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_impregnation_02",
+        "label": "浸渍停留 2 导布",
+        "location": "浸渍停留区驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+        "loadLabel": "浸渍停留 2 导布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_impregnation_02_motor",
+            "via": [
+              "MERC_impregnation_02_motor_gear"
+            ],
+            "loads": [
+              "MERC_impregnation_02_upper_01",
+              "MERC_impregnation_02_upper_02",
+              "MERC_impregnation_02_upper_03",
+              "MERC_impregnation_02_upper_04",
+              "MERC_impregnation_02_upper_05",
+              "MERC_impregnation_02_upper_06",
+              "MERC_impregnation_02_lower_01",
+              "MERC_impregnation_02_lower_02",
+              "MERC_impregnation_02_lower_03",
+              "MERC_impregnation_02_lower_04",
+              "MERC_impregnation_02_lower_05",
+              "MERC_impregnation_02_lower_06"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_impregnation_02_circulation",
+        "label": "浸渍停留 2 循环液",
+        "location": "浸渍停留区前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "浸渍停留 2 循环液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_impregnation_02_circulation",
+            "via": [],
+            "loads": [
+              "MERC_impregnation_02_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_stabilizing_01",
+        "label": "稳定洗涤 1 导布",
+        "location": "稳定洗涤区驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+        "loadLabel": "稳定洗涤 1 导布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_stabilizing_01_motor",
+            "via": [
+              "MERC_stabilizing_01_motor_gear"
+            ],
+            "loads": [
+              "MERC_stabilizing_01_upper_01",
+              "MERC_stabilizing_01_upper_02",
+              "MERC_stabilizing_01_upper_03",
+              "MERC_stabilizing_01_upper_04",
+              "MERC_stabilizing_01_upper_05",
+              "MERC_stabilizing_01_upper_06",
+              "MERC_stabilizing_01_lower_01",
+              "MERC_stabilizing_01_lower_02",
+              "MERC_stabilizing_01_lower_03",
+              "MERC_stabilizing_01_lower_04",
+              "MERC_stabilizing_01_lower_05",
+              "MERC_stabilizing_01_lower_06"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_stabilizing_01_circulation",
+        "label": "稳定洗涤 1 循环液",
+        "location": "稳定洗涤区前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "稳定洗涤 1 循环液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_stabilizing_01_circulation",
+            "via": [],
+            "loads": [
+              "MERC_stabilizing_01_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_stabilizing_02",
+        "label": "稳定洗涤 2 导布",
+        "location": "稳定洗涤区驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "完整覆盖 6 对辊；图标表示输布功能，实际主动/随动分配待核。",
+        "loadLabel": "稳定洗涤 2 导布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_stabilizing_02_motor",
+            "via": [
+              "MERC_stabilizing_02_motor_gear"
+            ],
+            "loads": [
+              "MERC_stabilizing_02_upper_01",
+              "MERC_stabilizing_02_upper_02",
+              "MERC_stabilizing_02_upper_03",
+              "MERC_stabilizing_02_upper_04",
+              "MERC_stabilizing_02_upper_05",
+              "MERC_stabilizing_02_upper_06",
+              "MERC_stabilizing_02_lower_01",
+              "MERC_stabilizing_02_lower_02",
+              "MERC_stabilizing_02_lower_03",
+              "MERC_stabilizing_02_lower_04",
+              "MERC_stabilizing_02_lower_05",
+              "MERC_stabilizing_02_lower_06"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_stabilizing_02_circulation",
+        "label": "稳定洗涤 2 循环液",
+        "location": "稳定洗涤区前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "稳定洗涤 2 循环液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_stabilizing_02_circulation",
+            "via": [],
+            "loads": [
+              "MERC_stabilizing_02_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_chain_L",
+        "label": "左侧夹链",
+        "location": "展幅区左侧端部",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "夹链牵引布边并约束幅宽；两侧是否独立电机为示意。",
+        "loadLabel": "左侧夹链作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_chain_motor_L",
+            "via": [],
+            "loads": [
+              "MERC_chain_L",
+              "MERC_chain_L_in",
+              "MERC_chain_L_out"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_chain_R",
+        "label": "右侧夹链",
+        "location": "展幅区右侧端部",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "夹链牵引布边并约束幅宽；两侧是否独立电机为示意。",
+        "loadLabel": "右侧夹链作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_chain_motor_R",
+            "via": [],
+            "loads": [
+              "MERC_chain_R",
+              "MERC_chain_R_in",
+              "MERC_chain_R_out"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_width_01",
+        "label": "夹链调幅 1",
+        "location": "展幅区第 1 横向丝杆",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+        "loadLabel": "夹链调幅 1作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "position"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_width_motor_01",
+            "via": [],
+            "loads": [
+              "MERC_width_screw_01"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_width_02",
+        "label": "夹链调幅 2",
+        "location": "展幅区第 2 横向丝杆",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+        "loadLabel": "夹链调幅 2作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "position"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_width_motor_02",
+            "via": [],
+            "loads": [
+              "MERC_width_screw_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_width_03",
+        "label": "夹链调幅 3",
+        "location": "展幅区第 3 横向丝杆",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "调幅工作轴示意，3 根丝杆不代表厂家确认轴数。",
+        "loadLabel": "夹链调幅 3作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "position"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_width_motor_03",
+            "via": [],
+            "loads": [
+              "MERC_width_screw_03"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_section_control",
+        "label": "SECTION CONTROL 布边伸展",
+        "location": "展幅区两侧布边",
+        "electric": "不指定电机；能源及真实动力分配见动作说明。",
+        "action": "机械伸展功能有厂家证据，独立动力未公开，不借用夹链电机假定机械连接。",
+        "loadLabel": "SECTION CONTROL 布边伸展作用工位",
+        "status": "unassigned",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "MERC_section_L",
+              "MERC_section_R"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_vacuum",
+        "label": "真空抽碱",
+        "location": "夹链出口狭缝与机外动力",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "动力经抽吸管作用于布面狭缝；设备类型、数量和位置为功能示意。",
+        "loadLabel": "真空抽碱作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "air",
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_vacuum_motor",
+            "via": [],
+            "loads": [
+              "MERC_vacuum_motor_pump",
+              "MERC_vacuum_slot"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_wash_01",
+        "label": "后洗转鼓 1",
+        "location": "后洗第 1 模块",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "转鼓输布功能驱动示意，保持低张力。",
+        "loadLabel": "后洗转鼓 1作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_wash_01_motor",
+            "via": [
+              "MERC_wash_01_motor_gear"
+            ],
+            "loads": [
+              "MERC_wash_01_drum_01",
+              "MERC_wash_01_drum_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_wash_01_circulation",
+        "label": "后洗循环 1",
+        "location": "后洗模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "后洗循环 1作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_wash_01_circulation",
+            "via": [],
+            "loads": [
+              "MERC_wash_01_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_wash_02",
+        "label": "后洗转鼓 2",
+        "location": "后洗第 2 模块",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "转鼓输布功能驱动示意，保持低张力。",
+        "loadLabel": "后洗转鼓 2作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_wash_02_motor",
+            "via": [
+              "MERC_wash_02_motor_gear"
+            ],
+            "loads": [
+              "MERC_wash_02_drum_01",
+              "MERC_wash_02_drum_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_wash_02_circulation",
+        "label": "后洗循环 2",
+        "location": "后洗模块前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "后洗循环 2作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_wash_02_circulation",
+            "via": [],
+            "loads": [
+              "MERC_wash_02_circulation_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_final",
+        "label": "后洗轧液",
+        "location": "出布前轧辊轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵引轧辊；加载能源未知，不补造加载电机。",
+        "loadLabel": "后洗轧液作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "pressure"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_final_motor",
+            "via": [
+              "MERC_final_motor_gear"
+            ],
+            "loads": [
+              "MERC_final_nip_01",
+              "MERC_final_nip_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MERC_exit",
+        "label": "出布卷装",
+        "location": "出布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "洗净湿布卷装，功能位置为示意。",
+        "loadLabel": "出布卷装作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "MERC_exit_motor",
+            "via": [
+              "MERC_exit_motor_gear"
+            ],
+            "loads": [
+              "MERC_exit_roll"
+            ]
+          }
+        ]
+      }
+    ],
+    "checkedAt": "2026-11-19",
+    "structuralCompleteness": false
+  },
+  {
+    "id": "sanforizing",
+    "name": "橡毯预缩",
+    "equipment": "POWER-SHRINK 橡毯预缩整理线",
+    "en": "Rubber-belt Sanforizing Range",
+    "section": "finishing",
+    "maker": "Brückner",
+    "model": "POWER-SHRINK",
+    "configuration": "选择衬衫／裤料连续整理功能线：进布卷及储布架、蒸汽滚筒、单橡毯预缩、1500 mm 毛毯烘筒、2 只冷却辊、出布储布架和卷装。保留内置磨毯与水冷，选择磨屑抽吸选件。未选重磅牛仔线的额外整纬／预拉幅模块。12 个电机点和传动拆分为功能示意，非原厂轴数。",
+    "summary": "观察橡毯在压辊与热滚筒间形变压缩布幅，然后毛毯干燥稳定、冷却与卷装；维护磨毯单列。",
+    "input": "待降低缩水率的机织物",
+    "output": "经过预缩、稳定及冷却的成品织物",
+    "process": [
+      "储布架连续供布，气动摆辊控制张力",
+      "蒸汽滚筒润湿",
+      "橡毯压缩与回复使织物机械预缩",
+      "毛毯包覆蒸汽烘筒干燥稳定",
+      "冷却、出布储布和卷装；磨毯属于停产维护"
+    ],
+    "quality": [
+      "残余缩水率",
+      "润湿率和温度",
+      "橡毯压缩量、速度及表面状态",
+      "毛毯张力与烘筒温度",
+      "冷却后的张力与手感"
+    ],
+    "verified": [
+      "当前官网列 POWER-SHRINK，确认橡毯预缩、水冷、内置磨毯、湿区外轴承及毛毯组合。",
+      "官方样本页 5 确认储布架气动摆辊与蒸汽滚筒。",
+      "页 6 确认选配磨屑抽吸；页 8 提供毛毯烘筒直径选项；页 10 区分衬衫／裤料与重磅牛仔配置。"
+    ],
+    "inferred": [
+      "本模型选择 1500 mm 毛毯烘筒和 2 只冷却辊；后者数量为示意配置。",
+      "橡毯与热滚筒分别显示驱动功能，不声称厂家一定安装两台独立电机。",
+      "磨毯、风机与水泵位置、外形和功率未公开。",
+      "气动摆辊、蒸汽阀及旋转接头均不当成电机。"
+    ],
+    "missing": [
+      "电机数量、电磁类型、功率与驱动图。",
+      "橡毯压紧/张紧和毛毯纠偏执行器。",
+      "整线尺寸、牵引分段及客户选配表。",
+      "官网样本修订日期未完整标出，不宣称它们是最新发布年度。"
+    ],
+    "counts": {
+      "进出储布架": 2,
+      "蒸汽润湿滚筒": 1,
+      "橡毯预缩单元": 1,
+      "完整橡毯回路": 1,
+      "毛毯烘筒": 1,
+      "毛毯烘筒直径 mm": 1500,
+      "完整毛毯回路": 1,
+      "冷却辊（示意）": 2,
+      "内置磨毯辊": 1,
+      "选配磨屑抽吸": 1,
+      "示意电机工位": 12,
+      "气动摆辊": 2
+    },
+    "sources": [
+      {
+        "title": "Brückner POWER-SHRINK 当前产品页",
+        "url": "https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html",
+        "supports": "当前机型、橡毯、水冷、内置磨毯及毛毯组合。"
+      },
+      {
+        "title": "POWER-SHRINK 官方样本页 5",
+        "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page5.html",
+        "supports": "储布架气动摆辊和蒸汽滚筒。"
+      },
+      {
+        "title": "POWER-SHRINK 官方样本页 6",
+        "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page6.html",
+        "supports": "水冷、内置磨毯与选配抽屑。"
+      },
+      {
+        "title": "POWER-SHRINK 官方样本页 8（英／西版）",
+        "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-es/files/basic-html/page8.html",
+        "supports": "毛毯干燥稳定及 800/1500/2000/2500 mm 烘筒选项。"
+      },
+      {
+        "title": "POWER-SHRINK 官方样本页 10",
+        "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page10.html",
+        "supports": "衬衫／裤料线含进出储布架，重磅牛仔另选整纬及预拉幅。"
+      },
+      {
+        "title": "POWER-SHRINK 官方样本页 4",
+        "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page4.html",
+        "supports": "橡毯、压辊和预缩热滚筒的作用。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "SAN_entry",
+        "label": "进布退卷",
+        "location": "进布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "供布功能示意；实际主动或制动方式待核。",
+        "loadLabel": "进布退卷作用工位",
+        "status": "inferred",
+        "sources": [
+          4
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_entry_motor",
+            "via": [
+              "SAN_entry_motor_gear"
+            ],
+            "loads": [
+              "SAN_entry_roll"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_entry_scray",
+        "label": "进布储布牵引",
+        "location": "进布架顶部",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "主动牵引辊供布进入储布槽，气动摆辊单列。",
+        "loadLabel": "进布储布牵引作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_entry_scray_motor",
+            "via": [
+              "SAN_entry_scray_motor_gear"
+            ],
+            "loads": [
+              "SAN_entry_scray_top"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_steam",
+        "label": "蒸汽滚筒输布",
+        "location": "润湿滚筒轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "输布驱动示意，蒸汽另由管路提供。",
+        "loadLabel": "蒸汽滚筒输布作用工位",
+        "status": "inferred",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_steam_motor",
+            "via": [
+              "SAN_steam_motor_gear"
+            ],
+            "loads": [
+              "SAN_steam_drum"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_rubber",
+        "label": "橡毯循环",
+        "location": "橡毯回程驱动侧",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "橡毯循环与接触辊随动；主动辊及张紧分配未公开。",
+        "loadLabel": "橡毯循环作用工位",
+        "status": "inferred",
+        "sources": [
+          0,
+          5
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "main",
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_rubber_motor",
+            "via": [
+              "SAN_rubber_motor_gear"
+            ],
+            "loads": [
+              "SAN_rubber_blanket",
+              "SAN_press_roller",
+              "SAN_tension_roller",
+              "SAN_return_roller"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_cylinder",
+        "label": "预缩热滚筒",
+        "location": "热滚筒轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "与橡毯速度配合；独立电机图标为功能拆解，厂家独立轴数未知。",
+        "loadLabel": "预缩热滚筒作用工位",
+        "status": "inferred",
+        "sources": [
+          0,
+          5
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "main",
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_cylinder_motor",
+            "via": [
+              "SAN_cylinder_motor_gear"
+            ],
+            "loads": [
+              "SAN_shrink_cylinder"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_felt",
+        "label": "毛毯干燥稳定",
+        "location": "毛毯烘筒轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "烘筒和毛毯输送热湿布，导辊随毛毯转动；蒸汽热源另列。",
+        "loadLabel": "毛毯干燥稳定作用工位",
+        "status": "inferred",
+        "sources": [
+          0,
+          3
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "transport"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_felt_motor",
+            "via": [
+              "SAN_felt_motor_gear"
+            ],
+            "loads": [
+              "SAN_felt_cylinder",
+              "SAN_felt_blanket",
+              "SAN_felt_tension",
+              "SAN_felt_entry",
+              "SAN_felt_exit"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_cooling",
+        "label": "冷却段导布",
+        "location": "冷却辊轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "冷却稳定后进入出布储布架；主动与随动分配未知。",
+        "loadLabel": "冷却段导布作用工位",
+        "status": "inferred",
+        "sources": [
+          4
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_cooling_drive",
+            "via": [
+              "SAN_cooling_drive_gear"
+            ],
+            "loads": [
+              "SAN_cooling_drum_01",
+              "SAN_cooling_drum_02"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_exit_scray",
+        "label": "出布储布牵引",
+        "location": "出布架顶部",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "牵引并暂存下游换卷期间的布幅。",
+        "loadLabel": "出布储布牵引作用工位",
+        "status": "inferred",
+        "sources": [
+          1,
+          4
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_exit_scray_motor",
+            "via": [
+              "SAN_exit_scray_motor_gear"
+            ],
+            "loads": [
+              "SAN_exit_scray_top"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_exit",
+        "label": "出布卷装",
+        "location": "出布卷轴端",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "匹配布速与张力收卷，控制参数未公开。",
+        "loadLabel": "出布卷装作用工位",
+        "status": "inferred",
+        "sources": [
+          4
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind",
+          "tension"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_exit_motor",
+            "via": [
+              "SAN_exit_motor_gear"
+            ],
+            "loads": [
+              "SAN_exit_roll"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_grinding",
+        "label": "内置磨毯（维护）",
+        "location": "预缩主机下部",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "停产维护时磨削橡毯，不表示正常过布时同时磨毯。",
+        "loadLabel": "内置磨毯（维护）作用工位",
+        "status": "inferred",
+        "sources": [
+          0,
+          2
+        ],
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_grinding_motor",
+            "via": [
+              "SAN_grinding_motor_gear"
+            ],
+            "loads": [
+              "SAN_grinding_roller"
+            ]
+          }
+        ],
+        "operation": "maintenance"
+      },
+      {
+        "id": "SAN_cooling_pump",
+        "label": "橡毯冷却水循环",
+        "location": "预缩主机前下方",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "电机驱动泵工作轴，经管网提供处理液。液流作用与辊组机械传动分别表示。",
+        "loadLabel": "橡毯冷却水循环作用工位",
+        "status": "inferred",
+        "sources": [
+          0,
+          2
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_cooling_pump",
+            "via": [],
+            "loads": [
+              "SAN_cooling_pump_pump"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SAN_dust",
+        "label": "磨毯抽屑（已选选件）",
+        "location": "机外抽屑箱",
+        "electric": "原厂电磁类型、功率和独立轴数未公开；外形及安装点为功能示意。",
+        "action": "配合磨毯维护抽吸粉尘，不属于正常工艺循环风。",
+        "loadLabel": "磨毯抽屑（已选选件）作用工位",
+        "status": "inferred",
+        "sources": [
+          2
+        ],
+        "filters": [
+          "fluid",
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ],
+        "groups": [
+          {
+            "motor": "SAN_dust_motor",
+            "via": [],
+            "loads": [
+              "SAN_dust_fan"
+            ]
+          }
+        ],
+        "operation": "maintenance"
+      },
+      {
+        "id": "SAN_pneumatic_dancers",
+        "label": "进出布气动摆辊",
+        "location": "进出储布架摆臂",
+        "electric": "不指定电机；能源及真实动力分配见动作说明。",
+        "action": "厂家明确气动加载；摆辊由织物带动转动，气缸调节加载，不设置伺服电机。",
+        "loadLabel": "进出布气动摆辊作用工位",
+        "status": "confirmed",
+        "sources": [
+          1
+        ],
+        "filters": [
+          "pneumatic"
+        ],
+        "jobs": [
+          "tension",
+          "pressure"
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "SAN_entry_scray_bottom",
+              "SAN_exit_scray_bottom"
+            ]
+          }
+        ],
+        "actuation": "pneumatic"
+      }
+    ],
+    "checkedAt": "2026-11-19",
+    "structuralCompleteness": false
+  }
+]

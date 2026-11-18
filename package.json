@@ -1,0 +1,16 @@
+{
+  "name": "textile-machinery-atlas",
+  "version": "7.0.0",
+  "private": true,
+  "type": "module",
+  "description": "纺织装备工艺与传动交互演示系统，覆盖 27 类设备及其电机、安装工位与受驱机构",
+  "scripts": {
+    "start": "python3 scripts/serve.py",
+    "check": "node --check dist/app.js && node --check dist/drive-view.js && node --check dist/texturing-motion.js && node --check dist/station-motion.js && python3 qa/verify_project.py --output qa/verification.json && python3 qa/verify_extensions_v5.py --output qa/extensions-validation.json && node qa/test-branches-ui.mjs",
+    "check:camera": "node qa/test-camera.mjs",
+    "check:rendering": "node qa/test-model-rendering.mjs",
+    "check:drives": "python3 qa/verify_drives_v4.py --output qa/drive-validation.json && node qa/test-drive-view.mjs",
+    "check:motion": "node qa/test-texturing-motion.mjs && node qa/test-drive-animation.mjs && node qa/test-rotor-spinning.mjs && node qa/test-equipment-stations.mjs",
+    "check:stations": "node qa/test-equipment-stations.mjs"
+  }
+}

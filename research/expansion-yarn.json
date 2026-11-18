@@ -1,0 +1,499 @@
+[
+  {
+    "id": "assembly_winding",
+    "name": "并纱",
+    "equipment": "SSM CWX-D 槽筒并纱机",
+    "en": "Assembly winding",
+    "section": "yarn_processing",
+    "maker": "SSM",
+    "model": "CWX-D",
+    "configuration": "公开最小完整10锭，双面5+5；选用2股供纱，20只静止退绕供纱卷装；152 mm槽筒排纱；圆柱合股卷装。",
+    "summary": "把两根短纤单纱按可控张力平行并合并卷成适于后续捻线的卷装，本工序不赋予规定捻度。每锭独立驱动槽筒，槽沟同时完成排纱，筒子通过表面接触卷绕。",
+    "input": "两根短纤单纱及其供纱卷装",
+    "output": "二股平行合股卷装（尚需按产品要求加捻）",
+    "process": [
+      "两只静止供纱卷装分别从端部退绕",
+      "各单纱经过独立导纱、张力与断纱检测位置",
+      "两根纱在导纱器并合，缺股时停止卷绕",
+      "独立锭位驱动槽筒，其槽形让纱横向往复分布",
+      "槽筒与筒子接触形成合股交叉卷装"
+    ],
+    "quality": [
+      "缺股与单根断纱监控",
+      "两根纱的张力均衡",
+      "卷装密度与退绕性能",
+      "避免把并纱误认为加捻工序"
+    ],
+    "verified": [
+      "当前SSM官网列CWX-D；每锭独立驱动、槽筒排纱。",
+      "官网及产品系列册第20页：最小10、最大80锭（8节双面），横动152 mm。",
+      "官网支持2股和3股供纱；本机选择2股。",
+      "第20页官方图已实际查看，显示双面5位模块、下部供纱架、上部槽筒与卷装、端部电控。"
+    ],
+    "inferred": [
+      "选择最小10锭整机而非截短多锭机器；2×5排列由官方10锭双面配置及照片共同解释。",
+      "机架长度、高度、间距、侧罩折线和各安装座按官方图比例重构，没有声称厂家精确外形尺寸。",
+      "独立电机外壳和输出轴位置、槽筒具体沟槽曲线、各张力/检测元件外形为示意。",
+      "每只供纱卷装直径240 mm，小于官方2股供纱允许280 mm上限。"
+    ],
+    "missing": [
+      "电机制造商、额定功率、减速/轴联图、驱动铭牌未取得。",
+      "随机卷绕槽筒的精确槽形和传动比、检测/切断器BOM未取得。",
+      "完整电气柜和安全联锁回路未公开，结构完整性不作OEM验证。"
+    ],
+    "counts": {
+      "并纱锭位": 10,
+      "机面": 2,
+      "每面锭位": 5,
+      "每锭供纱根数": 2,
+      "供纱卷装": 20,
+      "槽筒": 10,
+      "合股筒子": 10,
+      "可视独立槽筒驱动工位": 10,
+      "排纱行程毫米": 152
+    },
+    "sources": [
+      {
+        "title": "SSM 当前并纱机产品页：CWX-D",
+        "url": "https://www.ssm.ch/products/winding-solutions/assembly-winding-machines",
+        "supports": "单锭独立驱动，2/3股，槽筒排纱，152 mm，10–80锭。"
+      },
+      {
+        "title": "SSM Product portfolio，p.20，当前官网版本",
+        "url": "https://www.ssm.ch/fileadmin/ssm/documents/products/winding/ssm-product-range-3615-en.pdf",
+        "supports": "CWX-D技术表与整机照片；公开最小10锭双面配置。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "assembly_drum",
+        "label": "10锭独立槽筒与接触卷绕",
+        "location": "每个并纱位上部槽筒侧端",
+        "electric": "每锭独立电动驱动；功率和电机型式未披露",
+        "action": "带动槽筒旋转；槽沟完成横动排纱，接触传动带动合股卷装",
+        "loadLabel": "凹槽槽筒与合股筒子",
+        "status": "confirmed",
+        "filters": [
+          "single"
+        ],
+        "jobs": [
+          "wind",
+          "traverse"
+        ],
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 10,
+            "start": 1,
+            "motor": "CWXD_wind_{n:02d}",
+            "via": [
+              "CWXD_wind_{n:02d}_out"
+            ],
+            "loads": [
+              "CWXD_drum_{n:02d}",
+              "CWXD_package_{n:02d}"
+            ]
+          }
+        ],
+        "note": "confirmed仅指原厂明确每锭独立驱动槽筒并纱工位；模型轴端与安装形式不是已核厂家联轴结构。"
+      },
+      {
+        "id": "assembly_supply",
+        "label": "二股静止退绕、张力与并合",
+        "location": "下部供纱架与中部单纱处理区",
+        "electric": "供纱卷装端部退绕，不设置供纱旋转电机",
+        "action": "两根单纱经张力和检测后平行并合；不加规定捻度",
+        "loadLabel": "供纱卷装与并纱导纱区",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 10,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "CWXD_supply_{n:02d}",
+              "CWXD_merge_{n:02d}"
+            ]
+          }
+        ]
+      }
+    ],
+    "structuralCompleteness": false,
+    "checkedAt": "2026-11-19",
+    "scope": "public_configuration_reconstruction; not OEM CAD/BOM"
+  },
+  {
+    "id": "airjet_spinning",
+    "name": "喷气纺",
+    "equipment": "Rieter J 70 自主喷气纺纱机",
+    "en": "Air-jet spinning",
+    "section": "yarn_processing",
+    "maker": "Rieter",
+    "model": "J 70",
+    "configuration": "官方p.18基础40纺位、2机节、2落筒机器人；255 mm节距；1070 mm条筒；机长11113 mm、宽3029 mm、高3100 mm。圆柱卷装，选用Q30A；不选择上蜡或VARIOlot。",
+    "summary": "熟条经过牵伸形成纤维束，再由压缩空气在喷嘴内成纱，随后引纱、清纱和卷绕。每个纺位可自主接头，机器人负责落筒、空管辅助纱等工作。",
+    "input": "适用原料及纱支范围内的充分准备熟条；示例为纤维素短纤熟条",
+    "output": "喷气纱圆柱卷装",
+    "process": [
+      "条筒喂入熟条并通过牵伸钳口",
+      "压缩空气进入两片式喷嘴壳体，在陶瓷纺纱尖端形成包缠纱结构",
+      "成纱通过接头工作区、Q30A与引纱钳口",
+      "直线横动导纱与卷绕单元形成圆柱卷装",
+      "单纺位处理断头接头；落筒机器人换筒及辅助接头",
+      "双侧成筒带输送卷装，空管供给箱补给；废料自动压实移出"
+    ],
+    "quality": [
+      "牵伸均匀性与喂条准备",
+      "喷嘴气压、纺纱尖端与纤维适配",
+      "Q30A清纱与弱纱检测选项按订货配置",
+      "接头质量与筒子退绕品质",
+      "不能把气流成纱解释成电动转杯或实体锭子加捻"
+    ],
+    "verified": [
+      "当前Rieter官网及其现挂3584-v1 en 2305手册确认J70平台，p.18列40纺位/2节/2机器人和尺寸。",
+      "手册p.19：255 mm节距；每纺纱及卷绕单元独立驱动；直线横动；2机器人标准，4机器人可选。",
+      "手册p.19：两条成筒输送带、独立空管供给；储管能力660（每侧330）。",
+      "手册p.11和14：机器人落筒、辅助纱及清洁功能；自主纺位接头；两片式可开启喷嘴；废料压实移出。",
+      "手册p.13：压缩空气用于喷嘴成纱；不会为喷嘴设置假想电机。",
+      "p.4近景、p.14喷嘴图、p.18整机尺寸图均已实际查看。"
+    ],
+    "inferred": [
+      "40纺位完整建模；4对可视牵伸罗拉依据公开近景形成结构示意，厂家完整牵伸BOM未提供。",
+      "每纺位以1处牵伸功能驱动和1处卷绕功能驱动外形表达独立工位；80处外形不是已核实际总电机数。",
+      "2处输送带和2处机器人行走驱动的位置、外形及中间联接为功能推定；功率、内部驱动数量未知。",
+      "条筒采取交错双排；各机头分段、喷嘴壳体和电控位置按照片比例重建，只有总外形与公开节距有尺寸依据。",
+      "660只空管作满储能力示意，仓道数与管列排列未获BOM确认；不表示生产中必须满储。",
+      "陶瓷喉口仅表示通孔和空气通道关系；未冒称0.9/1.0/1.2 mm纺纱尖端内部精密几何。"
+    ],
+    "missing": [
+      "原厂电机清单、铭牌、功率、编码器、每纺位牵伸各轴和卷绕/引纱/横动的实际独立电机数量与分配。",
+      "喷嘴微孔/气道、真实内部流场和捻度形成不可由外观复刻验证。",
+      "自主接头执行器、机器人全部执行轴、吸排风机、废料压实器的具体驱动形式及传动连接。",
+      "详细安全联锁、气动/电气回路、完整装配图、全部部件间隙和OEM结构完整性。"
+    ],
+    "counts": {
+      "纺位": 40,
+      "机节": 2,
+      "每节纺位": 20,
+      "落筒机器人": 2,
+      "熟条筒": 40,
+      "气流成纱喷嘴": 40,
+      "筒子卷装": 40,
+      "牵伸功能驱动示意": 40,
+      "卷绕功能驱动示意": 40,
+      "双侧成筒输送带": 2,
+      "机器人行走驱动示意": 2,
+      "输送带驱动示意": 2,
+      "空管储存容量": 660,
+      "纺位节距毫米": 255,
+      "公开机长毫米": 11113
+    },
+    "sources": [
+      {
+        "title": "Rieter J70 当前产品页",
+        "url": "https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70",
+        "supports": "独立纺纱及卷绕单元，气流纺平台、双面分节配置、Q30A与圆柱卷装。"
+      },
+      {
+        "title": "Rieter J70 brochure 3584-v1 en 2305，p.18–19",
+        "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+        "supports": "40纺位2节2机器人基础配置、11113×3029×3100 mm、255 mm、1070 mm条筒及驱动/物流参数。"
+      },
+      {
+        "title": "Rieter J70 brochure，p.4、11、13–14",
+        "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+        "supports": "实际整机/纺位近景，压缩空气喷嘴、可开启外壳，自主接头、机器人职责及废料处理。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "airjet_drafting",
+        "label": "40纺位牵伸功能驱动",
+        "location": "各自主纺纱单元下部牵伸区",
+        "electric": "独立纺纱单元已证实；本图每位1处外形表示牵伸功能，实际各罗拉电机分配未披露",
+        "action": "驱动牵伸下罗拉形成不同表面速度，控制纤维束牵伸",
+        "loadLabel": "牵伸罗拉组",
+        "status": "inferred",
+        "filters": [
+          "single"
+        ],
+        "jobs": [
+          "draft",
+          "feed"
+        ],
+        "sources": [
+          0,
+          1,
+          2
+        ],
+        "groups": [
+          {
+            "repeat": 40,
+            "start": 1,
+            "motor": "J70_draft_{n:02d}",
+            "via": [
+              "J70_draft_{n:02d}_out"
+            ],
+            "loads": [
+              "J70_drafting_{n:02d}"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_winding",
+        "label": "40个独立卷绕单元",
+        "location": "每个纺位上部卷装区",
+        "electric": "每卷绕单元独立驱动；电机实型及轴端联接未披露",
+        "action": "带动卷绕工作辊并形成成纱卷装",
+        "loadLabel": "卷绕工作辊、筒子",
+        "status": "confirmed",
+        "filters": [
+          "single"
+        ],
+        "jobs": [
+          "wind"
+        ],
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 40,
+            "start": 1,
+            "motor": "J70_wind_{n:02d}",
+            "via": [
+              "J70_wind_{n:02d}_out"
+            ],
+            "loads": [
+              "J70_wind_drum_{n:02d}",
+              "J70_package_{n:02d}"
+            ]
+          }
+        ],
+        "note": "confirmed仅对应独立卷绕工位归属；不代表图中电机数、位置及接触传动结构已获BOM核验。"
+      },
+      {
+        "id": "airjet_pneumatic_spinning",
+        "label": "40个压缩空气成纱喷嘴",
+        "location": "牵伸出口上方的两片式喷嘴",
+        "electric": "压缩空气；空压机为外部公用系统，本机未虚构喷嘴电机",
+        "action": "气流使纤维端部围绕纱芯形成包缠结构",
+        "loadLabel": "成纱喷嘴",
+        "status": "unassigned",
+        "filters": [
+          "pneumatic"
+        ],
+        "jobs": [
+          "process",
+          "air"
+        ],
+        "sources": [
+          1,
+          2
+        ],
+        "groups": [
+          {
+            "repeat": 40,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "J70_air_nozzle_{n:02d}"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_delivery_traverse",
+        "label": "引纱与直线横动（驱动分配未公开）",
+        "location": "喷嘴至卷装之间",
+        "electric": "真实驱动归属、独立电机数量未核；不补造横动电机",
+        "action": "引出成纱并横向排纱；直线横动功能已有原厂依据",
+        "loadLabel": "引纱钳口、横动导纱器",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "traverse"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 40,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "J70_delivery_{n:02d}",
+              "J70_traverse_{n:02d}"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_piecing",
+        "label": "自主纺位接头（执行器未核）",
+        "location": "每纺位喷嘴出口与控制面板之间",
+        "electric": "各执行器为电动或气动及其数量未披露",
+        "action": "各纺位独立处理自然断头和清纱切断，不必等待落筒机器人",
+        "loadLabel": "自主接头工作口",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process",
+          "position"
+        ],
+        "sources": [
+          0,
+          2
+        ],
+        "groups": [
+          {
+            "repeat": 40,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "J70_piecing_{n:02d}"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_doffing",
+        "label": "双侧机器人行走与落筒",
+        "location": "机器上方纵轨和各侧卷绕位置",
+        "electric": "行走驱动外观为功能推定；其他执行轴与气动件不补造",
+        "action": "沿纺位移动并完成落筒、辅助纱与清洁任务",
+        "loadLabel": "2台落筒机器人",
+        "status": "inferred",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "position",
+          "logistics"
+        ],
+        "sources": [
+          1,
+          2
+        ],
+        "groups": [
+          {
+            "motor": "J70_robot_drive_A",
+            "via": [
+              "J70_robot_drive_A_out"
+            ],
+            "loads": [
+              "J70_robot_A"
+            ]
+          },
+          {
+            "motor": "J70_robot_drive_B",
+            "via": [
+              "J70_robot_drive_B_out"
+            ],
+            "loads": [
+              "J70_robot_B"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_package_transport",
+        "label": "双侧成筒输送",
+        "location": "卷绕区后方纵向皮带",
+        "electric": "每带一处驱动外观为示意，实际电机与减速件未披露",
+        "action": "把落下的成筒送到机端",
+        "loadLabel": "A/B侧成筒带",
+        "status": "inferred",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "transport",
+          "logistics"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "motor": "J70_conveyor_drive_A",
+            "via": [
+              "J70_conveyor_drive_A_out"
+            ],
+            "loads": [
+              "J70_conveyor_A"
+            ]
+          },
+          {
+            "motor": "J70_conveyor_drive_B",
+            "via": [
+              "J70_conveyor_drive_B_out"
+            ],
+            "loads": [
+              "J70_conveyor_B"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "airjet_utilities",
+        "label": "吸排风与自动废料处理（驱动未核）",
+        "location": "车头服务柜和机节吸风主通道",
+        "electric": "未取得风机与压实器驱动清单，保留未知动力源",
+        "action": "汇集排风、压实并移出软废料",
+        "loadLabel": "吸排风接口、废料压实与收集",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "air",
+          "pressure"
+        ],
+        "sources": [
+          1,
+          2
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "J70_suction_system",
+              "J70_waste_compactor"
+            ]
+          }
+        ]
+      }
+    ],
+    "structuralCompleteness": false,
+    "checkedAt": "2026-11-19",
+    "scope": "public_configuration_reconstruction; not OEM CAD/BOM"
+  }
+]

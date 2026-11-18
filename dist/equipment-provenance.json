@@ -1,0 +1,2577 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-19",
+  "assetVersion": "20261119-stations",
+  "scope": "当前设备身份来自实际GLB；v4显示整机驱动工位和功能传动路径，电机只显示外观，未知实机装配仍待核实。",
+  "acceptance": {
+    "structuralCompleteness": false,
+    "status": "结构待核实",
+    "note": "公开资料尚不足以逐项证明全部内部装配无遗漏；已确认、选定和待核实分别列出。"
+  },
+  "items": [
+    {
+      "id": "opening",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79",
+      "referenceConfiguration": "棉开清模块链：UNIfloc A 12、UNIclean B 12、UNImix B 72、UNIstore A 79，另含 A 49 重杂分离与 A 21 凝棉接口；场地布置为推定。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter VARIOline / UNIfloc A 12",
+      "currentFinding": "当前目录在列；本次无法确认绝对最新或2026新款。A12至少2017已存在。",
+      "generationAssessment": "当前目录在列；本次无法确认绝对最新或2026新款。A12至少2017已存在。",
+      "referenceYear": null,
+      "verified": [
+        "当前目录列有 A12、B12、B72、A79、A49、A21 模块。",
+        "B12 公开外形尺寸：2227 × 1040 × 2020 mm。",
+        "B12 工作幅宽 1600 mm，清洁辊直径 750 mm。",
+        "A12 使用转矩控制直接驱动。"
+      ],
+      "inferred": [
+        "模块顺序、互联管道与场地间距为所选安装方案，尚非厂家审定成套线。",
+        "12 m 轨道与 20 个棉包是场地库存布置，并非把固定设备数量缩减为示意。",
+        "A12 抓棉盘、升降/行走，B72 仓室隔板及 A79/A49/A21 壳体比例缺工程尺寸依据。"
+      ],
+      "missing": [
+        "未锁定原棉品质、含杂率、车间产量与厂家完整配套方案。",
+        "外部过滤站、风量、火花/金属/异纤分离与风机选型仍为待核实接口。",
+        "抓棉盘、传动、升降、气路与控制系统的完整零件清单。"
+      ],
+      "selectedCounts": {
+        "轨道长度（布局选定）": "12 m",
+        "棉包数（场地布置）": 20
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "a12-current",
+          "publisher": "Rieter",
+          "title": "Automatic Bale Opener UNIfloc A 12",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation/bale-opener-unifloc-a-12",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前产品页；明确扭矩控制直接驱动、抓取力扫描、取棉罗拉和规格；未给此页面发布日期。"
+        },
+        {
+          "id": "a12-2017",
+          "publisher": "Rieter",
+          "title": "Rieter Annual Report 2017",
+          "url": "https://www.rieter.com/fileadmin/user_upload/investor-relations/reports/2017/rieter-annual-report-2017-en.pdf",
+          "publishedDate": "2017",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "annual_report",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "封面/页眉为 Annual Report 2017；第17页讨论UNIfloc A 12。此为报告年度，非本次确认的首发日。",
+          "supports": "A 12至少在2017报告期已经存在；不能称2026新推出。"
+        },
+        {
+          "id": "fiber-current",
+          "publisher": "Rieter",
+          "title": "Fiber Preparation Machines",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前目录列A 12、VARIOline、C 81、C 77；目录展示不等于订单可交付或绝对最新。"
+        },
+        {
+          "title": "Rieter · UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79 配置资料",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation/blowroom-line-varioline"
+        },
+        {
+          "title": "Rieter · UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79 配置资料",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/fiber-preparation/varioline/rieter-varioline-brochure-2303-v9-96282-en.pdf",
+          "printedPages": [
+            50
+          ]
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "行走塔、独立悬臂抓棉头与直驱外部形体",
+            "升降导向与行走轮",
+            "B12 清洁辊及落杂腔",
+            "B72 混棉壳体与仓室",
+            "A79 储棉/开松模块",
+            "A49 重杂分离",
+            "A21 凝棉接口",
+            "物料风管与废气总管"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "carding",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "C 81",
+      "referenceConfiguration": "40 根工作盖板；CGC/TLM/IGS 功能位置；独立单头圈条器；未选 RSB-Module 55。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter C 80剖面 + C 81外形/样本",
+      "currentFinding": "C81相对C80为已证实的后继新代（2023推出）；当前在列。未声称所有厂家或所有地区的绝对最新。",
+      "generationAssessment": "C81相对C80为已证实的后继新代（2023推出）；当前在列。未声称所有厂家或所有地区的绝对最新。",
+      "referenceYear": null,
+      "verified": [
+        "40 根工作盖板。",
+        "公开功能包括 CGC、TLM 与 IGS。"
+      ],
+      "inferred": [
+        "外形仅以 C81 为参照；内部轴承位置和尺寸从公开图推定。",
+        "40 根工作盖板有资料依据；40 根回程盖板仅为回程外观分段，尚非厂家总盖板数证明。",
+        "CGC/TLM/IGS 只表示功能位置与外部形体，不代表核实了传感器数量或执行器内构。",
+        "900 mm 圈条筒为未核实的展示选择。"
+      ],
+      "missing": [
+        "完整回程盖板链、链轮、清洁机构及总盖板数量。",
+        "针布钢丝形状、密度、精确隔距及 CGC/IGS 内部机构。",
+        "完整自调匀整喂入、剥棉、圈条/换筒与吸风控制。"
+      ],
+      "selectedCounts": {
+        "工作盖板数（已确认）": 40,
+        "回程盖板分段数（推定）": 40,
+        "展示条筒直径（待核实）": "900 mm"
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "c81-current",
+          "publisher": "Rieter",
+          "title": "High-Performance Card C 81",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation/card-c-81",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前C 81页面列40个工作盖板、CGC、TLM、IGS与RSB-Module 55。"
+        },
+        {
+          "id": "c81-date",
+          "publisher": "Rieter",
+          "title": "Card C 80: A Game-Changer in Fiber Preparation",
+          "url": "https://www.rieter.com/sustainability/sustainability-stories/details/card-c-80-a-game-changer-in-fiber-preparation",
+          "publishedDate": "2024-05-31",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "dated_manufacturer_article",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "正文页首 May 31, 2024；正文明确C 81于2023年推出。",
+          "supports": "C 81是基于C 80后推出的机型，原C 80/C 81并用属于混代参考。"
+        },
+        {
+          "id": "fiber-current",
+          "publisher": "Rieter",
+          "title": "Fiber Preparation Machines",
+          "url": "https://www.rieter.com/products/systems/fiber-preparation",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前目录列A 12、VARIOline、C 81、C 77；目录展示不等于订单可交付或绝对最新。"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "棉箱",
+            "锡林、刺辊与道夫",
+            "全部 40 根工作盖板及可见回程",
+            "分段外罩",
+            "CGC/TLM/IGS 功能外部形体",
+            "棉网集束路径",
+            "独立圈条与备用筒",
+            "吸风支路及总管"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "drawing",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "RSB-D 55",
+      "referenceConfiguration": "8 根并合、单眼、自调匀整；RQM 与选配 CLEANtube；600 mm 条筒列为展示选择。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter RSB-D 55 / draw-frames brochure 3690-v1",
+      "currentFinding": "2023公开为新代；当前目录仍将55称最新单眼系列。只能作此范围内的厂家声明，未确认所有配置修订的时间。",
+      "generationAssessment": "2023公开为新代；当前目录仍将55称最新单眼系列。只能作此范围内的厂家声明，未确认所有配置修订的时间。",
+      "referenceYear": null,
+      "verified": [
+        "并合数为 8。",
+        "输出为单眼。",
+        "公开功能包括自调匀整、RQM，以及选配 CLEANtube。"
+      ],
+      "inferred": [
+        "紧凑牵伸头/外罩据当前照片；罗拉直径、加压系统和电机外部形体为推定。",
+        "保留全部 8 个喂入条筒；条架与输出换筒列布置为推定。",
+        "输出筒尺寸和精确换筒规格尚未绑定订单配置。"
+      ],
+      "missing": [
+        "完整匀整检测、伺服与电气链。",
+        "CLEANtube/圈条内部、牵伸加压及轴承零件清单。",
+        "所选换筒器和条架的工程图。"
+      ],
+      "selectedCounts": {
+        "并合根数（已确认）": 8,
+        "输出眼数（已确认）": 1,
+        "展示条筒直径（待核实）": "600 mm"
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "d55-current",
+          "publisher": "Rieter",
+          "title": "Autoleveler Draw Frame RSB-D 55 and Draw Frame SB-D 55",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-dsb-d-55",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前单眼新一代页面；区分自调匀整RSB与无匀整SB，列ECOrized、RQM、CLEANtube与单电机圈条相关配置。"
+        },
+        {
+          "id": "d55-date",
+          "publisher": "Rieter",
+          "title": "Rieter customer magazine link 79/2023",
+          "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/79/rieter-customer-magazine-link-no-79-en.pdf",
+          "publishedDate": "2023",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "manufacturer_magazine",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "刊内页眉 link 79 / 2023；第14页Raising the Bar介绍新一代55/27。无精确月日。",
+          "supports": "2023刊物将RSB-D/SB-D55与RSB-D/SB-D27作为新一代介绍。"
+        },
+        {
+          "id": "prep-current",
+          "publisher": "Rieter",
+          "title": "Spinning Preparation Machines",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前目录并列RSB-D/SB-D55、RSB-D/SB-D27、E90/E86、OMEGAlap E40/E36、F40/F20/F37；并列产品不可仅按型号数字判断先后。"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "8 筒动力条架",
+            "紧凑牵伸头",
+            "检测/自调匀整位置",
+            "独立圈条驱动",
+            "换筒队列与导轨",
+            "吸风接口",
+            "RQM 操作显示"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "combing",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "E 90 + OMEGAlap E 40 + SERVOlap E 26",
+      "referenceConfiguration": "E90 全 8 头、ROBOlap、300 mm 棉卷；独立 E40 配 28 个 600 mm 喂入筒；SERVOlap E26 物流。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter E 90",
+      "currentFinding": "E90于2019公开发布，当前仍在列；尚无足够资料证明本次目标配置为2026最新改版。",
+      "generationAssessment": "E90于2019公开发布，当前仍在列；尚无足够资料证明本次目标配置为2026最新改版。",
+      "referenceYear": null,
+      "verified": [
+        "精梳头/并合数为 8。",
+        "ROBOlap 棉卷幅宽 300 mm，最大直径 550 mm。",
+        "输出牵伸为带压力棒的四上三下配置。",
+        "自动棉卷运输选项为 SERVOlap E26。",
+        "E40 喂入筒数 28、筒径 600 mm。",
+        "此筒配置的 E40 公开外包络为 7685 × 3925 × 2840 mm。"
+      ],
+      "inferred": [
+        "保留全部 8 头；E90 头间距、壳体与物流布置为推定。",
+        "保留 E40 全部 28 筒，但其内部布置未按测量数据复现全部公布外包络。",
+        "ROBOlap/E26 夹持几何与 Omega 带厚、带宽、辊组排列依据公开功能重构。"
+      ],
+      "missing": [
+        "圆梳/顶梳针密与齿形、分离/喂入时序、完整压力棒装配。",
+        "E40 成卷带及辊组、自动换卷和牵伸加压完整清单。",
+        "E26 传感器/夹持器内部，以及准备/精梳的实际产能匹配。"
+      ],
+      "selectedCounts": {
+        "精梳头数（已确认）": 8,
+        "E40 喂入筒数（已确认）": 28,
+        "E40 喂入筒直径": "600 mm",
+        "棉卷幅宽": "300 mm"
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "e90-current",
+          "publisher": "Rieter",
+          "title": "Comber E 90",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/comber-e-90",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前在列；公开8并合、ROBOlap有/无版本、RQM选项、SERVOtrolley E17/SERVOlap E26等。"
+        },
+        {
+          "id": "itma2019",
+          "publisher": "Rieter",
+          "title": "ITMA 2019 in Barcelona – Highlights of Day 2",
+          "url": "https://www.rieter.com/company/news-and-success-stories/details/itma-2019-in-barcelona-highlights-of-day-2",
+          "publishedDate": "2019-06-21",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "dated_manufacturer_article",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "页面日期June 21, 2019，正文发布E90与F40。",
+          "supports": "E90和F40当时作为新机发布；目前仍在目录不表示2026首发。"
+        },
+        {
+          "id": "prep-current",
+          "publisher": "Rieter",
+          "title": "Spinning Preparation Machines",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前目录并列RSB-D/SB-D55、RSB-D/SB-D27、E90/E86、OMEGAlap E40/E36、F40/F20/F37；并列产品不可仅按型号数字判断先后。"
+        },
+        {
+          "title": "Rieter · E 90 + OMEGAlap E 40 + SERVOlap E 26 配置资料",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/omegalap-e-40"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "8 套棉卷支承、圆梳、钳板和分离辊",
+            "ROBOlap 工作位置",
+            "八头集条台",
+            "四上三下输出牵伸罗拉",
+            "输出/备用筒",
+            "独立 E40 及全部 28 喂入筒",
+            "E40 牵伸和成卷带",
+            "E26 高架轨道、承载器和夹持器",
+            "集中落棉抽吸"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "roving",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "F 40",
+      "referenceConfiguration": "完整公开 72 锭、4 节、10.485 m 配置；集成自动落纱与内部输送，选电子牵伸及监测选项。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter F 40 / F 20图片混用",
+      "currentFinding": "F40于ITMA2019上市（2022新闻再次确认）；当前目录存在不等于2026新款，绝对最新无法确认。",
+      "generationAssessment": "F40于ITMA2019上市（2022新闻再次确认）；当前目录存在不等于2026新款，绝对最新无法确认。",
+      "referenceYear": null,
+      "verified": [
+        "72 锭、4 节，主机长 10485 mm。",
+        "每节长度 2080 mm。",
+        "锭距 115 mm、筒管直径 152 mm、卷绕高度 406 mm。",
+        "自动落纱：筒管龙筋退入机内，内部交换并送至端部转运站。",
+        "中央升降：每两节配置一根居中的螺杆。"
+      ],
+      "inferred": [
+        "每节两排错位、每排 9 位；节数、锭距和主机长度保留公开规格。",
+        "保留全部 72 喂入筒；五排、508 mm 筒径布置据公开条架描述推定。",
+        "锭翼、筒管、牵伸、升降与输送分别表示驱动外形，未声称 OEM 电机外形或齿轮内构已核实。",
+        "72 个内部交换位和转运路径表达公开顺序，尚非经验证的落纱机构。"
+      ],
+      "missing": [
+        "实际差动/齿轮/螺杆传动与完整机内换管机构、时序。",
+        "HP4080 内部加压元件、锭翼压掌/顶冠尺寸与公差。",
+        "完整带轮、齿轮、轴承、气路、电气清单及额定参数。"
+      ],
+      "selectedCounts": {
+        "锭数（已确认）": 72,
+        "节数（已确认）": 4,
+        "主机长度（已确认）": "10485 mm",
+        "节长（已确认）": "2080 mm",
+        "锭距（已确认）": "115 mm",
+        "中央升降单元": 2,
+        "喂入条筒（选定布局）": 72
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "f40-current",
+          "publisher": "Rieter",
+          "title": "Fully-automated F 40 and Semi-automated F 20",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation/roving-frame-f-40f-20",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "F40全自动、F20半自动是并列配置，不应笼统合为同一完整机型；公开252锭上限、电子牵伸选项和输送接口。"
+        },
+        {
+          "id": "f40-date",
+          "publisher": "Rieter",
+          "title": "ITM 2022 Media Release",
+          "url": "https://www.rieter.com/fileadmin/user_upload/media/2022/en/rieter-media-release-2022-04-27-en.pdf",
+          "publishedDate": "2022-04-27",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "media_release",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "PDF抬头Winterthur – April 27, 2022；正文明确F40在ITMA2019上市。",
+          "supports": "补证F40首次市场介绍在2019；2022为继续展示，非首次发布。"
+        },
+        {
+          "id": "itma2019",
+          "publisher": "Rieter",
+          "title": "ITMA 2019 in Barcelona – Highlights of Day 2",
+          "url": "https://www.rieter.com/company/news-and-success-stories/details/itma-2019-in-barcelona-highlights-of-day-2",
+          "publishedDate": "2019-06-21",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "dated_manufacturer_article",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "页面日期June 21, 2019，正文发布E90与F40。",
+          "supports": "E90和F40当时作为新机发布；目前仍在目录不表示2026首发。"
+        },
+        {
+          "id": "prep-current",
+          "publisher": "Rieter",
+          "title": "Spinning Preparation Machines",
+          "url": "https://www.rieter.com/products/systems/spinning-preparation",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前目录并列RSB-D/SB-D55、RSB-D/SB-D27、E90/E86、OMEGAlap E40/E36、F40/F20/F37；并列产品不可仅按型号数字判断先后。"
+        },
+        {
+          "title": "Rieter · F 40 配置资料",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-f-20-f-40-roving-frame-brochure-3310-v2-96623-en.pdf",
+          "printedPages": [
+            9,
+            10,
+            4,
+            7
+          ]
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "72 锭及 72 个条筒",
+            "72 套牵伸、皮圈和加压组件",
+            "锭翼、压掌、顶冠",
+            "4 节完整外壳",
+            "72 个机内空筒及交换位",
+            "2 个中央升降单元",
+            "内部输送轨",
+            "端部升降/转运站",
+            "SERVOtrail 接口",
+            "吸风与分功能驱动"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "spinning",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "G 38 FE",
+      "referenceConfiguration": "标准最小 288 锭、6 节、70 mm 锭距；单侧吸风、C3 联机尾箱，长 14.260 m；42 mm 钢领，未选 34 mm 高速选件。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Rieter G38图片 + 3236-v5-100402样本",
+      "currentFinding": "2024刊物明确新一代G38。原v5样本仍由当前官网提供，所以资料本身不能一概判旧；但模型没有复现该版本完整结构。",
+      "generationAssessment": "2024刊物明确新一代G38。原v5样本仍由当前官网提供，所以资料本身不能一概判旧；但模型没有复现该版本完整结构。",
+      "referenceYear": null,
+      "verified": [
+        "公开标准最小配置为 288 锭，每节 48 锭。",
+        "所选锭距 70 mm。",
+        "所选钢领直径 42 mm。",
+        "C3 单侧吸风尾箱的机头/机尾长度常数为 4180 mm。",
+        "公开长度公式：288 ÷ 2 × 70 + 4180 = 14260 mm。",
+        "当前功能包括 FLEXIdraft FE、ISM premium、SERVOdisc。"
+      ],
+      "inferred": [
+        "保留全部 288 锭的管纱、钢领/钢丝圈、导纱钩、牵伸、落纱位和粗纱喂入。",
+        "保留全部 72 组四锭锭带驱动；精确锭带与驱动几何未获 OEM 核实。",
+        "机头/机尾长度分配、牵伸电机外形、摇架与吸棉笛管由公开图推定。",
+        "保留公开总长公式；所选 X6 接口和产能尚未作为匹配生产线工程设计。",
+        "152 mm 粗纱卷装采用六排、纵向 210 mm 间距，避免按 70 mm 锭距直排造成相交；实际 OEM 排列未核实。"
+      ],
+      "missing": [
+        "FE 电机精确数量/位置、齿轮/轴/带与四锭装配。",
+        "集体落纱与 SERVOdisc 机构、运动控制、电气/气动清单。",
+        "与所选 X6 的产能和接口匹配。",
+        "未选 ROBOspin、紧密纺、竹节纱及高速选件；不能把未选选件都认定为标准机缺件。"
+      ],
+      "selectedCounts": {
+        "锭数（已确认）": 288,
+        "节数": 6,
+        "每节锭数（已确认）": 48,
+        "锭距": "70 mm",
+        "钢领直径": "42 mm",
+        "主机总长（公开公式）": "14260 mm",
+        "四锭驱动组数": 72
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "g38-current",
+          "publisher": "Rieter",
+          "title": "Ring Spinning Machine G 38",
+          "url": "https://www.rieter.com/products/systems/ring-spinning-machines/ring-spinning-machine-g-38",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前明确为G38新版本、FE/SE，含SERVOdisc、短气圈、ISM premium及可选高速包/ROBOspin。"
+        },
+        {
+          "id": "g38-date",
+          "publisher": "Rieter",
+          "title": "Rieter customer magazine link 80/2024",
+          "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/80/rieter-customer-magazine-link-no-80-en.pdf",
+          "publishedDate": "2024",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "manufacturer_magazine",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "刊内 link 80 / 2024，第10页新一代G38专题；未确认精确月日。",
+          "supports": "同名G38在2024资料中已有新代版本，90秒落纱、SERVOdisc等须按配置核对。"
+        },
+        {
+          "id": "g38-current-pdf",
+          "publisher": "Rieter",
+          "title": "G38 brochure 3236-v5-100402",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-g-38-ring-spinning-machine-brochure-3236-v5-100402-en.pdf",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "current_product_download",
+          "checkedOn": "2026-11-16",
+          "supports": "本次从当前G38产品页点击下载，仍为原参考所用v5；不能仅按原照片年份判G38资料过时。版本号不是发布日期。",
+          "printedPages": [
+            31,
+            30
+          ]
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "全部 288 个纺纱位",
+            "6 个完整 48 锭节段",
+            "逐锭牵伸/粗纱吊锭",
+            "逐锭钢领、钢丝圈与短气圈纱路",
+            "72 组四锭驱动",
+            "逐锭 ISM 外部形体",
+            "集体落纱轨、夹持器与连杆",
+            "SERVOdisc 托盘及空管",
+            "FE 功能驱动外形",
+            "单端抽吸及全部笛管路径",
+            "完整机头/机尾外罩和联机接口"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "winding",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "Autoconer X6 Type V",
+      "referenceConfiguration": "96 单元、320 mm 单元距，为官网当前公开最大配置；Type V SmartTray 供回管、Cop Exchanger 与自动落筒。独立设备参照，未与 288 锭 G38 配平产能。",
+      "configurationStatus": "已选公开配置 · 完整装配仍待核实",
+      "previousReference": "Autoconer X6照片 + 3563-v1 D/V样本",
+      "currentFinding": "2025刊物明确新Cop Exchanger及紧凑设计；当前产品页指向v3样本，原v1不能当作当前全配置。v3正文抓取超时，未核实其全部修订。",
+      "generationAssessment": "2025刊物明确新Cop Exchanger及紧凑设计；当前产品页指向v3样本，原v1不能当作当前全配置。v3正文抓取超时，未核实其全部修订。",
+      "referenceYear": null,
+      "verified": [
+        "公开最大络筒单元数为 96。",
+        "单元距为 320 mm。",
+        "当前 Type V 功能包括 Cop Exchanger、RFID SmartTray、Ring-Winder-Connect。"
+      ],
+      "inferred": [
+        "选择公开最大配置，不代表特定交付订单，也不证明适配 288 锭细纱机。",
+        "工作段 30.720 m = 96 × 320 mm；机头/机尾长度及 16 个六单元支承节段为推定。",
+        "当前 3563-v3 PDF 抓取超时；当前产品页证实功能存在，新组件几何仍据公开图/功能推定。",
+        "已表达管纱剔除、落筒夹持器和空筒仓的可见结构；隐藏内部未核实。"
+      ],
+      "missing": [
+        "当前 3563-v3 样本完整内容及精确订单配置。",
+        "逐单元张力器、清纱器、捻接器、吸风、气动和电气完整装配。",
+        "实际落筒运动学及外部细纱机物流时序。",
+        "所选横动/槽筒与纱种专用选项仍未完全核实。"
+      ],
+      "selectedCounts": {
+        "络筒单元数（公开最大配置）": 96,
+        "单元距（已确认）": "320 mm",
+        "工作段长度（计算）": "30720 mm",
+        "六单元支承节段（推定）": 16
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "x6-current",
+          "publisher": "Rieter",
+          "title": "Automatic Winding Machine Autoconer X6",
+          "url": "https://www.rieter.com/products/systems/winding-machines/automatic-package-winding-machine-autoconer",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前页面有RM/D/V物料供给区别、新Cop Exchanger、RFID/SmartTrays与Ring-Winder-Connect；目前产品页下载链接指向v3手册。"
+        },
+        {
+          "id": "x6-date",
+          "publisher": "Rieter",
+          "title": "Rieter customer magazine link 81/2025",
+          "url": "https://www.rieter.com/fileadmin/user_upload/services/documents/customer-magazines/link/81/rieter-customer-magazine-link-no-81-en.pdf",
+          "publishedDate": "2025",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "manufacturer_magazine",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "刊内 link 81/2025，第13页One Step Closer to Autonomous Winding；无精确月日。",
+          "supports": "当前Type V新增自动剔除问题管纱的Cop Exchanger，且有紧凑机身更新。"
+        },
+        {
+          "id": "x6-v2",
+          "publisher": "Rieter",
+          "title": "Autoconer X6 brochure 3563-v2-98521",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-automatic-material-flow-type-d-v-brochure-3563-v2-98521-en.pdf",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "manufacturer_brochure",
+          "checkedOn": "2026-11-16",
+          "supports": "已读取的v2内容含Type V、Ring-Winder-Connect及Cop Exchanger。版本号不等同发布年。"
+        },
+        {
+          "id": "x6-v3-link",
+          "publisher": "Rieter",
+          "title": "Autoconer X6 current linked brochure 3563-v3-98521",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/winding/rieter-autoconer-x6-type-d-v-brochure-3563-v3-98521-en.pdf",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "current_product_download_link",
+          "checkedOn": "2026-11-16",
+          "supports": "链接由当前官网产品页点击获得；本次连续两次抓取超时，不能据此声称已核对v3全部内容。"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "本轮结构范围（由建模记录列示）",
+          "items": [
+            "全部 96 单元",
+            "96 个工作管纱/SmartTray 及回送托盘",
+            "逐单元张力/清纱/捻接外形",
+            "上下吸嘴",
+            "筒纱、槽筒与摇架",
+            "逐单元驱动外形",
+            "供管与回送轨道",
+            "Cop Exchanger 与剔除箱",
+            "自动落筒车、轨道与夹持器",
+            "上部空筒储备",
+            "筒纱输送带",
+            "负压及压缩空气总管"
+          ]
+        }
+      ],
+      "configSource": "research/config-spinning-v3.json"
+    },
+    {
+      "id": "warping",
+      "referenceManufacturer": "KARL MAYER",
+      "referenceModel": "WARPDIRECT 2.0",
+      "referenceConfiguration": "2.2 m工作幅；1.0 m经轴；480位筒子架（2侧×6层×40列）；电动压辊",
+      "configurationStatus": "所选公开范围内的配置；未获OEM订单确认",
+      "previousReference": "KARL MAYER WARPDIRECT；旧双语单页照片，未锁定代次、幅宽及筒子架。",
+      "currentFinding": "WARPDIRECT 当前仍列于厂家目录；2026-10-29 厂家新闻进一步明确现行为 WARPDIRECT 2.0，2025 年末推出。旧 WARPDIRECT 外形不能自动当作 2.0。",
+      "generationAssessment": "WARPDIRECT 2.0；这是本轮找到的厂家明确命名的新一代。2026 新闻中的去年年底换算为 2025 年末，确切首发日未公开。",
+      "referenceYear": 2025,
+      "verified": [
+        "厂家在2026-10-29资料明确WARPDIRECT 2.0于2025年末推出。",
+        "2.0压辊系统为电动，不能画成旧液压压辊；液气制动不因压辊电动而消失。",
+        "当前页面1800–2400 mm工作幅、800–1400 mm轴盘直径；Smart-Riet和kick-back。",
+        "已目视官方整机图：低矮双侧包壳、分片斜置透明防护、前部卷绕经轴、外侧集成HMI。"
+      ],
+      "inferred": [
+        "选择2200 mm工作幅、1000 mm经轴盘；480锭位是本项目整套纱线规划，没有公开客户订单证明。",
+        "筒子架选择2侧×6层×40列，逐位建筒子、托杆、张力器、断头检测器、连续纱线。其架型/张力器精确型号待核实。",
+        "电动压辊导轨/丝杆/小伺服的具体布局根据功能推定；不声称与厂家内部装配相同。",
+        "主机总长/高度、筒子架间距及包壳厚度由照片比例与工作幅推定。"
+      ],
+      "missing": [
+        "指定480位筒子架的厂家型号及订单BOM",
+        "2.0电动压辊、轴夹持、液气制动和kick-back的内部总装图",
+        "张力器/断头检测器类型与逐件零件表",
+        "真实电控/气路、安全联锁回路、线缆及全部维修空间"
+      ],
+      "selectedCounts": {
+        "筒子架侧数": 2,
+        "每侧层数": 6,
+        "每侧列数": 40,
+        "筒子架总锭位": 480,
+        "所选筒子数": 480,
+        "所选张力器数": 480,
+        "所选断头检测器数": 480,
+        "连续纱线根数": 480,
+        "整经轴数": 1,
+        "电动压辊数": 1
+      },
+      "sourceConflicts": [
+        "当前产品页给幅宽 1800–2400 mm，旧单页给 1800–2800 mm。未取得同代配置表前，不混用两组边界。",
+        "现产品页仍列液气制动器；2.0 新闻说电动化的是压辊系统，不是制动器。",
+        "2024-10-15 新闻也曾称 WARPDIRECT 为最新一代；必须让位于有更晚明确代号的 2026 证据。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.karlmayer.com/en/products/warp-preparation/beaming-machines-and-direct-warpers/warpdirect/",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前系列、Smart-Riet、压辊及制动说明、幅宽和经轴范围；不等于完整 2.0 订单图",
+          "title": "当前系列、Smart-Riet、压辊及制动说明、幅宽和经轴范围；不等于完整 2.0 订单图",
+          "evidence": "current official product page read"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/karl-mayer-at-the-weaving-hall-of-itma-asia-2026-high-performance-warp-preparation-for-high-quality-fabrics-made-from-staple-fibers-and-new-horizons-in-textiles/",
+          "publicationDate": "2026-10-29",
+          "access": "official article body read",
+          "supports": "明确 WARPDIRECT 2.0、2025 年末推出、电动压辊、短纤适用和可选张力系统；同时确认 PROSIZE HSB 在 2026 展示",
+          "title": "明确 WARPDIRECT 2.0、2025 年末推出、电动压辊、短纤适用和可选张力系统；同时确认 PROSIZE HSB 在 2026 展示",
+          "evidence": "official article body read"
+        },
+        {
+          "url": "https://www.karlmayer.com/de/news-events/news/successful-start-to-the-trade-fair/",
+          "publicationDate": "2024-10-15",
+          "access": "official article body read",
+          "supports": "2024 WARPDIRECT 展示年代；不据此覆盖 2.0 后续更新",
+          "title": "2024 WARPDIRECT 展示年代；不据此覆盖 2.0 后续更新",
+          "evidence": "official article body read"
+        },
+        {
+          "title": "已实际目视的厂家整机照片",
+          "url": "https://www.karlmayer.com/ecomaXL/files/WARPDIRECT_overall_2025.jpg",
+          "publicationDate": null,
+          "evidence": "视觉检查，不以抓取日期代替发布年份"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "所选尺寸与布置依据",
+          "items": [
+            "工作幅宽（m）：2.2",
+            "经轴盘直径（m）：1.0",
+            "布置外包络（m；推定）：6.0 × 22.0",
+            "尺寸依据：为容纳所选完整筒子架的建模布局，非厂家安装尺寸"
+          ]
+        }
+      ],
+      "configSource": "research/config-weaving-v3.json"
+    },
+    {
+      "id": "sizing",
+      "referenceManufacturer": "KARL MAYER",
+      "referenceModel": "PROSIZE HSB",
+      "referenceConfiguration": "2.2 m；6根经轴×480根；1个HSB湿区；12烘筒；2880根经纱；1织轴",
+      "configurationStatus": "所选公开范围内的配置；未获OEM订单确认",
+      "previousReference": "KARL MAYER PROSIZE；旧单页照片，未锁定 HSB/VSB、浆槽及烘筒数量。",
+      "currentFinding": "PROSIZE (PSZ) 仍为当前模块化浆纱平台；2024 发布 CASCADE 与 Smart Size Box，2026 厂家仍重点展示 PROSIZE 的 HSB 浆槽。这些是系统/选件更新，不能虚构 PROSIZE 2.0 代号。",
+      "generationAssessment": "当前 PROSIZE 平台已证实；未找到统一整线新代号。CASCADE 与 Smart Size Box 有 2024-10-16 日期证据。",
+      "referenceYear": null,
+      "verified": [
+        "当前PROSIZE提供HSB与VSB，2026官方明确展示HSB；不能将VSB客户订单配置移植为HSB。",
+        "HSB公开工作幅1800–2400 mm，烘筒可选4–24；2200 mm及12烘筒在公开范围内。",
+        "SoftDry为各烘筒单独电机驱动控制；公开有CASCADE与Smart Size Box但不代表此配置已装。",
+        "已目视官方整线图：前卷绕机头侧柜、全幅防护网门、多段封闭烘房/排湿罩和管道。"
+      ],
+      "inferred": [
+        "选择6根1000 mm轴盘退绕经轴，各480根，共2880根；选择1个HSB湿区、12烘筒与1根1016 mm轴盘织轴。数量为连贯教学安装选择，非已核实订单。",
+        "12烘筒采用单列交替包角，逐筒驱动；直径、筒距、实际总长/保温罩分段为尺度推定。",
+        "HSB浸浆/轧浆辊尺寸、浆液循环槽、压力执行器细节根据功能推定，未取得HSB剖面。",
+        "CASCADE与Smart Size Box未虚构成已安装；蒸汽/冷凝水支路表达功能，缺内部工程回路。"
+      ],
+      "missing": [
+        "完整HSB指定版本总装、辊系剖面及真实装辊数量",
+        "指定12烘筒布局订单和确切筒径/接头/汽路BOM",
+        "经轴架制动控制、湿分绞/干分绞模块及其精确数量",
+        "浆液配制站、蒸汽热源/冷凝水设备、电柜和公用工程边界",
+        "完整安全、电气、润滑及维修装配"
+      ],
+      "selectedCounts": {
+        "退绕经轴数": 6,
+        "每轴经纱根数": 480,
+        "总经纱根数": 2880,
+        "浆槽湿区数": 1,
+        "所选浸浆辊数": 1,
+        "所选轧浆辊数": 2,
+        "烘筒数": 12,
+        "烘筒独立驱动数": 12,
+        "织轴数": 1
+      },
+      "sourceConflicts": [
+        "官方当前页同时列一般幅宽 1800–2800 mm、HSB 1800–2400 mm、VSB 1800–3200 mm；必须按模块识别，不能选一个范围替代整线所有模块。",
+        "4–24 烘筒是可选范围，不是某一具体设备已有 24 个烘筒。",
+        "SoftDry、CASCADE、Smart Size Box 不提供完整安装 BOM；选件名称不构成实际安装证明。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.karlmayer.com/en/products/warp-preparation/sizing-and-assembling-machines/prosize/",
+          "publicationDate": null,
+          "access": "current official page read; Smart Size Box also visible in search index and German official page",
+          "supports": "当前 PROSIZE、HSB/VSB 幅宽、模块化烘筒、SoftDry、CASCADE；尺寸范围不能当作单台完整配置",
+          "title": "当前 PROSIZE、HSB/VSB 幅宽、模块化烘筒、SoftDry、CASCADE；尺寸范围不能当作单台完整配置",
+          "evidence": "current official page read; Smart Size Box also visible in search index and German official page"
+        },
+        {
+          "url": "https://www.karlmayer.com/de/produkte/kettvorbereitung/schlichte-und-assembliermaschinen/prosize/",
+          "publicationDate": null,
+          "access": "official search-index text read",
+          "supports": "Smart Size Box 的电机参数与轴承振动/温度监测",
+          "title": "Smart Size Box 的电机参数与轴承振动/温度监测",
+          "evidence": "official search-index text read"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/investing-in-sizing-technology-from-karl-mayer/",
+          "publicationDate": "2024-10-16",
+          "access": "official article body read",
+          "supports": "CASCADE 与 Smart Size Box 当时为新开发；Pinhua 的 PROSIZE VSB 订单，不等于 HSB 订单",
+          "title": "CASCADE 与 Smart Size Box 当时为新开发；Pinhua 的 PROSIZE VSB 订单，不等于 HSB 订单",
+          "evidence": "official article body read"
+        },
+        {
+          "url": "https://www.downloadcenter.karlmayer.com/en/news-events/my-textile-news/karl-mayer-at-the-weaving-hall-of-itma-asia-2026-high-performance-warp-preparation-for-high-quality-fabrics-made-from-staple-fibers-and-new-horizons-in-textiles/",
+          "publicationDate": "2026-10-29",
+          "access": "official article body read",
+          "supports": "2026 当前 HSB 子型展示",
+          "title": "2026 当前 HSB 子型展示",
+          "evidence": "official article body read"
+        },
+        {
+          "title": "已实际目视的厂家整机照片",
+          "url": "https://www.karlmayer.com/ecomaXL/files/PROSIZE_overall_1944x1092.jpg",
+          "publicationDate": null,
+          "evidence": "视觉检查，不以抓取日期代替发布年份"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "所选尺寸与布置依据",
+          "items": [
+            "工作幅宽（m）：2.2",
+            "退绕轴盘直径（m）：1.0",
+            "织轴盘直径（m）：1.016",
+            "布置外包络（m；推定）：5.0 × 25.0",
+            "尺寸依据：所选布局长度为建模推定，非厂家尺寸图"
+          ]
+        }
+      ],
+      "configSource": "research/config-weaving-v3.json"
+    },
+    {
+      "id": "drawing_in",
+      "referenceManufacturer": "Stäubli",
+      "referenceModel": "SAFIR PRO S67",
+      "referenceConfiguration": "固定机头；2辆2.2 m完整移动车；单经片；2综框平纹；AWC 2.0",
+      "configurationStatus": "所选公开范围内的配置；未获OEM订单确认",
+      "previousReference": "Stäubli SAFIR S80；官网整机照，未锁定单/双经片、移动小车数、幅宽或综框数量。",
+      "currentFinding": "S80 当前仍在厂家目录，服务复杂单/双经片应用，并非可判定已淘汰。SAFIR PRO S67 于 2024 首发且当前在列，适合棉纱及中等复杂度单经片；没有证据称它是 S80 的等能力直接继任者。",
+      "generationAssessment": "PRO S67 有明确 2024 新机发布证据；S80、PRO S47、PRO S67、PRO S37 为不同应用分支，型号数值或 PRO 字样不能单独判断继任顺序。",
+      "referenceYear": 2024,
+      "verified": [
+        "S67为固定穿经机头与移动穿经车结构，官方说明通常配2辆车。",
+        "单经片可1/2层，最多20综框是能力上限，不是每台都安装20框。",
+        "AWC 2.0双纱检测为当前功能，适用于棉纺应用。",
+        "已目视S67官方整机图：长低位轨道车架、端部不对称固定高机头、悬挂机头和黄色前护栏。"
+      ],
+      "inferred": [
+        "选择2.2 m车幅、2辆完整车、每车2综框且每框1440综丝；匹配平纹2880经纱，非指定订单。",
+        "活动车显示接近穿经完成状态，备用车的2880根待穿经纱夹在上游；不能把同时展开的全部经纱误解为机头同时穿2880根。",
+        "每车2880综丝、2880停经片、1441筘齿为所选配置；2根/筘隙。",
+        "机头外壳/末端针具/检测窗位置按公开照片和功能推定，不展示未经证实的内部精密结构。"
+      ],
+      "missing": [
+        "2.2 m指定型号车架尺寸/传动与夹持详图",
+        "机头内部选纱、综丝/停经片分离及穿经针机构全部装配",
+        "AWC 2.0内部光学、电气、气动和校准结构",
+        "完整零件表、维护件及导轨规格"
+      ],
+      "selectedCounts": {
+        "移动穿经车数": 2,
+        "每车综框数": 2,
+        "每框综丝数": 1440,
+        "每车综丝数": 2880,
+        "每车停经片数": 2880,
+        "每车筘齿数": 1441,
+        "每车装载经纱根数": 2880,
+        "固定穿经机头数": 1
+      },
+      "sourceConflicts": [
+        "当前 S67 页主应用为单经片、1/2 纱层，最多 20 片综框；S80 为单/双经片、最多 4 层与 28 片综框。不能把 S80 容量套到 S67。",
+        "2024 S67 发布稿提到双经轴 Layer and Offset 特定应用，而当前产品简介为单经片；该特殊配置需厂家确认，不能擅自与标准参数合并。",
+        "PRO S37 主要为长丝及喷水织造，不适合为了更新年份替代本棉纺路线。PRO S47 偏标准/牛仔应用，其地区页速度存在差异，不用其参数补 S67。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-s80.html",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "S80 仍在列；复杂单/双经片、最多 4 层、28 综框与 AWC 2.0",
+          "title": "S80 仍在列；复杂单/双经片、最多 4 层、28 综框与 AWC 2.0",
+          "evidence": "current official product page read"
+        },
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine/safir-pro-s67.html",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前 S67 棉/混纺适用、固定机头与移动小车、单经片和最多 20 综框；通常 2 台小车不是每台已安装证明",
+          "title": "当前 S67 棉/混纺适用、固定机头与移动小车、单经片和最多 20 综框；通常 2 台小车不是每台已安装证明",
+          "evidence": "current official product page read"
+        },
+        {
+          "url": "https://www.staubli.com/us/en/news/global/2024/ITM-2024.html",
+          "publicationDate": "2024-05-13",
+          "access": "official article body read",
+          "supports": "S67 于 2024-06 ITM 首次公开；双经轴 Layer and Offset 为文中特定应用",
+          "title": "S67 于 2024-06 ITM 首次公开；双经轴 Layer and Offset 为文中特定应用",
+          "evidence": "official article body read"
+        },
+        {
+          "url": "https://www.staubli.com/global/en/textile/products/drawing-in-machine.html",
+          "publicationDate": null,
+          "access": "current official lineup read",
+          "supports": "S37、S47、S67、S80 当前并列，非数字顺序淘汰关系",
+          "title": "S37、S47、S67、S80 当前并列，非数字顺序淘汰关系",
+          "evidence": "current official lineup read"
+        },
+        {
+          "title": "已实际目视的厂家整机照片",
+          "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--b50505e0-0ab1-4e89-a9e9-411a5f9b3e40/drawing-in-machine-shirting-safir-pro-s67-bim.jpg?preferwebp=true&quality=75",
+          "publicationDate": null,
+          "evidence": "视觉检查，不以抓取日期代替发布年份"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "所选尺寸与布置依据",
+          "items": [
+            "所选工作幅宽（m）：2.2",
+            "布置外包络（m；推定）：9.8 × 3.4",
+            "尺寸依据：机身/轨道尺寸由官方照片和所选幅宽推定，非厂家安装图"
+          ]
+        }
+      ],
+      "configSource": "research/config-weaving-v3.json"
+    },
+    {
+      "id": "weaving",
+      "referenceManufacturer": "Picanol",
+      "referenceModel": "Ultimax 4-R 220",
+      "referenceConfiguration": "2.2 m筘幅平台；2.1 m全棉平纹；2880经纱；2综框；4路供纬",
+      "configurationStatus": "所选公开范围内的配置；未获OEM订单确认",
+      "previousReference": "Picanol OptiMax-i Connect；2021 英文产品册及路径含 2023-07 的照片，未锁定剑杆导引、幅宽、开口和卷绕配置。",
+      "currentFinding": "Ultimax 是已证实继任 OptiMax 的当前剑杆平台。本轮选 Ultimax 4-R 220 平台的全棉平纹配置；官方 2026 Denim 展样是棉经/PBT 纬，不能将其配方或选件冒充本模型实装。",
+      "generationAssessment": "同路线优先参照 Ultimax；Supermax 是 2024 面向亚洲市场的新剑杆分支，不据发布时间认定替代 Ultimax。2025/2026 新喷气机均不纳入本剑杆替换。",
+      "referenceYear": 2023,
+      "verified": [
+        "Ultimax为当前剑杆平台，2023-06发布；当前官网及2024样本可确认外观/技术范围。",
+        "2026官方展示过Ultimax-4-R 220；该展示为棉经/PBT纬Denim，不能冒充本项目纯棉配置。",
+        "已目视官方整机图：低宽白/黑侧包壳、全幅白色前操作护板、左集成HMI、左侧储纬和在用/备用筒子。",
+        "左右剑杆及传纬/接纬机制、经轴送经/织口/成布卷绕为剑杆织造必要关系。"
+      ],
+      "inferred": [
+        "选择220 cm平台、210 cm布幅、2880经纱与2综框全棉平纹；这是独立工艺选择，不是2026 Denim展样复刻。",
+        "选择4路储纬与4在用+4备用筒子；当前时刻仅通道1引纬，其余为选纬通道。",
+        "2综框各1440综丝、2880停经片、1441筘齿依据所选2880经纱、2入筘平纹匹配。",
+        "经轴、布卷直径、驱动外壳/杆件/边部装置与外廓尺寸为公开图比例推定；未取得SUMO及电子送经/卷取内部图纸。"
+      ],
+      "missing": [
+        "该全棉平纹订单、综框规格和开口机构精确型号",
+        "实际边组织/剪纬/布边处理系统数量和全部结构",
+        "精确GC/FF引纬变体、ERGO/EcoFill/QSC安装确认；不把展示选件全部当本机实装",
+        "完整主轴/剑杆传动、润滑/冷却/电柜/安全BOM",
+        "全部隐藏件、运动副公差与装配约束"
+      ],
+      "selectedCounts": {
+        "经纱根数": 2880,
+        "综框数": 2,
+        "每框综丝数": 1440,
+        "停经片数": 2880,
+        "筘齿数": 1441,
+        "剑带数": 2,
+        "剑头数": 2,
+        "储纬器数": 4,
+        "在用纬纱筒子数": 4,
+        "备用纬纱筒子数": 4,
+        "经轴数": 1,
+        "布卷数": 1
+      },
+      "sourceConflicts": [
+        "2024 产品册给的是各幅宽/开口/夹持方式选项集合，不是每台同时具备所有选件。",
+        "Ultimax、Ultimax Terry、Supermax 与 OmniPlus-i Connect/AirOne 属不同构型或工艺，不能合成一台。",
+        "2026-11-13 官方 AirOne 新闻虽更新，但其为喷气；发布时间新不满足剑杆路线可比要求。",
+        "Picanol 部分 PDF 和 2026 新闻直接请求返回 403；已读取厂家域名搜索索引正文，未声称成功下载受限文件。"
+      ],
+      "sources": [
+        {
+          "url": "https://www.picanol.be/en/machines-features/machines/ultimax-rapier-weaving-machine",
+          "publicationDate": null,
+          "access": "current official product page read",
+          "supports": "当前 Ultimax 剑杆平台及官方图片/样本入口",
+          "title": "当前 Ultimax 剑杆平台及官方图片/样本入口",
+          "evidence": "current official product page read"
+        },
+        {
+          "url": "https://www.picanol.be/en/milestones",
+          "publicationDate": null,
+          "access": "official timeline read",
+          "supports": "Connect 2021、Ultimax 2023-06、Supermax 2024-10 亚洲市场的明确时间关系",
+          "title": "Connect 2021、Ultimax 2023-06、Supermax 2024-10 亚洲市场的明确时间关系",
+          "evidence": "official timeline read"
+        },
+        {
+          "url": "https://picanol.media/sites/default/files/2023-05/pr_2023_picanol_at_itma_2023.pdf",
+          "publicationDate": "2023-05-09",
+          "access": "official PDF text read through search index",
+          "supports": "Ultimax 对 OptiMax 的继任关系及宣布供货 2024-Q1",
+          "title": "Ultimax 对 OptiMax 的继任关系及宣布供货 2024-Q1",
+          "evidence": "official PDF text read through search index"
+        },
+        {
+          "url": "https://www.picanol.be/en/news/picanol-present-its-leading-weaving-technology-itm-2026",
+          "publicationDate": "2026-05-08",
+          "access": "official search-index article text read; direct open returned HTTP 403",
+          "supports": "Ultimax-4-R 220 Denim 精确示范型号、GC/ERGO/EcoFill/QSC 及棉经/PBT 纬参数",
+          "title": "Ultimax-4-R 220 Denim 精确示范型号、GC/ERGO/EcoFill/QSC 及棉经/PBT 纬参数",
+          "evidence": "official search-index article text read; direct open returned HTTP 403"
+        },
+        {
+          "url": "https://www.picanol.be/sites/picanol/files/2024-09/PIC_Ultimax_brochure_2024_EN.pdf",
+          "publicationDate": "2024-09",
+          "datePrecisionNote": "年月据官方文件路径与文件名，不声称具体发布日",
+          "access": "official PDF technical text read through search index; direct download returned HTTP 403",
+          "supports": "宽度、开口、引纬、送经卷布、驱动的可选技术规格；不足以推定全部安装项",
+          "title": "宽度、开口、引纬、送经卷布、驱动的可选技术规格；不足以推定全部安装项",
+          "evidence": "official PDF technical text read through search index; direct download returned HTTP 403"
+        },
+        {
+          "url": "https://www.picanol.be/en/news/picanol-present-its-new-airone-airjet-weaving-machine-indian-subcontinent",
+          "publicationDate": "2026-11-13",
+          "access": "official article body read",
+          "supports": "最新消息中的 AirOne 为喷气机，因此不用于替换剑杆路线",
+          "title": "最新消息中的 AirOne 为喷气机，因此不用于替换剑杆路线",
+          "evidence": "official article body read"
+        },
+        {
+          "title": "已实际目视的厂家整机照片",
+          "url": "https://www.picanol.be/sites/picanol/files/styles/gallery/public/2023-06/ultimax_3.jpg?itok=RE-jSiaQ",
+          "publicationDate": null,
+          "evidence": "视觉检查，不以抓取日期代替发布年份"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [
+        {
+          "title": "所选尺寸与布置依据",
+          "items": [
+            "平台名义筘幅（m）：2.2",
+            "所选布幅（m）：2.1",
+            "布置外包络（m；推定）：6.2 × 4.4",
+            "尺寸依据：幅宽匹配4-R 220平台，其余外廓为照片比例推定，非厂家尺寸图"
+          ]
+        }
+      ],
+      "configSource": "research/config-weaving-v3.json"
+    },
+    {
+      "id": "pretreatment",
+      "referenceManufacturer": "Benninger",
+      "referenceModel": "BEN-BLEACH / REACTA",
+      "referenceConfiguration": "INJECTA—EXTRACTA—IMPACTA—REACTA—EXTRACTA模块线",
+      "configurationStatus": "已选展示配置 · 完整装配仍待核实",
+      "previousReference": "Benninger BEN-BLEACH 官方照片，未锁定整线配置",
+      "currentFinding": "厂家当前仍列 BEN-BLEACH，整线按面料、速度和布局组合退浆、浸渍、汽蒸、水洗和漂白模块。不能用系列名称验证当前短模型完整。",
+      "generationAssessment": "未找到可证明统一最新代号的发布证据",
+      "referenceYear": null,
+      "verified": [
+        "官网确认预处理、浸渍、汽蒸、后洗模块类型；公开照片显示高位反应箱、检修平台及下部洗涤段"
+      ],
+      "inferred": [
+        "所选1个预溶胀、1个预洗、1个浸渍、1个汽蒸、3个后洗模块为布置选择，非已核实厂家订单",
+        "整体尺寸、辊床、外部管线与柜体位置按公开照片估计"
+      ],
+      "missing": [
+        "完整订单总图与处理能力",
+        "REACTA单/双辊床及实际内部布路",
+        "全部泵阀、化学计量、蒸汽冷凝与过滤系统BOM"
+      ],
+      "selectedCounts": {
+        "前处理模块数": 7,
+        "洗涤模块数": 4
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "url": "https://benningergroup.com/en/textile-finishing/bleaching-solutions",
+          "publicationDate": null,
+          "supports": "当前系列及模块化配置"
+        },
+        {
+          "title": "BEN-BLEACH当前官方样本，p4–13",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Bleaching_Solutions/Broschuere_Bleaching_EN.pdf"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [],
+      "configSource": "research/config-finishing-v3.json"
+    },
+    {
+      "id": "dyeing",
+      "referenceManufacturer": "Benninger",
+      "referenceModel": "Küsters DyePad / CPB",
+      "referenceConfiguration": "高进布架、双泳动辊、配液与堆置卷装；CPB后洗为独立步骤",
+      "configurationStatus": "已选展示配置 · 完整装配仍待核实",
+      "previousReference": "Benninger Küsters DyePad / BEN-Colour 公开产品照片",
+      "currentFinding": "DyePad仍在厂家当前CPB染色产品线中。持续在售不证明为新发布机型；CPB与连续固色是不同配置，不能拼装其模块后声称复刻。",
+      "generationAssessment": "未确认新的完整设备代号或精确版本",
+      "referenceYear": null,
+      "verified": [
+        "厂家当前CPB系列及两根泳动辊",
+        "厂家整机照片中的高架导辊、双侧机座、低液槽和侧操作面板"
+      ],
+      "inferred": [
+        "2200mm幅宽为展示配置选择，整机尺寸及外部管线按照片推定",
+        "配液和堆置小车为辅助功能布置，未核实精确订单型号"
+      ],
+      "missing": [
+        "泳动辊内部支承与压力回路",
+        "精确配液计量单元、堆置站及后洗设备配置",
+        "电气、润滑与整套BOM"
+      ],
+      "selectedCounts": {
+        "工作辊数": 2,
+        "堆置小车数": 1
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "url": "https://benningergroup.com/en/textile-finishing/dyeing-solutions",
+          "publicationDate": null,
+          "supports": "当前DyePad与CPB路线",
+          "title": "Benninger当前DyePad CPB产品页"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [],
+      "configSource": "research/config-finishing-v3.json"
+    },
+    {
+      "id": "stenter",
+      "referenceManufacturer": "Monforts",
+      "referenceModel": "MONTEX — AEI 2026 reference",
+      "referenceConfiguration": "6烘房、3.2m工作幅宽、全电加热、延长进布臂、集成热回收",
+      "configurationStatus": "已选展示配置 · 完整装配仍待核实",
+      "previousReference": "Monforts MONTEX 8500，2025年图片路径；仅据外形，未确定烘房数量和加热配置",
+      "currentFinding": "厂家当前MONTEX仍为定制模块系统。2026-11-09案例明确是一套6烘房、3.2m工作幅宽、全电加热、延长进布臂与集成热回收的具体设备；这个案例不是全系列统一最新配置。",
+      "generationAssessment": "当前MONTEX系列可确认，精确订单版本仍待选择",
+      "referenceYear": null,
+      "verified": [
+        "2026-11-09厂家案例明确6烘房、3.2m、全电加热、延长入口及热回收",
+        "现场照片可见整高检修门、侧下部技术箱、黄色检修走道及分区电控柜"
+      ],
+      "inferred": [
+        "每房3m、具体进出口长度、风机/喷嘴数量、针链节距为布局推定",
+        "六房没有缩减，但外形不代表拿到该订单总图"
+      ],
+      "missing": [
+        "原订单总图与准确房长",
+        "完整风路、加热元件、喷嘴与针/铗链装配资料",
+        "热回收实装内部与全电控驱动清单"
+      ],
+      "selectedCounts": {
+        "烘房数": 6,
+        "工作幅宽（mm）": 3200,
+        "单侧针链工作段链节数（推定）": 256,
+        "单侧针链回程段链节数（推定）": 256
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "url": "https://www.monforts.de/produkte/spannrahmen/",
+          "publicationDate": null,
+          "supports": "当前MONTEX、模块化配置和官方交互3D入口"
+        },
+        {
+          "url": "https://www.monforts.de/aktuelles/aei-reaps-the-benefits-of-all-electric-new-monforts-range/",
+          "publicationDate": "2026-11-09",
+          "supports": "6烘房、3.2m、全电加热、延长进布臂与热回收案例",
+          "title": "Monforts AEI安装案例（2026-11-09）"
+        },
+        {
+          "url": "https://platform.govie.de/share/revision/JBuwfZJ48Fzriv6J7?Monforts-Montex=",
+          "publicationDate": null,
+          "supports": "厂家产品页链接的官方3D展示入口；本轮未检查其中装配结构"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [],
+      "configSource": "research/config-finishing-v3.json"
+    },
+    {
+      "id": "calender",
+      "referenceManufacturer": "ANDRITZ",
+      "referenceModel": "teXcal s-roll",
+      "referenceConfiguration": "双辊构型；2200mm辊面为所选配置",
+      "configurationStatus": "已选展示配置 · 完整装配仍待核实",
+      "previousReference": "ANDRITZ 2023产品册中的teXcal s-roll与Raconip L；模型为自行组合的双辊构型",
+      "currentFinding": "厂家当前同时列s-roll、Raconip L、trike、Raconip TT等用途不同的产品。TT的有日期发布证据早至2019-04-10，不能因网页写new就称2026最新款，也不能把两辊、L形三辊和不同内部辊系混用。",
+      "generationAssessment": "无法据当前页面确认唯一最新款；需按棉机织面料整理效果锁定一种配置",
+      "referenceYear": null,
+      "verified": [
+        "当前产品册p14的双辊、左侧全高控制柜、封闭侧架与进出布导辊",
+        "辊面1800–3600mm为公开标准范围，选择其中2200mm"
+      ],
+      "inferred": [
+        "各外包络尺寸、轴承、管线和油站布置按照片推定"
+      ],
+      "missing": [
+        "s-roll内部支承与准确轴承组件",
+        "完整液压、热介质与驱动系统BOM",
+        "选定辊面和辅助系统的总装图"
+      ],
+      "selectedCounts": {
+        "工作辊数": 2,
+        "所选辊面宽（mm）": 2200
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "url": "https://www.andritz.com/products-en/power-to-x/nonwoven-textile/textile/textile-calendering-nonwoven-and-textile",
+          "publicationDate": null,
+          "supports": "当前多种轧光机用途与辊组差异"
+        },
+        {
+          "url": "https://www.andritz.com/newsroom-en/nonwoven-and-textile/2019-04-10-techtextil",
+          "publicationDate": "2019-04-10",
+          "supports": "Raconip TT发布年代"
+        },
+        {
+          "url": "https://www.andritz.com/resource/blob/299446/80243e217ab3aca4d81c1611e62ee64b/brochure-textile-keep-profits-rolling-with-calenders-2023--data.pdf",
+          "publicationDate": "2023-09",
+          "supports": "上一版所据产品册，不能当作工程装配图",
+          "title": "ANDRITZ当前链接产品册p14"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [],
+      "configSource": "research/config-finishing-v3.json"
+    },
+    {
+      "id": "inspection",
+      "referenceManufacturer": "Uster",
+      "referenceModel": "Fabriq Vision 2",
+      "referenceConfiguration": "2250mm检测幅宽；检测单元、控制台和Album复核工作站",
+      "configurationStatus": "已选展示配置 · 完整装配仍待核实",
+      "previousReference": "Uster EVS Fabriq Vision与Q-Bar 2的旧资料，现模型为自行构造的验布卷装台",
+      "currentFinding": "已确认新一代Fabriq Vision 2于2025-10-24官方发布稿中作为新品介绍。其2025-07技术资料给出SVC3检测单元、控制台、照明、编码器、工作站、选件和外形尺寸。Q-Bar 2为织造区在线检测，不能替代成品验布整线；Fabriq Vision 2也不能单独代表未指定的放卷/收卷机。",
+      "generationAssessment": "Fabriq Vision 2为已证实的新一代参考候选，现GLB并未复刻该机型",
+      "referenceYear": null,
+      "verified": [
+        "2025-07技术资料p10：2250mm检测幅宽对应W3000mm，闭合H2150mm，D680mm配置",
+        "p11控制台W650×H1550×D440mm",
+        "SVC3、照明、编码器、控制台与复核工作站为已公开系统组成"
+      ],
+      "inferred": [
+        "门缝、机架型材、编码器和线缆的具体布置来自产品图比例",
+        "厂商未公开相机数量，不虚构一组相机来冒充完整光学配置"
+      ],
+      "missing": [
+        "2250mm订单的具体SVC3数量、镜头和安装图",
+        "内部光学、电气和全部零件BOM",
+        "完整验布卷装线的放卷与收卷机型号；本模型只对应检测系统"
+      ],
+      "selectedCounts": {
+        "检测幅宽（mm）": 2250,
+        "检测主机公布宽度（mm）": 3000,
+        "检测主机闭合高度（mm）": 2150,
+        "检测主机深度（mm）": 680,
+        "控制台数": 1,
+        "复核工作站数": 1
+      },
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "url": "https://www.uster.com/fileadmin/user_upload/Images/AboutUster/News_and_Media/2025/251024_Uster_press_release_ITMA_Asia_2025_novelties_and_news.pdf",
+          "publicationDate": "2025-10-24",
+          "supports": "Fabriq Vision 2新品与SVC3检测平台"
+        },
+        {
+          "url": "https://www.uster.com/fileadmin/user_upload/Downloads/1_Products/1.4_Fabric_Inspection/Fabriq_Vision_2/Uster_Fabriq_Vision_2_techdate_web_en_25.pdf",
+          "publicationDate": "2025-07",
+          "supports": "安装单元、尺寸、选件；不足以穷尽内部装配",
+          "title": "Uster Fabriq Vision 2技术资料（2025-07），p2/10/11"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "selected_public_reference",
+      "configurationSections": [],
+      "configSource": "research/config-finishing-v3.json"
+    },
+    {
+      "id": "motor",
+      "referenceManufacturer": "ABB（系列资料参考）",
+      "referenceModel": "未选定具体电机订货号",
+      "referenceConfiguration": "完整配置待锁定；参见已确认信息与待核实项目。",
+      "configurationStatus": "配置待核实",
+      "previousReference": "ABB Process performance目录12-2022 v2，第104页通用爆炸结构；模型为自定义24槽教学绕组",
+      "currentFinding": "不能称现款ABB电机，也不能称任一纺机原装驱动。已证实2025有新IE5范围，但其功率/区域/安装形式必须选型，不能直接套用。",
+      "generationAssessment": "不能称现款ABB电机，也不能称任一纺机原装驱动。已证实2025有新IE5范围，但其功率/区域/安装形式必须选型，不能直接套用。",
+      "referenceYear": null,
+      "verified": [
+        "ABB当前系列选型入口、数据表/外形图渠道；需选功率、极数、电压、频率、效率等级、机座/安装方式、冷却/防护及订货号。"
+      ],
+      "inferred": [],
+      "missing": [
+        "未取得某一订货号定子/转子叠片、槽数/极数、真实端部绕组与接线、轴承/风扇的设计数据。",
+        "现24槽/线圈几何为教学原创，不能声称厂家准确绕组、BOM或性能。",
+        "ABB可提供部分配置图纸不等于公开内部完整CAD；也无各纺机实际配套电机清单。"
+      ],
+      "selectedCounts": {},
+      "sourceConflicts": [],
+      "sources": [
+        {
+          "id": "abb-old",
+          "publisher": "ABB",
+          "title": "ABB Low voltage Process performance motors 12-2022 v2",
+          "url": "https://library.e.abb.com/public/212f71af40014ca9bcd3788187292dbc/ABB%20Low%20voltage%20Process%20performance%20motors%20400%20V%2050%20Hz%2C%20460%20V%2060%20Hz_12-2022_v2.pdf",
+          "publishedDate": "2022-12",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "manufacturer_catalog",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "原研究下载目录标注12-2022；此前实际查看第104页通用爆炸结构。",
+          "supports": "原电机模型参考源为2022年12月系列目录，不是确定订货号的最新电机CAD。"
+        },
+        {
+          "id": "abb-current",
+          "publisher": "ABB",
+          "title": "ABB Process performance induction motors",
+          "url": "https://www.abb.com/global/en/areas/motion/motors-generators/low-voltage-motors/iec-low-voltage-motors/process-performance-motors/process-performance-induction-motors",
+          "publishedDate": null,
+          "dateKind": "not_stated",
+          "sourceType": "product_page",
+          "checkedOn": "2026-11-16",
+          "supports": "当前系列页效率至IE5；提供按条件选型的GoSelect/Optimizer与图纸资料入口，不等同已获得内部整机CAD/BOM。"
+        },
+        {
+          "id": "abb-2025",
+          "publisher": "ABB",
+          "title": "ABB launch of IE5 motor range in India",
+          "url": "https://new.abb.com/news/detail/129326/abb-accelerates-industrial-energy-efficiency-with-strategic-investment-and-launch-of-ie5-motor-range-in-india",
+          "publishedDate": "2025-09-25",
+          "dateKind": "printed_publication_or_article_date",
+          "sourceType": "media_release",
+          "checkedOn": "2026-11-16",
+          "dateEvidence": "页面明确Press release | Bengaluru, India | 2025-09-25。",
+          "supports": "此新闻证实印度本地制造IE5感应电机45–1000kW新范围；不代表所有小功率纺机均配该系列。"
+        }
+      ],
+      "structuralCompleteness": false,
+      "configurationEvidenceStatus": "audit_only",
+      "configurationSections": []
+    },
+    {
+      "id": "compact_spinning",
+      "name": "紧密纺机",
+      "manufacturer": "Rieter",
+      "model": "K 48",
+      "configuration": "288锭；6节×48锭；70mm锭距；单侧吸风；无中间传动；C3直联型14.260m；34mm钢领、LENA28/DUI16 High-Speed Package；210mm纱管",
+      "currentFinding": "当前官网K 48，现挂2025-04版v6样本。厂家同型号已有迭代；本模型锁定该公开版本和选定配置，不声称厂家最新订单的全部细节。",
+      "verified": [
+        "标准最少288锭，144锭仅按要求；每节48锭，所选6节两面各144锭。",
+        "70mm锭距、单侧吸风、无中间传动和C3直联配置可组合；长度=(288/2×70)+4180=14260mm。",
+        "公开主驱为一台大电机经主皮带、纵向共轴及四锭锭带驱动；288锭对应72组四锭带。",
+        "紧密单元采用筛鼓、Bright吸风嵌件与Detect导流监测；并非通用集聚皮圈。",
+        "High-Speed Package可选34mm钢领、LENA28锭子和DUI16纱管；70mm锭距允许180–230mm管长。",
+        "样本明确集体自动落纱、SERVOdisc与ISM premium；ROBOspin为可选接头机器人，本配置不选。"
+      ],
+      "inferred": [
+        "210mm管长为公开范围内的项目选定值，不是默认唯一规格。",
+        "头尾箱外形、牵伸/集聚机构精确尺寸、风道分支和外部电机安装位置按公开图示功能重建。",
+        "粗纱卷装与288锭逐一对应；吊架排列、工作中的卷装余量和全部防护件细部未获订单确认。",
+        "孔型和孔数用于可见筛鼓结构表达，不是厂家孔径、节距或加工公差。"
+      ],
+      "missing": [
+        "整机CAD、BOM及完整隐藏传动总图。",
+        "各牵伸电机精确数量、型号、分配箱内部齿轮和速比。",
+        "落纱气动/机械驱动全图、联锁和电气线缆。",
+        "与具体络筒机配套的订单级直联输送布置。"
+      ],
+      "selectedCounts": {
+        "sections": 6,
+        "spindlesPerSection": 48,
+        "spindles": 288,
+        "spindlesPerSide": 144,
+        "compactingUnits": 288,
+        "rovingPackages": 288,
+        "fourSpindleTapeGroups": 72,
+        "doffingGrippers": 288,
+        "suctionUnits": 1
+      },
+      "selectedCountLabels": {
+        "sections": "节数",
+        "spindlesPerSection": "每节锭数",
+        "spindles": "完整锭位",
+        "spindlesPerSide": "每侧锭位",
+        "compactingUnits": "集聚单元",
+        "rovingPackages": "粗纱卷装",
+        "fourSpindleTapeGroups": "四锭锭带组",
+        "doffingGrippers": "落纱夹持器",
+        "suctionUnits": "单侧吸风单元"
+      },
+      "dimensions": {
+        "machineLengthM": 14.26,
+        "spindleGaugeM": 0.07,
+        "spindleRowWidthM": 0.66,
+        "dofferRetractedWidthM": 1.062,
+        "dofferExtendedWidthM": 1.38,
+        "ringDiameterM": 0.034,
+        "tubeLengthM": 0.21,
+        "evidence": "总体长度依官方公式；非所有外廓高度均有尺寸依据。"
+      },
+      "sources": [
+        {
+          "title": "Rieter K 48 当前产品页",
+          "url": "https://www.rieter.com/products/systems/compact-spinning-machines/compact-spinning-machine-k-48",
+          "publicationDate": null,
+          "evidence": "当前官网读取；不以抓取日替代发布年份"
+        },
+        {
+          "title": "K 48 3237-v6 英文技术册；第12/16/30/31页",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-k-48-compact-spinning-machine-brochure-3237-v6-95005-en.pdf",
+          "publicationDate": "2025-04",
+          "evidence": "PDF末页版号3237-v6 en 2504；原文件下载及实际页面视觉检查"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "localPdf": "research/visual-sources-v5/k48.pdf",
+        "pages": [
+          12,
+          16
+        ],
+        "images": [
+          "research/visual-sources-v5/k48-drive-p12.png",
+          "research/visual-sources-v5/k48-compact-p16.png"
+        ]
+      },
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "K 48",
+      "referenceConfiguration": "288锭；6节×48锭；70mm锭距；单侧吸风；无中间传动；C3直联型14.260m；34mm钢领、LENA28/DUI16 High-Speed Package；210mm纱管",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实",
+      "technicalPagesRead": [
+        12,
+        14,
+        16,
+        18,
+        30,
+        31
+      ],
+      "configSource": "research/config-extensions-v5.json",
+      "configurationEvidenceStatus": "selected_public_reference",
+      "generationAssessment": "当前官网K 48，现挂2025-04版v6样本。厂家同型号已有迭代；本模型锁定该公开版本和选定配置，不声称厂家最新订单的全部细节。",
+      "configurationSections": [
+        {
+          "title": "所选设备结构范围",
+          "items": [
+            "288完整集聚锭位",
+            "多孔筛鼓与Detect",
+            "72组四锭锭带",
+            "集体落纱与单通道吸风"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "twisting",
+      "name": "倍捻机",
+      "manufacturer": "Saurer",
+      "model": "CompactTwister Series 8",
+      "configuration": "机械控制型；1节20锭（双面各10）；207mm锭距；VTS-07；长4.895m、机宽0.620m；并合筒纱喂入；机械分配传动；选用Volcojet气动穿纱附件",
+      "currentFinding": "当前官网仍列CompactTwister Series 8，并挂06/2019技术册；PrimeTwister为当前并列平台。本模型选择有完整公开最小配置表的CompactTwister机械版，不声称这是2026新发布型号。",
+      "verified": [
+        "机械控制技术表第18页明确1节20锭、207mm节距、总长4895mm；一节2100mm，驱动箱2167mm，尾箱628mm。",
+        "公开机宽620mm，驱动箱高1540mm、机节1601mm、尾箱1400mm。",
+        "VTS-07圆柱喂入卷装直径最高180mm、锥形最高185mm；这是卷装尺寸，不是罐外径。",
+        "机械控制机与电子控制机配置表不同；电子版第19页最少6节120锭，不能将其伺服装配套入20锭。",
+        "官方截面明确静止罐、锭转子、锭带、气圈导纱、超喂轮、横动机构、摩擦辊与卷绕架。",
+        "每转在锭子内部和外部气圈各加一捻，形成两次真捻；与加弹机的假捻热定型不同。"
+      ],
+      "inferred": [
+        "所选20锭按双面各10完整布置；锭罐外径、气圈及支承细部按截面比例建立，非精确厂家尺寸。",
+        "主电机经机械分配驱动锭带、超喂和卷绕；分配箱内部未公开，不虚构齿数和减速比。",
+        "喂入选择已并合筒纱，不选TwinPack直接双筒喂入；因此上游需并纱/并合络筒。",
+        "模型选160mm喂入卷装、220mm成品卷装，均为公开范围内的展示状态；Volcojet作为明确选择的气动穿纱附件，而非默认标准件。"
+      ],
+      "missing": [
+        "选定VTS-07锭罐、锭盘和刹车总装CAD及BOM。",
+        "机械控制版本实际电机规格、机械变速分配和切向锭带张紧细节。",
+        "气路、联锁、Volcojet等全部选件配置；未选附件不冒充标准。",
+        "当前订单是否对2019技术表有未公开尺寸更新。"
+      ],
+      "selectedCounts": {
+        "sections": 1,
+        "spindlesPerSection": 20,
+        "spindles": 20,
+        "spindlesPerSide": 10,
+        "spindlePots": 20,
+        "feedPackages": 20,
+        "balloons": 20,
+        "overfeedUnits": 20,
+        "windingPositions": 20,
+        "feedPackageDiameterMm": 160,
+        "deliveryPackageDiameterMm": 220
+      },
+      "selectedCountLabels": {
+        "sections": "完整节数",
+        "spindlesPerSection": "每节锭数",
+        "spindles": "完整倍捻锭位",
+        "spindlesPerSide": "每侧锭位",
+        "spindlePots": "静止锭罐",
+        "feedPackages": "并合喂入卷装",
+        "balloons": "外部气圈",
+        "overfeedUnits": "超喂工位",
+        "windingPositions": "卷绕工位",
+        "feedPackageDiameterMm": "选定喂入卷装直径（毫米）",
+        "deliveryPackageDiameterMm": "选定成品卷装直径（毫米）"
+      },
+      "dimensions": {
+        "machineLengthM": 4.895,
+        "machineWidthM": 0.62,
+        "sectionHeightM": 1.601,
+        "headHeightM": 1.54,
+        "tailHeightM": 1.4,
+        "sectionLengthM": 2.1,
+        "headLengthM": 2.167,
+        "tailLengthM": 0.628,
+        "spindleGaugeM": 0.207,
+        "feedPackageMaximumDiameterM": 0.18,
+        "evidence": "当前官网仍挂的2019-06原厂样本第18页机械控制配置。"
+      },
+      "sources": [
+        {
+          "title": "Saurer CompactTwister 当前产品页",
+          "url": "https://saurer.com/en/products/machines/twisting-and-cabling/staple/compacttwister",
+          "publicationDate": null,
+          "evidence": "当前页面仍挂Series 8和2019技术册"
+        },
+        {
+          "title": "CompactTwister 原厂技术册：机械版第18页、电子版第19页、截面第8/9页",
+          "url": "https://saurer.com/media/266/download/2019_CompactTwister_EN.pdf?v=2",
+          "publicationDate": "2019-06",
+          "evidence": "从当前官网HTML实际下载链接取得PDF；末页Copyright 06.2019；实看第8与18页"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "localPdf": "research/visual-sources-v5/compacttwister.pdf",
+        "pages": [
+          8,
+          18
+        ],
+        "images": [
+          "research/visual-sources-v5/compacttwister-p8.png",
+          "research/visual-sources-v5/compacttwister-tech-p18.png"
+        ]
+      },
+      "referenceManufacturer": "Saurer / Volkmann",
+      "referenceModel": "CompactTwister series 8",
+      "referenceConfiguration": "机械控制型；1节20锭（双面各10）；207mm锭距；VTS-07；长4.895m、机宽0.620m；并合筒纱喂入；机械分配传动；选用Volcojet气动穿纱附件",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实",
+      "selectedOptions": {
+        "Volcojet": true,
+        "TwinPack": false,
+        "electronicServoControl": false,
+        "packageConveyor": false,
+        "balloonLimiter": false
+      },
+      "configSource": "research/config-extensions-v5.json",
+      "configurationEvidenceStatus": "selected_public_reference",
+      "generationAssessment": "当前官网仍列CompactTwister Series 8，并挂06/2019技术册；PrimeTwister为当前并列平台。本模型选择有完整公开最小配置表的CompactTwister机械版，不声称这是2026新发布型号。",
+      "configurationSections": [
+        {
+          "title": "所选设备结构范围",
+          "items": [
+            "完整20锭双面机节",
+            "静止锭罐与锭转子",
+            "完整外部气圈",
+            "超喂、横动及摩擦卷绕"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "texturing",
+      "name": "牵伸假捻加弹机",
+      "manufacturer": "Barmag",
+      "model": "eFK",
+      "configuration": "eFK Standard；PET单股；V型；16节×24=384工位；固定筒架；godet喂纱；type 8切向带假捻；Camshaft三层卷绕；手动落筒",
+      "currentFinding": "eFK当前官网仍列售；eFK EvoSmart是另一个更近期平台。用户明确选择具有公开完整配置参数的eFK，不把384工位eFK称为EvoSmart或最新一代。2023技术表当前原链接失效，数字从官方URL搜索索引复核；当前2026通用册未重新给出该整机表。",
+      "verified": [
+        "当前官网明确eFK为手动落筒加弹平台，godet用于加弹区前后的喂纱。",
+        "官方2023_02/05技术表搜索索引给出Standard、PET、Single、V型、16节、384卷绕工位；每节24工位由384÷16得出。",
+        "同表给出总长27406mm、机顶宽7944mm、机底宽4764mm、固定筒架宽6724mm、机高5678mm、节距1440mm、纱距110mm。",
+        "同表主加热2.0m、冷轨1.1m、二热1.46m；喂纱可选G1/G1.X/G2/G2X或轴系，卷前W3，卷绕可选ATT或Camshaft。",
+        "当前通用册确认假捻摩擦单元存在单独电机或切向带两种驱动形式，不能把两者混称同一标准装配。"
+      ],
+      "inferred": [
+        "选定PET单股、固定筒架、godet喂纱和Camshaft，属于表列可配置选项；不代表取得了某客户的整机订单BOM。",
+        "每侧每节12工位、三层卷绕每层4位为模型选定的完整排布；尚未取得该配置截面图完成视觉核验。单元门板、机架和局部轴承尺寸按功能与比例表达。",
+        "图中的电机外壳和传动位置用于说明实际工位功能，具体型号与安装尺寸待核实。",
+        "摩擦盘叠片数、POY卷装尺寸是建模选择或待核值，不冒充原厂精确选配。",
+        "模型以7个共用电机工位分别表达两侧假捻、W3、卷绕与油剂循环；真实电机台数及机内分配未核。G1/G2集成驱动未独立建模。",
+        "固定筒架建立384个工作POY卷装，不声称已包含未核实的备用卷装系统；摩擦假捻选type 8切向带形式。"
+      ],
+      "missing": [
+        "2023_02/05参数表的当前可下载原文件；已确认旧域404、迁移路径转错误页。",
+        "同一384工位订单的安装图、剖面、BOM、箱内电机与全部机械传动。",
+        "固定筒架每个工作位的备用POY卷装数量和精确分层，不能把备用包数当成已证实额定数量。",
+        "摩擦盘的选定材料、盘片配比、喷嘴、油轮、传感器和具体驱动选配清单。",
+        "尚未实际取得清晰eFK V型截面原图，左右模块、走纱高度和局部工位位置属于功能/比例推定，不声称已视觉核实整机截面。"
+      ],
+      "selectedCounts": {
+        "sections": 16,
+        "positionsPerSection": 24,
+        "positions": 384,
+        "sides": 2,
+        "positionsPerSide": 192,
+        "windingDecksPerSide": 3,
+        "windersPerDeckPerSection": 4,
+        "primaryHeaterPaths": 384,
+        "coolingPaths": 384,
+        "secondaryHeaterPaths": 384,
+        "activePOYPackages": 384,
+        "reservePOYPackages": 0,
+        "DTYPackages": 384,
+        "continuousYarnPaths": 384,
+        "frictionUnits": 384,
+        "frictionShafts": 1152,
+        "commonDriveStations": 7
+      },
+      "selectedCountLabels": {
+        "sections": "完整节数",
+        "positionsPerSection": "每节工位",
+        "positions": "完整加弹工位",
+        "sides": "工作侧数",
+        "positionsPerSide": "每侧工位",
+        "windingDecksPerSide": "每侧卷绕层数",
+        "windersPerDeckPerSection": "每节每层卷绕位",
+        "primaryHeaterPaths": "主加热纱路",
+        "coolingPaths": "冷却纱路",
+        "secondaryHeaterPaths": "二热纱路",
+        "activePOYPackages": "工作POY卷装",
+        "reservePOYPackages": "未建备用POY卷装",
+        "DTYPackages": "DTY卷装",
+        "continuousYarnPaths": "独立连续纱路",
+        "frictionUnits": "假捻单元",
+        "frictionShafts": "三轴摩擦盘轴",
+        "commonDriveStations": "模型中推定的共用驱动工位"
+      },
+      "dimensions": {
+        "machineLengthM": 27.406,
+        "topWidthM": 7.944,
+        "bottomWidthM": 4.764,
+        "widthWithStationaryCreelM": 6.724,
+        "machineHeightM": 5.678,
+        "sectionPitchM": 1.44,
+        "yarnPitchM": 0.11,
+        "primaryHeaterLengthM": 2.0,
+        "coolingRailLengthM": 1.1,
+        "secondaryHeaterLengthM": 1.46,
+        "evidence": "2023官方PDF URL的搜索索引；原文件当前下载失败，当前在售性另外由官网确认。"
+      },
+      "sources": [
+        {
+          "title": "Barmag eFK 当前产品页",
+          "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk/",
+          "publicationDate": null,
+          "evidence": "现售平台；与eFK EvoSmart并列，不能称最新一代"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_02 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_02_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-02",
+          "evidence": "日期来自文件名；官方URL的搜索索引全文读取，原链接当前404；未取得该版原PDF，参数置信度受此限制"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_05 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_05_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-05",
+          "evidence": "同一384工位参数搜索索引交叉核对；原链接当前404；日期来自文件名"
+        },
+        {
+          "title": "Barmag DTY manufacturing 当前通用册",
+          "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true",
+          "publicationDate": "2026-04",
+          "evidence": "当前官网真实下载链接，PDF末页BBA205 04/2026；实际下载并查看11、13页机构照片，非eFK专用整机图"
+        },
+        {
+          "title": "eFK EvoSmart 2026官方新闻：用于与选定eFK区分",
+          "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+          "publicationDate": "2026-01-08",
+          "evidence": "更近期平台另有SmartGodets/EvoHeater；本模型不套用其技术名称"
+        },
+        {
+          "title": "原厂2017期刊：eFK卷绕与导纱局部图，不作为当前容量依据",
+          "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_28_en.pdf?download=true",
+          "publicationDate": "2017-10",
+          "evidence": "PDF下载并实际查看第24页；仅部件外观参考"
+        },
+        {
+          "title": "早期原厂eFK brochure文本副本：type 8切向带与type 8E单独驱动的区别",
+          "url": "https://www.yumpu.com/en/document/view/4112004/efk-oerlikon-barmag-oerlikon-textile",
+          "publicationDate": null,
+          "evidence": "原厂作者资料的第三方历史转存，2012上传时间不等于厂家出版年；仅搜索索引文本核对，不宣称实际看到了V型截面。用于识别驱动形式，非当前订单BOM。"
+        }
+      ],
+      "visualEvidence": {
+        "visuallyInspected": true,
+        "scope": "当前通用册部件照片，非eFK专用V型整机截面",
+        "localPdf": "research/visual-sources-v5/barmag-dty2026.pdf",
+        "pages": [
+          11,
+          13
+        ],
+        "images": [
+          "research/visual-sources-v5/dty2026-p11.png",
+          "research/visual-sources-v5/dty2026-p13.png"
+        ],
+        "configurationCrossSectionInspected": false
+      },
+      "referenceManufacturer": "Barmag",
+      "referenceModel": "eFK",
+      "referenceConfiguration": "eFK Standard；PET单股；V型；16节×24=384工位；固定筒架；godet喂纱；type 8切向带假捻；Camshaft三层卷绕；手动落筒",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "configurationStatus": "完整所选工位数；公开外形与功能重建，隐藏机构和订单配置尚未完整核实",
+      "configSource": "research/config-extensions-v5.json",
+      "configurationEvidenceStatus": "selected_public_reference",
+      "generationAssessment": "eFK当前官网仍列售；eFK EvoSmart是另一个更近期平台。用户明确选择具有公开完整配置参数的eFK，不把384工位eFK称为EvoSmart或最新一代。2023技术表当前原链接失效，数字从官方URL搜索索引复核；当前2026通用册未重新给出该整机表。",
+      "configurationSections": [
+        {
+          "title": "所选设备结构范围",
+          "items": [
+            "16节384完整工位",
+            "V型加热冷却区",
+            "双面三层卷绕",
+            "固定POY筒架"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rotor_spinning",
+      "name": "气流纺（转杯纺纱机）",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "R 70",
+      "referenceConfiguration": "双面基础机，2 节共 48 个纺位、2 台落筒机器人。选 1 070 mm 高矩形条筒、圆柱卷装和逐位清纱。",
+      "currentFinding": "立达当前转杯纺产品目录列有全自动 R 70 和半自动 R 37。本模型采用 R 70 技术册第 8 页基础机一行的配置。",
+      "configurationStatus": "原厂整机尺寸和逐纺位驱动有公开依据，安装细节为外形重建。",
+      "modelVersion": "3.0",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "sections": 2,
+        "positions": 48,
+        "pitch": "230 mm",
+        "length": "11.453 m",
+        "width": "2.536 m",
+        "height": "2.950 m",
+        "sectionLength": "2.820 m",
+        "sectionLowerEdge": "1.175 m",
+        "cans": "48 个，220 × 920 × 1 070 mm",
+        "robots": 2,
+        "deliveryBelts": 2,
+        "unitDrives": "5 项 × 48 位 = 240 个逐位驱动映射"
+      },
+      "selectedCountLabels": {
+        "sections": "机节数",
+        "positions": "纺位数",
+        "pitch": "同侧锭距",
+        "length": "整机长度",
+        "width": "图示宽度（含机器人）",
+        "height": "所选高度",
+        "sectionLength": "单节长度",
+        "sectionLowerEdge": "机节下缘",
+        "cans": "所选条筒",
+        "robots": "落筒机器人",
+        "deliveryBelts": "成筒输送带",
+        "unitDrives": "本配置逐位电机"
+      },
+      "verified": [
+        "技术册第 8 页给出基础机的两节、48 位和两台机器人。同侧每节 12 位、节长 2.820 m，所选条筒高度对应整机高 2.950 m。",
+        "第 9 页分别列出喂条、分梳辊、转杯的单电机驱动，以及卷装和导纱的独立驱动。分梳辊电子调速范围 6 000–11 000 r/min；磁轴承转杯的技术设计上限为 180 000 r/min。",
+        "两条成筒皮带向同一端输出。车头两侧分别供管，车尾设抽吸过滤和废料收集；接头时气动清杯，机器人承担落筒。",
+        "纺位直接形成卷装。当前选圆柱筒子；产品技术册标注的直径与质量上限分别为 350 mm、6 kg。"
+      ],
+      "inferred": [
+        "根据外观图和整机尺寸图布置纺纱箱、摇架、卷装、护盖和辅助模块。电机外壳、支承、轴端以及纱线走向按工位功能重建。",
+        "五类逐位电机按原厂公开结构各映射 48 个。模型给出示意筒径、实际装载中的部分空管；供管架额定容量与当前存管量分开。",
+        "纺位运动以可观察速度演示，横动行程、每个纺位的相位以及辊筒接触位置按当前几何选取。"
+      ],
+      "missing": [
+        "各电机的铭牌、功率、极数、绕组和具体电磁型式，以及引纱罗拉的独立动力归属，原厂公开资料未逐项披露。",
+        "风机、皮带、机器人和供管机构的执行电机型号、数量及内部机械分配仍需订单资料。240 只统计五类逐位驱动。",
+        "未取得装配 CAD 或 BOM。所选配置不含选配上蜡、自动成筒提升机和托盘输送接口。"
+      ],
+      "sources": [
+        {
+          "title": "立达 R 70 全自动转杯纺纱机",
+          "url": "https://www.rieter.com/products/systems/rotor-spinning-machines/rotor-spinning-machine-r-70",
+          "supports": "当前在列型号、逐位自动化与吸风设计。"
+        },
+        {
+          "title": "立达 R 70 原厂技术册",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-r-70-v2-rotor-spinning-machine-brochure-3313-v4-95393-en.pdf",
+          "printedPages": [
+            2,
+            6,
+            8,
+            9,
+            10
+          ],
+          "supports": "整机照片、纺纱箱正面、基础机尺寸、五项单电机驱动以及选配边界。"
+        },
+        {
+          "title": "立达转杯纺成套工艺路线",
+          "url": "https://www.rieter.com/products/system-applications/rotor-spinning-system",
+          "supports": "从纤维准备、梳理和条子准备到转杯成纱及卷装的流程。"
+        }
+      ],
+      "configSource": "research/config-rotor.json",
+      "configurationEvidenceStatus": "selected_public_reference"
+    },
+    {
+      "id": "assembly_winding",
+      "name": "并纱",
+      "referenceManufacturer": "SSM",
+      "referenceModel": "CWX-D",
+      "referenceConfiguration": "公开最小完整10锭，双面5+5；选用2股供纱，20只静止退绕供纱卷装；152 mm槽筒排纱；圆柱合股卷装。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-yarn.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "并纱锭位": 10,
+        "机面": 2,
+        "每面锭位": 5,
+        "每锭供纱根数": 2,
+        "供纱卷装": 20,
+        "槽筒": 10,
+        "合股筒子": 10,
+        "可视独立槽筒驱动工位": 10,
+        "排纱行程毫米": 152
+      },
+      "verified": [
+        "当前SSM官网列CWX-D；每锭独立驱动、槽筒排纱。",
+        "官网及产品系列册第20页：最小10、最大80锭（8节双面），横动152 mm。",
+        "官网支持2股和3股供纱；本机选择2股。",
+        "第20页官方图已实际查看，显示双面5位模块、下部供纱架、上部槽筒与卷装、端部电控。"
+      ],
+      "inferred": [
+        "选择最小10锭整机而非截短多锭机器；2×5排列由官方10锭双面配置及照片共同解释。",
+        "机架长度、高度、间距、侧罩折线和各安装座按官方图比例重构，没有声称厂家精确外形尺寸。",
+        "独立电机外壳和输出轴位置、槽筒具体沟槽曲线、各张力/检测元件外形为示意。",
+        "每只供纱卷装直径240 mm，小于官方2股供纱允许280 mm上限。"
+      ],
+      "missing": [
+        "电机制造商、额定功率、减速/轴联图、驱动铭牌未取得。",
+        "随机卷绕槽筒的精确槽形和传动比、检测/切断器BOM未取得。",
+        "完整电气柜和安全联锁回路未公开，结构完整性不作OEM验证。"
+      ],
+      "sources": [
+        {
+          "title": "SSM 当前并纱机产品页：CWX-D",
+          "url": "https://www.ssm.ch/products/winding-solutions/assembly-winding-machines",
+          "supports": "单锭独立驱动，2/3股，槽筒排纱，152 mm，10–80锭。"
+        },
+        {
+          "title": "SSM Product portfolio，p.20，当前官网版本",
+          "url": "https://www.ssm.ch/fileadmin/ssm/documents/products/winding/ssm-product-range-3615-en.pdf",
+          "supports": "CWX-D技术表与整机照片；公开最小10锭双面配置。"
+        }
+      ]
+    },
+    {
+      "id": "airjet_spinning",
+      "name": "喷气纺",
+      "referenceManufacturer": "Rieter",
+      "referenceModel": "J 70",
+      "referenceConfiguration": "官方p.18基础40纺位、2机节、2落筒机器人；255 mm节距；1070 mm条筒；机长11113 mm、宽3029 mm、高3100 mm。圆柱卷装，选用Q30A；不选择上蜡或VARIOlot。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-yarn.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "纺位": 40,
+        "机节": 2,
+        "每节纺位": 20,
+        "落筒机器人": 2,
+        "熟条筒": 40,
+        "气流成纱喷嘴": 40,
+        "筒子卷装": 40,
+        "牵伸功能驱动示意": 40,
+        "卷绕功能驱动示意": 40,
+        "双侧成筒输送带": 2,
+        "机器人行走驱动示意": 2,
+        "输送带驱动示意": 2,
+        "空管储存容量": 660,
+        "纺位节距毫米": 255,
+        "公开机长毫米": 11113
+      },
+      "verified": [
+        "当前Rieter官网及其现挂3584-v1 en 2305手册确认J70平台，p.18列40纺位/2节/2机器人和尺寸。",
+        "手册p.19：255 mm节距；每纺纱及卷绕单元独立驱动；直线横动；2机器人标准，4机器人可选。",
+        "手册p.19：两条成筒输送带、独立空管供给；储管能力660（每侧330）。",
+        "手册p.11和14：机器人落筒、辅助纱及清洁功能；自主纺位接头；两片式可开启喷嘴；废料压实移出。",
+        "手册p.13：压缩空气用于喷嘴成纱；不会为喷嘴设置假想电机。",
+        "p.4近景、p.14喷嘴图、p.18整机尺寸图均已实际查看。"
+      ],
+      "inferred": [
+        "40纺位完整建模；4对可视牵伸罗拉依据公开近景形成结构示意，厂家完整牵伸BOM未提供。",
+        "每纺位以1处牵伸功能驱动和1处卷绕功能驱动外形表达独立工位；80处外形不是已核实际总电机数。",
+        "2处输送带和2处机器人行走驱动的位置、外形及中间联接为功能推定；功率、内部驱动数量未知。",
+        "条筒采取交错双排；各机头分段、喷嘴壳体和电控位置按照片比例重建，只有总外形与公开节距有尺寸依据。",
+        "660只空管作满储能力示意，仓道数与管列排列未获BOM确认；不表示生产中必须满储。",
+        "陶瓷喉口仅表示通孔和空气通道关系；未冒称0.9/1.0/1.2 mm纺纱尖端内部精密几何。"
+      ],
+      "missing": [
+        "原厂电机清单、铭牌、功率、编码器、每纺位牵伸各轴和卷绕/引纱/横动的实际独立电机数量与分配。",
+        "喷嘴微孔/气道、真实内部流场和捻度形成不可由外观复刻验证。",
+        "自主接头执行器、机器人全部执行轴、吸排风机、废料压实器的具体驱动形式及传动连接。",
+        "详细安全联锁、气动/电气回路、完整装配图、全部部件间隙和OEM结构完整性。"
+      ],
+      "sources": [
+        {
+          "title": "Rieter J70 当前产品页",
+          "url": "https://www.rieter.com/products/systems/air-jet-spinning-machines/air-jet-spinning-machine-j-70",
+          "supports": "独立纺纱及卷绕单元，气流纺平台、双面分节配置、Q30A与圆柱卷装。"
+        },
+        {
+          "title": "Rieter J70 brochure 3584-v1 en 2305，p.18–19",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+          "supports": "40纺位2节2机器人基础配置、11113×3029×3100 mm、255 mm、1070 mm条筒及驱动/物流参数。"
+        },
+        {
+          "title": "Rieter J70 brochure，p.4、11、13–14",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-j-70-air-jet-spinning-machine-brochure-3584-v1-98493-en.pdf",
+          "supports": "实际整机/纺位近景，压缩空气喷嘴、可开启外壳，自主接头、机器人职责及废料处理。"
+        }
+      ]
+    },
+    {
+      "id": "warp_tying",
+      "name": "自动结经",
+      "referenceManufacturer": "Stäubli 史陶比尔",
+      "referenceModel": "TIEPRO + TPF",
+      "referenceConfiguration": "1台TIEPRO结经头；TPF A式平直夹纱；模型选定2.16m有效经纱片、上下各480根经纱；非厂家固定纱数/订单尺寸。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-preparation.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "结经头": 1,
+        "新经纱展示根数": 480,
+        "旧经纱展示根数": 480,
+        "模型主驱动工位": 1,
+        "锥形分纱工作区": 2,
+        "夹纱架脚轮": 4
+      },
+      "verified": [
+        "当前官方产品页仍列TIEPRO；可处理标准短纤、纯棉及棉混纺经纱，NeB 3–100，最高600结/分。",
+        "官方明确锥形分纱、电子双纱检测、Auto-Reverse先退回再切纱。",
+        "TPF公开结经宽度范围100–560cm及A/B两种夹持原理；本模型选A式。",
+        "已下载并实际查看原厂TIEPRO和TPF照片，外形、提手、上盖、双立柱和四脚轮据图重构。"
+      ],
+      "inferred": [
+        "上下各480根为完整展示用选定经纱片，不是厂家标准或最高纱数；2.16m在TPF公开范围内但不是已确认订单规格。",
+        "结经头尺寸、分纱器局部比例、轴承/刀片外形及安装位置按照片比例表达。",
+        "模型只有1个主驱动功能定位锚点，不宣称TIEPRO实机只有1台电机；分纱/打结/切纱的共享关系待厂家内部图核实。",
+        "移动结经头演示为沿幅宽进给功能，实际横移驱动没有归给主电机。"
+      ],
+      "missing": [
+        "TIEPRO电气BOM、电机总数/电磁型式/功率和逐轴驱动归属。",
+        "分纱、打结、切纱、横移之间的原厂传动图和时序相位。",
+        "该选定宽度TPF及TIEPRO精确安装尺寸。"
+      ],
+      "sources": [
+        {
+          "title": "Stäubli TIEPRO 当前产品页",
+          "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/tiepro.html",
+          "supports": "当前在列；锥形分纱、最高600结/分、电子双纱检测和先退回重分纱再切纱。未披露电机数量或内部传动。"
+        },
+        {
+          "title": "Stäubli TPF 结经架当前产品页",
+          "url": "https://www.staubli.com/global/en/textile/products/warp-tying-machine/warp-tying-frame-tpf.html",
+          "supports": "支持TIEPRO；可选100–560cm结经宽度；A式平直夹紧和B式90度转杆夹紧。"
+        },
+        {
+          "title": "Stäubli TIEPRO 原厂整机照片",
+          "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--5020de82-55f0-4449-be0d-9831cf2d7355/warp-tying-machine-all-type-yarn-tiepro-hip.jpg?preferwebp=true&quality=75",
+          "supports": "已实际查看：青绿上盖、顶部屏幕/提手、金属下机身、前露分纱与打结工作区。无尺寸标注。"
+        },
+        {
+          "title": "Stäubli TPF 原厂照片",
+          "url": "https://www.staubli.com/adobe/dynamicmedia/deliver/dm-aid--a4f4e34e-c016-4e9a-b328-9a051adc9320/tpf-tying-frame-hip-2x.jpg?preferwebp=true&quality=75",
+          "supports": "已实际查看：双立柱、四脚轮、窄长夹纱框、横杆、手动夹持与托钩。"
+        },
+        {
+          "title": "Stäubli ITM FLASH 2024 原厂资料，第4页",
+          "url": "https://www.staubli.com/content/dam/textile/showpad/fairs/itm-2024/FLASH_2024_ITM-T%C3%BCrkiye_ENG.pdf",
+          "supports": "2024展会资料确认锥形分纱、无分纱针、无油浴及自动退回；未把电子检测说成电机。"
+        }
+      ]
+    },
+    {
+      "id": "washing_range",
+      "name": "平幅水洗与皂洗",
+      "referenceManufacturer": "Benninger",
+      "referenceModel": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+      "referenceConfiguration": "采用官方技术册第 4 页中间的染后／印后组合流程：2 个 TRIKOFLEX、3 个 EXTRACTA、1 个 TEMPACTA，配进布、分段牵引、末端轧液和卷装。各 EXTRACTA 选择 5 个 EA 单穿布带压辊回环。辊数、尺寸及 18 个电机位置为本次功能示意，不是原厂 BOM；该组合未选烘筒。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-wet.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "TRIKOFLEX 模块": 2,
+        "EXTRACTA EA 模块": 3,
+        "TEMPACTA 模块": 1,
+        "转鼓": 4,
+        "EXTRACTA 浸液回环（示意）": 15,
+        "EXTRACTA 辊体（示意）": 45,
+        "示意电机工位": 18,
+        "循环泵示意工位": 6,
+        "烘筒（未选）": 0
+      },
+      "verified": [
+        "官网当前列有 BEN-WASH、EXTRACTA 与 TRIKOFLEX。",
+        "官方册第 4 页展示转鼓、辊槽与停留组合的染后／印后洗涤线。",
+        "第 6–9 页给出分格逆流、单／双穿布、压辊变型和转鼓正反面洗涤；第 12 页说明 TEMPACTA 停留皂洗用途。"
+      ],
+      "inferred": [
+        "模块尺寸、检修罩、泵位置与传动联接按功能重建。",
+        "各 EXTRACTA 完整展示所选 5 个 EA 回环；此数量不代表厂家统一标准。",
+        "分段驱动连接表达功能从属，不能据此认定每根辊都是机械主动轴。",
+        "TEMPACTA 托布段的 12 个支承辊和 2 个端辊为选定连续路径表达。"
+      ],
+      "missing": [
+        "原厂电机总表、独立轴数、电磁类型、功率和电气图。",
+        "模块尺寸、泵流量和传动比。",
+        "具体订单洗槽数量与停留容量。"
+      ],
+      "sources": [
+        {
+          "title": "Benninger BEN-WASH 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/washing-solutions",
+          "supports": "当前产品系列与模块化范围。"
+        },
+        {
+          "title": "Benninger Washing Solutions 官方技术册",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Washing_Solutions/Broschuere_Washing_EN.pdf",
+          "supports": "印刷页 4：组合线；6–9：EXTRACTA / TRIKOFLEX；12：TEMPACTA。未提供本模型电机总表。"
+        }
+      ]
+    },
+    {
+      "id": "singeing",
+      "name": "织物烧毛",
+      "referenceManufacturer": "SWASTIK Textile Engineers",
+      "referenceModel": "Super Singe",
+      "referenceConfiguration": "选定1.8m布幅/2.0m辊面；前后各2刷辊、2狭缝燃烧器、4水冷导布辊；独立刷毛吸尘、助燃和燃烧排风；蒸汽灭火；不选可选预烘及退浆浸渍槽。尺寸为模型选定、非已确认OEM安装图。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-preparation.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "选定布幅毫米": 1800,
+        "选定辊面毫米": 2000,
+        "狭缝燃烧器": 2,
+        "水冷导布辊": 4,
+        "前刷毛辊": 2,
+        "后刷毛辊": 2,
+        "模型刷辊电机": 4,
+        "模型风机工位": 3,
+        "模型牵引电机": 1,
+        "模型电机合计": 8,
+        "蒸汽灭火管": 1
+      },
+      "verified": [
+        "当前厂家网站仍列Super Singe且链接4页原厂样本；样本封面带1937–2012周年标记，属于历史公开图样仍在官网使用。",
+        "厂家明确刷毛辊由交流电机直接连接；交流供电不等于已确认异步、永磁或伺服类型。",
+        "厂家明确2个狭缝燃烧器及水冷配置；PDF图示4个水冷导布辊与前后各2个刷辊。",
+        "样本展示独立刷毛抽尘、助燃空气风机和燃烧排气；本模型保持三类气流功能分开。",
+        "不配可选退浆浸渍槽时，厂家提供蒸汽灭火装置；停电时两燃烧器同时退避并切断燃气。"
+      ],
+      "inferred": [
+        "1.8m布幅、2m辊面、框架间距和所有安装尺寸为选定演示比例，样本没有提供该订单外形尺寸。",
+        "4个刷辊的4个直联电机按所选前后双刷配置完整展示；确切电机品牌、功率及机批数量未取到BOM。",
+        "助燃、燃烧排风和刷毛吸尘各显示1个功能电机，叶轮/电机位置根据照片和功能重构，不宣称原厂精确风路。",
+        "出口牵引采用1个模型驱动工位；电机类型与减速结构未公开，壳体样式仅说明机械接口。",
+        "水冷辊被动转动与布速关系由工艺功能表达，未新增无依据的水泵或逐辊电机。"
+      ],
+      "missing": [
+        "该选定整机的电气BOM、全部电机型号、功率和厂家安装总图。",
+        "燃烧器退避执行器的电磁/气动具体型号及机械联锁细节；不归为旋转电机。",
+        "吸尘过滤器、风机、出口牵引在实际客户订单中的选型与布置。",
+        "受控燃烧、热传递、真实张力、燃气压力和安全联锁工程仿真。"
+      ],
+      "sources": [
+        {
+          "title": "SWASTIK Super Singe 当前产品页",
+          "url": "https://www.swastiktextile.com/gas-singening-machine-super-singe/",
+          "supports": "当前官网在列；明确交流电机直接连接刷毛辊、独立吸尘、2个狭缝水冷燃烧器、单/双面烧毛、失电退避、80–150m/min。"
+        },
+        {
+          "title": "SWASTIK Super Singe 原厂4页样本",
+          "url": "https://www.swastiktextile.com/Download%20Catalogue/gas_singeing_machine.pdf",
+          "supports": "已下载并逐页查看：第1/4页整机照片；第2–3页完整布路、前后双刷辊、助燃及排风风机、4个水冷导布辊、2燃烧器及安全退避。第4页说明未配退浆槽时采用蒸汽灭火。封面有1937–2012周年标记，不称2026新型号。"
+        }
+      ]
+    },
+    {
+      "id": "mercerizing",
+      "name": "丝光",
+      "referenceManufacturer": "Benninger",
+      "referenceModel": "BEN-DIMENSA",
+      "referenceConfiguration": "选择棉机织物有链／无链组合功能线：双浸渍及停留、短夹链展幅、SECTION CONTROL、真空抽碱、两区稳定、两模块 TRIKOFLEX 后洗、轧液及进出布。22 个电机位置、辊数、调幅轴数及尺寸为功能示意，不作为原厂标准 BOM。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-wet.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "浸渍及停留区": 2,
+        "夹链导轨": 2,
+        "展示夹链链节": 72,
+        "调幅丝杆（示意）": 3,
+        "稳定洗涤区": 2,
+        "TRIKOFLEX 后洗模块": 2,
+        "水平浸渍及稳定辊（示意）": 48,
+        "示意电机工位": 22,
+        "液体循环泵示意工位": 6,
+        "真空动力示意工位": 1
+      },
+      "verified": [
+        "官网当前明确 BEN-DIMENSA 有链与无链组合。",
+        "2024 册第 6–8 页给出浸渍、停留、展幅、稳定并允许单或双浸渍。",
+        "第 9 页给出槽下碱液配制、过滤与加热；第 10–13 页涵盖真空抽碱、弱碱喷淋、SECTION CONTROL、稳定和后洗。"
+      ],
+      "inferred": [
+        "水平模块各保留 6 对辊，属于本次选定表达。",
+        "左右夹链驱动、3 根调幅丝杆、真空动力及循环泵位置均为推定。",
+        "SECTION CONTROL 保留两侧作用点，不将未披露的独立动力归属给邻近电机。",
+        "两区稳定与两区后洗为功能组合，实际订单须按织物和产能确定。"
+      ],
+      "missing": [
+        "原厂电机和传动 BOM、独立轴数、电磁类型与功率。",
+        "SECTION CONTROL 及调幅执行机构详图。",
+        "尺寸、传动比和真空系统选型。",
+        "客户后洗、烘干配置。"
+      ],
+      "sources": [
+        {
+          "title": "Benninger BEN-DIMENSA 当前产品页",
+          "url": "https://benningergroup.com/en/textile-finishing/mercerizing-solutions",
+          "supports": "当前系列及有链／无链组合原理。"
+        },
+        {
+          "title": "Benninger Mercerizing Solutions 2024 官方技术册",
+          "url": "https://benningergroup.com/fileadmin/user_upload/Textile_Finishing/Mercerizing_Solutions/Broschuere_Mercerizing_EN_2024.pdf",
+          "supports": "印刷页 6–13：工艺分区、碱液系统、夹链、SECTION CONTROL、真空抽碱、稳定和后洗。"
+        }
+      ]
+    },
+    {
+      "id": "sanforizing",
+      "name": "橡毯预缩",
+      "referenceManufacturer": "Brückner",
+      "referenceModel": "POWER-SHRINK",
+      "referenceConfiguration": "选择衬衫／裤料连续整理功能线：进布卷及储布架、蒸汽滚筒、单橡毯预缩、1500 mm 毛毯烘筒、2 只冷却辊、出布储布架和卷装。保留内置磨毯与水冷，选择磨屑抽吸选件。未选重磅牛仔线的额外整纬／预拉幅模块。12 个电机点和传动拆分为功能示意，非原厂轴数。",
+      "configurationStatus": "依据厂家在列产品及该机型公开资料选择配置。",
+      "currentFinding": "本次核对的厂家产品页和技术资料见下方。",
+      "configSource": "research/expansion-wet.json",
+      "modelVersion": "3.0",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only",
+      "fidelityStatus": "partial_public_reference",
+      "structuralCompleteness": false,
+      "selectedCounts": {
+        "进出储布架": 2,
+        "蒸汽润湿滚筒": 1,
+        "橡毯预缩单元": 1,
+        "完整橡毯回路": 1,
+        "毛毯烘筒": 1,
+        "毛毯烘筒直径 mm": 1500,
+        "完整毛毯回路": 1,
+        "冷却辊（示意）": 2,
+        "内置磨毯辊": 1,
+        "选配磨屑抽吸": 1,
+        "示意电机工位": 12,
+        "气动摆辊": 2
+      },
+      "verified": [
+        "当前官网列 POWER-SHRINK，确认橡毯预缩、水冷、内置磨毯、湿区外轴承及毛毯组合。",
+        "官方样本页 5 确认储布架气动摆辊与蒸汽滚筒。",
+        "页 6 确认选配磨屑抽吸；页 8 提供毛毯烘筒直径选项；页 10 区分衬衫／裤料与重磅牛仔配置。"
+      ],
+      "inferred": [
+        "本模型选择 1500 mm 毛毯烘筒和 2 只冷却辊；后者数量为示意配置。",
+        "橡毯与热滚筒分别显示驱动功能，不声称厂家一定安装两台独立电机。",
+        "磨毯、风机与水泵位置、外形和功率未公开。",
+        "气动摆辊、蒸汽阀及旋转接头均不当成电机。"
+      ],
+      "missing": [
+        "电机数量、电磁类型、功率与驱动图。",
+        "橡毯压紧/张紧和毛毯纠偏执行器。",
+        "整线尺寸、牵引分段及客户选配表。",
+        "官网样本修订日期未完整标出，不宣称它们是最新发布年度。"
+      ],
+      "sources": [
+        {
+          "title": "Brückner POWER-SHRINK 当前产品页",
+          "url": "https://www.brueckner-textile.com/en/products/details/power-shrink-sanfor-range.html",
+          "supports": "当前机型、橡毯、水冷、内置磨毯及毛毯组合。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 5",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page5.html",
+          "supports": "储布架气动摆辊和蒸汽滚筒。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 6",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page6.html",
+          "supports": "水冷、内置磨毯与选配抽屑。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 8（英／西版）",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-es/files/basic-html/page8.html",
+          "supports": "毛毯干燥稳定及 800/1500/2000/2500 mm 烘筒选项。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 10",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page10.html",
+          "supports": "衬衫／裤料线含进出储布架，重磅牛仔另选整纬及预拉幅。"
+        },
+        {
+          "title": "POWER-SHRINK 官方样本页 4",
+          "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page4.html",
+          "supports": "橡毯、压辊和预缩热滚筒的作用。"
+        }
+      ]
+    }
+  ],
+  "configurationFiles": [
+    "research/config-spinning-v3.json",
+    "research/config-weaving-v3.json",
+    "research/config-finishing-v3.json",
+    "research/config-extensions-v5.json",
+    "research/config-rotor.json",
+    "research/expansion-yarn.json",
+    "research/expansion-preparation.json",
+    "research/expansion-wet.json"
+  ],
+  "configuredMachineCount": 27,
+  "assets": {
+    "calender": {
+      "sha256": "ab9728c0a35d87552d86e536af785fb5f2f210f44428ba40ad316c9d40b2da5b",
+      "bytes": 1272376,
+      "modelVersion": "3.0",
+      "referenceModel": "teXcal s-roll",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "carding": {
+      "sha256": "6805b808eb73c7df2256432f2008a12d06b0ce83710e6f4ca9ecc7be24dc1068",
+      "bytes": 941500,
+      "modelVersion": "3.0",
+      "referenceModel": "C 81",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "combing": {
+      "sha256": "d69888cdb9e76d04d7a57966ba6b2712c1dacfb63aa4b8c025ad9d210ea31d88",
+      "bytes": 1277740,
+      "modelVersion": "3.0",
+      "referenceModel": "E 90 + OMEGAlap E 40 + SERVOlap E 26",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "drawing": {
+      "sha256": "42767e516a13657e835610e955682bc1ce0f85c9061a6a1e3592bceb00bc6bc4",
+      "bytes": 1076812,
+      "modelVersion": "3.0",
+      "referenceModel": "RSB-D 55",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "drawing_in": {
+      "sha256": "6cfcab870698364bf3b895268beafa973aae19fb4df9b623585c78c890ca8d59",
+      "bytes": 24523588,
+      "modelVersion": "3.0",
+      "referenceModel": "SAFIR PRO S67",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "dyeing": {
+      "sha256": "991163c6023c69d4180a9d37a5513aa60946476d77d1b4cc7341b315b57ce72a",
+      "bytes": 1400476,
+      "modelVersion": "3.0",
+      "referenceModel": "Küsters DyePad / CPB",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "inspection": {
+      "sha256": "1821472e3f6da1ed6b80f349d2905f24f72323362e9b6c7ce400277bf652fc38",
+      "bytes": 475688,
+      "modelVersion": "3.0",
+      "referenceModel": "Fabriq Vision 2",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "motor": {
+      "sha256": "143ff81e95e725d83ea599fe6b53adde49ad91770189896676efe1a8f5ab76f5",
+      "bytes": 1772924,
+      "modelVersion": "2.0",
+      "referenceModel": null,
+      "usage": "archived_not_loaded_by_live_view"
+    },
+    "opening": {
+      "sha256": "ca3e698fd1522c3804ddf8806f48c902867163907e69a0a2f32319f94be6bc13",
+      "bytes": 1442200,
+      "modelVersion": "3.0",
+      "referenceModel": "UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "pretreatment": {
+      "sha256": "e9e31c48bc00c2ee52431daeaa3cb758dee963b39086eaab8dc023a9549a45f3",
+      "bytes": 1760516,
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-BLEACH / REACTA",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "roving": {
+      "sha256": "5a82d5ebcd48cccf7540dd1038011a50aa9b58adece0389215f175b123588d8c",
+      "bytes": 1870192,
+      "modelVersion": "3.0",
+      "referenceModel": "F 40",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "sizing": {
+      "sha256": "8d711333036d8b4fddc3f67ecf1181bf9e417677f3f47ed82f78d192ec2a3b1f",
+      "bytes": 2786488,
+      "modelVersion": "3.0",
+      "referenceModel": "PROSIZE HSB",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "spinning": {
+      "sha256": "6c4380ccd2dac531d969c04a6b76205466f39915e2d3810389005bd21fc89232",
+      "bytes": 3348820,
+      "modelVersion": "3.0",
+      "referenceModel": "G 38 FE",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "stenter": {
+      "sha256": "b37222c90b5d5c7bdfea1aa9249374ce9c22a278a66b15482da76c25935532ce",
+      "bytes": 1927620,
+      "modelVersion": "3.0",
+      "referenceModel": "MONTEX — AEI 2026 reference",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "warping": {
+      "sha256": "23268d362e4ad2c79b4f3391c7d7b0146b09b2d6c21351219bc09f0b7cf5208d",
+      "bytes": 2690584,
+      "modelVersion": "3.0",
+      "referenceModel": "WARPDIRECT 2.0",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "weaving": {
+      "sha256": "b4fde3c4d8aa315281492412a40e09237cf3aa041e311d0b8ea586846304dc46",
+      "bytes": 24709972,
+      "modelVersion": "3.0",
+      "referenceModel": "Ultimax 4-R 220",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "winding": {
+      "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "bytes": 1929012,
+      "modelVersion": "3.0",
+      "referenceModel": "Autoconer X6 Type V",
+      "driveRevision": "4.0",
+      "motorDetailScope": "external_only"
+    },
+    "compact_spinning": {
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "bytes": 5271448,
+      "modelVersion": "3.0",
+      "referenceModel": "K 48",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only"
+    },
+    "twisting": {
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "bytes": 1441236,
+      "modelVersion": "3.0",
+      "referenceModel": "CompactTwister series 8",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only"
+    },
+    "texturing": {
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "bytes": 15098372,
+      "modelVersion": "3.0",
+      "referenceModel": "eFK",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only"
+    },
+    "rotor_spinning": {
+      "sha256": "0333ae379f82cf457be515614b7347b9fd0746f23a2d544bc71e66cbc33e3ade",
+      "bytes": 3250220,
+      "modelVersion": "3.0",
+      "referenceModel": "R 70",
+      "driveRevision": "5.0",
+      "motorDetailScope": "external_only"
+    },
+    "assembly_winding": {
+      "bytes": 924260,
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f",
+      "modelVersion": "3.0",
+      "referenceModel": "CWX-D",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "airjet_spinning": {
+      "bytes": 3696624,
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202",
+      "modelVersion": "3.0",
+      "referenceModel": "J 70",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "warp_tying": {
+      "bytes": 942412,
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1",
+      "modelVersion": "3.0",
+      "referenceModel": "TIEPRO + TPF",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "washing_range": {
+      "bytes": 1595964,
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565",
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "singeing": {
+      "bytes": 1883888,
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302",
+      "modelVersion": "3.0",
+      "referenceModel": "Super Singe",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "mercerizing": {
+      "bytes": 2051240,
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674",
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-DIMENSA",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    },
+    "sanforizing": {
+      "bytes": 1446496,
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31",
+      "modelVersion": "3.0",
+      "referenceModel": "POWER-SHRINK",
+      "driveRevision": "7.0",
+      "motorDetailScope": "external_only"
+    }
+  },
+  "assetManifestRecordedAt": "2026-11-18T23:36:39.818656+00:00",
+  "driveRevision": "5.0",
+  "motorDetailScope": "external_only"
+}

@@ -1,0 +1,888 @@
+{
+  "testedAt": "2026-11-18T23:41:21.297Z",
+  "assetVersion": "20261119-stations",
+  "identityCases": 28,
+  "raycastSelectionCases": 80206,
+  "configurationRecords": 27,
+  "models": [
+    {
+      "id": "calender",
+      "sha256": "ab9728c0a35d87552d86e536af785fb5f2f210f44428ba40ad316c9d40b2da5b",
+      "modelVersion": "3.0",
+      "referenceModel": "teXcal s-roll",
+      "meshNodes": 209,
+      "semanticTypes": 73,
+      "members": 216,
+      "largestGroups": [
+        {
+          "label": "六角紧固螺栓",
+          "members": 32
+        },
+        {
+          "label": "导辊轴承座",
+          "members": 10
+        },
+        {
+          "label": "轴承座安装脚",
+          "members": 10
+        },
+        {
+          "label": "辊端法兰",
+          "members": 10
+        },
+        {
+          "label": "压力刻度",
+          "members": 9
+        }
+      ]
+    },
+    {
+      "id": "carding",
+      "sha256": "6805b808eb73c7df2256432f2008a12d06b0ce83710e6f4ca9ecc7be24dc1068",
+      "modelVersion": "3.0",
+      "referenceModel": "C 81",
+      "meshNodes": 191,
+      "semanticTypes": 53,
+      "members": 190,
+      "largestGroups": [
+        {
+          "label": "盖板回程;返回段数量/链距未有BOM",
+          "members": 40
+        },
+        {
+          "label": "C81工作盖板",
+          "members": 40
+        },
+        {
+          "label": "门铰链",
+          "members": 16
+        },
+        {
+          "label": "调平底脚",
+          "members": 12
+        },
+        {
+          "label": "门把手",
+          "members": 8
+        }
+      ]
+    },
+    {
+      "id": "combing",
+      "sha256": "d69888cdb9e76d04d7a57966ba6b2712c1dacfb63aa4b8c025ad9d210ea31d88",
+      "modelVersion": "3.0",
+      "referenceModel": "E 90 + OMEGAlap E 40 + SERVOlap E 26",
+      "meshNodes": 527,
+      "semanticTypes": 68,
+      "members": 536,
+      "largestGroups": [
+        {
+          "label": "条筒脚轮",
+          "members": 120
+        },
+        {
+          "label": "条筒口圈",
+          "members": 60
+        },
+        {
+          "label": "辊端轴伸",
+          "members": 47
+        },
+        {
+          "label": "筒内棉条",
+          "members": 30
+        },
+        {
+          "label": "E40根喂条",
+          "members": 28
+        }
+      ]
+    },
+    {
+      "id": "drawing",
+      "sha256": "42767e516a13657e835610e955682bc1ce0f85c9061a6a1e3592bceb00bc6bc4",
+      "modelVersion": "3.0",
+      "referenceModel": "RSB-D 55",
+      "meshNodes": 180,
+      "semanticTypes": 47,
+      "members": 183,
+      "largestGroups": [
+        {
+          "label": "条筒脚轮",
+          "members": 44
+        },
+        {
+          "label": "条筒口圈",
+          "members": 22
+        },
+        {
+          "label": "筒内棉条",
+          "members": 11
+        },
+        {
+          "label": "导条架主动喂入轮",
+          "members": 8
+        },
+        {
+          "label": "根并合喂条",
+          "members": 8
+        }
+      ]
+    },
+    {
+      "id": "drawing_in",
+      "sha256": "6cfcab870698364bf3b895268beafa973aae19fb4df9b623585c78c890ca8d59",
+      "modelVersion": "3.0",
+      "referenceModel": "SAFIR PRO S67",
+      "meshNodes": 5968,
+      "semanticTypes": 69,
+      "members": 5978,
+      "largestGroups": [
+        {
+          "label": "穿经后经片",
+          "members": 2880
+        },
+        {
+          "label": "备用车待穿经片",
+          "members": 2880
+        },
+        {
+          "label": "轴承座紧固件",
+          "members": 16
+        },
+        {
+          "label": "轨道地脚固定片",
+          "members": 12
+        },
+        {
+          "label": "辊端轴承壳体",
+          "members": 8
+        }
+      ]
+    },
+    {
+      "id": "dyeing",
+      "sha256": "991163c6023c69d4180a9d37a5513aa60946476d77d1b4cc7341b315b57ce72a",
+      "modelVersion": "3.0",
+      "referenceModel": "Küsters DyePad / CPB",
+      "meshNodes": 381,
+      "semanticTypes": 82,
+      "members": 392,
+      "largestGroups": [
+        {
+          "label": "防护板通风孔",
+          "members": 120
+        },
+        {
+          "label": "六角紧固螺栓",
+          "members": 40
+        },
+        {
+          "label": "导辊轴承座",
+          "members": 14
+        },
+        {
+          "label": "轴承座安装脚",
+          "members": 14
+        },
+        {
+          "label": "辊端法兰",
+          "members": 14
+        }
+      ]
+    },
+    {
+      "id": "inspection",
+      "sha256": "1821472e3f6da1ed6b80f349d2905f24f72323362e9b6c7ce400277bf652fc38",
+      "modelVersion": "3.0",
+      "referenceModel": "Fabriq Vision 2",
+      "meshNodes": 120,
+      "semanticTypes": 40,
+      "members": 124,
+      "largestGroups": [
+        {
+          "label": "检修门铰链",
+          "members": 18
+        },
+        {
+          "label": "六角紧固螺栓",
+          "members": 12
+        },
+        {
+          "label": "检修门密封",
+          "members": 9
+        },
+        {
+          "label": "检修门把手",
+          "members": 9
+        },
+        {
+          "label": "检测单元横梁",
+          "members": 6
+        }
+      ]
+    },
+    {
+      "id": "motor",
+      "sha256": "143ff81e95e725d83ea599fe6b53adde49ad91770189896676efe1a8f5ab76f5",
+      "modelVersion": "2.0",
+      "referenceModel": null,
+      "meshNodes": 345,
+      "semanticTypes": 52,
+      "members": 357,
+      "largestGroups": [
+        {
+          "label": "双层分布式绕组端部与槽边",
+          "members": 72
+        },
+        {
+          "label": "槽壁绝缘衬垫",
+          "members": 48
+        },
+        {
+          "label": "槽底绝缘衬垫",
+          "members": 24
+        },
+        {
+          "label": "鼠笼导条",
+          "members": 18
+        },
+        {
+          "label": "定子槽齿",
+          "members": 17
+        }
+      ]
+    },
+    {
+      "id": "opening",
+      "sha256": "ca3e698fd1522c3804ddf8806f48c902867163907e69a0a2f32319f94be6bc13",
+      "modelVersion": "3.0",
+      "referenceModel": "UNIfloc A 12 + UNIclean B 12 + UNImix B 72 + UNIstore A 79",
+      "meshNodes": 245,
+      "semanticTypes": 71,
+      "members": 243,
+      "largestGroups": [
+        {
+          "label": "抓棉辊盘;盘形由公开外观推定",
+          "members": 32
+        },
+        {
+          "label": "门铰链",
+          "members": 30
+        },
+        {
+          "label": "调平底脚",
+          "members": 28
+        },
+        {
+          "label": "配棉场棉包",
+          "members": 20
+        },
+        {
+          "label": "门把手",
+          "members": 15
+        }
+      ]
+    },
+    {
+      "id": "pretreatment",
+      "sha256": "e9e31c48bc00c2ee52431daeaa3cb758dee963b39086eaab8dc023a9549a45f3",
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-BLEACH / REACTA",
+      "meshNodes": 935,
+      "semanticTypes": 119,
+      "members": 955,
+      "largestGroups": [
+        {
+          "label": "六角紧固螺栓",
+          "members": 80
+        },
+        {
+          "label": "导辊轴承座",
+          "members": 76
+        },
+        {
+          "label": "轴承座安装脚",
+          "members": 76
+        },
+        {
+          "label": "辊端法兰",
+          "members": 76
+        },
+        {
+          "label": "压力刻度",
+          "members": 54
+        }
+      ]
+    },
+    {
+      "id": "roving",
+      "sha256": "5a82d5ebcd48cccf7540dd1038011a50aa9b58adece0389215f175b123588d8c",
+      "modelVersion": "3.0",
+      "referenceModel": "F 40",
+      "meshNodes": 1716,
+      "semanticTypes": 63,
+      "members": 1860,
+      "largestGroups": [
+        {
+          "label": "条筒脚轮",
+          "members": 288
+        },
+        {
+          "label": "锭翼及平衡臂",
+          "members": 144
+        },
+        {
+          "label": "条筒口圈",
+          "members": 144
+        },
+        {
+          "label": "粗纱锭喂条",
+          "members": 72
+        },
+        {
+          "label": "F40独立粗纱锭位",
+          "members": 72
+        }
+      ]
+    },
+    {
+      "id": "sizing",
+      "sha256": "8d711333036d8b4fddc3f67ecf1181bf9e417677f3f47ed82f78d192ec2a3b1f",
+      "modelVersion": "3.0",
+      "referenceModel": "PROSIZE HSB",
+      "meshNodes": 6568,
+      "semanticTypes": 93,
+      "members": 6598,
+      "largestGroups": [
+        {
+          "label": "退绕经纱",
+          "members": 2880
+        },
+        {
+          "label": "完整浆纱经纱片",
+          "members": 2880
+        },
+        {
+          "label": "轴承座紧固件",
+          "members": 120
+        },
+        {
+          "label": "卷绕门防护网",
+          "members": 99
+        },
+        {
+          "label": "辊端轴承壳体",
+          "members": 60
+        }
+      ]
+    },
+    {
+      "id": "spinning",
+      "sha256": "6c4380ccd2dac531d969c04a6b76205466f39915e2d3810389005bd21fc89232",
+      "modelVersion": "3.0",
+      "referenceModel": "G 38 FE",
+      "meshNodes": 4772,
+      "semanticTypes": 64,
+      "members": 5346,
+      "largestGroups": [
+        {
+          "label": "粗纱架至牵伸头喂入",
+          "members": 288
+        },
+        {
+          "label": "粗纱吊锭",
+          "members": 288
+        },
+        {
+          "label": "完整粗纱卷装;多列架布局待工程核对",
+          "members": 288
+        },
+        {
+          "label": "G38独立完整纺纱锭位",
+          "members": 288
+        },
+        {
+          "label": "自动落纱空管",
+          "members": 288
+        }
+      ]
+    },
+    {
+      "id": "stenter",
+      "sha256": "b37222c90b5d5c7bdfea1aa9249374ce9c22a278a66b15482da76c25935532ce",
+      "modelVersion": "3.0",
+      "referenceModel": "MONTEX — AEI 2026 reference",
+      "meshNodes": 1939,
+      "semanticTypes": 87,
+      "members": 1974,
+      "largestGroups": [
+        {
+          "label": "针板链工作段",
+          "members": 512
+        },
+        {
+          "label": "针链下部回程",
+          "members": 512
+        },
+        {
+          "label": "六角紧固螺栓",
+          "members": 136
+        },
+        {
+          "label": "横向热风喷嘴排(位置待总图核实)",
+          "members": 108
+        },
+        {
+          "label": "调平螺杆",
+          "members": 56
+        }
+      ]
+    },
+    {
+      "id": "warping",
+      "sha256": "23268d362e4ad2c79b4f3391c7d7b0146b09b2d6c21351219bc09f0b7cf5208d",
+      "modelVersion": "3.0",
+      "referenceModel": "WARPDIRECT 2.0",
+      "meshNodes": 3588,
+      "semanticTypes": 70,
+      "members": 4077,
+      "largestGroups": [
+        {
+          "label": "伸缩筘筘齿",
+          "members": 481
+        },
+        {
+          "label": "筒子架锭位",
+          "members": 480
+        },
+        {
+          "label": "棉纱筒子",
+          "members": 480
+        },
+        {
+          "label": "逐锭断头检测器",
+          "members": 480
+        },
+        {
+          "label": "筒子托杆",
+          "members": 480
+        }
+      ]
+    },
+    {
+      "id": "weaving",
+      "sha256": "b4fde3c4d8aa315281492412a40e09237cf3aa041e311d0b8ea586846304dc46",
+      "modelVersion": "3.0",
+      "referenceModel": "Ultimax 4-R 220",
+      "meshNodes": 3147,
+      "semanticTypes": 87,
+      "members": 3163,
+      "largestGroups": [
+        {
+          "label": "经纱",
+          "members": 2880
+        },
+        {
+          "label": "轴承座紧固件",
+          "members": 24
+        },
+        {
+          "label": "辊端轴承壳体",
+          "members": 12
+        },
+        {
+          "label": "轴承端盖",
+          "members": 12
+        },
+        {
+          "label": "轴承座安装脚",
+          "members": 12
+        }
+      ]
+    },
+    {
+      "id": "winding",
+      "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "modelVersion": "3.0",
+      "referenceModel": "Autoconer X6 Type V",
+      "meshNodes": 2504,
+      "semanticTypes": 60,
+      "members": 2697,
+      "largestGroups": [
+        {
+          "label": "卷绕单元状态灯",
+          "members": 288
+        },
+        {
+          "label": "辊端轴伸",
+          "members": 192
+        },
+        {
+          "label": "端盖法兰与机壳铭牌座",
+          "members": 97
+        },
+        {
+          "label": "外部紧固件",
+          "members": 97
+        },
+        {
+          "label": "密封垫与电缆入口套",
+          "members": 97
+        }
+      ]
+    },
+    {
+      "id": "compact_spinning",
+      "sha256": "2798544940e7d6106e5086fcd0d87fb1b579c18fef8488096451f6b9b61aa62b",
+      "modelVersion": "3.0",
+      "referenceModel": "K 48",
+      "meshNodes": 8273,
+      "semanticTypes": 103,
+      "members": 10731,
+      "largestGroups": [
+        {
+          "label": "K48完整紧密纺锭位",
+          "members": 288
+        },
+        {
+          "label": "集聚输出—导纱钩—钢丝圈—管纱 / 纤维束由宽到窄的气流集聚路径",
+          "members": 288
+        },
+        {
+          "label": "独立集聚抽吸接口及支管",
+          "members": 288
+        },
+        {
+          "label": "集聚负压支路至单吸风总管",
+          "members": 288
+        },
+        {
+          "label": "筛筒下部抽吸接口外形",
+          "members": 288
+        }
+      ]
+    },
+    {
+      "id": "twisting",
+      "sha256": "4ff10aad88cd3fe00759a168be23052dd911e860d40a0f82b5f6b2f7ee593b19",
+      "modelVersion": "3.0",
+      "referenceModel": "CompactTwister series 8",
+      "meshNodes": 699,
+      "semanticTypes": 84,
+      "members": 825,
+      "largestGroups": [
+        {
+          "label": "交叉卷绕表面纱线示意",
+          "members": 40
+        },
+        {
+          "label": "CompactTwister完整倍捻工位",
+          "members": 20
+        },
+        {
+          "label": "脚踏制动连杆 / 筒子夹持盘 / 导纱轮支承臂 / 筒子摇架",
+          "members": 20
+        },
+        {
+          "label": "导纱轮调节滑座 / 超喂轮外部轴座",
+          "members": 20
+        },
+        {
+          "label": "气圈眼—超喂轮—导轮—横动—交叉卷绕的连续纱路 / 合股卷装至入口制动器",
+          "members": 20
+        }
+      ]
+    },
+    {
+      "id": "texturing",
+      "sha256": "1ce7ff136bfdc193ea7d7a30a744100f500ee89e7267acd1709e429e768f1c3b",
+      "modelVersion": "3.0",
+      "referenceModel": "eFK",
+      "meshNodes": 17709,
+      "semanticTypes": 110,
+      "members": 24539,
+      "largestGroups": [
+        {
+          "label": "摩擦盘轴组",
+          "members": 1152
+        },
+        {
+          "label": "错层摩擦工作盘",
+          "members": 1152
+        },
+        {
+          "label": "摩擦盘隔圈",
+          "members": 1152
+        },
+        {
+          "label": "假捻器三轴轴伸",
+          "members": 1152
+        },
+        {
+          "label": "卷装纸管端部",
+          "members": 768
+        }
+      ]
+    },
+    {
+      "id": "rotor_spinning",
+      "sha256": "0333ae379f82cf457be515614b7347b9fd0746f23a2d544bc71e66cbc33e3ade",
+      "modelVersion": "3.0",
+      "referenceModel": "R 70",
+      "meshNodes": 6882,
+      "semanticTypes": 105,
+      "members": 7859,
+      "largestGroups": [
+        {
+          "label": "外壳纵向筋",
+          "members": 1920
+        },
+        {
+          "label": "端盖紧固螺栓",
+          "members": 960
+        },
+        {
+          "label": "喂给罗拉纵向棱",
+          "members": 576
+        },
+        {
+          "label": "端盖止口",
+          "members": 480
+        },
+        {
+          "label": "线缆插座",
+          "members": 240
+        }
+      ]
+    },
+    {
+      "id": "assembly_winding",
+      "sha256": "c090499bf33bf5b6bb24e641da3cebfac91ffc9c79ac57ccebf39abf3ab7703f",
+      "modelVersion": "3.0",
+      "referenceModel": "CWX-D",
+      "meshNodes": 670,
+      "semanticTypes": 62,
+      "members": 743,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 80
+        },
+        {
+          "label": "单根纱导纱环",
+          "members": 40
+        },
+        {
+          "label": "单根纱张力碟片",
+          "members": 40
+        },
+        {
+          "label": "法兰紧固螺栓",
+          "members": 40
+        },
+        {
+          "label": "摇架筒管夹头",
+          "members": 20
+        }
+      ]
+    },
+    {
+      "id": "airjet_spinning",
+      "sha256": "c0ac9933f0d196ab1f86b582f93979ff34f56eef4e5a94f1feb634e638fca202",
+      "modelVersion": "3.0",
+      "referenceModel": "J 70",
+      "meshNodes": 7881,
+      "semanticTypes": 115,
+      "members": 9080,
+      "largestGroups": [
+        {
+          "label": "下罗拉纵向细齿",
+          "members": 1920
+        },
+        {
+          "label": "机壳纵筋",
+          "members": 672
+        },
+        {
+          "label": "空管储位",
+          "members": 660
+        },
+        {
+          "label": "可供给空纱管",
+          "members": 660
+        },
+        {
+          "label": "空管端部内孔阴影",
+          "members": 660
+        }
+      ]
+    },
+    {
+      "id": "warp_tying",
+      "sha256": "c3ac433a1d5ff7aecf1d05a9ee4ff7e82332234397f0e13152ab2122f870d7c1",
+      "modelVersion": "3.0",
+      "referenceModel": "TIEPRO + TPF",
+      "meshNodes": 110,
+      "semanticTypes": 61,
+      "members": 120,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 8
+        },
+        {
+          "label": "脚轮支叉",
+          "members": 8
+        },
+        {
+          "label": "手动夹纱杠杆",
+          "members": 6
+        },
+        {
+          "label": "夹纱杠杆枢轴",
+          "members": 6
+        },
+        {
+          "label": "机体紧固件",
+          "members": 4
+        }
+      ]
+    },
+    {
+      "id": "washing_range",
+      "sha256": "84cc202e65f3b1a22adc33c5cd7774add104da27eabe00e960196f0795285565",
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-WASH / TRIKOFLEX + EXTRACTA EA + TEMPACTA",
+      "meshNodes": 1509,
+      "semanticTypes": 104,
+      "members": 1583,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 180
+        },
+        {
+          "label": "外置轴颈",
+          "members": 152
+        },
+        {
+          "label": "辊体端面",
+          "members": 152
+        },
+        {
+          "label": "湿区外置轴承座",
+          "members": 152
+        },
+        {
+          "label": "辊面运动观察标记",
+          "members": 76
+        }
+      ]
+    },
+    {
+      "id": "singeing",
+      "sha256": "d049a211b7dbd644b67072eccd7a27af9492ad1a523a8e7c27cb3d5598e2f302",
+      "modelVersion": "3.0",
+      "referenceModel": "Super Singe",
+      "meshNodes": 727,
+      "semanticTypes": 103,
+      "members": 764,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 106
+        },
+        {
+          "label": "刷毛螺旋毛束",
+          "members": 64
+        },
+        {
+          "label": "轴承座底脚",
+          "members": 46
+        },
+        {
+          "label": "轴承密封圈",
+          "members": 46
+        },
+        {
+          "label": "剖分轴承座",
+          "members": 46
+        }
+      ]
+    },
+    {
+      "id": "mercerizing",
+      "sha256": "3703b8b3b42f083657059ca82f9ad8cb275f682eb7df361db1475df9847f8674",
+      "modelVersion": "3.0",
+      "referenceModel": "BEN-DIMENSA",
+      "meshNodes": 1718,
+      "semanticTypes": 130,
+      "members": 1811,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 218
+        },
+        {
+          "label": "外置轴颈",
+          "members": 132
+        },
+        {
+          "label": "辊体端面",
+          "members": 132
+        },
+        {
+          "label": "湿区外置轴承座",
+          "members": 132
+        },
+        {
+          "label": "法兰紧固螺栓",
+          "members": 88
+        }
+      ]
+    },
+    {
+      "id": "sanforizing",
+      "sha256": "84fda51b49683f25459e3cd601d017b8046badc6f517b490c683e4eb08120c31",
+      "modelVersion": "3.0",
+      "referenceModel": "POWER-SHRINK",
+      "meshNodes": 693,
+      "semanticTypes": 108,
+      "members": 735,
+      "largestGroups": [
+        {
+          "label": "机壳纵筋",
+          "members": 108
+        },
+        {
+          "label": "法兰紧固螺栓",
+          "members": 48
+        },
+        {
+          "label": "减速机盖紧固件",
+          "members": 40
+        },
+        {
+          "label": "外置轴颈",
+          "members": 36
+        },
+        {
+          "label": "辊体端面",
+          "members": 36
+        }
+      ]
+    }
+  ],
+  "regressions": [
+    "v2 catalog-rename isolation",
+    "v3 missing model name fallback",
+    "motor remains generic",
+    "model numbers preserved",
+    "n/total yarn labels consolidated",
+    "ordinal can labels consolidated",
+    "every raycast mesh maps to a selectable semantic member"
+  ],
+  "manufacturerCompletenessVerified": false,
+  "result": "pass"
+}

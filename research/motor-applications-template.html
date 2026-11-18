@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172c31">
+<meta name="description" content="按设备、电机和工作负载对照纺织机械的电机工位、传动路径与厂家资料。">
+<title>$TITLE · 纺织装备工艺与传动交互演示系统</title>
+<style>
+:root{color-scheme:light;--ink:#183336;--dark:#172c31;--muted:#4d625e;--paper:#f5f5ef;--surface:#fffefa;--line:#d8ded6;--sage:#e6eee7;--orange:#a64725;font-family:Inter,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit;color:inherit}button{cursor:pointer}a{color:#236357;text-underline-offset:.22em}a:hover,button:hover{color:var(--orange)}:focus-visible{outline:3px solid #c36640;outline-offset:3px}
+[hidden]{display:none!important}.screenreader{position:absolute;clip-path:inset(50%);height:1px;width:1px;overflow:hidden}.skip:focus{clip-path:none;width:auto;height:auto;z-index:10;top:.5rem;left:.5rem;background:white;padding:.5rem}
+.wrap{width:min(1220px,calc(100% - 64px));margin:auto}.top{background:var(--dark);color:#fff}.top .wrap{display:flex;min-height:58px;align-items:center;justify-content:space-between;gap:18px}.top strong{font-size:14px;font-weight:600;letter-spacing:.07em}.top a{color:#e7eee5;text-decoration:none;font-size:13px}.top a:hover{text-decoration:underline}
+main{padding-bottom:35px}.intro{padding:40px 0 23px;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;border-bottom:1px solid var(--line)}h1{margin:0;font-weight:650;font-size:clamp(26px,3.1vw,43px);line-height:1.2;letter-spacing:-.04em}.intro p{margin:12px 0 0;font-size:14px;color:var(--muted);line-height:1.7}
+.figures{display:flex;gap:22px;flex-shrink:0}.figures>div{border-left:1px solid var(--line);padding-left:16px}.figures b{display:block;font:600 clamp(24px,2.5vw,34px)/1.2 ui-monospace,"SFMono-Regular",monospace;color:#234b40}.figures span{font-size:12px;color:var(--muted)}
+.controls{padding:22px 0 13px;scroll-margin-top:12px}.controls form{display:grid;grid-template-columns:1.15fr 1.6fr 1.3fr 1.35fr auto;gap:12px;align-items:end}
+.controls label{display:grid;gap:7px;color:#364e48;font-size:12px;font-weight:600}.controls select,.controls input{width:100%;min-width:0;border:1px solid #b6c6bb;border-radius:5px;background:var(--surface);min-height:41px;padding:8px;font-size:13px;line-height:1.4}.controls select{padding-right:18px}.controls button{background:transparent;border:1px solid #b6c6bb;border-radius:5px;padding:0 12px;min-height:41px;font-size:13px;font-weight:600}
+.tools-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:13px;flex-wrap:wrap}.tools-bottom p{font-size:13px;margin:0;color:var(--muted)}.tools-bottom b{color:var(--ink)}.tools-bottom a{font-size:12px}
+.references{display:flex;flex-direction:column;align-items:flex-start;gap:4px;margin-top:8px}.references a{font-size:11.5px;line-height:1.65;color:#236357;text-decoration:underline;text-decoration-color:#9fbab0;overflow-wrap:anywhere}.references a:hover{text-decoration-color:currentColor}
+.help{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:6px 0 24px;align-items:start}.help>details{background:#ecf0e9;border:1px solid var(--line);border-radius:5px}.help summary,.model-routes summary{cursor:pointer;font-size:13px;font-weight:600;line-height:1.55;padding:11px 14px}.help details[open]{grid-column:1/-1}.help details[open] summary{border-bottom:1px solid var(--line)}
+.help-body{padding:14px 16px 18px}.help p{font-size:13px;line-height:1.7;margin:0 0 8px}.dictionary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px 20px}.dictionary article{padding:10px 0;border-top:1px solid var(--line)}.dictionary button{border:0;padding:0;background:none;text-align:left;font-size:14px;font-weight:650;color:#205b50}.dictionary button span{color:var(--orange)}.dictionary article p{margin:5px 0 3px}.market-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px}.market-notes h3{font-size:14px;margin:5px 0 2px}.market-notes b{font-weight:600}
+.equipment{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-bottom:20px;overflow:hidden;scroll-margin-top:12px}.equipment-head{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 23px 0}.scope{font-weight:600;font-size:11px;letter-spacing:.08em;color:#526c60}.equipment h2{font-size:25px;line-height:1.35;margin:4px 0 0;letter-spacing:-.035em}.question{font-size:15px;line-height:1.6;font-weight:580;margin:6px 0}.back-model{flex-shrink:0;color:#27584d;font-size:13px;font-weight:550}.scope-note{font-size:13px;line-height:1.7;color:var(--muted);margin:0 23px 15px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:21%}.col-path{width:27%}.col-evidence{width:25%}.col-use{width:27%}th,td{padding:12px 16px;text-align:left;vertical-align:top;border-top:1px solid var(--line);overflow-wrap:anywhere}th{background:var(--sage);font-size:12px;font-weight:650;color:#35594c;line-height:1.5}td{font-size:13px;line-height:1.75}th:first-child,td:first-child{padding-left:23px}th:last-child,td:last-child{padding-right:23px}td strong{font-size:14px;line-height:1.55;display:block}.maker{display:block;font-size:12px;line-height:1.6;color:var(--muted);margin-top:5px}.evidence{display:block;font-size:10px;letter-spacing:.02em;color:#755234;font-weight:600;margin-bottom:4px}
+.model-routes{border-top:1px solid var(--line);background:#f5f6f1}.model-routes summary{padding:10px 23px;color:#486155}.model-routes summary span{font-weight:400}.model-routes ul{font-size:13px;line-height:1.7;padding:0 28px 0 42px;margin:0 0 14px}.model-routes li{margin:5px 0}.model-routes small{font-size:11px;color:#755234}
+.empty{padding:28px;border:1px dashed #a9bbb0;background:var(--surface);border-radius:6px;font-size:14px}.end{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding:18px 0;color:var(--muted);font-size:12px;line-height:1.8}.end p{margin:0}.end a{flex-shrink:0}.jump{background:none;border:0;text-decoration:underline;text-underline-offset:.22em;color:#236357}
+@media(max-width:900px){.controls form{grid-template-columns:repeat(2,minmax(0,1fr)) auto}.controls label:nth-of-type(3){grid-column:1}.controls button{grid-column:3;grid-row:2}.dictionary{grid-template-columns:repeat(2,minmax(0,1fr))}.figures{gap:12px}.intro{gap:15px}.figures>div{padding-left:10px}.wrap{width:calc(100% - 36px)}th,td{padding:10px}}
+@media(max-width:680px){.wrap{width:calc(100% - 28px)}.top .wrap{min-height:51px}.top strong{font-size:12px;letter-spacing:0}.top a{font-size:12px}.intro{display:block;padding:25px 0 17px}.intro p{font-size:13px;margin-top:8px}.figures{margin-top:14px;gap:17px}.figures>div{display:flex;align-items:baseline;gap:4px;border-left:0;padding:0}.figures b{font-size:20px}.figures span{font-size:11px}.controls{padding-top:16px}.controls form{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controls label:nth-of-type(3){grid-column:auto}.controls button{grid-column:auto;grid-row:auto;justify-self:start;min-height:33px}.controls select,.controls input{font-size:13px}.help{grid-template-columns:1fr;gap:6px;margin-bottom:14px}.dictionary,.market-notes{grid-template-columns:1fr}.equipment-head{padding:16px 14px 0;align-items:flex-start;gap:8px}.back-model{font-size:12px;margin-top:2px}.equipment h2{font-size:22px}.question{font-size:14px}.scope-note{margin:0 14px 12px}.equipment table,.equipment tbody,.equipment tr,.equipment td{display:block;width:100%}.equipment colgroup,.equipment thead{display:none}.equipment tr{border-top:1px solid var(--line);padding:13px 14px}.equipment tr:nth-child(even){background:#f8f9f4}.equipment td{padding:0;border:0;line-height:1.65}.equipment td+td{margin-top:9px}.equipment td+td:before{content:attr(data-label);display:block;color:#4a695a;font-size:11px;font-weight:650;margin-bottom:2px}.maker{margin-top:3px}.evidence{display:inline;margin-right:7px}.references{margin-top:5px}.model-routes summary{padding:10px 14px}.end{flex-wrap:wrap}.help-body{padding:12px}.scope{font-size:10px}}
+@media print{body{background:white}.top,.controls,.help,.back-model,.model-routes,.end a{display:none}.wrap{width:100%}.intro{padding:0 0 12px}.equipment{break-before:auto;overflow:visible}.equipment-head{break-after:avoid}tr{break-inside:avoid}.references a{color:#222}.equipment .scope-note{margin-bottom:8px}}
+</style>
+</head>
+<body>
+<a class="skip screenreader" href="#study-filters">跳到筛选</a>
+<header class="top"><div class="wrap"><strong>纺织装备工艺与传动交互演示系统</strong><a href="./index.html">返回三维系统 ↗</a></div></header>
+<main class="wrap">
+<div class="intro"><div><h1>$TITLE</h1><p>从电机查工位，从工位查负载、传动路径和厂家依据。</p></div>
+<div class="figures" aria-label="资料覆盖"><div><b>$STAGES</b><span>类设备</span></div><div><b>$COUNT</b><span>条工位记录</span></div><div><b>$SOURCES</b><span>份资料</span></div></div></div>
+<section class="controls" id="study-filters" aria-label="电机与工位筛选">
+<form id="study-form" role="search">
+<label for="machine">设备<select id="machine"><option value="">全部设备</option>$STAGEOPTIONS</select></label>
+<label for="motor">电机或驱动<select id="motor"><option value="">全部类型与方案</option>$MOTOROPTIONS</select></label>
+<label for="job">应用场景<select id="job"><option value="">全部工位与负载</option>$JOBOPTIONS</select></label>
+<label for="words">查厂家、型号或部件<input id="words" type="search" autocomplete="off" placeholder="例如 eFK、罗拉、张力"></label>
+<button id="clear" type="button">清除筛选</button></form>
+<div class="tools-bottom"><p id="results" role="status" aria-live="polite"><b>$COUNT</b> 条工位记录 · <b>$STAGES</b> 类设备</p><a href="./motor-applications.json" download>下载研究数据（JSON）↓</a></div>
+</section>
+<section class="help" aria-label="研究说明">
+<details id="glossary"><summary>电机类型、控制方式与典型工位</summary><div class="help-body"><p>点击术语可查看对应记录。同一台电机可以同时具备不同栏目的特征，例如永磁同步、变频调速和同轴直驱。</p><div class="dictionary">$GLOSSARY</div></div></details>
+<details><summary>哪些结构更常见？出货数字与资料范围</summary><div class="help-body"><p>$MARKETSCOPE</p><div class="market-notes">$MARKETITEMS</div>$MARKETLINK<p>$SCOPE 现有三维模型有 $ROUTES 条路线，其中 $MODELCONF 条的功能有厂家依据，$MODELINFER 条标记为功能推定。</p></div></details>
+</section>
+<noscript><p>本页已列出全部工位与来源。启用 JavaScript 可按工位和电机筛选。</p></noscript>
+<p id="empty" class="empty" hidden>没有符合条件的工位。可清除筛选，或改用更短的厂家名、型号或部件名。</p>
+<div id="equipment-list">$SECTIONS</div>
+<footer class="end"><p>资料核查于 $DATE。出货按设备统计。每条记录中的方案和配置均对应所标厂家与型号。</p><a href="#study-filters" id="to-filters">返回筛选 ↑</a></footer>
+</main>
+<script type="application/json" id="terms">$TAGDATA</script>
+<script>
+(() => {
+  const get = (id) => document.getElementById(id);
+  const machine = get('machine'), motor = get('motor'), job = get('job'), words = get('words');
+  const terms = JSON.parse(get('terms').textContent);
+  const normalize = (value) => value.normalize('NFKC').toLowerCase();
+  const sections = Array.from(document.querySelectorAll('.equipment')).map((section) => {
+    const title = section.querySelector('h2').textContent;
+    const rows = Array.from(section.querySelectorAll('tbody tr')).map((node) => {
+      const motors = node.dataset.motors.split(' '), jobs = node.dataset.jobs.split(' ');
+      const search = normalize([title, node.textContent, ...motors.map((key) => terms.motors[key]), ...jobs.map((key) => terms.jobs[key])].join(' '));
+      return {node, motors, jobs, search, motorJobs:JSON.parse(node.dataset.motorJobs)};
+    });
+    return {section, rows};
+  });
+  const validStages = new Set(sections.map((item) => item.section.id));
+  function readAddress() {
+    const url = new URL(location.href), hash = url.hash.slice(1);
+    machine.value = validStages.has(hash) ? hash : '';
+    motor.value = url.searchParams.get('motor') || '';
+    job.value = url.searchParams.get('job') || '';
+    words.value = url.searchParams.get('q') || '';
+  }
+  function update(address) {
+    let rowCount = 0, stageCount = 0;
+    const keywords = normalize(words.value.trim()).split(/\s+/).filter(Boolean);
+    for (const {section, rows} of sections) {
+      let stageMatches = 0;
+      for (const row of rows) {
+        const hit = (!machine.value || machine.value === section.id)
+          && (!motor.value || row.motors.includes(motor.value))
+          && (!job.value || row.jobs.includes(job.value))
+          && (!motor.value || !job.value || row.motorJobs[motor.value]?.includes(job.value))
+          && keywords.every((word) => row.search.includes(word));
+        row.node.hidden = !hit;
+        if (hit) stageMatches++;
+      }
+      section.hidden = stageMatches === 0;
+      if (stageMatches) stageCount++;
+      rowCount += stageMatches;
+    }
+    get('results').textContent = rowCount + ' 条工位记录 · ' + stageCount + ' 类设备';
+    get('empty').hidden = rowCount !== 0;
+    if (address) {
+      const url = new URL(location.href);
+      for (const [key, value] of [['motor',motor.value], ['job',job.value], ['q',words.value.trim()]]) {
+        if (value) url.searchParams.set(key, value);
+        else url.searchParams.delete(key);
+      }
+      url.hash = machine.value;
+      if (location.protocol === 'http:' || location.protocol === 'https:') history.replaceState(null, '', url);
+    }
+  }
+  function showFilters() {
+    get('study-filters').scrollIntoView({block:'start'});
+    machine.focus({preventScroll:true});
+  }
+  for (const field of [machine, motor, job]) field.addEventListener('change', () => update(true));
+  words.addEventListener('input', () => update(true));
+  get('study-form').addEventListener('submit', (event) => {event.preventDefault();update(true)});
+  get('clear').addEventListener('click', () => {get('study-form').reset();update(true);});
+  for (const button of document.querySelectorAll('[data-term]')) {
+    button.addEventListener('click', () => {
+      get('study-form').reset();motor.value = button.dataset.term;
+      get('glossary').open = false;update(true);showFilters();
+    });
+  }
+  get('to-filters').addEventListener('click', (event) => {event.preventDefault();showFilters()});
+  window.addEventListener('hashchange', () => {readAddress();update(false)});
+  readAddress();update(false);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-11-17",
+  "stages": [
+    {
+      "id": "compact_spinning",
+      "name": "紧密纺",
+      "en": "Compact spinning",
+      "input": "粗纱",
+      "output": "低毛羽的紧密纱管纱",
+      "summary": "在环锭加捻前，用多孔筛鼓和受控负压把牵伸后的纤维束横向集聚，再经钢领、钢丝圈和锭子加捻卷绕。",
+      "process": [
+        "粗纱喂入与罗拉/皮圈牵伸",
+        "筛鼓、Bright吸风嵌件与Detect导流元件集聚纤维束",
+        "钢领与钢丝圈配合锭子完成真捻及管纱卷绕",
+        "集体落纱后进入络筒"
+      ],
+      "drive": [
+        "一台主锭子电机经主带、纵向共轴和72组四锭锭带带动288锭。",
+        "电子牵伸系统控制牵伸比和筛鼓运动；单通道抽吸产生集聚负压。",
+        "钢领板升降控制卷绕成形；外部驱动布局与隐藏分配部分明确为推定。"
+      ],
+      "quality": [
+        "集聚负压与Detect状态",
+        "条干、毛羽、强力和捻度一致性",
+        "逐锭断头监测、牵伸区压力和落纱可靠性"
+      ],
+      "sources": [
+        {
+          "title": "Rieter K 48 当前产品页",
+          "url": "https://www.rieter.com/products/systems/compact-spinning-machines/compact-spinning-machine-k-48",
+          "publicationDate": null,
+          "evidence": "当前官网读取；不以抓取日替代发布年份"
+        },
+        {
+          "title": "K 48 3237-v6 英文技术册；第12/16/30/31页",
+          "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-k-48-compact-spinning-machine-brochure-3237-v6-95005-en.pdf",
+          "publicationDate": "2025-04",
+          "evidence": "PDF末页版号3237-v6 en 2504；原文件下载及实际页面视觉检查"
+        }
+      ],
+      "optional": true,
+      "note": "紧密纺是传统环锭细纱工位的替代分支，并非在普通环锭纺完成后再串接一道工序。完整选定K48为288锭；不把集聚单元等同于加弹或倍捻。",
+      "branchType": "alternative",
+      "linkTo": "spinning",
+      "routeLabel": "粗纱 → 紧密纺（替代环锭细纱）→ 络筒",
+      "branchFrom": "roving",
+      "branchTo": "winding",
+      "modelFeatures": [
+        "288完整集聚锭位",
+        "多孔筛鼓与Detect",
+        "72组四锭锭带",
+        "集体落纱与单通道吸风"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    },
+    {
+      "id": "texturing",
+      "name": "牵伸假捻加弹",
+      "en": "Draw texturing",
+      "input": "聚酯预取向长丝 POY",
+      "output": "具有卷曲和蓬松性的牵伸变形丝 DTY",
+      "summary": "利用喂纱速度差牵伸长丝，经过加热、冷却和摩擦假捻形成热定型卷曲，退捻后的丝束再经二热、上油与卷绕成为DTY。",
+      "process": [
+        "固定筒架POY退绕并经G1喂入",
+        "2.0m主加热与1.1m冷轨控制丝束温度",
+        "摩擦盘假捻与G2牵伸配合形成卷曲结构",
+        "1.46m二热调节收缩与扭矩，再经W3喂纱",
+        "上油、横动卷绕，完整384工位手动落筒"
+      ],
+      "drive": [
+        "喂入与牵伸godet控制速度比及张力，不能把加热器当电机。",
+        "摩擦盘驱动在加弹区引入假捻；所选驱动形式需与模型节点及配置对应。",
+        "W3、Camshaft横动/卷绕驱动控制成形；具体机内传动未获OEM总图。"
+      ],
+      "quality": [
+        "牵伸比、张力、D/Y比与断丝",
+        "主加热/冷却/二热状态及丝束热历史",
+        "卷曲、沸水收缩、残余扭矩、染色均匀性与筒子成形"
+      ],
+      "sources": [
+        {
+          "title": "Barmag eFK 当前产品页",
+          "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk/",
+          "publicationDate": null,
+          "evidence": "现售平台；与eFK EvoSmart并列，不能称最新一代"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_02 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_02_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-02",
+          "evidence": "日期来自文件名；官方URL的搜索索引全文读取，原链接当前404；未取得该版原PDF，参数置信度受此限制"
+        },
+        {
+          "title": "Manual DTY (PET) 2023_05 技术表",
+          "url": "https://www.oerlikon.com/ecoma/files/DL_Texturing_OBA_DTY_2023_05_datasheet_manual_en.pdf?download=true",
+          "publicationDate": "2023-05",
+          "evidence": "同一384工位参数搜索索引交叉核对；原链接当前404；日期来自文件名"
+        },
+        {
+          "title": "Barmag DTY manufacturing 当前通用册",
+          "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true",
+          "publicationDate": "2026-04",
+          "evidence": "当前官网真实下载链接，PDF末页BBA205 04/2026；实际下载并查看11、13页机构照片，非eFK专用整机图"
+        },
+        {
+          "title": "eFK EvoSmart 2026官方新闻：用于与选定eFK区分",
+          "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+          "publicationDate": "2026-01-08",
+          "evidence": "更近期平台另有SmartGodets/EvoHeater；本模型不套用其技术名称"
+        },
+        {
+          "title": "原厂2017期刊：eFK卷绕与导纱局部图，不作为当前容量依据",
+          "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_28_en.pdf?download=true",
+          "publicationDate": "2017-10",
+          "evidence": "PDF下载并实际查看第24页；仅部件外观参考"
+        },
+        {
+          "title": "早期原厂eFK brochure文本副本：type 8切向带与type 8E单独驱动的区别",
+          "url": "https://www.yumpu.com/en/document/view/4112004/efk-oerlikon-barmag-oerlikon-textile",
+          "publicationDate": null,
+          "evidence": "原厂作者资料的第三方历史转存，2012上传时间不等于厂家出版年；仅搜索索引文本核对，不宣称实际看到了V型截面。用于识别驱动形式，非当前订单BOM。"
+        }
+      ],
+      "optional": true,
+      "note": "这是化纤POY→DTY独立路线，不能直接串入全棉纺纱主线。假捻使纱在加工区暂时加捻再退捻，留下热定型卷曲；不是倍捻机每转两次的永久真捻。采用当前列售eFK公开384工位配置，不称EvoSmart。",
+      "branchType": "independent",
+      "linkTo": null,
+      "routeLabel": "化纤支线：POY → 牵伸假捻加弹 → DTY",
+      "branchFrom": "POY",
+      "branchTo": "DTY",
+      "modelFeatures": [
+        "16节384完整工位",
+        "V型加热冷却区",
+        "双面三层卷绕",
+        "固定POY筒架"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    },
+    {
+      "id": "twisting",
+      "name": "倍捻",
+      "en": "Two-for-one twisting",
+      "input": "已并纱/并合络筒的多根单纱卷装",
+      "output": "具有规定真捻的股线筒子",
+      "summary": "并合纱从静止锭罐内经空心锭子和储纱盘引出，形成罐外气圈；每转在内外两个区段各加一捻，再经超喂和卷绕制成股线。",
+      "process": [
+        "上游先完成并纱/并合络筒，本配置不选TwinPack双筒直喂",
+        "静止罐内退绕，经张力制动进入空心锭子",
+        "转子径向出纱形成外部气圈，每转实现两次真捻",
+        "气圈导纱、超喂和横动摩擦卷绕形成股线筒子"
+      ],
+      "drive": [
+        "主电机经机械分配和切向锭带驱动20个锭转子，静止锭罐不随转子旋转。",
+        "机械分配控制超喂、摩擦辊与横动；隐藏齿轮和精确传动比未公开。",
+        "所选为20锭机械控制型，不借用最少120锭电子控制型的伺服配置。"
+      ],
+      "quality": [
+        "合股根数、单纱张力与捻度/捻向",
+        "气圈稳定性、毛羽及断头",
+        "卷绕密度、卷装成形和各工位一致性"
+      ],
+      "sources": [
+        {
+          "title": "Saurer CompactTwister 当前产品页",
+          "url": "https://saurer.com/en/products/machines/twisting-and-cabling/staple/compacttwister",
+          "publicationDate": null,
+          "evidence": "当前页面仍挂Series 8和2019技术册"
+        },
+        {
+          "title": "CompactTwister 原厂技术册：机械版第18页、电子版第19页、截面第8/9页",
+          "url": "https://saurer.com/media/266/download/2019_CompactTwister_EN.pdf?v=2",
+          "publicationDate": "2019-06",
+          "evidence": "从当前官网HTML实际下载链接取得PDF；末页Copyright 06.2019；实看第8与18页"
+        }
+      ],
+      "optional": true,
+      "note": "倍捻是股线生产中的可选支线。普通络筒后的单纱必须先并合，不能直接视作合股喂入；本模型未另建并纱机。真捻保留在成品股线中，区别于加弹机的假捻。",
+      "branchType": "optional_branch",
+      "linkTo": "winding",
+      "routeLabel": "络筒 → 并纱/并合络筒（未建模）→ 倍捻 → 股线筒子",
+      "branchFrom": "assembly_winding",
+      "branchTo": "plied_yarn",
+      "requiresUnmodeledStage": "assembly_winding",
+      "modelFeatures": [
+        "完整20锭双面机节",
+        "静止锭罐与锭转子",
+        "完整外部气圈",
+        "超喂、横动及摩擦卷绕"
+      ],
+      "section": "yarn_processing",
+      "group": "yarn_processing"
+    }
+  ],
+  "routeNotes": [
+    "保持原16工序全棉主线；三台作为明确标注的替代、可选和独立支线。",
+    "用户明确不另加纱线蒸汽定型设备。",
+    "现有stenter建议名称：拉幅热定型（兼烘干）。纯棉主要拉幅、干燥和尺寸/手感控制；热塑性纤维可用热定型固定尺寸与形态，不能把纯棉解释为同样的热塑熔融定型。"
+  ],
+  "existingStageClarifications": {
+    "stenter": {
+      "name": "拉幅热定型（兼烘干）",
+      "note": "全棉路线用于拉幅、烘干和整理；涤纶等热塑性纤维可进一步通过热定型稳定尺寸。温度、时间和张力随纤维与整理要求确定。"
+    }
+  }
+}

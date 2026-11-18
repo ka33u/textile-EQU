@@ -1,0 +1,232 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1640" viewBox="0 0 1440 1640" role="img" aria-labelledby="title desc">
+<title id="title">纺织装备工艺路线与驱动工位</title><desc id="desc">棉纺、机织、染整及各条品种分支，设备框可打开本机传动模型。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1L6 4L1 7" fill="none" stroke="#bc663e" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:system-ui,-apple-system,'PingFang SC',sans-serif;fill:#173237}.head{font-size:31px;font-weight:700}.section{font-size:23px;font-weight:650}.lead{font-size:18px;font-weight:600}.title{font-size:19px;font-weight:650}.note{font-size:15px;fill:#516964}a:hover rect,a:focus rect{stroke:#b2542b;stroke-width:3}</style>
+<rect width="1440" height="1640" fill="#f4f4ee"/>
+<text x="44" y="57" class="head">纺织装备工艺路线与驱动工位</text>
+<text x="44" y="88" class="note">点击设备框可进入三维传动视图。各行标出适用路线，同一台设备可服务于多种工艺。</text>
+<path d="M44 123H1396" stroke="#cbd4ce"/>
+<text x="44" y="156" class="section">棉纺与纱线加工</text>
+<text x="44" y="219" class="lead">环锭纱主线</text>
+<a href="../#opening/drive" aria-label="查看开清棉的驱动工位">
+<rect x="260.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="342.00" y="209" text-anchor="middle" class="title">开清棉</text><text x="342.00" y="231" text-anchor="middle" class="note">开松与混合</text>
+</a>
+<path d="M427.00 213H446.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#carding/drive" aria-label="查看梳棉的驱动工位">
+<rect x="452.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="534.00" y="209" text-anchor="middle" class="title">梳棉</text><text x="534.00" y="231" text-anchor="middle" class="note">生条</text>
+</a>
+<path d="M619.00 213H638.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#drawing/drive" aria-label="查看并条的驱动工位">
+<rect x="644.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="726.00" y="209" text-anchor="middle" class="title">并条</text><text x="726.00" y="231" text-anchor="middle" class="note">匀整条子</text>
+</a>
+<path d="M811.00 213H830.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#roving/drive" aria-label="查看粗纱的驱动工位">
+<rect x="836.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="918.00" y="209" text-anchor="middle" class="title">粗纱</text><text x="918.00" y="231" text-anchor="middle" class="note">粗纱管</text>
+</a>
+<path d="M1003.00 213H1022.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#spinning/drive" aria-label="查看环锭细纱的驱动工位">
+<rect x="1028.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="1110.00" y="209" text-anchor="middle" class="title">环锭细纱</text><text x="1110.00" y="231" text-anchor="middle" class="note">管纱</text>
+</a>
+<path d="M1195.00 213H1214.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#winding/drive" aria-label="查看自动络筒的驱动工位">
+<rect x="1220.00" y="184" width="164.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="1302.00" y="209" text-anchor="middle" class="title">自动络筒</text><text x="1302.00" y="231" text-anchor="middle" class="note">筒子纱</text>
+</a>
+<text x="44" y="299" class="lead">精梳品种</text>
+<a href="../#drawing/drive" aria-label="查看预并条的驱动工位">
+<rect x="260.00" y="264" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="390.00" y="289" text-anchor="middle" class="title">预并条</text><text x="390.00" y="311" text-anchor="middle" class="note">条子准备</text>
+</a>
+<path d="M523.00 293H542.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#combing/drive" aria-label="查看成卷及精梳的驱动工位">
+<rect x="548.00" y="264" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="678.00" y="289" text-anchor="middle" class="title">成卷及精梳</text><text x="678.00" y="311" text-anchor="middle" class="note">E 40 与 E 90 机组</text>
+</a>
+<path d="M811.00 293H830.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#drawing/drive" aria-label="查看精梳后并条的驱动工位">
+<rect x="836.00" y="264" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="966.00" y="289" text-anchor="middle" class="title">精梳后并条</text><text x="966.00" y="311" text-anchor="middle" class="note">并合与匀整</text>
+</a>
+<path d="M1099.00 293H1118.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#roving/drive" aria-label="查看粗纱的驱动工位">
+<rect x="1124.00" y="264" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="1254.00" y="289" text-anchor="middle" class="title">粗纱</text><text x="1254.00" y="311" text-anchor="middle" class="note">进入细纱路线</text>
+</a>
+<text x="44" y="379" class="lead">紧密纺品种</text>
+<a href="../#roving/drive" aria-label="查看粗纱的驱动工位">
+<rect x="260.00" y="344" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="369" text-anchor="middle" class="title">粗纱</text><text x="393.00" y="391" text-anchor="middle" class="note">喂入粗纱</text>
+</a>
+<path d="M529.00 373H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#compact_spinning/drive" aria-label="查看紧密纺的驱动工位">
+<rect x="554.00" y="344" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="369" text-anchor="middle" class="title">紧密纺</text><text x="687.00" y="391" text-anchor="middle" class="note">集聚后环锭成纱</text>
+</a>
+<path d="M823.00 373H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#winding/drive" aria-label="查看自动络筒的驱动工位">
+<rect x="848.00" y="344" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="369" text-anchor="middle" class="title">自动络筒</text><text x="981.00" y="391" text-anchor="middle" class="note">筒子纱</text>
+</a>
+<text x="44" y="459" class="lead">转杯成纱</text>
+<a href="../#drawing/drive" aria-label="查看条子准备的驱动工位">
+<rect x="260.00" y="424" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="449" text-anchor="middle" class="title">条子准备</text><text x="393.00" y="471" text-anchor="middle" class="note">熟条</text>
+</a>
+<path d="M529.00 453H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#rotor_spinning/drive" aria-label="查看气流纺／转杯纺的驱动工位">
+<rect x="554.00" y="424" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="449" text-anchor="middle" class="title">气流纺／转杯纺</text><text x="687.00" y="471" text-anchor="middle" class="note">分梳与转杯凝聚</text>
+</a>
+<path d="M823.00 453H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="848.00" y="424" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="981.00" y="449" text-anchor="middle" class="title">转杯纱筒子</text><text x="981.00" y="471" text-anchor="middle" class="note">用于整经或供纬</text>
+<text x="44" y="539" class="lead">喷气成纱</text>
+<a href="../#drawing/drive" aria-label="查看条子准备的驱动工位">
+<rect x="260.00" y="504" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="529" text-anchor="middle" class="title">条子准备</text><text x="393.00" y="551" text-anchor="middle" class="note">熟条</text>
+</a>
+<path d="M529.00 533H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#airjet_spinning/drive" aria-label="查看喷气纺的驱动工位">
+<rect x="554.00" y="504" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="529" text-anchor="middle" class="title">喷气纺</text><text x="687.00" y="551" text-anchor="middle" class="note">牵伸与喷嘴成纱</text>
+</a>
+<path d="M823.00 533H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="848.00" y="504" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="981.00" y="529" text-anchor="middle" class="title">喷气纱筒子</text><text x="981.00" y="551" text-anchor="middle" class="note">用于整经或供纬</text>
+<text x="44" y="619" class="lead">股线加工</text>
+<rect x="260.00" y="584" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="393.00" y="609" text-anchor="middle" class="title">单纱筒子</text><text x="393.00" y="631" text-anchor="middle" class="note">两根或多根单纱</text>
+<path d="M529.00 613H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#assembly_winding/drive" aria-label="查看并纱的驱动工位">
+<rect x="554.00" y="584" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="609" text-anchor="middle" class="title">并纱</text><text x="687.00" y="631" text-anchor="middle" class="note">平行合股卷装</text>
+</a>
+<path d="M823.00 613H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#twisting/drive" aria-label="查看倍捻的驱动工位">
+<rect x="848.00" y="584" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="609" text-anchor="middle" class="title">倍捻</text><text x="981.00" y="631" text-anchor="middle" class="note">加捻股线</text>
+</a>
+<text x="44" y="699" class="lead">化纤长丝加工</text>
+<rect x="260.00" y="664" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="393.00" y="689" text-anchor="middle" class="title">预取向丝</text><text x="393.00" y="711" text-anchor="middle" class="note">POY</text>
+<path d="M529.00 693H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#texturing/drive" aria-label="查看假捻加弹的驱动工位">
+<rect x="554.00" y="664" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="689" text-anchor="middle" class="title">假捻加弹</text><text x="687.00" y="711" text-anchor="middle" class="note">牵伸、加热与假捻</text>
+</a>
+<path d="M823.00 693H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="848.00" y="664" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="981.00" y="689" text-anchor="middle" class="title">变形长丝</text><text x="981.00" y="711" text-anchor="middle" class="note">DTY</text>
+<path d="M44 756H1396" stroke="#cbd4ce"/>
+<text x="44" y="789" class="section">经纱准备与机织</text>
+<text x="44" y="854" class="lead">经纱通道</text>
+<a href="../#warping/drive" aria-label="查看整经的驱动工位">
+<rect x="260.00" y="819" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="390.00" y="844" text-anchor="middle" class="title">整经</text><text x="390.00" y="866" text-anchor="middle" class="note">筒纱形成经轴</text>
+</a>
+<path d="M523.00 848H542.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#sizing/drive" aria-label="查看浆纱的驱动工位">
+<rect x="548.00" y="819" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="678.00" y="844" text-anchor="middle" class="title">浆纱</text><text x="678.00" y="866" text-anchor="middle" class="note">按品种上浆</text>
+</a>
+<path d="M811.00 848H830.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#drawing_in/drive" aria-label="查看穿综穿筘的驱动工位">
+<rect x="836.00" y="819" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="966.00" y="844" text-anchor="middle" class="title">穿综穿筘</text><text x="966.00" y="866" text-anchor="middle" class="note">建立经纱路径</text>
+</a>
+<path d="M1099.00 848H1118.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#weaving/drive" aria-label="查看机织的驱动工位">
+<rect x="1124.00" y="819" width="260.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="1254.00" y="844" text-anchor="middle" class="title">机织</text><text x="1254.00" y="866" text-anchor="middle" class="note">经、纬交织</text>
+</a>
+<text x="44" y="934" class="lead">沿用穿法换轴</text>
+<rect x="260.00" y="899" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="393.00" y="924" text-anchor="middle" class="title">新旧经片</text><text x="393.00" y="946" text-anchor="middle" class="note">织机换经轴</text>
+<path d="M529.00 928H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#warp_tying/drive" aria-label="查看自动结经的驱动工位">
+<rect x="554.00" y="899" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="924" text-anchor="middle" class="title">自动结经</text><text x="687.00" y="946" text-anchor="middle" class="note">逐根对应打结</text>
+</a>
+<path d="M823.00 928H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#weaving/drive" aria-label="查看机织的驱动工位">
+<rect x="848.00" y="899" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="924" text-anchor="middle" class="title">机织</text><text x="981.00" y="946" text-anchor="middle" class="note">接续生产</text>
+</a>
+<text x="44" y="1014" class="lead">纬纱通道</text>
+<rect x="260.00" y="979" width="266.00" height="60" rx="7" fill="#e8ede5" stroke="#bdccc2"/>
+<text x="393.00" y="1004" text-anchor="middle" class="title">适用筒子纱</text><text x="393.00" y="1026" text-anchor="middle" class="note">按织机要求备纬</text>
+<path d="M529.00 1008H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#weaving/drive" aria-label="查看机织的驱动工位">
+<rect x="554.00" y="979" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="1004" text-anchor="middle" class="title">机织</text><text x="687.00" y="1026" text-anchor="middle" class="note">供纬与引纬</text>
+</a>
+<path d="M44 1076H1396" stroke="#cbd4ce"/>
+<text x="44" y="1109" class="section">连续染整与成品检验</text>
+<text x="44" y="1173" class="lead">前处理选配</text>
+<a href="../#singeing/drive" aria-label="查看烧毛的驱动工位">
+<rect x="260.00" y="1138" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="1163" text-anchor="middle" class="title">烧毛</text><text x="393.00" y="1185" text-anchor="middle" class="note">布面毛羽处理</text>
+</a>
+<path d="M529.00 1167H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#pretreatment/drive" aria-label="查看湿前处理的驱动工位">
+<rect x="554.00" y="1138" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="1163" text-anchor="middle" class="title">湿前处理</text><text x="687.00" y="1185" text-anchor="middle" class="note">退浆、煮练、漂白</text>
+</a>
+<path d="M823.00 1167H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#mercerizing/drive" aria-label="查看丝光的驱动工位">
+<rect x="848.00" y="1138" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="1163" text-anchor="middle" class="title">丝光</text><text x="981.00" y="1185" text-anchor="middle" class="note">按品种进行碱处理</text>
+</a>
+<text x="44" y="1253" class="lead">冷轧堆染色</text>
+<a href="../#dyeing/drive" aria-label="查看冷轧堆的驱动工位">
+<rect x="260.00" y="1218" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="1243" text-anchor="middle" class="title">冷轧堆</text><text x="393.00" y="1265" text-anchor="middle" class="note">浸轧及堆置固色</text>
+</a>
+<path d="M529.00 1247H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#washing_range/drive" aria-label="查看平幅水洗／皂洗的驱动工位">
+<rect x="554.00" y="1218" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="1243" text-anchor="middle" class="title">平幅水洗／皂洗</text><text x="687.00" y="1265" text-anchor="middle" class="note">染后独立水洗</text>
+</a>
+<path d="M823.00 1247H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#stenter/drive" aria-label="查看拉幅整理的驱动工位">
+<rect x="848.00" y="1218" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="1243" text-anchor="middle" class="title">拉幅整理</text><text x="981.00" y="1265" text-anchor="middle" class="note">干燥及幅宽控制</text>
+</a>
+<text x="44" y="1333" class="lead">布面整理选配</text>
+<a href="../#stenter/drive" aria-label="查看拉幅整理的驱动工位">
+<rect x="260.00" y="1298" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="1323" text-anchor="middle" class="title">拉幅整理</text><text x="393.00" y="1345" text-anchor="middle" class="note">按材料选择热定型</text>
+</a>
+<path d="M529.00 1327H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#calender/drive" aria-label="查看轧光的驱动工位">
+<rect x="554.00" y="1298" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="1323" text-anchor="middle" class="title">轧光</text><text x="687.00" y="1345" text-anchor="middle" class="note">调节布面光泽</text>
+</a>
+<path d="M823.00 1327H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#inspection/drive" aria-label="查看织物疵点检测的驱动工位">
+<rect x="848.00" y="1298" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="1323" text-anchor="middle" class="title">织物疵点检测</text><text x="981.00" y="1345" text-anchor="middle" class="note">成品检测与复核</text>
+</a>
+<text x="44" y="1413" class="lead">尺寸稳定整理</text>
+<a href="../#stenter/drive" aria-label="查看拉幅整理的驱动工位">
+<rect x="260.00" y="1378" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="393.00" y="1403" text-anchor="middle" class="title">拉幅整理</text><text x="393.00" y="1425" text-anchor="middle" class="note">准备待预缩布</text>
+</a>
+<path d="M529.00 1407H548.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#sanforizing/drive" aria-label="查看橡毯预缩的驱动工位">
+<rect x="554.00" y="1378" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="687.00" y="1403" text-anchor="middle" class="title">橡毯预缩</text><text x="687.00" y="1425" text-anchor="middle" class="note">经向压缩与稳定</text>
+</a>
+<path d="M823.00 1407H842.00" fill="none" stroke="#bc663e" stroke-width="2" marker-end="url(#arrow)"/>
+<a href="../#inspection/drive" aria-label="查看织物疵点检测的驱动工位">
+<rect x="848.00" y="1378" width="266.00" height="60" rx="7" fill="#fff" stroke="#bdccc2"/>
+<text x="981.00" y="1403" text-anchor="middle" class="title">织物疵点检测</text><text x="981.00" y="1425" text-anchor="middle" class="note">成品检测与复核</text>
+</a>
+<text x="44" y="1515" class="note">烧毛、丝光、轧光和预缩均按织物及产品要求选用。前处理、染色和后整理的具体组合见各设备工艺说明。</text>
+<text x="44" y="1560" class="note">三维页面可查询厂家型号、选定配置、电机及执行机构的资料来源。</text>
+</svg>
