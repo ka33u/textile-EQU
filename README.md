@@ -1,6 +1,6 @@
 # 纺织装备工艺与传动交互演示系统
 
-围绕棉纺、机织、染整及纱线加工，系统收录 **27 类设备**，其中 16 类位于主线，11 类属于替代、准备或选配工序。在三维整机中选择电机，可以查看安装工位、受驱机构、传动方式和厂家依据。电机应用研究页支持跨设备比较。
+系统覆盖棉纺、机织、染整及纱线加工的 **27 类设备、39 款机型、16 家厂商**。其中 38 款展示所选整机配置，巴马格 eFK EvoSmart 展示厂家已披露的工位。点选某个电机可查看安装位置、带动的机构、传动依据及运动示意。
 
 ## 本地运行
 
@@ -12,7 +12,32 @@ npm start
 
 也可直接执行 `python3 scripts/serve.py`。可运行文件都在 `dist/`，包含 Three.js、设备模型、流程图和研究资料。通过静态 HTTP 服务即可使用，运行期间无需访问 CDN。
 
-## 本次新增的七类设备
+## 按厂家和机型切换
+
+在三维窗口上方先选「厂家 / 品牌」，再选「机型」。结构视图、传动视图、GLB 下载、工艺说明和研究记录会一起切换。首页「查找厂家与机型」支持按工序、品牌和关键词检索。地址栏保存当前机型和视图，可直接分享。各型号的发布时间、资料版次和核查日期见「型号与配置」。本次资料核查于 2026 年 11 月 20 日完成。
+
+| 工序 | 新增机型 | 可对照的传动功能 |
+|---|---|---|
+| 梳棉 | 经纬青岛宏大 JWF1217 | 锡林永磁同步直联、刺辊和盖板变频、五组伺服工位，可与立达 C 81 对照 |
+| 并条 | 经纬沈阳宏大华明 JWF1366Pro、立达 RSB-D 27 | 单眼差速匀整与双眼独立牵伸，各眼圈条、筒底盘、吸风及换筒 |
+| 转杯纺 | 浙江泰坦 TQF-K90、卓郎 Autocoro 11 和 BD 8、立达 R 37 | 逐位转杯、步进喂棉、分梳和卷绕，各款可追踪的传动不同。可与立达 R 70 对照 |
+| 喷气纺 | 卓郎 Autoairo | 牵伸、气动成纱、导纱、卷绕与落筒，可与立达 J 70 对照 |
+| 剑杆织造 | 浙江泰坦 TT-868 | 直驱主轴、伺服送经和卷取、步进绞边、机械打纬与引纬 |
+| 假捻加弹 | 越剑 YJ1000V-240、巴马格 eAFK HQ、巴马格 eFK EvoSmart | 前两款分别为 240 和 576 纱位。EvoSmart 提供 Smart Godet 导丝盘和 EvoHeater 工位，原有 eFK 384 位整机亦可选 |
+
+例如，打开 [立达 RSB-D 27 双眼并条机传动](http://127.0.0.1:4173/#drawing/drive/rieter_rsb_d27)，选择「两眼主牵伸」后即可在两个电机间切换。在同一工序改选经纬 JWF1366Pro，可以检查匀整伺服与差速机构的连接。从「设备结构」进入加弹机的「纱线路径」可选择一根纱，运行并近看其在模型中的路径。
+
+经纬 JWF1366Pro 的 2026 年 7 月说明书提供主传动图、电机型号和功率。立达 RSB-D 27 的 2026 年 5 月版手册给出双眼的布置图与功率分项。越剑使用厂家在 DirectIndustry 展厅公开的参数表，首发日期和实机配套电机清单待核实。eAFK HQ 收录于巴马格 2026 年样本，eFK EvoSmart 于 2025 年推出。整机几何按已公开的选定配置重建，详情中列有尚待装配图核实的部分。[经纬说明书](https://www.jwgf.com/cpfw/mfjx/btj/syhm/202607/P020260731520695347371.pdf) · [立达并条机手册](https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v2-100158-en.pdf) · [越剑厂商展厅](https://www.directindustry.com/prod/zhejiang-yuejian-intelligent-equipment-company/product-235275-2369973.html) · [巴马格 EvoSmart 公告](https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/)
+
+新增机型的配置、来源和电机分组位于 `research/variants-*.json`。按同名 `blender/variants_*.py` 重建的 Blender 工程位于 `blender/variants/`，网页按需读取 `dist/assets/variants/` 内相应型号的 GLB 和研究记录。更新模型或研究记录后执行下列命令，可重新生成目录及电机应用对照表，并核验每个电机的受驱范围。
+
+```sh
+blender --background --factory-startup --python-exit-code 1 --python blender/build_expansion.py -- rieter_rsb_d27
+python3 scripts/publish_model_variants.py
+npm run check:variants
+```
+
+## 七类工序扩展设备
 
 下表列出模型中可定位的电机位置。两列分别统计厂家资料支持驱动归属的位置，以及按设备功能推定的位置。同一电机带动多个机构时只计一次。具体电机型号、功率、安装尺寸及尚待核实的轴系可在每台设备的「型号与配置」和路线详情中查阅。
 
@@ -31,7 +56,7 @@ npm start
 
 ## 项目文件
 
-- `dist/` 提供 27 台设备的 GLB、旧版独立电机资产、交互网页与 [电机应用对照表](dist/motor-applications.html)。
+- `dist/` 提供 27 类设备各机型的 GLB、旧版独立电机资产、交互网页与 [电机应用对照表](dist/motor-applications.html)。
 - `blender/` 包含可编辑的设备工程与建模脚本。新增 7 台均有各自的 `.blend`，复用 `build_expansion.py` 导出。
 - `research/expansion-*.json` 记录所选配置、厂家链接、证据支持范围、安装工位和电机与部件的对应关系。
 - `qa/` 提供完整取景、零件选择、传动关系与动画检查。新增设备的工位数量与模型指纹见 [逐台检查结果](qa/equipment-stations-validation.json)。
@@ -41,6 +66,7 @@ npm start
 ```sh
 blender --background --factory-startup --python-exit-code 1 --python blender/build_expansion.py -- washing_range
 python3 scripts/publish_expansion.py
+python3 scripts/publish_model_variants.py
 npm run check
 npm run check:stations
 npm run check:drives
@@ -54,7 +80,7 @@ node qa/verify-frontend-v3.mjs
 
 从「棉纺」选择「气流纺（转杯纺）」，在「传动链 / 驱动工位」选择驱动路线及纺位，可观察立达 R 70 双面基础机的逐位传动。两节各有 24 个纺位，总计 48 位。五类逐位电机分别驱动喂条、分梳、转杯、卷绕和横动导纱。配置来源及其他设备的覆盖核查见「研究与资料」。
 
-从首页选择「查询电机类型与应用工位」可进入跨厂家对照，从任一设备的「电机与传动」可直接查看该工序。研究页支持按电机、工作负载、设备及关键词组合筛选，并可返回对应的三维工位。[电机应用对照](dist/motor-applications.html)
+从首页选择「研究电机与工位」可进入跨厂家对照，从任一设备的「电机与传动」可直接查看该工序。研究页支持按电机、工作负载、设备及关键词组合筛选，并可返回对应的三维工位。[电机应用对照](dist/motor-applications.html)
 
 原厂资料、适用范围和工位记录收录在 [研究数据](dist/motor-applications.json) 中。更新数据后运行 `python3 scripts/build_motor_applications.py` 即可校验引用并重新生成可离线阅读的页面。
 

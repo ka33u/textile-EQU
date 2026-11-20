@@ -5,17 +5,20 @@ import { fallbackData, equipmentNames, branchConnections } from './ui-data.js?v=
 import { fitPerspectiveBounds } from './camera-fit.js?v=20261118-v6-motion';
 import { normalizeImportedModel, worldModelBounds } from './scene-geometry.js?v=20261118-render';
 
-import { DriveView, driveObjectContext, driveRoutePoints, exteriorDriveDirection, scopeDriveRoute } from './drive-view.js?v=20261119-stations';
+import { DriveView, driveObjectContext, driveRoutePoints, exteriorDriveDirection, scopeDriveRoute } from './drive-view.js?v=20261120-models';
 import { TexturingMotion, TEXTURING_PHASES } from './texturing-motion.js?v=20261119-stations';
 import { ModelMaterials, ModelBatches, PICK_LAYER } from './model-rendering.js?v=20261118-render';
 
 import { RotorMotion } from './rotor-motion.js?v=20261118-rotor';
-import { StationMotion } from './station-motion.js?v=20261119-stations';
+import { StationMotion } from './station-motion.js?v=20261120-models';
+
+import { StationYarn } from './station-yarn.js?v=20261120-models';
+import { ModelPicker, machineHash, parseMachineHash } from './model-library.js?v=20261120-models';
 
 const ASSET_VERSION = '20261118-v6-motion';
 const $ = (id) => document.getElementById(id);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
-const state = { data: fallbackData, provenance: null, driveData: null, driveError: false, loadedIdentity: null, current: 'weaving', mode: 'machine', filter: 'all', playing: false, rotating: false, xray: false, wire: false, explode: 0, autoFit: true, loaded: false, request: 0 };
+const state = { data: fallbackData, provenance: null, driveData: null, driveError: false, loadedIdentity: null, library: null, variant: null, variantDetails: null, current: 'weaving', mode: 'machine', filter: 'all', playing: false, rotating: false, xray: false, wire: false, explode: 0, autoFit: true, loaded: false, request: 0 };
 const sections = { spinning: {name:'棉纺',en:'SPINNING',index:'01'}, weaving: {name:'机织',en:'WEAVING',index:'02'}, finishing: {name:'染整',en:'FINISHING',index:'03'}, yarn_processing: {name:'纺纱与纱线加工',en:'SPINNING & YARN PROCESSING',index:'分支'} };
 let scene, camera, renderer, controls, content, modelRoot, selectedObject, floor, grid;
 let meshes = [], exploded = [], spinning = [], selectable = [];
@@ -24,7 +27,7 @@ let activeRecord=null,modelBatches=null,loadController=null,batchTransformsDirty
 const recentModels=new Map();
 let driveView, driveHighlights = new Set();
 let rotorMotion=null;
-let stationMotion=null;
+let stationMotion=null,stationYarn=null;
 let texturingMotion = null, playbackTime = 0, lastMotionReadout = -Infinity;
 const texturing = { mode:'process', speed:1, yarnMode:'single', side:'A', position:1, motorId:null, focusYarn:false };
 let yarnFocusObjects=new Set();
@@ -53,10 +56,30 @@ const motionSpeed = reduceMotion ? .55 : 1;
 const escapeHTML = (value) => String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const toArray = (value) => Array.isArray(value) ? value : value ? [value] : [];
 const stage = () => state.data.stages.find(item=>item.id===state.current) || state.data.stages[0];
-const modelID = () => state.current;
+const modelID = () => state.variant || state.current;
+const selectedVariant = () => state.variant ? state.library?.models.find(item=>item.stageId===state.current&&item.id===state.variant) : null;
+const preferredModels = new Map();
+const picker = new ModelPicker(choice=>selectMachine(choice.stageId, choice.id===choice.stageId ? null : choice.id), async()=>{
+  if(await getModelLibrary() && state.variant && !state.loaded)await loadModel();
+});
+async function getModelLibrary(){
+  try{
+    const response=await fetch('./model-variants.json?v=20261120-models',{cache:'no-store'});
+    if(!response.ok)throw new Error('Model catalog HTTP '+response.status);
+    const library=await response.json();
+    if(!Array.isArray(library.models)||!Array.isArray(library.makers)||!library.models.length)throw new Error('Invalid model catalog');
+    state.library=library;picker.setCatalog(library);renderNavigation();renderDetails();
+    return true;
+  }catch(error){picker.unavailable();console.warn('Model catalog unavailable:',error.message);return false}
+}
 const stageCode = item => branchConnections[item.id]?.code||String(state.data.stages.filter(s=>!branchConnections[s.id]).indexOf(item)+1).padStart(2,'0');
 const stageLabel = item => item.id==='stenter'?'拉幅热定型':item.name;
-const modelAssetURL = (id=modelID()) => `./assets/models/${id}.glb?v=${ASSET_VERSION}${state.provenance?.assets?.[id]?.sha256?`&sha=${state.provenance.assets[id].sha256.slice(0,16)}`:''}`;
+function modelAssetURL(){
+  const variant=selectedVariant();
+  if(state.variant)return variant?'./assets/variants/'+variant.id+'.glb?sha='+variant.sha256.slice(0,16)+'&record='+variant.detailHash.slice(0,12):'';
+  const id=state.current,sha=state.provenance?.assets?.[id]?.sha256;
+  return './assets/models/'+id+'.glb?v='+ASSET_VERSION+(sha?'&sha='+sha.slice(0,16):'');
+}
 const normalizeSource = (item) => typeof item==='string'?{title:item,url:item}:item;
 const isSafeURL = (value) => { try { const url=new URL(value); return ['https:','http:'].includes(url.protocol); } catch { return false; } };
 function sourceLink(source, full=false){
@@ -82,7 +105,7 @@ function readModelIdentity(root){
   for(let i=0;i<queue.length;i++){
     const node=queue[i],data=node.userData||{};
     if(data.modelVersion!==undefined||data.referenceModel){
-      return Object.fromEntries(['modelVersion','modelType','referenceManufacturer','referenceModel','referenceConfiguration','fidelityStatus','referenceStatus','structuralCompleteness','equipmentId','actualScope','unresolved','stationDriveModel','driveRevision'].filter(key=>data[key]!==undefined).map(key=>[key,data[key]]));
+      return Object.fromEntries(['modelVersion','modelType','referenceManufacturer','referenceModel','referenceConfiguration','fidelityStatus','referenceStatus','structuralCompleteness','equipmentId','actualScope','unresolved','stationDriveModel','driveRevision','stageId','makerKey'].filter(key=>data[key]!==undefined).map(key=>[key,data[key]]));
     }
     queue.push(...node.children);
   }
@@ -103,8 +126,14 @@ function resolveModelIdentity(metadata,item){
     hasReference
   };
 }
-const provenanceItem=()=>state.provenance?.items.find(item=>item.id===modelID());
+const provenanceItem=()=>state.variant?state.variantDetails?.provenance:state.provenance?.items.find(item=>item.id===state.current);
 function equipmentDisplay(){
+  if(state.variant){
+    const choice=selectedVariant();
+    const name=choice?.equipment||stage().name;
+    const title=choice&&!name.toLowerCase().includes(choice.model.toLowerCase())?choice.model+' · '+name:name;
+    return {title,subtitle:choice?[choice.makerLabel,choice.model,choice.scope==='station'?'公开工位模型':''].filter(Boolean).join(' · '):'正在核对机型'};
+  }
   const metadata=state.loadedIdentity?.id===modelID()?state.loadedIdentity.metadata:null;
   if(Number.parseFloat(metadata?.modelVersion)>=3){
     if(state.current==='inspection'&&/Fabriq Vision 2/i.test(metadata.referenceModel||''))return {title:'织物疵点检测系统',subtitle:'检测单元 · 控制台 · 复核工作站'};
@@ -149,7 +178,7 @@ function renderProvenanceDialog(){
   if(!item){
     html+='<p>设备来源文件暂未载入。可重新打开页面读取资料，工艺来源仍可在「研究与资料」中查看。</p>';
   } else {
-    html+=`<section class="provenance-section"><span class="provenance-caption">厂家资料对照 / ${escapeHTML(state.provenance.checkedAt||'核查日期未标注')}</span><h3>${escapeHTML(item.referenceManufacturer)} · ${escapeHTML(item.referenceModel)}</h3><p>${escapeHTML(item.currentFinding||'')}</p><dl class="configuration-facts"><div><dt>所选配置</dt><dd>${escapeHTML(item.referenceConfiguration||'待确认')}</dd></div><div><dt>配置依据</dt><dd>${escapeHTML(item.configurationStatus||'待核实')}</dd></div>${item.referenceYear?`<div><dt>参考代次</dt><dd>${escapeHTML(item.referenceYear)} · 不是文件下载年份</dd></div>`:''}</dl>${item.generationAssessment&&item.generationAssessment.trim()!==(item.currentFinding||'').trim()?`<p class="evidence-empty">${escapeHTML(item.generationAssessment)}</p>`:''}</section>`;
+    html+=`<section class="provenance-section"><span class="provenance-caption">厂家资料对照 / ${escapeHTML(item.checkedAt||state.provenance?.checkedAt||'核查日期未标注')}</span><h3>${escapeHTML(item.referenceManufacturer)} · ${escapeHTML(item.referenceModel)}</h3><p>${escapeHTML(item.currentFinding||'')}</p><dl class="configuration-facts"><div><dt>所选配置</dt><dd>${escapeHTML(item.referenceConfiguration||'待确认')}</dd></div><div><dt>配置依据</dt><dd>${escapeHTML(item.configurationStatus||'待核实')}</dd></div>${item.referenceYear?`<div><dt>参考代次</dt><dd>${escapeHTML(item.referenceYear)} · 不是文件下载年份</dd></div>`:''}</dl>${item.generationAssessment&&item.generationAssessment.trim()!==(item.currentFinding||'').trim()?`<p class="evidence-empty">${escapeHTML(item.generationAssessment)}</p>`:''}</section>`;
     const counts=Object.entries(item.selectedCounts||{});
     if(counts.length)html+=`<section class="provenance-section"><h3>所选数量与尺寸</h3><p class="evidence-empty">各项依据与推定范围见下方记录；选定数量不等于厂家完整订单证明。</p><dl class="configuration-facts">${counts.map(([key,value])=>`<div><dt>${escapeHTML(item.selectedCountLabels?.[key]||key)}</dt><dd>${escapeHTML(evidenceText(value))}</dd></div>`).join('')}</dl></section>`;
     for(const section of toArray(item.configurationSections))html+=`<section class="provenance-section"><h3>${escapeHTML(section.title||'配置明细')}</h3>${evidenceList(section.rows||section.items||section.notes)}</section>`;
@@ -191,7 +220,7 @@ function matchesProcessFilter(item,filter){
 function renderNavigation(){
   const items=state.data.stages,branchCount=items.filter(item=>branchConnections[item.id]).length;
   $('equipment-count').textContent=items.length;
-  $('equipment-count-note').textContent=`${items.length-branchCount} 主线 · ${branchCount} 分支`;
+  $('equipment-count-note').textContent=state.library?state.library.models.length+' 款机型 · '+state.library.makers.length+' 家厂商':`${items.length-branchCount} 主线 · ${branchCount} 分支`;
   let html='';
   for(const [key,group] of Object.entries(sections)){
     const cottonBranches=state.filter==='spinning'&&key==='yarn_processing';
@@ -200,7 +229,8 @@ function renderNavigation(){
     html+=`<div class="stage-group-label${key==='yarn_processing'?' branch-group-label':''}">${group.index} / ${cottonBranches?'替代成纱工艺':group.name}</div>`;
     html+=visibleItems.map(item=>{
       const branch=branchConnections[item.id];
-      return `<button class="stage-button${item.id===state.current?' active':''}${branch?' branch-stage':''}" data-stage="${item.id}" aria-current="${item.id===state.current?'step':'false'}"><span class="stage-number">${stageCode(item)}</span><span class="stage-name">${escapeHTML(stageLabel(item))}</span>${branch?`<span class="stage-optional branch-kind">${escapeHTML(branch.kind.replace('分支',''))}</span>`:item.optional?'<span class="stage-optional">选配</span>':''}</button>`;
+      const modelCount=state.library?.models.filter(machine=>machine.stageId===item.id).length||0;
+      return `<button class="stage-button${item.id===state.current?' active':''}${branch?' branch-stage':''}" data-stage="${item.id}" aria-current="${item.id===state.current?'step':'false'}"><span class="stage-number">${stageCode(item)}</span><span class="stage-name">${escapeHTML(stageLabel(item))}</span>${modelCount>1?`<span class="stage-models">${modelCount}款</span>`:branch?`<span class="stage-optional branch-kind">${escapeHTML(branch.kind.replace('分支',''))}</span>`:item.optional?'<span class="stage-optional">选配</span>':''}</button>`;
     }).join('');
   }
   $('stage-list').innerHTML=html;
@@ -237,15 +267,17 @@ async function loadMotorCatalog() {
   }
 }
 function renderMotorExamples(id) {
-  $('stage-motor-study').href = './motor-applications.html#' + id;
+  const choice=selectedVariant();
+  $('stage-motor-study').href = './motor-applications.html'+(choice?'?model='+encodeURIComponent(choice.id):'')+'#' + id;
   const panel = $('study-examples');
-  if (panel.dataset.stage !== id) panel.open = false;
-  panel.dataset.stage = id;
+  if (panel.dataset.stage !== modelID()) panel.open = false;
+  panel.dataset.stage = modelID();
   const group = motorCatalog?.stages.find(item => item.id === id);
-  panel.hidden = !group;
-  if (!group) return;
-  $('study-example-count').textContent = '厂家工位实例（' + group.rows.length + '）';
-  $('study-rows').innerHTML = group.rows.map(row => {
+  const rows=(group?.rows||[]).filter(row=>state.variant?row.modelAssetId===state.variant:!row.modelAssetId);
+  panel.hidden = !rows.length;
+  if (!rows.length) { $('study-rows').replaceChildren(); return; }
+  $('study-example-count').textContent = (choice?'本机工位记录':'厂家工位实例')+'（' + rows.length + '）';
+  $('study-rows').innerHTML = rows.map(row => {
     const links = row.refs.map(key => sourceLink(motorCatalog.sources[key])).join('');
     return '<article><strong>' + escapeHTML(row.station) + '</strong><small>'
       + escapeHTML(row.maker + ' · ' + row.model + ' · ' + row.level) + '</small><p>'
@@ -256,28 +288,38 @@ function renderMotorExamples(id) {
 function renderDetails(){
   const item=stage(),index=state.data.stages.indexOf(item),section=sections[item.section]||sections.yarn_processing;
   $('detail-title').textContent=stageLabel(item);
-  $('detail-summary').textContent=item.summary;
+  picker.refresh(state.current,modelID());
+  const choice=selectedVariant(),variantInfo=state.variantDetails;
+  const currentModel=choice||state.library?.models.find(model=>model.id===modelID());
+  $('machine-dating').textContent=choice ? choice.dating+' · 资料核查 '+choice.checkedAt : '';
+  $('machine-dating').hidden=!choice;
+  $('detail-title').textContent=currentModel?.scope==='station'?item.name+' · 公开工位':stageLabel(item);
+  const description=state.variant ? (variantInfo?.process||{}) : item;
+  $('detail-summary').textContent=description.summary||(choice?choice.configuration:'正在读取本机型的资料');
   $('detail-section').textContent=`${section.index} / ${section.name}`;
   $('detail-index').textContent=`设备 ${index+1} / ${state.data.stages.length}`;
   renderRouteContext(item);
   renderMotorExamples(item.id);
-  $('input-material').textContent=toArray(item.input).join(' / ');
-  $('output-material').textContent=toArray(item.output).join(' / ');
-  ['process','drive','quality'].forEach(key=>$(key+'-list').innerHTML=toArray(item[key]).map(text=>`<li>${escapeHTML(typeof text==='object'?(text.text||text.description||JSON.stringify(text)):text)}</li>`).join(''));
-  $('stage-note').textContent=item.note||'';
-  $('stage-note').hidden=!item.note;
-  $('stage-sources').innerHTML=toArray(item.sources).map(source=>sourceLink(source)).join('');
+  $('input-material').textContent=toArray(description.input).join(' / ')||'—';
+  $('output-material').textContent=toArray(description.output).join(' / ')||'—';
+  const points=state.variant?{...description,drive:variantInfo?.drive.routes.map(r=>r.location+' · '+r.electric)}:item;
+  ['process','drive','quality'].forEach(key=>$(key+'-list').innerHTML=toArray(points[key]).map(text=>`<li>${escapeHTML(typeof text==='object'?(text.text||text.description||JSON.stringify(text)):text)}</li>`).join(''));
+  $('stage-note').textContent=state.variant?'':item.note||'';
+  $('stage-note').hidden=!$('stage-note').textContent;
+  $('stage-sources').innerHTML=toArray(state.variant?variantInfo?.provenance.sources:item.sources).map(source=>sourceLink(source)).join('');
   $('prev-stage').disabled=index===0;
   $('next-stage').disabled=index===state.data.stages.length-1;
   updateViewerLabels();
 }
 function updateViewerLabels(){
-  const item=stage(),drive=state.mode==='drive';
-  $('stage-code').textContent=drive?'DRIVE MAP / 整机传动链':`${branchConnections[item.id]?'BRANCH ':''}${stageCode(item)} / ${item.en||item.id.toUpperCase()}`;
+  const item=stage(),drive=state.mode==='drive',scope=selectedVariant()?.scope;
+  const driveTitle=scope==='station'?'工位传动链':'整机传动链';
+  $('drive-panel-title').textContent=driveTitle;
+  $('stage-code').textContent=drive?'DRIVE MAP / '+driveTitle:`${branchConnections[item.id]?'BRANCH ':''}${stageCode(item)} / ${item.en||item.id.toUpperCase()}`;
   const display=equipmentDisplay();
   $('viewer-title').textContent=display.title;
   $('viewer-subtitle').textContent=drive?'点击编号工位 · 追踪动力到工作机构':display.subtitle;
-  $('download-model').href=modelAssetURL();
+  if(modelAssetURL())$('download-model').href=modelAssetURL();else $('download-model').removeAttribute('href');
   $('download-model').download=`textile-${modelID()}.glb`;
   $('download-model').setAttribute('aria-disabled',String(!state.loaded));
   $$('[data-mode]').forEach(button=>{const active=button.dataset.mode===state.mode;button.classList.toggle('active',active);button.setAttribute('aria-pressed',active)});
@@ -298,24 +340,25 @@ function renderSources(){
   const sources=raw.map(normalizeSource).filter(s=>s&&s.url&&!seen.has(s.url)&&seen.add(s.url));
   $('all-sources').innerHTML=sources.map(s=>sourceLink(s,true)).join('')||'<p>工序说明已随页面提供，完整来源将在资料文件载入后显示。</p>';
 }
-async function selectStage(id){
-  if(!state.data.stages.some(s=>s.id===id)) return;
-  if(state.current===id&&state.loaded)return;
-  state.current=id;
+async function selectMachine(id,variant=null,{mode=state.mode,navigate=true}={}){
+  if(!state.data.stages.some(stage=>stage.id===id))return;
+  const changed=state.current!==id||state.variant!==variant;
+  if(!changed&&state.mode===mode&&state.loaded)return;
+  state.current=id;state.variant=variant;state.mode=mode;
+  if(changed){state.loaded=false;state.variantDetails=null;state.loadedIdentity=null}
+  if(!variant||selectedVariant())preferredModels.set(id,variant);
   if(!matchesProcessFilter(stage(),state.filter))state.filter='all';
-  renderNavigation(); renderDetails();
-  history.replaceState(null,'',`#${id}${state.mode==='drive'?'/drive':''}`);
-  await loadModel();
+  const hash=machineHash(id,variant,mode);
+  if(navigate&&location.hash!==hash)history.pushState(null,'',hash);
+  renderNavigation();renderDetails();
+  if(changed||!state.loaded)await loadModel();else syncDriveMode();
 }
+function selectStage(id){return selectMachine(id,preferredModels.get(id)||null)}
 function selectMode(mode){
-  const next=mode==='drive'||mode==='motor'?'drive':'machine';
-  if(state.mode===next&&state.loaded)return;
-  state.mode=next;
-  updateViewerLabels();syncDriveMode();
-  history.replaceState(null,'',`#${state.current}${state.mode==='drive'?'/drive':''}`);
+  return selectMachine(state.current,state.variant,{mode:mode==='drive'||mode==='motor'?'drive':'machine'});
 }
 
-const currentDriveData=()=>state.driveData?.items.find(item=>item.id===state.current);
+const currentDriveData=()=>state.variant?state.variantDetails?.drive:state.driveData?.items.find(item=>item.id===state.current);
 async function getDriveData(){
   try {
     state.driveError=false;
@@ -324,7 +367,7 @@ async function getDriveData(){
     const data=await response.json();
     if(!Array.isArray(data.items))throw new Error('Invalid drive routes');
     state.driveData=data;
-    if(state.loaded&&modelRoot){
+    if(state.loaded&&modelRoot&&!state.variant){
       driveView?.setModel(modelRoot,currentDriveData());
       stationMotion?.setRoutes(driveView.routes);
       if(texturingMotion){
@@ -340,6 +383,7 @@ function syncDriveMode(){
   driveView?.setVisible(active&&state.loaded);
   rotorMotion?.select(active?driveView.selectedRoute():null);
   stationMotion?.select(active&&driveView.selectedRoute()?driveView.selectedMotorRoutes():null);
+  syncStationYarn();
   driveHighlights=active&&state.loaded?driveView?.highlightedObjects()||new Set():new Set();
   syncTexturingMotion();
   if(active&&texturingMotion)for(const object of texturingMotion.highlightedObjects())driveHighlights.add(object);
@@ -358,7 +402,7 @@ function renderDrivePanel(){
   $('drive-route-list').innerHTML=routes.map(route=>{
     const declared=route.graph?.association==='explicit_motor_groups';
     let badge=route.motors.length?`${route.motors.length} 处`:'待核';
-    if(declared&&route.motors.length)badge+=(route.evidence.status==='public_confirmed'?' · 有据':' · 推定');
+    if(declared&&route.motors.length)badge+=route.loadUnassigned?' · 负载待核':route.evidence.status==='public_confirmed'?' · 有据':' · 推定';
     if(declared&&!route.motors.length)badge=route.actuation==='pneumatic'?'气动':'见说明';
     return `<button data-drive-route="${escapeHTML(route.id)}" class="${selected?.id===route.id?'active':''}" aria-pressed="${selected?.id===route.id}"><b>${String(route.index+1).padStart(2,'0')}</b><span>${escapeHTML(route.label)}<small>${escapeHTML(route.location)}</small></span><em>${badge}</em></button>`;
   }).join('')||`<p class="drive-empty">${state.loaded?'当前没有可用的路线标记':'设备载入后显示工位位置'}</p>${state.driveError?'<button id="retry-drive" class="inline-link">重试读取传动资料 ↻</button>':''}`;
@@ -427,7 +471,7 @@ function renderStationDrive(selected){
       (scope.operation==='maintenance'?'<p>停产维护工位，单独演示。</p>':'')+'<dl>'+
       '<dt>安装工位</dt><dd>'+escapeHTML(scope.location)+'</dd><dt>电机与动力源</dt><dd>'+escapeHTML(scope.electric)+'</dd>'+
       '<dt>带动机构</dt><dd>'+escapeHTML(scope.role)+'</dd></dl>'+
-      '<small>'+status[scope.evidence.status]+'</small><div class="station-sources">'+scope.evidence.sources.map(s=>sourceLink(s)).join('')+'</div>'+
+      '<small>'+(scope.loadUnassigned?'厂家照片可辨认电机外观':status[scope.evidence.status])+'</small><div class="station-sources">'+scope.evidence.sources.map(s=>sourceLink(s)).join('')+'</div>'+
       '<ul class="station-loads">'+controls+'</ul></section>');
   }
   detail.innerHTML=rows.join('');
@@ -479,13 +523,52 @@ function setPlaying(playing){
   if(!state.loaded)return;
   if(playing&&!state.playing)lastTime=performance.now();
   state.playing=Boolean(playing);setPressed('play-toggle',state.playing);
+  syncStationYarn();
   $('play-text').textContent=state.playing?'暂停演示':'运行演示';
   $('play-icon').innerHTML=state.playing?'<path d="M7 5h4v14H7zM15 5h4v14h-4z"/>':'<path d="m9 5 11 7-11 7z"/>';
   syncTexturingMotion();renderer.shadowMap.needsUpdate=true;invalidateFrame();
 }
+function syncStationYarn(){
+  const panel=$('station-yarn-panel'),overlay=stationYarn?.overlay;
+  panel.hidden=!overlay;
+  if(!overlay)return;
+  const singleMotor=state.mode==='drive'&&Boolean(driveView?.selectedRoute());
+  overlay.visible=!singleMotor;
+  $('station-yarn-readout').textContent=singleMotor?'当前仅演示所选动力工位。打开纱路可回到连续走纱。':
+    selectedVariant()?.scope==='station'?'导丝盘包绕段。加热器作为单独工位展示。':'青色标记沿所选纱位从 POY 退绕，经加热、冷却与假捻，行至 DTY 卷装。';
+  $('station-yarn-play').textContent=singleMotor?'打开并运行纱路':state.playing?'暂停纱路':'运行纱路';
+  $('station-yarn-play').setAttribute('aria-pressed',String(!singleMotor&&state.playing));
+}
+function initializeStationYarn(){
+  if(state.current!=='texturing'||!state.variant)return;
+  stationYarn=new StationYarn(modelRoot,scene);
+  if(!stationYarn.paths.length)return;
+  const sides=new Map();
+  $('station-yarn-position').replaceChildren(...stationYarn.paths.map(({side},index)=>{
+    const n=(sides.get(side)||0)+1;sides.set(side,n);
+    return new Option(side?side+' 侧 · 第 '+n+' 纱位':'Smart Godet 导丝盘',String(index));
+  }));
+  $('station-yarn-position').disabled=stationYarn.paths.length===1;
+  syncStationYarn();
+}
+$('station-yarn-position').addEventListener('change',()=>{
+  if(!stationYarn)return;
+  if(state.mode==='drive'&&driveView.selectedRoute())selectDriveRoute(null);
+  stationYarn.select(Number($('station-yarn-position').value));invalidateFrame();
+});
+$('station-yarn-play').addEventListener('click',()=>{
+  const scoped=state.mode==='drive'&&driveView.selectedRoute();
+  if(scoped)selectDriveRoute(null);
+  setPlaying(scoped?true:!state.playing);
+});
+$('station-yarn-focus').addEventListener('click',()=>{
+  if(!stationYarn?.paths.length)return;
+  if(state.mode==='drive'&&driveView.selectedRoute())selectDriveRoute(null);
+  focusDriveObject(stationYarn.paths[stationYarn.index].node);
+});
 function texturingStationIndex(){return (texturing.side==='B'?192:0)+texturing.position}
 function syncTexturingMotion(){
-  const active=state.current==='texturing'&&state.loaded&&Boolean(texturingMotion);
+  const active=modelID()==='texturing'&&state.loaded&&Boolean(texturingMotion);
   $('texturing-panel').hidden=!active;$('texturing-motors').hidden=!active;
   document.querySelector('.atlas').classList.toggle('has-texturing-motion',active);
   if(!active)return;
@@ -512,7 +595,7 @@ function syncTexturingMotion(){
   renderTexturingReadout(true);invalidateFrame();
 }
 function initializeTexturing(){
-  if(state.current!=='texturing')return;
+  if(modelID()!=='texturing')return;
   texturingMotion=new TexturingMotion(modelRoot,scene,{routes:driveView.routes});
   $('texturing-flow').innerHTML=TEXTURING_PHASES.map((phase,index)=>`<span data-texturing-phase="${index}">${escapeHTML(phase.label)}</span>`).join('');
   $('texturing-motor-select').innerHTML='<option value="">全机联动 · 全部动力源</option>'+texturingMotors.map(motor=>`<option value="${motor.id}">${motor.code} · ${motor.name} · ${motor.side?'192':'384'} 纱位</option>`).join('')+'<option value="unmodeled:feed_g1">G1 集成动力源 · 未独立建模</option><option value="unmodeled:feed_g2">G2 集成动力源 · 未独立建模</option>';
@@ -538,7 +621,7 @@ function showTexturingProcess(){
   history.replaceState(null,'','#texturing/drive');syncDriveMode();
 }
 function renderTexturingReadout(force=false){
-  if(!texturingMotion||state.current!=='texturing')return;
+  if(!texturingMotion||modelID()!=='texturing')return;
   const now=performance.now();if(!force&&now-lastMotionReadout<100)return;lastMotionReadout=now;
   const current=texturingMotion.getState();
   $('texturing-state').textContent=state.playing?(texturing.mode==='motor'?(texturing.motorId?'单电机运行':'动力源未建模'):'全机联动中'):'已暂停';
@@ -692,6 +775,7 @@ function prepareBatches(){
   batchTransformsDirty=false;lastBatchTime=playbackTime;
 }
 function retireModel(){
+  stationYarn?.dispose();stationYarn=null;$('station-yarn-panel').hidden=true;
   rotorMotion?.dispose();rotorMotion=null;stationMotion?.dispose();stationMotion=null;
   modelBatches?.dispose();modelBatches=null;
   texturingMotion?.dispose();texturingMotion=null;
@@ -745,35 +829,57 @@ async function readModelBytes(response,onProgress){
 async function loadModel(){
   if(!initialized)return;
   const request=++state.request;
+  if(state.variant&&!state.library){
+    if(modelRoot)modelRoot.visible=false;
+    await libraryReady;
+    if(request!==state.request)return;
+  }
   state.loaded=false;
   loadController?.abort();loadController=new AbortController();
-  const {signal}=loadController,loadedID=modelID(),url=modelAssetURL();
+  const {signal}=loadController,loadedID=modelID(),url=modelAssetURL(),variant=selectedVariant();
   const cached=recentModels.get(url);recentModels.delete(url);
   if(modelRoot)modelRoot.visible=false;
   retireModel();
   syncTexturingMotion();
-  state.loadedIdentity=null;
+  state.loadedIdentity=null;state.variantDetails=null;
   $('download-model').setAttribute('aria-disabled','true');
   driveHighlights.clear();driveView?.clear();if(driveView){driveView.routes=[];driveView.activeId=null;driveView.setVisible(false)}
   renderProvenance();renderDrivePanel();
   resetModelState();
   $('part-select').disabled=true;$('explode').disabled=true;$('play-toggle').disabled=true;
   $('load-screen').hidden=false;$('load-screen').classList.remove('error');$('retry-load').hidden=true;
-  $('load-label').textContent='正在载入'+(equipmentNames[state.current]||stage().name);
+  $('load-label').textContent='正在载入 '+(variant?.model||equipmentNames[state.current]||stage().name);
   $('load-detail').textContent='准备几何、材质与零件信息';
   $('model-status').textContent='LOADING / 模型载入中';
   try {
+    if(state.variant&&!variant){
+      showError('此机型未在当前工序的目录中','可用「机型目录」选择设备，或重新读取目录。');return;
+    }
     let record=cached;
     if(!record){
-      const response=await fetch(url,{signal});
-      if(!response.ok)throw new Error('Model fetch failed: '+response.status);
-      const bytes=await readModelBytes(response,percent=>{if(request===state.request)$('load-detail').textContent=`载入 ${percent}%`});
+      const detail=async()=>{
+        if(!variant)return null;
+        const res=await fetch('./assets/variants/'+variant.id+'.json?v='+variant.detailHash.slice(0,16),{signal});
+        if(!res.ok)throw new Error('Machine record unavailable: '+res.status);
+        const data=await res.json();
+        if(data.id!==loadedID||data.stageId!==variant.stageId||data.drive?.id!==loadedID||data.provenance?.referenceModel!==variant.model||data.provenance?.referenceManufacturer!==variant.maker)throw new Error('Machine record identity mismatch');
+        return data;
+      };
+      const binary=async()=>{
+        const response=await fetch(url,{signal});
+        if(!response.ok)throw new Error('Model fetch failed: '+response.status);
+        return readModelBytes(response,percent=>{if(request===state.request)$('load-detail').textContent=`载入 ${percent}%`});
+      };
+      const [bytes,details]=await Promise.all([binary(),detail()]);
       if(request!==state.request)return;
-      const gltf=await loader.parseAsync(bytes,new URL('.',response.url).href);
+      const gltf=await loader.parseAsync(bytes,new URL('.',new URL(url,document.baseURI)).href);
       if(request!==state.request){disposeModel(gltf.scene);return}
       const metadata=readModelIdentity(gltf.scene);
       if(metadata.equipmentId&&metadata.equipmentId!==loadedID){disposeModel(gltf.scene);throw new Error('Model equipment identity mismatch')}
-      record=indexModel(gltf.scene,url,metadata);
+      if(variant&&(metadata.equipmentId!==loadedID||metadata.stageId!==variant.stageId||metadata.makerKey!==variant.makerKey||metadata.referenceModel!==variant.model||metadata.referenceManufacturer!==variant.maker)){
+        disposeModel(gltf.scene);throw new Error('Selected manufacturer or machine does not match geometry');
+      }
+      record=indexModel(gltf.scene,url,metadata);record.variantDetails=details;
     }
     activeRecord=record;modelRoot=record.root;
     ({meshes,exploded,spinning,groups:partGroups}=record);
@@ -785,14 +891,14 @@ async function loadModel(){
     $('explode').disabled=exploded.length===0;
     $('play-toggle').disabled=spinning.length===0;
     state.loaded=true;
-    state.loadedIdentity={id:loadedID,metadata:record.metadata};
-    driveView.setModel(modelRoot,currentDriveData());initializeTexturing();
+    state.loadedIdentity={id:loadedID,metadata:record.metadata};state.variantDetails=record.variantDetails||null;
+    driveView.setModel(modelRoot,currentDriveData());initializeTexturing();initializeStationYarn();
     if(loadedID==='rotor_spinning')rotorMotion=new RotorMotion(modelRoot);
     if(record.metadata.stationDriveModel){
       stationMotion=new StationMotion(modelRoot);stationMotion.setRoutes(driveView.routes);$('play-toggle').disabled=!stationMotion.entries.length;
     }
     syncDriveMode();prepareBatches();
-    updateViewerLabels();
+    renderDetails();
     setView('perspective');renderer.shadowMap.needsUpdate=true;
     $('load-screen').hidden=true;
     $('model-status').textContent=`${meshes.length} 几何节点 · ${selectable.length} 类零件`;
@@ -808,7 +914,7 @@ async function loadModel(){
     }
     driveView.clear();driveView.routes=[];syncDriveMode();renderProvenance();
     $('download-model').setAttribute('aria-disabled','true');$('play-toggle').disabled=true;
-    if(branchConnections[state.current]&&!state.provenance?.assets?.[state.current])showError('这台设备的模型尚未就绪','工艺分支资料可先查看；模型就绪后可点击重新加载。');
+    if(!state.variant&&branchConnections[state.current]&&!state.provenance?.assets?.[state.current])showError('这台设备的模型尚未就绪','工艺分支资料可先查看；模型就绪后可点击重新加载。');
     else showError('模型暂未加载成功','请检查网络后重试，也可继续查看右侧工艺资料。');
   }
 }
@@ -921,7 +1027,10 @@ function setView(view){
   const directions={perspective:[.73,.47,.82],front:[0,0,1],back:[0,0,-1],left:[-1,0,0],right:[1,0,0],top:[0,1,.000001],bottom:[0,-1,-.000001]};
   if(texturingMotion)directions.perspective=[.28,.34,-1];
   if(rotorMotion)directions.perspective=[.37,.28,1];
-  if(stationMotion)directions.perspective=[.45,.35,1];
+  if(stationMotion){
+    const size=activeRecord?.rawBounds?.getSize(new THREE.Vector3());
+    directions.perspective=size&&size.x>3*Math.max(size.y,size.z)?[.19,.20,1]:[.45,.35,1];
+  }
   setAutoFit(true);
   fitModelView(new THREE.Vector3(...(directions[view]||directions.perspective)));
   controls.update();
@@ -962,6 +1071,7 @@ function animate(now=performance.now()){
     // shadow pass cached instead of drawing all 17k equipment meshes twice per frame.
     if(!texturingMotion&&!rotorMotion&&!stationMotion)renderer.shadowMap.needsUpdate=true;
   }
+  if(stationYarn&&needsRender)stationYarn.update(state.playing?delta*motionSpeed:0);
   if(texturingMotion&&needsRender){texturingMotion.update(playbackTime,state.playing?delta*motionSpeed*texturing.speed:0);renderTexturingReadout()}
   if(modelBatches&&needsRender&&(batchTransformsDirty||lastBatchTime!==playbackTime)){
     modelBatches.update(batchTransformsDirty);batchTransformsDirty=false;lastBatchTime=playbackTime;
@@ -995,7 +1105,7 @@ $$('[data-mode]').forEach(button=>button.addEventListener('click',()=>selectMode
 $$('[data-view]').forEach(button=>button.addEventListener('click',()=>setView(button.dataset.view)));
 $('reset-view').addEventListener('click',()=>setView('perspective'));
 $('fit-all').addEventListener('click',()=>{texturing.focusYarn=false;syncTexturingMotion();applyMaterials();setAutoFit(true);fitModelView(camera.position.clone().sub(controls.target))});
-$('retry-load').addEventListener('click',()=>initialized?getProvenance().finally(loadModel):location.reload());
+$('retry-load').addEventListener('click',()=>initialized?Promise.allSettled([getProvenance(),getModelLibrary()]).then(loadModel):location.reload());
 $('download-model').addEventListener('click',event=>{if(!state.loaded)event.preventDefault()});
 $('play-toggle').addEventListener('click',()=>{if(texturingMotion&&state.mode!=='drive')selectMode('drive');setPlaying(!state.playing)});
 $('texturing-play').addEventListener('click',()=>{if(state.mode!=='drive')selectMode('drive');setPlaying(!state.playing)});
@@ -1044,26 +1154,16 @@ $('model-provenance-button').addEventListener('click',openProvenanceDialog);
 $('provenance-details-button').addEventListener('click',openProvenanceDialog);
 $('close-provenance-dialog').addEventListener('click',()=>$('provenance-dialog').close());
 $('provenance-dialog').addEventListener('click',event=>{if(event.target===$('provenance-dialog')){const rect=event.target.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)event.target.close()}});
-function readHashRoute(){
-  let hash;
-  try{hash=decodeURIComponent(location.hash.slice(1)).split('/')}catch{return null}
-  if(!state.data.stages.some(item=>item.id===hash[0]))return null;
-  return {current:hash[0],mode:['drive','motor'].includes(hash[1])?'drive':'machine'};
-}
+function readHashRoute(){return parseMachineHash(location.hash,state.data.stages)}
 async function syncHashRoute(){
   const route=readHashRoute();
-  if(!route||(route.current===state.current&&route.mode===state.mode))return;
-  const reloadModel=route.current!==state.current||!state.loaded;
-  Object.assign(state,route);
-  renderNavigation();renderDetails();
-  // Native hash navigation already updated the address; do not rewrite history here.
-  if(reloadModel)await loadModel();else syncDriveMode();
+  if(!route)return;
+  await selectMachine(route.current,route.variant,{mode:route.mode,navigate:false});
 }
 const initialRoute=readHashRoute();
 if(initialRoute)Object.assign(state,initialRoute);
 window.addEventListener('hashchange',syncHashRoute);
 renderNavigation();renderDetails();renderSources();
-loadMotorCatalog();
-getData();const driveReady=getDriveData();
-const provenanceReady=getProvenance();
-if(initViewer())Promise.allSettled([provenanceReady,driveReady]).finally(()=>{if(!state.request)loadModel()});
+loadMotorCatalog();getData();
+const driveReady=getDriveData(),provenanceReady=getProvenance(),libraryReady=getModelLibrary();
+if(initViewer())Promise.allSettled([provenanceReady,driveReady,libraryReady]).finally(()=>{if(!state.request)loadModel()});

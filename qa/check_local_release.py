@@ -8,10 +8,11 @@ URL='http://127.0.0.1:4173/'
 parser=argparse.ArgumentParser()
 parser.add_argument('--output',default='qa/local-deployment.json')
 args=parser.parse_args()
-VERSION=json.loads((ROOT/'dist/equipment-provenance.json').read_text())['assetVersion']
-paths=['index.html','app.js','style.css','ui-data.js','drive-view.js','drive-chains.json',
-       'equipment-provenance.json','process-data.json','camera-fit.js','scene-geometry.js','texturing-motion.js','model-rendering.js','rotor-motion.js','station-motion.js','assets/process-route.svg','motor-applications.html','motor-applications.json']
+VERSION=json.loads((ROOT/'dist/model-variants.json').read_text())['checkedAt']+'-models'
+paths=['index.html','model-library.js','model-variants.json','app.js','style.css','ui-data.js','drive-view.js','drive-chains.json',
+       'equipment-provenance.json','process-data.json','camera-fit.js','scene-geometry.js','texturing-motion.js','model-rendering.js','rotor-motion.js','station-motion.js','station-yarn.js','assets/process-route.svg','motor-applications.html','motor-applications.json']
 paths += [str(p.relative_to(ROOT/'dist')) for p in sorted((ROOT/'dist/assets/models').glob('*.glb'))]
+paths += [str(p.relative_to(ROOT/'dist')) for p in sorted((ROOT/'dist/assets/variants').iterdir()) if p.suffix in ('.glb','.json')]
 rows=[];errors=[]
 for path in paths:
     expected=(ROOT/'dist'/path).read_bytes()

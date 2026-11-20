@@ -54,7 +54,8 @@ export function scopeDriveRoute(route,motorOrIndex=route.motorIndex){
   if(!motor||!route.motors.some(item=>sameMotor(item,motor)))return {...route,steps:route.steps.map(step=>({...step,objects:[]})),motors:[],motorIndex:0};
   let cache=scopeCache.get(route);if(!cache){cache=new Map();scopeCache.set(route,cache)}
   const key=motorKey(motor);if(cache.has(key))return cache.get(key);
-  const positions=route.motors.map(centerOf),selected=route.motors.findIndex(item=>sameMotor(item,motor));
+  let positions;
+  const selected=route.motors.findIndex(item=>sameMotor(item,motor));
   const exactSide=key.match(/^EFK_(?:friction|W3|camshaft)_drive_([AB])$/)?.[1];
   const steps=route.steps.map(step=>{
     const explicit=step.motorScopes?.[key];
@@ -74,6 +75,7 @@ export function scopeDriveRoute(route,motorOrIndex=route.motorIndex){
       for(let p=item;p;p=p.parent){const index=route.motors.indexOf(p);if(index!==-1)return index===selected}
       if(step.objects.length===1)return true; // A shared mapped mechanism remains shared.
       const point=centerOf(item);let nearest=0,distance=Infinity;
+      positions??=route.motors.map(centerOf);
       positions.forEach((position,index)=>{const d=position.distanceToSquared(point);if(d<distance){nearest=index;distance=d}});
       return nearest===selected;
     });
@@ -124,8 +126,10 @@ export function resolveDriveRoutes(root,routes=[]){
         });
       }
       // A matched motor group owns its visible casing parts; count the assembly once.
-      const candidates=new Set(objects);
-      objects=objects.filter(node=>{let p=node.parent;while(p&&p!==root.parent){if(candidates.has(p))return false;p=p.parent}return true});
+      if (route.graph?.association!=='explicit_motor_groups' || !exact.length) {
+        const candidates=new Set(objects);
+        objects=objects.filter(node=>{let p=node.parent;while(p&&p!==root.parent){if(candidates.has(p))return false;p=p.parent}return true});
+      }
       return {...step,objects};
     });
     const motors=[...new Set(steps.filter(step=>step.role==='motor').flatMap(step=>step.objects))];

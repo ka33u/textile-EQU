@@ -1,3 +1,4 @@
+import {parseMachineHash} from '../dist/model-library.js';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import vm from 'node:vm';
@@ -102,10 +103,13 @@ assert.equal(unknown.motors.length,0);assert.ok(driveRoutePoints(unknown).every(
 const [known]=resolveDriveRoutes(fixture,[{id:'known',steps:[{role:'motor',anchorIds:['motor_assembly']}]}]);const first=driveRoutePoints(known)[0].point.clone();motor.position.x=3;fixture.updateMatrixWorld(true);assert.equal(driveRoutePoints(known)[0].point.x-first.x,3);
 const app=await fs.readFile('dist/app.js','utf8'),html=await fs.readFile('dist/index.html','utf8');
 const readHash=app.slice(app.indexOf('function readHashRoute(){'),app.indexOf('async function syncHashRoute(){'));
-const env={state:{data:{stages:data.items}},location:{hash:''}};const parse=vm.runInNewContext(readHash+';readHashRoute',env);
+const env={parseMachineHash,state:{data:{stages:data.items}},location:{hash:''}};const parse=vm.runInNewContext(readHash+';readHashRoute',env);
 for(const suffix of ['/motor','/drive','']){env.location.hash='#sizing'+suffix;assert.equal(parse().current,'sizing');assert.equal(parse().mode,suffix?'drive':'machine')}
 env.location.hash='#invalid/drive';assert.equal(parse(),null);
-assert.ok(app.includes('const modelID = () => state.current;'),'Both modes load equipment only');
+const modelExpression=app.match(/const modelID = (.*);/)[1];
+const modelID=vm.runInNewContext('('+modelExpression+')',env);
+env.state.current='sizing';
+for(const mode of ['machine','drive']){env.state.mode=mode;env.state.variant=null;assert.equal(modelID(),'sizing');env.state.variant='sizing_alternative';assert.equal(modelID(),'sizing_alternative');}
 assert.ok(!html.includes('电机解剖'));assert.ok(html.includes('data-mode="drive"'));
 report.regressions=['exact anchor IDs dominate broad fragments','empty/unknown steps never substitute a motor','all actual motor assemblies assigned to their own drive records','each repeated motor independently addressable and wraps','12 dryer motors exclude beam motor 13','inspection has no invented motor','functional anchors follow object transform','overlays excluded from equipment fit','legacy motor hash maps to whole-equipment drive mode','every repeated motor has a visible, accessible, directly clickable spatial dot in fitted mobile projection','all mapped upstream/downstream objects participate in cached branch topology','unmodeled connections use dashed batches','sizing motor exterior focus is unoccluded by raycast'];
 assert.equal(report.modelCases.length,processData.stages.length);assert.equal(report.routeCases,data.items.reduce((sum,item)=>sum+item.routes.length,0));assert.ok(report.motorStations>0);

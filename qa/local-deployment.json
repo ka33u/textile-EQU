@@ -1,30 +1,46 @@
 {
-  "checkedAt": "2026-11-18T23:46:06.292512+00:00",
+  "checkedAt": "2026-11-20T04:20:18.543316+00:00",
   "url": "http://127.0.0.1:4173/",
-  "assetVersion": "20261119-stations",
+  "assetVersion": "2026-11-20-models",
   "status": "pass",
   "files": [
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 16587,
-      "sha256": "c4534148c2bda3161c6a6e530d74c290c3e53643aaaa761d38a1689be9bb699b",
+      "bytes": 18499,
+      "sha256": "f7f809824b3ba611ee7d3de37b2b62bb1dc520f5d2ec11f858565e3b20a6875d",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "model-library.js",
+      "status": 200,
+      "bytes": 6584,
+      "sha256": "966a6908051c56d99022674f9c17222f047be7b5747ea68c7e7e4a8b1b6b46fc",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "model-variants.json",
+      "status": 200,
+      "bytes": 31444,
+      "sha256": "3f20d6107fc93dd063ba2386d997381b416e203bc79cbe1d0274eca120e6a969",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
     {
       "path": "app.js",
       "status": 200,
-      "bytes": 81494,
-      "sha256": "be1ad8c190f2687a37c6cbada21c2dd6a2007921b02c77e7ca49d5d87e2b9f3b",
+      "bytes": 88975,
+      "sha256": "eaf68aaa57fbd7cfa9e5307a2dbaf3278ed68c87777521d1a64222b0f5ce39e4",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
     {
       "path": "style.css",
       "status": 200,
-      "bytes": 46632,
-      "sha256": "1e79d22f4227f0573b34b3c6fc919c683d4051340ffdd75d448addb80d913a3e",
+      "bytes": 50781,
+      "sha256": "955b0632a9b3e42b2f9230f96950c4c5d0f5ee6e4fd63aa7d68bb7b26f3d0727",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -39,8 +55,8 @@
     {
       "path": "drive-view.js",
       "status": 200,
-      "bytes": 28868,
-      "sha256": "2f95a1c1459565112cc264c1de54091886026613b3e184c4d27d5ec6fdfa24a4",
+      "bytes": 28987,
+      "sha256": "0c4bbfdfc13c4334900f1ab70353b5bffeb9cb574594d05aa99479a353ea29f0",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -111,8 +127,16 @@
     {
       "path": "station-motion.js",
       "status": 200,
-      "bytes": 2493,
-      "sha256": "8c0cc1e45b6249156109db8f3ee40caee62ffc13db1cf644521384859f9ea697",
+      "bytes": 2555,
+      "sha256": "ee15bec7bb911a786865d70530e2ee4202ffe008d1da07065d2df7e839de63b7",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "station-yarn.js",
+      "status": 200,
+      "bytes": 2919,
+      "sha256": "7c8d87728854d52f87403d963123fc6414fcc498271d2903ade50a50a48e5da3",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -127,16 +151,16 @@
     {
       "path": "motor-applications.html",
       "status": 200,
-      "bytes": 300202,
-      "sha256": "d7d12599f261b15a800f360563bbbc5fe44c91fc6a53eb3a36f894cf49d828c8",
+      "bytes": 443713,
+      "sha256": "12ea6fefef5cefd1bdd600b9afea13ddac5a71d85ce3de416e19031fbd65f341",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
     {
       "path": "motor-applications.json",
       "status": 200,
-      "bytes": 203289,
-      "sha256": "4299d96f7f30aa77e24f5cda0e4c376fc4e4ce4adb820660b346006c14adb192",
+      "bytes": 285021,
+      "sha256": "9fb4158771679b7440cb5179033b9ef18f561cf882aa66e22096f2d1e7a72131",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -361,6 +385,198 @@
       "status": 200,
       "bytes": 1929012,
       "sha256": "31711dd42c69a3785d99cf7e725fc5c74ca11fcb9f52855f7ce935184d983219",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_eafk_hq.glb",
+      "status": 200,
+      "bytes": 19854676,
+      "sha256": "46af5a2616b170c34d8925526f01c3d1cc6ad994fc3ba37767ea970c85890b42",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_eafk_hq.json",
+      "status": 200,
+      "bytes": 268825,
+      "sha256": "367bc85cc4e39c534cb216a4cbba8cdedcef2a9c5a66d33b25f37d39e54d965a",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_efk_evosmart_station.glb",
+      "status": 200,
+      "bytes": 457964,
+      "sha256": "a30322f96cae5b2824c82540016af8e42028bcc1468b21624d073ecb2c9d2dbc",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_efk_evosmart_station.json",
+      "status": 200,
+      "bytes": 8463,
+      "sha256": "b444d7646ed85d038286213fd7ffef2c13e734c1264758f9d4ce30ca2a2ce208",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1217.glb",
+      "status": 200,
+      "bytes": 2227416,
+      "sha256": "662b647aeb6443cba69921f580f11b29e39514e2311eed46e07c0a97133f6d01",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1217.json",
+      "status": 200,
+      "bytes": 21509,
+      "sha256": "c68dc936b1002f9d5ff22f91b7dca3d1c9ae6a0927d60e316fc91bd62da182a5",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1366pro.glb",
+      "status": 200,
+      "bytes": 1178316,
+      "sha256": "1f65bf8c91cbcef247bc264628d4f2ae3eed758d837c624db50a07d121874687",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1366pro.json",
+      "status": 200,
+      "bytes": 17758,
+      "sha256": "5876a11eac7763174c2f7eb76677ca08132d3e5bf2ae10eab1818853c0147ae3",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_r_37.glb",
+      "status": 200,
+      "bytes": 2471340,
+      "sha256": "3d3b824cd05adba1aaa58705f2c9974cc5f596ee570ee76ad80ee628f883bfad",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_r_37.json",
+      "status": 200,
+      "bytes": 61402,
+      "sha256": "49f7f633dae86a661960b822dfb427e50685b5f480d6ac81ea06dac2dd130888",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_rsb_d27.glb",
+      "status": 200,
+      "bytes": 1381584,
+      "sha256": "cab30d142de6558f2e618eedbe231ce6f39a8b451e874ea856a706b340a4bc9d",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_rsb_d27.json",
+      "status": 200,
+      "bytes": 13511,
+      "sha256": "96d2edc52ac188f2afc2f80f43f261c70018942cc75bf0ea7122976c2b037af0",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autoairo.glb",
+      "status": 200,
+      "bytes": 3014128,
+      "sha256": "1bcf831a1f64f4125ae6fe0aa4baff1591b9a95c69df4467ed657728fa643f0d",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autoairo.json",
+      "status": 200,
+      "bytes": 63403,
+      "sha256": "0069e0e29d3224bb002ce89fa26676eb266d65ffef20448495e86bcfe007753a",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autocoro_11.glb",
+      "status": 200,
+      "bytes": 3888256,
+      "sha256": "1f76cdcaf42e7816875a9c1ff686e0cc879f6bf69e9db7910b1007e179834b7c",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autocoro_11.json",
+      "status": 200,
+      "bytes": 86516,
+      "sha256": "8878d5a34ed7b995235aa947f28381824072636923e18d04e660fb1c07019dde",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_bd_8.glb",
+      "status": 200,
+      "bytes": 2097532,
+      "sha256": "ba0a0dd1d49a98f62dfed8f0c826f8e2a77dd6155cf3a985ec94a30ff6a87f10",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_bd_8.json",
+      "status": 200,
+      "bytes": 51021,
+      "sha256": "d87ee59d92ca631dbebb97e70ba285148ce63b4792700e38c7c1a8fa795d721e",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tqf_k90.glb",
+      "status": 200,
+      "bytes": 8254236,
+      "sha256": "7ca290a268d3e8549705d8a27f4d5df9ebb0172dd86cbf4c9758a1318f6bee4c",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tqf_k90.json",
+      "status": 200,
+      "bytes": 269349,
+      "sha256": "78dc6f92d897c6efc7d6322129557eee969eccaccb9e6b3bf063ce19b2a74aa7",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tt868.glb",
+      "status": 200,
+      "bytes": 1554024,
+      "sha256": "39a1a62829255657ebda078a5c05cb5b0b3f149a219e6c8bebdd60d6f8b0d28a",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tt868.json",
+      "status": 200,
+      "bytes": 18852,
+      "sha256": "d994a04d68ecc71c0e6c85ea8c135bb9488d924082a024e4714d3e6389960686",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/yuejian_yj1000v.glb",
+      "status": 200,
+      "bytes": 7796400,
+      "sha256": "ad678dfd8aa392737769e7e41b4e6e42aa5bb441b46b56a68a7e74c49656dd57",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/yuejian_yj1000v.json",
+      "status": 200,
+      "bytes": 138038,
+      "sha256": "1dda6e6229fa24befa9662fd46b38ddf0a360e4f2965b059353d3971e6c72677",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -641,6 +857,126 @@
     },
     {
       "path": "assets/models/winding.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_eafk_hq.glb",
+      "fingerprint": "46af5a2616b170c3",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/barmag_eafk_hq.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/barmag_efk_evosmart_station.glb",
+      "fingerprint": "a30322f96cae5b28",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/barmag_efk_evosmart_station.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1217.glb",
+      "fingerprint": "662b647aeb6443cb",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1217.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1366pro.glb",
+      "fingerprint": "1f65bf8c91cbcef2",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1366pro.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_r_37.glb",
+      "fingerprint": "3d3b824cd05adba1",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/rieter_r_37.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/rieter_rsb_d27.glb",
+      "fingerprint": "cab30d142de6558f",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/rieter_rsb_d27.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autoairo.glb",
+      "fingerprint": "1bcf831a1f64f412",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/saurer_autoairo.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_autocoro_11.glb",
+      "fingerprint": "1f76cdcaf42e7816",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/saurer_autocoro_11.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_bd_8.glb",
+      "fingerprint": "ba0a0dd1d49a98f6",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/saurer_bd_8.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tqf_k90.glb",
+      "fingerprint": "7ca290a268d3e854",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/titan_tqf_k90.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/titan_tt868.glb",
+      "fingerprint": "39a1a62829255657",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/titan_tt868.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/yuejian_yj1000v.glb",
+      "fingerprint": "ad678dfd8aa39273",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/yuejian_yj1000v.glb",
       "fingerprint": "0000000000000000",
       "cacheControl": "no-store, max-age=0"
     }

@@ -23,7 +23,7 @@ export class StationMotion {
   setRoutes(routes){
     const maintenance=new Set(),production=new Set();
     for(const route of routes){
-      const target=route.operation==='maintenance'?maintenance:production;
+      const target=route.operation==='maintenance'||route.loadUnassigned?maintenance:production;
       for(const step of route.steps)for(const object of step.objects){
         for(const entry of this.byOwner.get(object)||[])target.add(entry);
       }
@@ -35,6 +35,7 @@ export class StationMotion {
     if(scopes===null){this.active=this.production;return}
     const entries=new Set();
     for(const route of scopes){
+      if(route.loadUnassigned)continue;
       if(!route.motors.length&&!(route.actuation==='pneumatic'&&route.evidence.status==='public_confirmed'))continue;
       for(const step of route.steps)for(const node of step.objects){
         for(const entry of this.byOwner.get(node)||[])entries.add(entry);

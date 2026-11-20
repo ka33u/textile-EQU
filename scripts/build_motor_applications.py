@@ -1,5 +1,5 @@
 """Render the offline motor application catalog from the published research data."""
-from collections import Counter
+from collections import Counter, defaultdict
 from html import escape
 import json
 from pathlib import Path
@@ -37,35 +37,46 @@ def source_links(refs, sources):
     return '<div class="references">' + "".join(links) + "</div>"
 
 
-def equipment_rows(rows, sources):
+def equipment_rows(rows, sources, stage_id):
     result = []
     for entry in rows:
         filters = " ".join(entry["filters"])
         jobs = " ".join(entry["jobs"])
         motor_jobs = escape(json.dumps(entry["motorJobs"], separators=(",", ":")))
-        result.append(f'''<tr data-motors="{filters}" data-jobs="{jobs}" data-motor-jobs="{motor_jobs}">
+        model_link = ""
+        model_key = escape(entry.get("modelAssetId", ""))
+        model_name = escape(entry["model"])
+        if entry.get("modelAssetId"):
+            url = f'./index.html#{stage_id}/drive/{entry["modelAssetId"]}'
+            model_link = f'<a class="maker" href="{escape(url)}">定位这款机型 ↗</a>'
+        result.append(f'''<tr data-model="{model_key}" data-model-name="{model_name}" data-motors="{filters}" data-jobs="{jobs}" data-motor-jobs="{motor_jobs}">
           <td data-label="设备与工位"><strong>{escape(entry["station"])}</strong>
-            <span class="maker">{escape(entry["maker"])} · {escape(entry["model"])}</span></td>
+            <span class="maker">{escape(entry["maker"])} · {escape(entry["model"])}</span>{model_link}</td>
           <td data-label="动力怎样传到机构">{escape(entry["path"])}</td>
           <td data-label="电机资料"><span class="evidence">{escape(entry["level"])}</span>{escape(entry["electric"])}</td>
           <td data-label="适用场景及来源">{escape(entry["work"])}{source_links(entry["refs"], sources)}</td></tr>''')
     return "".join(result)
 
 
-def model_routes(asset, routes):
+def model_routes(asset, routes, url, model_key=""):
     entries = []
     for item in routes:
         status = {"public_confirmed":"厂家资料支持该工位驱动","not_modeled":"动力归属另列或待核"}.get(item["evidence"]["status"],"模型功能推定")
         entries.append(f'<li><strong>{escape(item["label"])}</strong> · {escape(item["location"])}'
                        f'<br>{escape(item["role"])} <small>{status}</small></li>')
     model = asset["referenceModel"]
-    return (f'<details class="model-routes"><summary>三维模型中的 {len(routes)} 条传动路线'
-            f' <span>· {escape(model)}</span></summary><ul>{"".join(entries)}</ul></details>')
+    link = f'<a class="back-model" href="{escape(url)}">在三维中查看 {escape(model)} ↗</a>'
+    return (f'<details class="model-routes" data-model="{escape(model_key)}"><summary>三维模型中的 {len(routes)} 条传动路线'
+            f' <span>· {escape(model)}</span></summary><p class="scope-note">{link}</p><ul>{"".join(entries)}</ul></details>')
 
 
-def stage_section(s, process, assets, chains, sources):
+def stage_section(s, process, assets, chains, sources, variants):
     key = s["id"]
     section_name = SECTION_NAMES[process[key]["section"]]
+    route_sections = [model_routes(assets[key], chains[key]["routes"], f"./index.html#{key}/drive")]
+    for model, drive in variants[key]:
+        route_sections.append(model_routes({"referenceModel":model["model"]}, drive["routes"],
+                                          f'./index.html#{key}/drive/{model["id"]}', model["id"]))
     return f'''<section class="equipment" id="{key}" data-stage="{key}">
       <header class="equipment-head"><div><div class="scope">{section_name}</div>
         <h2>{NAMES[key]}</h2><p class="question">{escape(s["question"])}</p></div>
@@ -74,8 +85,8 @@ def stage_section(s, process, assets, chains, sources):
       <table><caption class="screenreader">{NAMES[key]}的厂家、电机工位、传动及应用对照</caption>
         <colgroup><col class="col-station"><col class="col-path"><col class="col-evidence"><col class="col-use"></colgroup>
         <thead><tr><th scope="col">设备与工位</th><th scope="col">动力怎样传到机构</th><th scope="col">电机资料</th><th scope="col">适用场景及来源</th></tr></thead>
-        <tbody>{equipment_rows(s["rows"], sources)}</tbody></table>
-      {model_routes(assets[key], chains[key]["routes"])}
+        <tbody>{equipment_rows(s["rows"], sources, key)}</tbody></table>
+      {"".join(route_sections)}
       </section>'''
 
 
@@ -85,6 +96,12 @@ def main():
     process = {s["id"]: s for s in read("process-data.json")["stages"]}
     chains = {s["id"]: s for s in read("drive-chains.json")["items"]}
     assets = read("equipment-provenance.json")["assets"]
+    variants = defaultdict(list)
+    if (DIST / "model-variants.json").exists():
+        for model in read("model-variants.json")["models"]:
+            if model["id"] != model["stageId"]:
+                drive = read(f'assets/variants/{model["id"]}.json')["drive"]
+                variants[model["stageId"]].append((model, drive))
     stage_ids = [s["id"] for s in stages]
     assert stage_ids == list(process) and set(stage_ids) == set(NAMES) == set(chains), "Stage mismatch"
     all_rows = [row for stage in stages for row in stage["rows"]]
@@ -112,6 +129,7 @@ def main():
                            for x in market["observations"])
     tag_data = {x["id"]: x["name"] for x in index}
     evidence = Counter(r["evidence"]["status"] for item in chains.values() for r in item["routes"])
+    evidence.update(r["evidence"]["status"] for items in variants.values() for _, drive in items for r in drive["routes"])
     page = Template((ROOT / "research" / "motor-applications-template.html").read_text(encoding="utf-8"))
     result = page.substitute(
         TITLE=catalog["title"], DATE=catalog["checkedAt"], COUNT=len(all_rows), STAGES=len(stages),
@@ -120,7 +138,7 @@ def main():
         MARKETITEMS=market_items, MARKETSCOPE=market["scope"], MARKETLINK=source_links([market["source"]], sources),
         SCOPE=catalog["scope"], ROUTES=sum(evidence.values()),
         MODELCONF=evidence["public_confirmed"], MODELINFER=evidence["functional_inference"],
-        SECTIONS="".join(stage_section(s, process, assets, chains, sources) for s in stages),
+        SECTIONS="".join(stage_section(s, process, assets, chains, sources, variants) for s in stages),
         TAGDATA=json.dumps({"motors": tag_data, "jobs": catalog["jobs"]}, ensure_ascii=False).replace("<", "&#60;"),
     )
     (DIST / "motor-applications.html").write_text(result, encoding="utf-8")

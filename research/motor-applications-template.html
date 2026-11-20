@@ -26,6 +26,7 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
 @media(max-width:900px){.controls form{grid-template-columns:repeat(2,minmax(0,1fr)) auto}.controls label:nth-of-type(3){grid-column:1}.controls button{grid-column:3;grid-row:2}.dictionary{grid-template-columns:repeat(2,minmax(0,1fr))}.figures{gap:12px}.intro{gap:15px}.figures>div{padding-left:10px}.wrap{width:calc(100% - 36px)}th,td{padding:10px}}
 @media(max-width:680px){.wrap{width:calc(100% - 28px)}.top .wrap{min-height:51px}.top strong{font-size:12px;letter-spacing:0}.top a{font-size:12px}.intro{display:block;padding:25px 0 17px}.intro p{font-size:13px;margin-top:8px}.figures{margin-top:14px;gap:17px}.figures>div{display:flex;align-items:baseline;gap:4px;border-left:0;padding:0}.figures b{font-size:20px}.figures span{font-size:11px}.controls{padding-top:16px}.controls form{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.controls label:nth-of-type(3){grid-column:auto}.controls button{grid-column:auto;grid-row:auto;justify-self:start;min-height:33px}.controls select,.controls input{font-size:13px}.help{grid-template-columns:1fr;gap:6px;margin-bottom:14px}.dictionary,.market-notes{grid-template-columns:1fr}.equipment-head{padding:16px 14px 0;align-items:flex-start;gap:8px}.back-model{font-size:12px;margin-top:2px}.equipment h2{font-size:22px}.question{font-size:14px}.scope-note{margin:0 14px 12px}.equipment table,.equipment tbody,.equipment tr,.equipment td{display:block;width:100%}.equipment colgroup,.equipment thead{display:none}.equipment tr{border-top:1px solid var(--line);padding:13px 14px}.equipment tr:nth-child(even){background:#f8f9f4}.equipment td{padding:0;border:0;line-height:1.65}.equipment td+td{margin-top:9px}.equipment td+td:before{content:attr(data-label);display:block;color:#4a695a;font-size:11px;font-weight:650;margin-bottom:2px}.maker{margin-top:3px}.evidence{display:inline;margin-right:7px}.references{margin-top:5px}.model-routes summary{padding:10px 14px}.end{flex-wrap:wrap}.help-body{padding:12px}.scope{font-size:10px}}
 @media print{body{background:white}.top,.controls,.help,.back-model,.model-routes,.end a{display:none}.wrap{width:100%}.intro{padding:0 0 12px}.equipment{break-before:auto;overflow:visible}.equipment-head{break-after:avoid}tr{break-inside:avoid}.references a{color:#222}.equipment .scope-note{margin-bottom:8px}}
+#study-model{border:1px solid #adbdaf;border-radius:3px;padding:5px 9px;color:#28584e;background:#f0f5ef;cursor:pointer;font:inherit}#study-model[hidden],.model-routes[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -41,7 +42,7 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
 <label for="job">应用场景<select id="job"><option value="">全部工位与负载</option>$JOBOPTIONS</select></label>
 <label for="words">查厂家、型号或部件<input id="words" type="search" autocomplete="off" placeholder="例如 eFK、罗拉、张力"></label>
 <button id="clear" type="button">清除筛选</button></form>
-<div class="tools-bottom"><p id="results" role="status" aria-live="polite"><b>$COUNT</b> 条工位记录 · <b>$STAGES</b> 类设备</p><a href="./motor-applications.json" download>下载研究数据（JSON）↓</a></div>
+<div class="tools-bottom"><button type="button" id="study-model" hidden></button><p id="results" role="status" aria-live="polite"><b>$COUNT</b> 条工位记录 · <b>$STAGES</b> 类设备</p><a href="./motor-applications.json" download>下载研究数据（JSON）↓</a></div>
 </section>
 <section class="help" aria-label="研究说明">
 <details id="glossary"><summary>电机类型、控制方式与典型工位</summary><div class="help-body"><p>点击术语可查看对应记录。同一台电机可以同时具备不同栏目的特征，例如永磁同步、变频调速和同轴直驱。</p><div class="dictionary">$GLOSSARY</div></div></details>
@@ -68,6 +69,8 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
     });
     return {section, rows};
   });
+  const modelNames = new Map(sections.flatMap(({rows})=>rows.filter(r=>r.node.dataset.model).map(r=>[r.node.dataset.model,r.node.dataset.modelName])));
+  let selectedModel='';
   const validStages = new Set(sections.map((item) => item.section.id));
   function readAddress() {
     const url = new URL(location.href), hash = url.hash.slice(1);
@@ -75,14 +78,25 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
     motor.value = url.searchParams.get('motor') || '';
     job.value = url.searchParams.get('job') || '';
     words.value = url.searchParams.get('q') || '';
+    const model=url.searchParams.get('model');
+    selectedModel=modelNames.has(model)?model:'';
   }
   function update(address) {
     let rowCount = 0, stageCount = 0;
     const keywords = normalize(words.value.trim()).split(/\s+/).filter(Boolean);
+    const pin=get('study-model');
+    pin.hidden=!selectedModel;
+    if(selectedModel)pin.textContent='当前机型 · '+modelNames.get(selectedModel)+' ×';
+    pin.setAttribute('aria-label','清除当前机型筛选');
     for (const {section, rows} of sections) {
+      const headerLink=section.querySelector('.equipment-head .back-model');
+      const modelHere=selectedModel && rows.some(r=>r.node.dataset.model===selectedModel);
+      headerLink.href='./index.html#'+section.id+'/drive'+(modelHere?'/'+selectedModel:'');
+      for(const details of section.querySelectorAll('.model-routes'))details.hidden=Boolean(selectedModel && details.dataset.model!==selectedModel);
       let stageMatches = 0;
       for (const row of rows) {
         const hit = (!machine.value || machine.value === section.id)
+          && (!selectedModel || row.node.dataset.model === selectedModel)
           && (!motor.value || row.motors.includes(motor.value))
           && (!job.value || row.jobs.includes(job.value))
           && (!motor.value || !job.value || row.motorJobs[motor.value]?.includes(job.value))
@@ -98,7 +112,7 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
     get('empty').hidden = rowCount !== 0;
     if (address) {
       const url = new URL(location.href);
-      for (const [key, value] of [['motor',motor.value], ['job',job.value], ['q',words.value.trim()]]) {
+      for (const [key, value] of [['motor',motor.value], ['job',job.value], ['q',words.value.trim()], ['model',selectedModel]]) {
         if (value) url.searchParams.set(key, value);
         else url.searchParams.delete(key);
       }
@@ -110,13 +124,15 @@ table{width:100%;border-collapse:collapse;table-layout:fixed}.col-station{width:
     get('study-filters').scrollIntoView({block:'start'});
     machine.focus({preventScroll:true});
   }
-  for (const field of [machine, motor, job]) field.addEventListener('change', () => update(true));
+  get('study-model').addEventListener('click',()=>{selectedModel='';update(true)});
+  machine.addEventListener('change',()=>{selectedModel='';update(true)});
+  for (const field of [motor, job]) field.addEventListener('change', () => update(true));
   words.addEventListener('input', () => update(true));
   get('study-form').addEventListener('submit', (event) => {event.preventDefault();update(true)});
-  get('clear').addEventListener('click', () => {get('study-form').reset();update(true);});
+  get('clear').addEventListener('click', () => {get('study-form').reset();selectedModel='';update(true);});
   for (const button of document.querySelectorAll('[data-term]')) {
     button.addEventListener('click', () => {
-      get('study-form').reset();motor.value = button.dataset.term;
+      get('study-form').reset();selectedModel='';motor.value = button.dataset.term;
       get('glossary').open = false;update(true);showFilters();
     });
   }

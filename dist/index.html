@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="atlas-build" content="20261119-stations">
+  <meta name="atlas-build" content="20261120-models">
   <meta name="theme-color" content="#172c31">
-  <meta name="description" content="交互查看棉纺、机织、染整及纱线加工的27台设备，研究设备结构、工艺路径与电机驱动工位。">
+  <meta name="description" content="按工序、厂家和机型查看纺织装备的三维结构、电机安装工位与传动路线。">
   <meta name="application-name" content="纺织装备工艺与传动交互演示系统">
   <title>纺织装备工艺与传动交互演示系统</title>
   <link rel="icon" href="./favicon.svg?v=20261118-v6-motion" type="image/svg+xml">
-  <link rel="stylesheet" href="./style.css?v=20261119-stations">
+  <link rel="stylesheet" href="./style.css?v=20261120-models">
   <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/"}}</script>
 </head>
 <body>
@@ -20,8 +20,8 @@
   </header>
   <section class="intro">
     <div><div class="eyebrow">TEXTILE EQUIPMENT / 工艺 · 结构 · 传动</div><h1>纺织装备工艺与传动<br><span>交互演示系统</span></h1></div>
-    <p>覆盖棉纺、机织、染整及纱线加工。<br>交互查看设备结构、工艺路径与电机传动。<a class="study-entry" href="./motor-applications.html">查询电机类型与应用工位 ↗</a></p>
-    <div class="intro-count"><b id="equipment-count">27</b><span>设备总览<br><span id="equipment-count-note">主线与分支</span></span></div>
+    <p>按工序、厂家和机型查看设备结构与电机传动。<span class="library-links"><button type="button" id="open-model-library">查找厂家与机型</button><a class="study-entry" href="./motor-applications.html">研究电机与工位</a></span></p>
+    <div class="intro-count"><b id="equipment-count">27</b><span>类设备<br><span id="equipment-count-note">主线与分支</span></span></div>
   </section>
   <main class="atlas">
     <aside class="process-nav" aria-label="工艺流程">
@@ -37,6 +37,11 @@
       <div class="workspace-heading">
         <div class="mode-switch" role="group" aria-label="模型模式"><button data-mode="machine" class="active" aria-pressed="true">设备结构</button><button data-mode="drive" aria-pressed="false">传动链 / 驱动工位<span class="orange-dot"></span></button></div>
         <span class="live-status"><span></span>实时 3D</span>
+      </div>
+      <div class="machine-picker" role="group" aria-label="当前工序的厂家与机型">
+        <label for="machine-maker">厂家 / 品牌<select id="machine-maker" disabled><option>读取厂家</option></select></label>
+        <label for="machine-model">机型<select id="machine-model" disabled><option>读取机型</option></select></label>
+        <div class="machine-browse"><button id="browse-model-library" type="button">机型目录</button><small id="machine-options-note"></small></div>
       </div>
       <div class="viewer" id="viewer">
         <div class="viewer-top">
@@ -64,6 +69,9 @@
         <div class="drive-station-controls"><span id="drive-station-count" role="status"></span><label id="rotor-station-label" hidden><span id="station-selector-title">转杯纺位</span> <select id="rotor-station"></select></label><button id="drive-prev-station" aria-label="上一处同类电机">←</button><button id="drive-next-station" aria-label="下一处同类电机">→</button><button id="drive-focus-motor">定位电机 ↗</button><button id="drive-fit-machine">整机适配</button></div>
         <span class="drive-path-legend"><i></i> 完整功能分支 · 虚线：连接未建模 · 非精确机械轴线</span>
       </div>
+      <section id="station-yarn-panel" class="station-yarn" hidden aria-labelledby="station-yarn-heading">
+        <h3 id="station-yarn-heading">纱线路径</h3><div><label>跟踪纱位 <select id="station-yarn-position"></select></label><button id="station-yarn-play" type="button" aria-pressed="false">运行纱路</button><button id="station-yarn-focus" type="button">近看纱路 ↗</button></div><p id="station-yarn-readout"></p>
+      </section>
       <section class="texturing-panel" id="texturing-panel" hidden aria-labelledby="texturing-heading">
         <div class="texturing-heading"><div><span class="eyebrow">YARN & MOTION</span><h3 id="texturing-heading">跟着一根纱，看清整机如何联动</h3></div><span id="texturing-state" class="texturing-state">已暂停</span></div>
         <div class="texturing-playback"><button id="texturing-play" class="texturing-play" aria-pressed="false">▶ 开始联动</button><label for="texturing-speed">演示速度 <select id="texturing-speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label><button id="texturing-restart">从头演示 ↺</button><button id="texturing-whole" aria-pressed="true">全机联动</button></div>
@@ -88,7 +96,7 @@
     </section>
     <aside class="details" aria-label="工艺说明">
       <div class="detail-topline"><span id="detail-section">02 / 机织</span><span class="detail-index" id="detail-index">设备 11 / 19</span></div>
-      <h2 id="detail-title">织造</h2><p class="detail-summary" id="detail-summary"></p>
+      <h2 id="detail-title">织造</h2><p class="detail-summary" id="detail-summary"></p><p class="machine-dating" id="machine-dating" hidden></p>
       <div class="route-context" id="route-context"></div>
       <div class="material-flow"><div><span>输入</span><strong id="input-material"></strong></div><svg viewBox="0 0 24 24"><path d="M4 12h16m-5-5 5 5-5 5"/></svg><div><span>输出</span><strong id="output-material"></strong></div></div>
       <div class="detail-scroll">
@@ -113,8 +121,18 @@
     </aside>
   </main>
   <footer class="page-footer"><span>纺织装备工艺与传动交互演示系统</span><span>从材料变化理解工艺，从传动结构理解设备。</span><button id="route-info">查看完整工艺说明 ↗</button></footer>
-  <dialog id="research-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><span class="eyebrow">RESEARCH NOTES</span><h2 id="dialog-title">理解这条生产线</h2></div><button id="close-dialog" class="dialog-close" aria-label="关闭资料">×</button></div><div class="dialog-content"><p class="dialog-intro">棉纺、机织与染整主线按产品选择工序。可分别查看成纱替代路线、倍捻前的并纱、换轴结经和染整工序。</p><p><a href="./assets/process-route.svg?v=20261119-stations" target="_blank" rel="noopener noreferrer" class="inline-link">查看设备与工艺路线图 ↗</a></p><section id="coverage-review" hidden></section><h3>路径与模型范围</h3><ul id="route-notes"></ul><h3>可追溯资料</h3><p>工艺根据制造商公开资料整理。每台设备的当前模型版本、所参考的厂家型号、完整配置与结构缺项，可在「型号与配置」中查看。公开资料尚未构成完整装配证明，运动为原理示意。</p><div id="all-sources" class="all-sources"></div><p class="technical-credit">模型：Blender · 交互：Three.js · 主线：棉纺—机织—染整</p></div></dialog>
+  <dialog class="model-library" id="model-library-dialog" aria-labelledby="library-title">
+    <div class="dialog-head"><h2 id="library-title">厂家与机型目录</h2><button id="close-model-library" class="dialog-close" aria-label="关闭机型目录">×</button></div>
+    <div class="library-filters">
+      <label>厂家 / 品牌<select id="library-maker"><option value="">全部厂家</option></select></label>
+      <label>设备类别<select id="library-stage"><option value="">全部设备类别</option></select></label>
+      <label>搜索<input id="library-query" type="search" placeholder="输入型号、厂名或工序"></label>
+    </div>
+    <p id="library-summary" role="status"></p><button type="button" class="inline-link" id="library-retry" hidden>重新读取机型目录</button>
+    <ul id="library-results" class="library-models"></ul>
+  </dialog>
+  <dialog id="research-dialog" aria-labelledby="dialog-title"><div class="dialog-head"><div><span class="eyebrow">RESEARCH NOTES</span><h2 id="dialog-title">理解这条生产线</h2></div><button id="close-dialog" class="dialog-close" aria-label="关闭资料">×</button></div><div class="dialog-content"><p class="dialog-intro">棉纺、机织与染整主线按产品选择工序。可分别查看成纱替代路线、倍捻前的并纱、换轴结经和染整工序。</p><p><a href="./assets/process-route.svg?v=20261120-models" target="_blank" rel="noopener noreferrer" class="inline-link">查看设备与工艺路线图 ↗</a></p><section id="coverage-review" hidden></section><h3>路径与模型范围</h3><ul id="route-notes"></ul><h3>可追溯资料</h3><p>工艺根据制造商公开资料整理。每台设备的当前模型版本、所参考的厂家型号、完整配置与结构缺项，可在「型号与配置」中查看。公开资料尚未构成完整装配证明，运动为原理示意。</p><div id="all-sources" class="all-sources"></div><p class="technical-credit">模型：Blender · 交互：Three.js · 主线：棉纺—机织—染整</p></div></dialog>
   <dialog id="provenance-dialog" aria-labelledby="provenance-dialog-title"><div class="dialog-head"><div><span class="eyebrow">MODEL & EVIDENCE</span><h2 id="provenance-dialog-title">设备型号与配置</h2></div><button id="close-provenance-dialog" class="dialog-close" aria-label="关闭设备资料">×</button></div><div class="dialog-content" id="provenance-dialog-content"></div></dialog>
-  <script type="module" src="./app.js?v=20261119-stations"></script>
+  <script type="module" src="./app.js?v=20261120-models"></script>
 </body>
 </html>

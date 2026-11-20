@@ -1,0 +1,711 @@
+[
+  {
+    "id": "yuejian_yj1000v",
+    "stageId": "texturing",
+    "scope": "machine",
+    "scopeLabel": "完整公开标准配置",
+    "makerKey": "yuejian",
+    "maker": "浙江越剑智能装备股份有限公司",
+    "model": "YJ1000V-240",
+    "equipment": "高速电子控制拉伸加弹机",
+    "configuration": "标准240锭，双面120+120，三层卷绕，固定原丝架；第一热箱2000毫米、第二热箱1460毫米、冷却轨1100毫米。",
+    "summary": "按厂家展厅标准240锭及整机原图重建三层卷绕、蓝色V形热箱支架和固定纱架。工位数完整保留；未公开的电机与传动拓扑用有标记的功能示意。",
+    "input": "涤纶或丙纶POY长丝",
+    "output": "低弹、中弹或高弹DTY长丝",
+    "process": [
+      "固定纱架退绕",
+      "喂纱与拉伸",
+      "第一热箱加热",
+      "冷却轨冷却",
+      "摩擦盘假捻",
+      "第二热箱定型",
+      "上油与卷绕"
+    ],
+    "quality": [
+      "关注纱线张力与热箱温度一致性",
+      "按原料与目标卷曲选择速度和拉伸条件",
+      "网络喷嘴属于可选配置，本模型未列入标准配置"
+    ],
+    "verified": [
+      "制造商名下展厅明确240锭为标准配置，264/288为其他配置；本模型不混用。",
+      "第一热箱2000毫米、第二热箱1460毫米、冷却轨1100毫米；卷绕辊直径100毫米，喂纱/上油辊直径75毫米。",
+      "公开固定纱架整机18780×6724×5250毫米、节距1440毫米、250×250毫米卷装；原图可见三层卷绕和蓝色上平台。",
+      "适用55–250 dtex；最高机械速度1000 m/min指W2喂纱辊速度，不作为动画速度。"
+    ],
+    "inferred": [
+      "三层每侧每层40位，10个装配分组×24位；总数240准确，厂家未给出机节拆分装配表。",
+      "六台端部电机仅为喂纱/假捻/卷绕功能定位示意；实际数量、位置、型号与分组均未由原厂技术资料证实。",
+      "局部穿丝走向、三轴盘组盘数、未标尺寸、支承和纱架容量按图片及工艺原理推定。"
+    ],
+    "missing": [
+      "厂家官网目前无法读取；型号技术表来自制造商DirectIndustry展厅，不能证明2026年仍接单销售。",
+      "电机铭牌、BOM、传动轴系、精确穿丝图、首发年月和具体选配订单未公开。",
+      "热媒、上油与吸排系统内部配置未公开；未宣称隐蔽结构完整。"
+    ],
+    "counts": {
+      "完整选定纱位": 240,
+      "每侧纱位": 120,
+      "卷绕层数_照片依据": 3,
+      "模型装配分组_非原厂机节表": 10,
+      "每模型分组纱位": 24,
+      "在用供纱卷装_一位一筒示意": 240,
+      "功能示意电机_非原厂总数": 6,
+      "第一热箱长度毫米": 2000,
+      "第二热箱长度毫米": 1460,
+      "冷却轨长度毫米": 1100
+    },
+    "sources": [
+      {
+        "title": "越剑制造商展厅：YJ1000V技术表及整机图",
+        "url": "https://www.directindustry.com/prod/zhejiang-yuejian-intelligent-equipment-company/product-235275-2369973.html",
+        "supports": "标准240锭、热箱/冷却轨/辊径/节距/外形尺寸、原料与速度。第三方平台上的制造商页面。"
+      },
+      {
+        "title": "越剑制造商展厅原图",
+        "url": "https://img.directindustry.com/images_di/photo-mg/235275-16412036.jpg",
+        "supports": "蓝色V形上架、维护走道和梯子、三层卷绕、固定纱架与白色端柜外形。"
+      },
+      {
+        "title": "越剑智能2025年年度报告（2026-04-11披露）",
+        "url": "https://static.cninfo.com.cn/finalpage/2026-04-11/1225092185.PDF",
+        "supports": "当期制造商业务背景；不支持YJ1000V具体锭数或当年销售状态。"
+      }
+    ],
+    "dating": "越剑在制造商展厅公开了 YJ1000V 的标准配置。2026 年 4 月披露的年报确认公司继续经营加弹机业务。该型号的首发年月及当前接单状态待核实。",
+    "checkedAt": "2026-11-20",
+    "routes": [
+      {
+        "id": "yjv_feed",
+        "label": "喂纱功能组",
+        "location": "两侧机头示意工位",
+        "electric": "外观电机为功能示意；驱动拓扑未公开",
+        "action": "喂纱与拉伸速度控制",
+        "loadLabel": "240组G1/G2/G2x工作辊",
+        "status": "inferred",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "draft"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 120,
+            "start": 1,
+            "motor": "YJV_feed_A",
+            "via": [
+              "YJV_feed_A_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_G1",
+              "YJV_p{n:03d}_G2",
+              "YJV_p{n:03d}_G2x"
+            ]
+          },
+          {
+            "repeat": 120,
+            "start": 121,
+            "motor": "YJV_feed_B",
+            "via": [
+              "YJV_feed_B_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_G1",
+              "YJV_p{n:03d}_G2",
+              "YJV_p{n:03d}_G2x"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yjv_friction",
+        "label": "摩擦假捻功能组",
+        "location": "双侧假捻区",
+        "electric": "组驱动电机及归属为推定",
+        "action": "三轴盘组对长丝施加假捻；中间轴带未公开",
+        "loadLabel": "240套三轴摩擦器",
+        "status": "inferred",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "twist",
+          "process"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 120,
+            "start": 1,
+            "motor": "YJV_friction_A",
+            "via": [
+              "YJV_friction_A_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_friction"
+            ]
+          },
+          {
+            "repeat": 120,
+            "start": 121,
+            "motor": "YJV_friction_B",
+            "via": [
+              "YJV_friction_B_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_friction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yjv_wind",
+        "label": "接触卷绕功能组",
+        "location": "三层卷绕区",
+        "electric": "卷绕组电机及位置为推定",
+        "action": "摩擦辊带动DTY卷装；排纱动力另列未知",
+        "loadLabel": "240卷绕辊与卷装",
+        "status": "inferred",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 120,
+            "start": 1,
+            "motor": "YJV_wind_A",
+            "via": [
+              "YJV_wind_A_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_takeup",
+              "YJV_p{n:03d}_package"
+            ]
+          },
+          {
+            "repeat": 120,
+            "start": 121,
+            "motor": "YJV_wind_B",
+            "via": [
+              "YJV_wind_B_out"
+            ],
+            "loads": [
+              "YJV_p{n:03d}_takeup",
+              "YJV_p{n:03d}_package"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yjv_traverse",
+        "label": "排纱与张力路径",
+        "location": "完整240卷绕位",
+        "electric": "排纱驱动归属未公开",
+        "action": "纱线横向排布",
+        "loadLabel": "240个排纱导眼",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "traverse",
+          "tension"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 240,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "YJV_p{n:03d}_traverse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yjv_heat",
+        "label": "热定型与冷却",
+        "location": "两级热箱及冷却导轨",
+        "electric": "双联苯气相加热与温控；不归入旋转电机",
+        "action": "加热、冷却、后定型",
+        "loadLabel": "240组热处理纱道",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 240,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "YJV_p{n:03d}_heater1",
+              "YJV_p{n:03d}_cooler",
+              "YJV_p{n:03d}_heater2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "yjv_oiling",
+        "label": "上油辊与油槽",
+        "location": "240卷绕位入口",
+        "electric": "上油辊直径有公开规格；动力和供油归属未公开",
+        "action": "长丝表面施加油剂",
+        "loadLabel": "240个75毫米上油辊",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "liquid",
+          "process"
+        ],
+        "sources": [
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 240,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "YJV_p{n:03d}_oiler"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "barmag_eafk_hq",
+    "stageId": "texturing",
+    "scope": "machine",
+    "scopeLabel": "完整公开576位配置",
+    "makerKey": "barmag",
+    "maker": "Barmag",
+    "model": "eAFK HQ",
+    "equipment": "高密度拉伸加弹机",
+    "configuration": "完整12机节×48位=576位，双面288+288，四层卷绕，每节每侧每层6位；Jumbo Rotary Creel与单锭自动落筒。",
+    "summary": "原厂公开576位配置，四层卷绕与斜置热处理架；保留576条完整工位纱路及576个独立摩擦器驱动。未公开的Godet、ATT与落筒动力分配明确留空。",
+    "input": "可拉伸加弹的POY长丝（按原料工艺配置）",
+    "output": "交叉卷绕DTY筒子",
+    "process": [
+      "旋转原丝架退绕",
+      "G1喂纱",
+      "加热与冷却",
+      "独立摩擦器假捻",
+      "G2/G2x喂纱及二次定型",
+      "ATT卷绕",
+      "单锭自动落筒"
+    ],
+    "quality": [
+      "关注单纱张力和加热一致性",
+      "ATT用于卷装成形与染色筒子工艺",
+      "模型动画不代表1200 m/min机械速度上限"
+    ],
+    "verified": [
+      "2026年04月原厂DTY册p16仍列eAFK HQ，明确每机节48位、每层6位与第四层。",
+      "2017年02月原厂期刊p21明确12机节最多576位、每侧288位及single-driven friction aggregates。",
+      "同页明确G1/G2/G2x单纱处理、气动穿丝、ATT、单锭自动落筒及标配Jumbo Rotary Creel。",
+      "single-feed Godet不等于独立电机；没有为每只Godet编造电机。"
+    ],
+    "inferred": [
+      "2.40米模型机节长、热箱长度、辊径、支架尺寸、盘组配方和详细穿丝转折为图片与工艺比例重建。",
+      "576摩擦器电机外形与安装位置推定；独立驱动归属有依据，隐蔽三轴传动未公开。",
+      "四个原图可见端部电机只保留外观位置，不虚构其负载；不等于全机BOM电机总数。",
+      "每纱位一个在用POY与DTY筒，未公开备用容量；自动落筒只重建可见机构外观。"
+    ],
+    "missing": [
+      "OEM CAD/BOM、精确安装尺寸、热箱有效长度、所有电机数量及铭牌未公开。",
+      "Godet、ATT、自动落筒与旋转纱架的驱动分组及气电执行器连接未公开。",
+      "完整穿丝图、实际摩擦盘组合和纱路接触动力学未验证。"
+    ],
+    "counts": {
+      "完整选定纱位": 576,
+      "已公开机节数": 12,
+      "每机节纱位": 48,
+      "每侧纱位": 288,
+      "卷绕层数": 4,
+      "每节每侧每层卷绕位": 6,
+      "已证独立摩擦器驱动": 576,
+      "照片可见但负载未分配的端部电机": 4,
+      "模型总可见电机_非原厂BOM总数": 580,
+      "单锭自动落筒组件": 576,
+      "G1_G2_G2x工作辊": 1728
+    },
+    "sources": [
+      {
+        "title": "Barmag DTY制造技术册，2026年04月，p16",
+        "url": "https://www.barmag.com/ecomaXL/files/barmag_DTY_2026-04_en.pdf?download=true",
+        "supports": "2026在列；48位/机节、四层卷绕、每层6位及HQ专属工艺。"
+      },
+      {
+        "title": "Oerlikon Barmag原厂期刊No.26，2017年02月，p20–21",
+        "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_26_en.pdf?download=true",
+        "supports": "12机节576位、每侧288、独立摩擦器、单纱Godet、ATT、自动落筒、Jumbo Rotary Creel与整机原图。"
+      }
+    ],
+    "dating": "约 2016 年推出。巴马格 2017 年 2 月的技术刊物记载 576 位配置，2026 年 4 月版样本继续收录此机型。",
+    "checkedAt": "2026-11-20",
+    "routes": [
+      {
+        "id": "hq_friction",
+        "label": "576位独立摩擦假捻驱动",
+        "location": "每纱位三轴摩擦器",
+        "electric": "原厂明确独立驱动；电机外形推定",
+        "action": "单电机驱动本纱位盘组；内部三轴传动未公开",
+        "loadLabel": "576套三轴摩擦器",
+        "status": "confirmed",
+        "filters": [
+          "single"
+        ],
+        "jobs": [
+          "twist",
+          "process"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 576,
+            "start": 1,
+            "motor": "HQ_p{n:03d}_friction_motor",
+            "via": [
+              "HQ_p{n:03d}_friction_motor_out"
+            ],
+            "loads": [
+              "HQ_p{n:03d}_friction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hq_godets",
+        "label": "G1/G2/G2x单纱喂纱",
+        "location": "完整576纱位的三组Godet",
+        "electric": "单纱处理确认；电机归属及群驱/单驱拓扑未知",
+        "action": "喂纱速度与拉伸控制",
+        "loadLabel": "1728只Godet工作辊",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "draft"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 576,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "HQ_p{n:03d}_G1",
+              "HQ_p{n:03d}_G2",
+              "HQ_p{n:03d}_G2x"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hq_att",
+        "label": "ATT卷绕与排纱",
+        "location": "四层卷绕576位",
+        "electric": "ATT功能确认；动力与连接未公开",
+        "action": "接触卷绕与排纱形成DTY筒子",
+        "loadLabel": "576卷绕辊、卷装与排纱导眼",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind",
+          "traverse"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 576,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "HQ_p{n:03d}_takeup",
+              "HQ_p{n:03d}_package",
+              "HQ_p{n:03d}_traverse"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hq_doff",
+        "label": "单锭自动落筒",
+        "location": "576卷绕位",
+        "electric": "自动落筒确认；气电执行器分配未公开",
+        "action": "推出满筒并辅助换管",
+        "loadLabel": "576个落筒组件",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "logistics"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "repeat": 576,
+            "start": 1,
+            "motor": null,
+            "via": [],
+            "loads": [
+              "HQ_p{n:03d}_doffer"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hq_visible_end",
+        "label": "原厂图中可见端部电机",
+        "location": "头端两侧上部各2处",
+        "electric": "可见外形；不宣称负载与BOM数量",
+        "action": "负载归属未公开",
+        "loadLabel": "未分配负载",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "position"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "motor": "HQ_visible_end_A1",
+            "via": [
+              "HQ_visible_end_A1_out"
+            ],
+            "loads": []
+          },
+          {
+            "motor": "HQ_visible_end_A2",
+            "via": [
+              "HQ_visible_end_A2_out"
+            ],
+            "loads": []
+          },
+          {
+            "motor": "HQ_visible_end_B1",
+            "via": [
+              "HQ_visible_end_B1_out"
+            ],
+            "loads": []
+          },
+          {
+            "motor": "HQ_visible_end_B2",
+            "via": [
+              "HQ_visible_end_B2_out"
+            ],
+            "loads": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "barmag_efk_evosmart_station",
+    "stageId": "texturing",
+    "scope": "station",
+    "scopeLabel": "公开工位模型",
+    "makerKey": "barmag",
+    "maker": "Barmag",
+    "model": "eFK EvoSmart",
+    "equipment": "Smart Godet与EvoHeater工位展示",
+    "configuration": "1套Smart Godet大辊/小分丝辊与独立变频驱动外观；另列1个EvoHeater封闭纱道及可换插芯样件。整机锭数和机节数未公开，不生成假想整机。",
+    "summary": "依据2026-01原厂报道及近景图，呈现独立变频导丝组件与抽换式加热插芯。两个组件并置比较，不宣称其间距、真实位置或同一根纱的连接已获原厂证实。",
+    "input": "进入喂纱或加热工位的长丝（依订单工艺）",
+    "output": "定速喂送或热处理后的工序中长丝；不含完整DTY卷绕",
+    "process": [
+      "Smart Godet多圈包绕与分丝",
+      "独立变频调速与闲置停机",
+      "另列EvoHeater封闭纱道",
+      "抽出插芯清洁/更换示意"
+    ],
+    "quality": [
+      "保持喂纱速度和张力稳定",
+      "关注封闭纱道的清洁与热处理一致性",
+      "图片比例重建不可用于量取OEM尺寸"
+    ],
+    "verified": [
+      "2026-01-08原厂新闻同时说明独立变频Smart Godet与EvoHeater。",
+      "Smart Godet官方页明确每个Godet独立变频器替代群驱，闲置辊可停机。",
+      "原图可见大工作辊、上方小分丝辊、多圈包绕、厚安装板、侧护片、紧固件和状态灯。",
+      "EvoHeater原图可见封闭纱道及抽换插芯；没有套用eAFK Evo的300毫米EvoCooler。"
+    ],
+    "inferred": [
+      "大辊216毫米、小辊60毫米和组件尺度仅为可视比例，不是公开技术规格。",
+      "背部电机外形与安装位置按驱动功能推定，未建内部定转子。",
+      "五圈包绕、展示支架和860毫米插芯示意长度均非厂家参数。"
+    ],
+    "missing": [
+      "全机锭数、每节位数、机节数、机长与完整订单配置未公开。",
+      "精确辊径、Godet到EvoHeater穿丝图、实际相对位置与间距未公开。",
+      "小分丝辊动力归属未公开，不增造第二台电机。",
+      "变频器位置/型号、电机铭牌、EvoHeater有效长度及完整热媒流路未公开。"
+    ],
+    "counts": {
+      "公开展示Smart_Godet工位": 1,
+      "已证独立变频喂纱驱动": 1,
+      "无独立动力证据的小分丝辊": 1,
+      "单独EvoHeater样件": 1,
+      "整机锭数": null,
+      "整机机节数": null,
+      "模型包绕圈数_非OEM参数": 5
+    },
+    "sources": [
+      {
+        "title": "Barmag新加弹机市场表现新闻，2026-01-08",
+        "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+        "supports": "eFK EvoSmart独立变频Smart Godet、EvoHeater与两张组件原图。"
+      },
+      {
+        "title": "Barmag：Smart Godets with individual inverters",
+        "url": "https://www.barmag.com/en/solutions-technologies/from-melt-to%E2%80%A6/textured-yarn-dty/efk-evosmart/smart-godets-with-individual-inverters/",
+        "supports": "各Godet独立变频器替代群驱与闲置停机；多圈包绕和分丝辊原图。"
+      },
+      {
+        "title": "Barmag：EvoHeater插芯更换原图",
+        "url": "https://www.barmag.com/ecomaXL/files/2026-01_OBA_eFK_EvoSmart_heater_insert_exchange.jpg",
+        "supports": "封闭纱道入口、可换插芯及可见软管，不支持精确长度或介质方向。"
+      }
+    ],
+    "dating": "2025 年在 ITMA Asia + CITME 首发。巴马格 2026 年 1 月的公告披露了独立变频导丝盘和新型加热器。整机锭数待核实。",
+    "checkedAt": "2026-11-20",
+    "routes": [
+      {
+        "id": "evs_smart_godet",
+        "label": "Smart Godet独立变频驱动",
+        "location": "导丝组件背部，电机外观位置推定",
+        "electric": "每Godet独立变频驱动有原厂文字",
+        "action": "大工作辊定速喂纱，闲置工位可停机",
+        "loadLabel": "1个Smart Godet大工作辊",
+        "status": "confirmed",
+        "filters": [
+          "single"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "sources": [
+          0,
+          1
+        ],
+        "groups": [
+          {
+            "motor": "EVS_smart_godet_motor",
+            "via": [
+              "EVS_smart_godet_motor_out"
+            ],
+            "loads": [
+              "EVS_smart_godet"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "evs_separator",
+        "label": "小分丝辊与多圈纱路",
+        "location": "大辊上方",
+        "electric": "小辊驱动方式未公开，不增造电机",
+        "action": "分开各圈纱线并维持包绕",
+        "loadLabel": "1个小分丝辊及5圈示意纱线",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "tension"
+        ],
+        "sources": [
+          1
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "EVS_separator",
+              "EVS_godet_yarn"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "evs_heater",
+        "label": "EvoHeater与抽换插芯",
+        "location": "单独组件；不是已证整机相对位置",
+        "electric": "热处理组件，不伪装为电机负载",
+        "action": "封闭纱道热处理及插芯更换",
+        "loadLabel": "1个EvoHeater样件",
+        "status": "unassigned",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "sources": [
+          0,
+          2
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "EVS_evoheater",
+              "EVS_heater_insert"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

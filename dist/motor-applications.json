@@ -1,6 +1,6 @@
 {
   "title": "纺织设备电机应用与传动方案",
-  "checkedAt": "2026-11-19",
+  "checkedAt": "2026-11-20",
   "jobs": {
     "main": "整机主轴与同步",
     "process": "抓棉、梳理及工艺执行",
@@ -522,6 +522,321 @@
               "process"
             ]
           }
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_cyl",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "锡林轴端 · 锡林永磁同步直驱",
+          "path": "电机输出轴直接带动锡林回转，使针布与盖板共同梳理纤维。",
+          "electric": "专用永磁同步电机，独立变频调速并直联锡林。",
+          "work": "锡林",
+          "refs": [
+            "cardJ",
+            "machineRef_f636a04b12a83c"
+          ],
+          "filters": [
+            "pm",
+            "sync",
+            "direct",
+            "vfd"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "pm": [
+              "process"
+            ],
+            "sync": [
+              "process"
+            ],
+            "direct": [
+              "process"
+            ],
+            "vfd": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_lick",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "给棉与锡林之间 · 刺辊独立变频",
+          "path": "刺辊回转，从给棉板握持的棉层中抓取纤维并排出杂质。",
+          "electric": "刺辊独立变频调速。电机构造与中间联接未披露。",
+          "work": "刺辊",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "vfd"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_flat",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "锡林上方盖板回路 · 回转盖板变频",
+          "path": "驱动盖板传动轮，使盖板条依次通过锡林梳理弧。",
+          "electric": "回转盖板单独变频，模型示意传动轮。",
+          "work": "盖板传动轮",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "vfd"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_feed",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "棉箱下方给棉口 · 给棉伺服",
+          "path": "给棉罗拉定量送入纤维层，配合梳理喂给。",
+          "electric": "给棉罗拉采用伺服驱动。",
+          "work": "给棉罗拉",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_doff",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "锡林出棉侧 · 道夫伺服",
+          "path": "驱动道夫从锡林表面剥取纤维并形成棉网。",
+          "electric": "道夫采用伺服驱动。",
+          "work": "道夫",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_web",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "道夫与大压辊之间 · 三罗拉伺服",
+          "path": "该驱动组带动三根输出罗拉，连续牵出棉网。",
+          "electric": "样本列为三罗拉伺服驱动。",
+          "work": "三根输出罗拉",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_cal",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "出条端 · 大压辊伺服",
+          "path": "大压辊压实汇聚后的棉条，与下游圈条速度配合。",
+          "electric": "大压辊采用伺服驱动。",
+          "work": "大压辊",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_coil",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "机前独立圈条器 · 圈条伺服",
+          "path": "圈条盘偏心出条，将生条按圈铺入直径 1 000 mm 条筒。",
+          "electric": "圈条采用伺服驱动。",
+          "work": "圈条盘",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "servo": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_chute_feed",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "JWF1177B 棉箱中上部 · 棉箱给棉匀整",
+          "path": "控制器根据棉层反馈调节给棉罗拉速度，稳定喂入开松区的棉量。",
+          "electric": "棉箱给棉罗拉有独立调节驱动。电机型式和单机额定功率待核。",
+          "work": "棉箱给棉匀整",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_chute_fan",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "棉箱循环风路 · 棉箱循环风",
+          "path": "风轮建立棉箱循环气流，配合排风壁和静压箱稳定下棉层。",
+          "electric": "循环风机见总图。电机外形和安装位置按风机功能推定。",
+          "work": "棉箱循环风",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_chute_open",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "JWF1177B 棉箱中段与下口 · 棉箱开松及输出",
+          "path": "开松辊处理棉束，输出罗拉将棉层送入主机给棉区。",
+          "electric": "样本列出工作辊尺寸及开松转速，动力分配待核。",
+          "work": "棉箱开松及输出",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1217",
+          "routeId": "jw_can_change",
+          "maker": "经纬纺机 · 青岛宏大",
+          "model": "JWF1217",
+          "station": "FT211 条筒导轨及出条口 · 直线换筒与机外切条",
+          "path": "切条机构与直线换筒装置配合完成满筒更换。",
+          "electric": "FT211 资料确认直线自动换筒和机外切条，单独执行动力的数量待核。",
+          "work": "直线换筒与机外切条",
+          "refs": [
+            "cardJ"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ]
+          },
+          "level": "动力归属或执行边界"
         }
       ]
     },
@@ -629,6 +944,357 @@
               "transport"
             ]
           }
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "main_draft",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "机身侧部至前罗拉/输出压辊 · 主牵伸与恒速输出",
+          "path": "带传动维持前罗拉和出条压辊速度，并给差速系统主输入",
+          "electric": "XYT112M30P4-5.5，5.5kW；电磁型式不据型号自行判断",
+          "work": "前罗拉、出条压辊和差速输入",
+          "refs": [
+            "machineRef_3cff4643a14764"
+          ],
+          "filters": [
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "main",
+            "feed"
+          ],
+          "motorJobs": {
+            "group": [
+              "main",
+              "feed"
+            ],
+            "unspecified": [
+              "main",
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "autolevelling",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "后区差速箱及二、三罗拉 · 差速匀整补偿",
+          "path": "检测信号经控制器形成速度补偿，差速器合成主速和补偿速度",
+          "electric": "LTM-080-C-40-560-P5B0R1PM15，1.34kW伺服电机",
+          "work": "后/中罗拉、检测罗拉和积极导条罗拉",
+          "refs": [
+            "machineRef_3cff4643a14764"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "upper_coiler",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "出条端上圈条头 · 上圈条独立直驱",
+          "path": "独立控制圈条头形成棉条圈绕",
+          "electric": "ANB3.3-T，3.3kW；厂家文章披露永磁同步盘式直驱",
+          "work": "上圈条盘",
+          "refs": [
+            "machineRef_106a3f994b08b1",
+            "machineRef_3cff4643a14764",
+            "drawJ"
+          ],
+          "filters": [
+            "pm",
+            "direct",
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "pm": [
+              "process"
+            ],
+            "direct": [
+              "process"
+            ],
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "lower_coiler",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "输出条筒下方 · 下筒盘独立直驱",
+          "path": "缓慢旋转输出条筒配合上圈条头",
+          "electric": "ANB0.1-D，0.1kW盘式直驱；圈条电机族的永磁同步说明见原文",
+          "work": "下筒盘与工作条筒",
+          "refs": [
+            "machineRef_106a3f994b08b1",
+            "machineRef_3cff4643a14764",
+            "drawJ"
+          ],
+          "filters": [
+            "pm",
+            "direct",
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "pm": [
+              "process"
+            ],
+            "direct": [
+              "process"
+            ],
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "cleaning",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "机身内离心风机及上下吸口 · 变频清洁吸风",
+          "path": "抽走上/下清洁口飞花",
+          "electric": "FS12L 1kW B14；直驱变频风机",
+          "work": "清洁风机叶轮",
+          "refs": [
+            "machineRef_106a3f994b08b1",
+            "machineRef_3cff4643a14764",
+            "drawJ"
+          ],
+          "filters": [
+            "vfd",
+            "fluid",
+            "direct"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ],
+            "direct": [
+              "air"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1366pro",
+          "routeId": "can_change",
+          "maker": "经纬纺机 · 沈阳宏大华明",
+          "model": "JWF1366Pro",
+          "station": "机前换筒滑轨 · 气动换筒",
+          "path": "气缸推动换筒机构，推出满筒同时喂入空筒；本模型只表达工作行程，不作摆臂几何和气动时序复刻",
+          "electric": "气动换筒，非独立电机；说明书明确气缸与节流阀调节速度",
+          "work": "换筒推杆",
+          "refs": [
+            "machineRef_106a3f994b08b1",
+            "machineRef_3cff4643a14764"
+          ],
+          "filters": [
+            "pneumatic",
+            "handling"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "transport"
+            ],
+            "handling": [
+              "transport"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_main",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "左右两眼牵伸区 · 两眼主牵伸",
+          "path": "各眼主传动带动主牵伸区罗拉以设定速比拉细纤维条。",
+          "electric": "每眼 3.90 kW 主电机。",
+          "work": "各眼牵伸罗拉",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_feed",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "两眼后部测量和喂入区 · 分眼喂入",
+          "path": "由匀整控制调节本眼喂入段速度，带动喂入罗拉和后区罗拉。",
+          "electric": "每眼 3.90 kW 喂入电机。",
+          "work": "喂入及后区罗拉",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_coil",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "左右出条端上部 · 分眼圈条",
+          "path": "驱动本眼圈条盘回转，从偏心出条口向条筒铺放熟条。",
+          "electric": "每眼 1.10 kW 圈条电机。",
+          "work": "偏心圈条盘",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_table",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "两眼输出条筒底座 · 条筒底盘",
+          "path": "底盘带动本眼条筒缓慢转动，与圈条盘相对运动以铺满筒截面。",
+          "electric": "每眼底盘电机有 0.20 或 0.37 kW 两档。",
+          "work": "条筒底盘",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_change",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "两眼排筒导轨 · 自动换筒",
+          "path": "输出满筒并把空筒移至圈条位，模型以本眼推杆的位移示意。",
+          "electric": "每眼换筒驱动 0.12 kW。执行联接为功能重建。",
+          "work": "换筒推杆",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_rsb_d27",
+          "routeId": "d27_suction",
+          "maker": "立达 Rieter",
+          "model": "RSB-D 27",
+          "station": "两眼之间的吸风总管 · 两眼共用吸风",
+          "path": "风机叶轮形成负压，经两侧支管抽走牵伸区域的飞花。",
+          "electric": "共用 1.50 kW 吸风电机。",
+          "work": "吸风叶轮",
+          "refs": [
+            "machineRef_243cb3b78d878e"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "厂家公开工位驱动"
         }
       ]
     },
@@ -1702,6 +2368,209 @@
               "position"
             ]
           }
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "main",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "机架左侧主驱安装座 · 直驱主轴",
+          "path": "驱动主轴；下游引纬/打纬分配的真实齿轮布局未建",
+          "electric": "电子控制变速直驱电机；电磁类别未披露",
+          "work": "主轴接口",
+          "refs": [
+            "machineRef_12b743fad668ef",
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "direct",
+            "unspecified"
+          ],
+          "jobs": [
+            "main"
+          ],
+          "motorJobs": {
+            "direct": [
+              "main"
+            ],
+            "unspecified": [
+              "main"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "rapier",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "左右引纬箱和剑带 · 变距螺杆引纬",
+          "path": "左右螺杆机构使送纬剑/接纬剑往复并在梭口交接",
+          "electric": "主动力来源按机型结构作功能归属；箱内传动未完全公开",
+          "work": "两组螺杆与两剑头",
+          "refs": [
+            "machineRef_12b743fad668ef",
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "group",
+            "position"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "group": [
+              "process"
+            ],
+            "position": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "beat_and_shed",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "筘座和左侧六片电子多臂箱 · 打纬、机械纬剪与多臂开口",
+          "path": "打纬并形成梭口，机械纬剪切断纬纱",
+          "electric": "原厂给出共轭凸轮打纬/电子多臂/机械纬剪；内部轴系分配推定",
+          "work": "筘座、六综框、机械纬剪",
+          "refs": [
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "group",
+            "position"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "group": [
+              "process"
+            ],
+            "position": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "letoff",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "经轴右轴端 · 伺服电子送经",
+          "path": "控制经轴转速和经纱放出",
+          "electric": "伺服电机驱动电子送经；电磁型式/功率待核",
+          "work": "单经轴",
+          "refs": [
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "takeup",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "前下方卷取辊右端 · 伺服电子卷取",
+          "path": "建立卷取速度和纬密；卷布机构随工艺收卷",
+          "electric": "伺服电机驱动电子卷取；内部卷布传动未完全公开",
+          "work": "牵引卷取辊与布卷",
+          "refs": [
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "servo"
+          ],
+          "jobs": [
+            "transport",
+            "tension"
+          ],
+          "motorJobs": {
+            "servo": [
+              "transport",
+              "tension"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "leno",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "左右布边工作位 · 步进电子绞边",
+          "path": "对应电机带动本侧绞边导纱盘",
+          "electric": "厂家明确步进电机驱动；模型选择左右各一工位",
+          "work": "左右绞边盘",
+          "refs": [
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "step",
+            "single"
+          ],
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "step": [
+              "position",
+              "process"
+            ],
+            "single": [
+              "position",
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tt868",
+          "routeId": "weft_selection",
+          "maker": "浙江泰坦",
+          "model": "TT-868",
+          "station": "机台左上方储纬、选纬组 · 储纬及四色选纬",
+          "path": "储备纬纱并呈递所选颜色，不归给主电机机械驱动",
+          "electric": "电子选纬功能确定；独立电机/电磁执行器数量和型式未公开",
+          "work": "4储纬工位与选纬工作组",
+          "refs": [
+            "machineRef_12b743fad668ef",
+            "machineRef_639aaf55c69a7b"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "position"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "position"
+            ]
+          },
+          "level": "动力归属或执行边界"
         }
       ]
     },
@@ -3034,6 +3903,374 @@
               "traverse"
             ]
           }
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_feed",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "两侧机头示意工位 · 喂纱功能组",
+          "path": "喂纱与拉伸速度控制",
+          "electric": "外观电机为功能示意；驱动拓扑未公开",
+          "work": "240组G1/G2/G2x工作辊",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "draft"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_friction",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "双侧假捻区 · 摩擦假捻功能组",
+          "path": "三轴盘组对长丝施加假捻；中间轴带未公开",
+          "electric": "组驱动电机及归属为推定",
+          "work": "240套三轴摩擦器",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "twist",
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "twist",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_wind",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "三层卷绕区 · 接触卷绕功能组",
+          "path": "摩擦辊带动DTY卷装；排纱动力另列未知",
+          "electric": "卷绕组电机及位置为推定",
+          "work": "240卷绕辊与卷装",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_traverse",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "完整240卷绕位 · 排纱与张力路径",
+          "path": "纱线横向排布",
+          "electric": "排纱驱动归属未公开",
+          "work": "240个排纱导眼",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "traverse",
+            "tension"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "traverse",
+              "tension"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_heat",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "两级热箱及冷却导轨 · 热定型与冷却",
+          "path": "加热、冷却、后定型",
+          "electric": "双联苯气相加热与温控；不归入旋转电机",
+          "work": "240组热处理纱道",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "yuejian_yj1000v",
+          "routeId": "yjv_oiling",
+          "maker": "浙江越剑智能装备股份有限公司",
+          "model": "YJ1000V-240",
+          "station": "240卷绕位入口 · 上油辊与油槽",
+          "path": "长丝表面施加油剂",
+          "electric": "上油辊直径有公开规格；动力和供油归属未公开",
+          "work": "240个75毫米上油辊",
+          "refs": [
+            "machineRef_013e03afb5f010"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "liquid",
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "liquid",
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_eafk_hq",
+          "routeId": "hq_friction",
+          "maker": "Barmag",
+          "model": "eAFK HQ",
+          "station": "每纱位三轴摩擦器 · 576位独立摩擦假捻驱动",
+          "path": "单电机驱动本纱位盘组；内部三轴传动未公开",
+          "electric": "原厂明确独立驱动；电机外形推定",
+          "work": "576套三轴摩擦器",
+          "refs": [
+            "machineRef_da9a31f9db54ac"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "twist",
+            "process"
+          ],
+          "motorJobs": {
+            "single": [
+              "twist",
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "barmag_eafk_hq",
+          "routeId": "hq_godets",
+          "maker": "Barmag",
+          "model": "eAFK HQ",
+          "station": "完整576纱位的三组Godet · G1/G2/G2x单纱喂纱",
+          "path": "喂纱速度与拉伸控制",
+          "electric": "单纱处理确认；电机归属及群驱/单驱拓扑未知",
+          "work": "1728只Godet工作辊",
+          "refs": [
+            "machineRef_da9a31f9db54ac"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "draft"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "draft"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_eafk_hq",
+          "routeId": "hq_att",
+          "maker": "Barmag",
+          "model": "eAFK HQ",
+          "station": "四层卷绕576位 · ATT卷绕与排纱",
+          "path": "接触卷绕与排纱形成DTY筒子",
+          "electric": "ATT功能确认；动力与连接未公开",
+          "work": "576卷绕辊、卷装与排纱导眼",
+          "refs": [
+            "machineRef_da9a31f9db54ac"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind",
+            "traverse"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind",
+              "traverse"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_eafk_hq",
+          "routeId": "hq_doff",
+          "maker": "Barmag",
+          "model": "eAFK HQ",
+          "station": "576卷绕位 · 单锭自动落筒",
+          "path": "推出满筒并辅助换管",
+          "electric": "自动落筒确认；气电执行器分配未公开",
+          "work": "576个落筒组件",
+          "refs": [
+            "machineRef_da9a31f9db54ac"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "logistics"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "logistics"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_eafk_hq",
+          "routeId": "hq_visible_end",
+          "maker": "Barmag",
+          "model": "eAFK HQ",
+          "station": "头端两侧上部各2处 · 原厂图中可见端部电机",
+          "path": "负载归属未公开",
+          "electric": "可见外形；不宣称负载与BOM数量",
+          "work": "未分配负载",
+          "refs": [
+            "machineRef_da9a31f9db54ac"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_efk_evosmart_station",
+          "routeId": "evs_smart_godet",
+          "maker": "Barmag",
+          "model": "eFK EvoSmart",
+          "station": "导丝组件背部，电机外观位置推定 · Smart Godet独立变频驱动",
+          "path": "大工作辊定速喂纱，闲置工位可停机",
+          "electric": "每Godet独立变频驱动有原厂文字",
+          "work": "1个Smart Godet大工作辊",
+          "refs": [
+            "machineRef_4dc31858631a5b",
+            "dtyEvo"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "barmag_efk_evosmart_station",
+          "routeId": "evs_separator",
+          "maker": "Barmag",
+          "model": "eFK EvoSmart",
+          "station": "大辊上方 · 小分丝辊与多圈纱路",
+          "path": "分开各圈纱线并维持包绕",
+          "electric": "小辊驱动方式未公开，不增造电机",
+          "work": "1个小分丝辊及5圈示意纱线",
+          "refs": [
+            "dtyEvo"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "tension"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "tension"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "barmag_efk_evosmart_station",
+          "routeId": "evs_heater",
+          "maker": "Barmag",
+          "model": "eFK EvoSmart",
+          "station": "单独组件；不是已证整机相对位置 · EvoHeater与抽换插芯",
+          "path": "封闭纱道热处理及插芯更换",
+          "electric": "热处理组件，不伪装为电机负载",
+          "work": "1个EvoHeater样件",
+          "refs": [
+            "machineRef_4dc31858631a5b",
+            "machineRef_e42854a013e2e2"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
         }
       ]
     },
@@ -3187,6 +4424,1014 @@
               "feed"
             ]
           }
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "rotor",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "每个纺纱箱的转杯背部 · 200个单锭转杯独立驱动",
+          "path": "每个电机仅带动自己的转杯形成凝聚加捻",
+          "electric": "原厂明确单锭转杯电机；高速电磁类型/精确外形未披露",
+          "work": "对应单锭转杯",
+          "refs": [
+            "machineRef_64ac108a751c4a",
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "direct",
+            "single",
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "direct": [
+              "process"
+            ],
+            "single": [
+              "process"
+            ],
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "feed",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "每个纺纱箱给棉口 · 200个步进给棉工位",
+          "path": "每个给棉罗拉独立计量对应棉条",
+          "electric": "技术表为步进喂给；具体电机型号/安装位置未公开",
+          "work": "对应给棉罗拉",
+          "refs": [
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "step",
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "step": [
+              "feed"
+            ],
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "delivery",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "每位引纱罗拉附近 · 200个单锭引纱功能驱动",
+          "path": "引出本位转杯纱并建立工艺速度关系",
+          "electric": "单锭引纱功能已确认；本模型每位1电机的数量/包装推定",
+          "work": "对应引纱罗拉",
+          "refs": [
+            "machineRef_64ac108a751c4a",
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "single",
+            "unspecified"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ],
+            "unspecified": [
+              "feed"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "opening_A",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机头分梳驱动位置与该侧100纺位 · A侧分梳功能驱动",
+          "path": "仅关联本侧100个分梳辊",
+          "electric": "原厂说明分梳辊变频；共用1电机数量与内部传动是推定",
+          "work": "该侧分梳辊",
+          "refs": [
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "vfd",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "process"
+            ],
+            "group": [
+              "process"
+            ],
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "winding_A",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机头卷绕分配接口与该侧100纺位 · A侧卷绕及横动功能驱动",
+          "path": "对应侧卷绕辊带动筒子并配合横动导纱",
+          "electric": "电机共用关系和内部传动未取得BOM；不声称直接轴连每个筒子",
+          "work": "该侧100卷绕辊/卷装/横动工作位",
+          "refs": [
+            "machineRef_64ac108a751c4a",
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "group": [
+              "process"
+            ],
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "suction_A",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机尾风机和负压总管 · A侧负压清洁功能驱动",
+          "path": "建立纺纱输纤/排杂所需气流，不能作为转杯的机械动力",
+          "electric": "工艺需负压；每侧1风机及装配位置推定",
+          "work": "离心叶轮",
+          "refs": [
+            "machineRef_64ac108a751c4a"
+          ],
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "opening_B",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机头分梳驱动位置与该侧100纺位 · B侧分梳功能驱动",
+          "path": "仅关联本侧100个分梳辊",
+          "electric": "原厂说明分梳辊变频；共用1电机数量与内部传动是推定",
+          "work": "该侧分梳辊",
+          "refs": [
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "vfd",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "process"
+            ],
+            "group": [
+              "process"
+            ],
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "winding_B",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机头卷绕分配接口与该侧100纺位 · B侧卷绕及横动功能驱动",
+          "path": "对应侧卷绕辊带动筒子并配合横动导纱",
+          "electric": "电机共用关系和内部传动未取得BOM；不声称直接轴连每个筒子",
+          "work": "该侧100卷绕辊/卷装/横动工作位",
+          "refs": [
+            "machineRef_64ac108a751c4a",
+            "machineRef_c933be4c095fe8"
+          ],
+          "filters": [
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "group": [
+              "process"
+            ],
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "titan_tqf_k90",
+          "routeId": "suction_B",
+          "maker": "浙江泰坦",
+          "model": "TQF-K90",
+          "station": "机尾风机和负压总管 · B侧负压清洁功能驱动",
+          "path": "建立纺纱输纤/排杂所需气流，不能作为转杯的机械动力",
+          "electric": "工艺需负压；每侧1风机及装配位置推定",
+          "work": "离心叶轮",
+          "refs": [
+            "machineRef_64ac108a751c4a"
+          ],
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_feed",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "各纺纱箱下部进条口 · 逐位独立喂条",
+          "path": "驱动喂条罗拉，调节喂入量和接头时序",
+          "electric": "厂家明确每位单电机；外壳安装为重建",
+          "work": "喂条罗拉",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_opening",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "各工位纺纱箱内 · 48位独立分梳辊",
+          "path": "将条子梳解为纤维并排除杂质",
+          "electric": "原厂明确独立电动驱动；铭牌与安装尺寸未公开",
+          "work": "分梳辊",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_rotor",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "各工位纺纱箱内 · 48位独立纺纱转杯",
+          "path": "转杯旋转凝聚、加捻并形成连续纱",
+          "electric": "原厂明确独立电动驱动；铭牌与安装尺寸未公开",
+          "work": "纺纱转杯",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "main"
+          ],
+          "motorJobs": {
+            "single": [
+              "main"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_wind",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "各工位上部卷绕区 · 48位独立筒子卷绕",
+          "path": "独立控制筒子转动以卷绕成形",
+          "electric": "原厂明确独立电动驱动；铭牌与安装尺寸未公开",
+          "work": "筒子卷绕",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "single": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_guide",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "各工位上部卷绕区 · 48位独立横动导纱",
+          "path": "往复铺纱形成交叉卷装",
+          "electric": "原厂明确独立电动驱动；铭牌与安装尺寸未公开",
+          "work": "横动导纱",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "traverse"
+          ],
+          "motorJobs": {
+            "single": [
+              "traverse"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_piecing",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "纺纱与卷绕之间 · 逐位数字接头机构",
+          "path": "定位接头/引纱动作，避免把接头执行轴虚构成已知数量",
+          "electric": "厂家确认独立电动接头元件，但未给轴数与驱动对应，保持未分配",
+          "work": "数字接头机构",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_doffer",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "两侧上部轨道 · 2台落筒单元沿机面行走",
+          "path": "沿轨道定位到需要换筒的工位",
+          "electric": "行走驱动位置及型式未公开，外壳按功能推定",
+          "work": "DU/DCU 行走单元",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position",
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_doff_arm",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "落筒单元下部 · 2台落筒夹持与换筒",
+          "path": "定位落筒夹持、筒子摇架抬起与空管更换；各执行轴仍保持未分配",
+          "electric": "执行方式/独立轴数未充分公开，未分配电机",
+          "work": "落筒夹持机构与各工位筒子摇架",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_tube",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "机头空管库 · 432支空管库供管",
+          "path": "把管库与供管功能关联到换筒流程",
+          "electric": "容量和基本供管功能已确认；驱动数与布置未公开，1壳仅为功能代表",
+          "work": "空管库",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_clean",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "2台DCU内部清洁工具附近 · DCU 转杯清洁直线驱动",
+          "path": "推动清洁工具进入退出转杯",
+          "electric": "原厂明确直线电机；外壳/工具行程重建",
+          "work": "转杯清洁头",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "position"
+          ],
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "position": [
+              "position",
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_suction",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "机尾与两侧吸风管路 · 工艺吸风与废料过滤",
+          "path": "建立工艺负压并将纤维废料送往分区过滤",
+          "electric": "工艺负压功能确认；总风机轴数与安装未公开，1个电机壳为功能代表",
+          "work": "吸风叶轮与工艺风道",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autocoro_11",
+          "routeId": "AC11_transport",
+          "maker": "Saurer 卓郎",
+          "model": "Autocoro 11",
+          "station": "上部两条输送带及端部 · 双面筒子输送",
+          "path": "将成纱卷装沿两机面输送",
+          "electric": "双带功能确认；每带一只电机壳为功能示意，实际轴数/安装未公布",
+          "work": "筒子输送带",
+          "refs": [
+            "machineRef_a5b071f44b3576"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_feed",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "各纺纱箱下部进条口 · 逐位独立喂条",
+          "path": "驱动喂条罗拉，调节喂入量和接头时序",
+          "electric": "厂家明确每位单电机；外壳安装为重建",
+          "work": "喂条罗拉",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_rotor",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机端与两侧纵向工位 · 双机面转杯功能传动",
+          "path": "传动到对应机面全部转杯工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "转杯",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "main"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "main"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_opening",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机端与两侧纵向工位 · 双机面分梳辊功能传动",
+          "path": "传动到对应机面全部分梳辊工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "分梳辊",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_winding",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机端与两侧纵向工位 · 双机面卷绕功能传动",
+          "path": "传动到对应机面全部卷绕工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "卷绕",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_traverse",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机端与两侧纵向工位 · 双机面横动导纱功能传动",
+          "path": "传动到对应机面全部横动导纱工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "横动导纱",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "traverse"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "traverse"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_lift",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "各卷绕位摇架 · 机械筒子抬起与制动",
+          "path": "满筒或断纱时脱离接触并制动",
+          "electric": "所选基础配置为机械控制；不是独立电机",
+          "work": "筒子摇架",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_suction",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机尾与两侧吸风管路 · 工艺吸风与废料过滤",
+          "path": "建立工艺负压并将纤维废料送往分区过滤",
+          "electric": "工艺负压功能确认；总风机轴数与安装未公开，1个电机壳为功能代表",
+          "work": "吸风叶轮与工艺风道",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_bd_8",
+          "routeId": "BD8_transport",
+          "maker": "Saurer 卓郎",
+          "model": "BD 8",
+          "station": "机尾与上部筒子带 · 双面筒子带中央驱动",
+          "path": "一组中央驱动关联两机面的筒子输送带",
+          "electric": "原厂标准配置明确中央驱动；电机/传动箱外形推定",
+          "work": "双面筒子输送带",
+          "refs": [
+            "machineRef_b80091d9e67126"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_feed",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "各纺纱箱下部进条口 · 逐位独立喂条",
+          "path": "驱动喂条罗拉，调节喂入量和接头时序",
+          "electric": "厂家明确每位单电机；外壳安装为重建",
+          "work": "喂条罗拉",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "feed"
+          ],
+          "motorJobs": {
+            "single": [
+              "feed"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_rotor",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "机端与两侧纵向工位 · 双机面转杯功能传动",
+          "path": "传动到对应机面全部转杯工作位置",
+          "electric": "变频驱动、切向带由原厂确认；电机外形/安装与分组示意",
+          "work": "转杯",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "main"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "main"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_opening",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "机端与两侧纵向工位 · 双机面分梳辊功能传动",
+          "path": "传动到对应机面全部分梳辊工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "分梳辊",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_winding",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "机端与两侧纵向工位 · 双机面卷绕功能传动",
+          "path": "传动到对应机面全部卷绕工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "卷绕",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "wind"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_traverse",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "机端与两侧纵向工位 · 双机面横动导纱功能传动",
+          "path": "传动到对应机面全部横动导纱工作位置",
+          "electric": "此类负载已确认，独立轴数及具体传动连接未公开；按机面绘制功能驱动",
+          "work": "横动导纱",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "traverse"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "traverse"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_delivery",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "纺纱箱上方出纱口 · 40位 AMIspin-Pro 独立引纱",
+          "path": "引纱并精确控制接头纱端",
+          "electric": "所选AMIspin-Pro明确为逐位单电机引纱",
+          "work": "引纱罗拉",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "process",
+            "tension"
+          ],
+          "motorJobs": {
+            "single": [
+              "process",
+              "tension"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_wax",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "引纱至卷绕路径中 · 40位独立上蜡",
+          "path": "驱动蜡盘并在连续纱上施蜡",
+          "electric": "原厂技术表明确每位独立上蜡驱动",
+          "work": "上蜡盘",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "single": [
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_suction",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "机尾与两侧吸风管路 · 工艺吸风与废料过滤",
+          "path": "建立工艺负压并将纤维废料送往分区过滤",
+          "electric": "工艺负压功能确认；总风机轴数与安装未公开，1个电机壳为功能代表",
+          "work": "吸风叶轮与工艺风道",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "rieter_r_37",
+          "routeId": "R37_transport",
+          "maker": "Rieter 立达",
+          "model": "R 37",
+          "station": "上部两条输送带及端部 · 双面筒子输送",
+          "path": "将成纱卷装沿两机面输送",
+          "electric": "双带功能确认；每带一只电机壳为功能示意，实际轴数/安装未公布",
+          "work": "筒子输送带",
+          "refs": [
+            "machineRef_64bae63684866a"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
         }
       ]
     },
@@ -3486,6 +5731,262 @@
             ]
           },
           "legacyComparison": true
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_draft",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "每位下部牵伸区 · 48位牵伸驱动功能位置",
+          "path": "驱动牵伸罗拉组，逐级加速纤维条",
+          "electric": "电子调整牵伸已确认；独立轴数和电磁类型未公布，模型每位1壳为示意",
+          "work": "牵伸罗拉组",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_air",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "两面母管、逐位支管与喷嘴 · 压缩空气成纱",
+          "path": "压缩空气在喷嘴中控制纤维成纱",
+          "electric": "气动负载，无本工位电机；外部压缩机不在设备供货内",
+          "work": "气流纺纱喷嘴",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "pneumatic"
+          ],
+          "jobs": [
+            "air",
+            "process"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "air",
+              "process"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_wind",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "各工位上部卷绕区 · 48位独立筒子卷绕",
+          "path": "控制筒子卷绕并形成交叉卷装",
+          "electric": "厂家明确每位独立电动驱动；外壳形制为示意",
+          "work": "筒子卷绕",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "wind"
+          ],
+          "motorJobs": {
+            "single": [
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_guide",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "各工位上部卷绕区 · 48位独立横动导纱",
+          "path": "控制横动导纱并形成交叉卷装",
+          "electric": "厂家明确每位独立电动驱动；外壳形制为示意",
+          "work": "横动导纱",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "single"
+          ],
+          "jobs": [
+            "traverse"
+          ],
+          "motorJobs": {
+            "single": [
+              "traverse"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_piecing",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "纺纱与卷绕之间 · 逐位数字接头机构",
+          "path": "定位接头/引纱动作，避免把接头执行轴虚构成已知数量",
+          "electric": "厂家确认独立电动接头元件，但未给轴数与驱动对应，保持未分配",
+          "work": "数字接头机构",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "process"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "process"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_doffer",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "两侧上部轨道 · 2台落筒单元沿机面行走",
+          "path": "沿轨道定位到需要换筒的工位",
+          "electric": "行走驱动位置及型式未公开，外壳按功能推定",
+          "work": "DU/DCU 行走单元",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position",
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_doff_arm",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "落筒单元下部 · 2台落筒夹持与换筒",
+          "path": "定位落筒夹持与空管更换机构",
+          "electric": "执行方式/独立轴数未充分公开，未分配电机",
+          "work": "落筒夹持机构",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_tube",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "机头空管库 · 432支空管库供管",
+          "path": "把管库与供管功能关联到换筒流程",
+          "electric": "容量和基本供管功能已确认；驱动数与布置未公开，1壳仅为功能代表",
+          "work": "空管库",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_suction",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "机尾与两侧吸风管路 · 工艺吸风与废料过滤",
+          "path": "建立工艺负压并将纤维废料送往分区过滤",
+          "electric": "工艺负压功能确认；总风机轴数与安装未公开，1个电机壳为功能代表",
+          "work": "吸风叶轮与工艺风道",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_autoairo",
+          "routeId": "AA_transport",
+          "maker": "Saurer 卓郎",
+          "model": "Autoairo",
+          "station": "上部两条输送带及端部 · 双面筒子输送",
+          "path": "将成纱卷装沿两机面输送",
+          "electric": "双带功能确认；每带一只电机壳为功能示意，实际轴数/安装未公布",
+          "work": "筒子输送带",
+          "refs": [
+            "machineRef_fa5747adfb01a4"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
         }
       ]
     },
@@ -5940,6 +8441,86 @@
       "title": "POWER-SHRINK 官方样本页 6",
       "url": "https://www.brueckner-textile.com/files/Flipbooks_Prospekte/Power-Shrink_en-de/files/basic-html/page6.html",
       "locator": "水冷、内置磨毯与选配抽屑。"
+    },
+    "machineRef_3cff4643a14764": {
+      "title": "JWF1366PRO-SM 产品说明书，2026年7月",
+      "url": "https://www.jwgf.com/cpfw/mfjx/btj/syhm/202607/P020260731520695347371.pdf",
+      "locator": "实际下载124页；第20、39、49、119、121页核对5电机及差速/带传动；图页已渲染目视。"
+    },
+    "machineRef_106a3f994b08b1": {
+      "title": "经纬官网 JWF1366Pro 当前产品页",
+      "url": "https://www.jwgf.com/cpfw/mfjx/btj/syhm/202607/t20260731_648799.html",
+      "locator": "眼数、并合数、罗拉型式、电机功率、条筒规格、气动换筒；真实下载HTML核对。"
+    },
+    "machineRef_64ac108a751c4a": {
+      "title": "浙江泰坦 TQF-K90 当前产品页",
+      "url": "https://www.chinataitan.com/mobile/product/pro1/60.html",
+      "locator": "实际下载官方HTML，明确单锭转杯电机及单锭引纱等功能。"
+    },
+    "machineRef_c933be4c095fe8": {
+      "title": "TQF-K90 原厂技术参数图",
+      "url": "https://www.chinataitan.com/mobile/d/file/product/pro1/2023-11-10/abd4290004c8b0b183d0cb2a2ac7604b.jpg",
+      "locator": "实际查看200–600头、每节20、230mm、步进给棉、转杯/条筒/卷装规格。"
+    },
+    "machineRef_12b743fad668ef": {
+      "title": "浙江泰坦 TT-868 当前产品页",
+      "url": "https://www.chinataitan.com/mobile/product/pro3/65.html",
+      "locator": "实际下载原厂HTML，明确直驱主电机和变距螺杆引纬。"
+    },
+    "machineRef_639aaf55c69a7b": {
+      "title": "TT-868 原厂主要技术参数图",
+      "url": "https://www.chinataitan.com/mobile/d/file/product/pro3/2023-11-10/14687de1d4650f35af4c3a42c4948dcd.jpg",
+      "locator": "实际查看筘幅、开口片数、四色、直驱、送经/卷取伺服、绞边步进、机械纬剪等选项。"
+    },
+    "machineRef_013e03afb5f010": {
+      "title": "越剑制造商展厅：YJ1000V技术表及整机图",
+      "url": "https://www.directindustry.com/prod/zhejiang-yuejian-intelligent-equipment-company/product-235275-2369973.html",
+      "locator": "标准240锭、热箱/冷却轨/辊径/节距/外形尺寸、原料与速度。第三方平台上的制造商页面。"
+    },
+    "machineRef_da9a31f9db54ac": {
+      "title": "Oerlikon Barmag原厂期刊No.26，2017年02月，p20–21",
+      "url": "https://www.barmag.com/ecomaXL/files/DL_OMF_FibersFilament_no_26_en.pdf?download=true",
+      "locator": "12机节576位、每侧288、独立摩擦器、单纱Godet、ATT、自动落筒、Jumbo Rotary Creel与整机原图。"
+    },
+    "machineRef_4dc31858631a5b": {
+      "title": "Barmag新加弹机市场表现新闻，2026-01-08",
+      "url": "https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/",
+      "locator": "eFK EvoSmart独立变频Smart Godet、EvoHeater与两张组件原图。"
+    },
+    "machineRef_e42854a013e2e2": {
+      "title": "Barmag：EvoHeater插芯更换原图",
+      "url": "https://www.barmag.com/ecomaXL/files/2026-01_OBA_eFK_EvoSmart_heater_insert_exchange.jpg",
+      "locator": "封闭纱道入口、可换插芯及可见软管，不支持精确长度或介质方向。"
+    },
+    "machineRef_f636a04b12a83c": {
+      "title": "经纬纺机 · JWF1217 面世报道（2023-11）",
+      "url": "https://www.jwgf.com/index.php?a=index&g=&id=5237&m=article",
+      "locator": "锡林专用永磁同步电机直联。"
+    },
+    "machineRef_243cb3b78d878e": {
+      "title": "Rieter · Draw frames, 3690-v2 (2605)",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v2-100158-en.pdf",
+      "locator": "RSB-D 27 的两眼布置与规格见印刷页 34–35，包含装机功率与多个选配尺寸。"
+    },
+    "machineRef_a5b071f44b3576": {
+      "title": "Autocoro 11 10/2026 原厂册",
+      "url": "https://saurer.com/media/7270/download/2026_10_Autocoro11_screen_EN.pdf?v=1",
+      "locator": "基本配置/选件表、工位与机节数、机型照片、尺寸图及传动功能说明。"
+    },
+    "machineRef_b80091d9e67126": {
+      "title": "BD 8 09/2026 原厂册",
+      "url": "https://saurer.com/media/6690/download/BD%208%20Product%20brochure%20EN.pdf?v=10",
+      "locator": "基本配置/选件表、工位与机节数、机型照片、尺寸图及传动功能说明。"
+    },
+    "machineRef_64bae63684866a": {
+      "title": "R 37 3312-v4 en 2509 原厂册",
+      "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/end-spinning/rieter-r-37-rotor-spinning-machine-and-robodoff-brochure-3312-v4-94612-en.pdf",
+      "locator": "第16–17、21–23、26–27页：40位基础整机、AMIspin-Pro、独立上蜡、切向带转杯和技术表。"
+    },
+    "machineRef_fa5747adfb01a4": {
+      "title": "Autoairo 09/2026 原厂册",
+      "url": "https://saurer.com/media/7276/download/2026_09_Autoairo-screen_EN.pdf?v=1",
+      "locator": "基本配置/选件表、工位与机节数、机型照片、尺寸图及传动功能说明。"
     }
   }
 }

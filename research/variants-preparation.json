@@ -1,0 +1,684 @@
+[
+  {
+    "checkedAt": "2026-11-20",
+    "id": "jingwei_jwf1217",
+    "stageId": "carding",
+    "makerKey": "jingwei",
+    "maker": "经纬纺机 · 青岛宏大",
+    "model": "JWF1217",
+    "equipment": "JWF1217 智能高产梳棉机",
+    "configuration": "棉型，工作宽度 1 280 mm，直径 1 000 mm 圈条换筒配置，38 根工作盖板。",
+    "dating": "厂家 2023 年 11 月发布该机型，样本版次为 2025 年 7 月。2026 年仍在列并有产量报道，厂家也已介绍后续 JWF1219。",
+    "summary": "棉层从高棉箱进入给棉罗拉，经过刺辊、锡林与盖板梳理。道夫剥取棉网，输出罗拉与压辊将棉条送至独立圈条工位。",
+    "input": "经清花和输棉系统送入的棉束",
+    "output": "圈放于条筒的生条",
+    "process": [
+      "储棉与均匀给棉",
+      "刺辊开松与除杂",
+      "锡林、固定盖板及回转盖板分梳",
+      "道夫剥取与三罗拉输出棉网",
+      "大压辊压条与圈条换筒"
+    ],
+    "quality": [
+      "棉网均匀度、生条条干及棉结",
+      "锡林、道夫及输出速度的同步",
+      "负压排杂及工作盖板清洁"
+    ],
+    "counts": {
+      "锡林直径（mm）": 1288,
+      "刺辊直径（mm）": 250,
+      "道夫直径（mm）": 706,
+      "工作宽度（mm）": 1280,
+      "工作盖板 / 回转盖板总数": "38 / 108",
+      "前 / 后固定盖板（棉型）": "10 / 10",
+      "前 / 后棉网清洁器": "3 / 3",
+      "吸点（全机）": 22,
+      "有资料依据的梳理及输出驱动工位": 8,
+      "棉箱给棉 / 循环风机工位": "1 / 1（风机电机按功能推定）"
+    },
+    "verified": [
+      "样本第 11–12 页列出锡林、刺辊和盖板分别变频调速，给棉、大压辊、圈条、道夫与三罗拉采用伺服驱动。",
+      "厂家发布稿明确锡林专用永磁同步电机直联，取消该工位的皮带传动。",
+      "样本第 19–22 页给出梳理部件总图、棉型固定盖板数量和所选条筒配置的安装图。",
+      "第 16–20 页区分主机与 JWF1177B 棉箱的给棉驱动，另给出棉箱开松辊、输出罗拉、循环风机及其规格。"
+    ],
+    "inferred": [
+      "机架内的位置和电机壳体按工作机构、总图与安装空间重建。22 个吸点以功能位置示意。",
+      "三罗拉按工位共同呈现，各辊的内部传动比及盖板回程细部按机构示意。"
+    ],
+    "missing": [
+      "厂家未逐台公开八个电机的铭牌功率、安装法兰和全部零件明细。样本所列 16 kW 为设备功率。",
+      "棉箱开松与输出之间的机械联接、风机电机型号、FT211 换筒与切条的动力分配仍待装配图核实。"
+    ],
+    "sources": [
+      {
+        "title": "经纬纺机 · 青岛宏大 JWF1217 产品页",
+        "url": "https://www.jwgf.com/cpfw/mfjx/smj/qdlmj/202608/t20260805_649247.html",
+        "supports": "厂家当前产品目录与样本入口。"
+      },
+      {
+        "title": "青岛宏大 JWF1217 产品样本（2025.07）",
+        "url": "https://www.jwgf.com/cpfw/mfjx/smj/qdlmj/202608/P020260805395973820951.pdf",
+        "supports": "印刷页 11–14 列驱动与 FT211 圈条器，16–22 页给出两路给棉控制、棉箱组成与工作辊尺寸、整机总图和安装规格。"
+      },
+      {
+        "title": "经纬纺机 · JWF1217 面世报道（2023-11）",
+        "url": "https://www.jwgf.com/index.php?a=index&g=&id=5237&m=article",
+        "supports": "锡林专用永磁同步电机直联。"
+      },
+      {
+        "title": "经纬纺机 · 青岛宏大 2026 年上半年生产报道",
+        "url": "https://www.jwgf.com/index.php?a=index&g=&id=6474&m=article",
+        "supports": "JWF1217 产量以及后续 JWF1219 的产品进展。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "jw_cyl",
+        "label": "锡林永磁同步直驱",
+        "location": "锡林轴端",
+        "electric": "专用永磁同步电机，独立变频调速并直联锡林。",
+        "action": "电机输出轴直接带动锡林回转，使针布与盖板共同梳理纤维。",
+        "loadLabel": "锡林",
+        "filters": [
+          "pm",
+          "sync",
+          "direct",
+          "vfd"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "cyl_m",
+            "via": [],
+            "loads": [
+              "cyl"
+            ]
+          }
+        ],
+        "sources": [
+          1,
+          2
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_lick",
+        "label": "刺辊独立变频",
+        "location": "给棉与锡林之间",
+        "electric": "刺辊独立变频调速。电机构造与中间联接未披露。",
+        "action": "刺辊回转，从给棉板握持的棉层中抓取纤维并排出杂质。",
+        "loadLabel": "刺辊",
+        "filters": [
+          "vfd"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "lick_m",
+            "via": [],
+            "loads": [
+              "lick"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_flat",
+        "label": "回转盖板变频",
+        "location": "锡林上方盖板回路",
+        "electric": "回转盖板单独变频，模型示意传动轮。",
+        "action": "驱动盖板传动轮，使盖板条依次通过锡林梳理弧。",
+        "loadLabel": "盖板传动轮",
+        "filters": [
+          "vfd"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "flat_m",
+            "via": [],
+            "loads": [
+              "flat_wheel"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_feed",
+        "label": "给棉伺服",
+        "location": "棉箱下方给棉口",
+        "electric": "给棉罗拉采用伺服驱动。",
+        "action": "给棉罗拉定量送入纤维层，配合梳理喂给。",
+        "loadLabel": "给棉罗拉",
+        "filters": [
+          "servo"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "feed_m",
+            "via": [],
+            "loads": [
+              "feed"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_doff",
+        "label": "道夫伺服",
+        "location": "锡林出棉侧",
+        "electric": "道夫采用伺服驱动。",
+        "action": "驱动道夫从锡林表面剥取纤维并形成棉网。",
+        "loadLabel": "道夫",
+        "filters": [
+          "servo"
+        ],
+        "jobs": [
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": "doff_m",
+            "via": [],
+            "loads": [
+              "doff"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_web",
+        "label": "三罗拉伺服",
+        "location": "道夫与大压辊之间",
+        "electric": "样本列为三罗拉伺服驱动。",
+        "action": "该驱动组带动三根输出罗拉，连续牵出棉网。",
+        "loadLabel": "三根输出罗拉",
+        "filters": [
+          "servo"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "web_m",
+            "via": [],
+            "loads": [
+              "web1",
+              "web2",
+              "web3"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_cal",
+        "label": "大压辊伺服",
+        "location": "出条端",
+        "electric": "大压辊采用伺服驱动。",
+        "action": "大压辊压实汇聚后的棉条，与下游圈条速度配合。",
+        "loadLabel": "大压辊",
+        "filters": [
+          "servo"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "cal_m",
+            "via": [],
+            "loads": [
+              "cal"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_coil",
+        "label": "圈条伺服",
+        "location": "机前独立圈条器",
+        "electric": "圈条采用伺服驱动。",
+        "action": "圈条盘偏心出条，将生条按圈铺入直径 1 000 mm 条筒。",
+        "loadLabel": "圈条盘",
+        "filters": [
+          "servo"
+        ],
+        "jobs": [
+          "wind"
+        ],
+        "groups": [
+          {
+            "motor": "coil_m",
+            "via": [],
+            "loads": [
+              "coil"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_chute_feed",
+        "label": "棉箱给棉匀整",
+        "location": "JWF1177B 棉箱中上部",
+        "electric": "棉箱给棉罗拉有独立调节驱动。电机型式和单机额定功率待核。",
+        "action": "控制器根据棉层反馈调节给棉罗拉速度，稳定喂入开松区的棉量。",
+        "loadLabel": "棉箱给棉匀整",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed"
+        ],
+        "groups": [
+          {
+            "motor": "chute_feed_m",
+            "via": [],
+            "loads": [
+              "chute_feed"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "jw_chute_fan",
+        "label": "棉箱循环风",
+        "location": "棉箱循环风路",
+        "electric": "循环风机见总图。电机外形和安装位置按风机功能推定。",
+        "action": "风轮建立棉箱循环气流，配合排风壁和静压箱稳定下棉层。",
+        "loadLabel": "棉箱循环风",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ],
+        "groups": [
+          {
+            "motor": "chute_fan_m",
+            "via": [],
+            "loads": [
+              "chute_fan"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "inferred"
+      },
+      {
+        "id": "jw_chute_open",
+        "label": "棉箱开松及输出",
+        "location": "JWF1177B 棉箱中段与下口",
+        "electric": "样本列出工作辊尺寸及开松转速，动力分配待核。",
+        "action": "开松辊处理棉束，输出罗拉将棉层送入主机给棉区。",
+        "loadLabel": "棉箱开松及输出",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "process"
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "opener",
+              "chute_out"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "unassigned"
+      },
+      {
+        "id": "jw_can_change",
+        "label": "直线换筒与机外切条",
+        "location": "FT211 条筒导轨及出条口",
+        "electric": "FT211 资料确认直线自动换筒和机外切条，单独执行动力的数量待核。",
+        "action": "切条机构与直线换筒装置配合完成满筒更换。",
+        "loadLabel": "直线换筒与机外切条",
+        "filters": [
+          "handling"
+        ],
+        "jobs": [
+          "logistics"
+        ],
+        "groups": [
+          {
+            "motor": null,
+            "via": [],
+            "loads": [
+              "card_pusher",
+              "card_cutter"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "unassigned"
+      }
+    ]
+  },
+  {
+    "checkedAt": "2026-11-20",
+    "id": "rieter_rsb_d27",
+    "stageId": "drawing",
+    "makerKey": "rieter",
+    "maker": "立达 Rieter",
+    "model": "RSB-D 27",
+    "equipment": "RSB-D 27 双眼自调匀整并条机",
+    "configuration": "两眼独立出条，每眼六根并合，双排主动导条架，喂入与输出选直径 600 mm 条筒和地面排筒。",
+    "dating": "立达在列机型。采用技术手册 3690-v2，版号 2605（2026 年 5 月）。",
+    "summary": "两组条筒分别向两眼供条。每眼独立匀整、牵伸和圈条，吸风由共用风机承担。可分别定位两眼的主电机、喂入电机、圈条和换筒驱动。",
+    "input": "分别供给两眼的梳棉条或预并条",
+    "output": "两路独立匀整、圈放于条筒的棉条",
+    "process": [
+      "两组各六根棉条经过主动导条架",
+      "各眼在喂入测量区采集棉条厚度",
+      "分眼自调匀整和四上三下牵伸",
+      "棉条集束并通过偏心圈条盘",
+      "底盘带筒回转并按节拍换筒"
+    ],
+    "quality": [
+      "两眼各自的熟条线密度与匀整效果",
+      "导条张力、牵伸区清洁及换筒衔接"
+    ],
+    "counts": {
+      "出条眼数": 2,
+      "每眼喂入根数": 6,
+      "喂入条筒总数": 12,
+      "每眼上 / 下罗拉数": "4 / 3",
+      "额定最高出条速度（m/min）": "2 × 1200",
+      "主电机 / 喂入电机": "各 2 × 3.90 kW",
+      "圈条 / 共用吸风": "2 × 1.10 kW / 1 × 1.50 kW",
+      "条筒底盘 / 换筒": "2 × 0.20 或 2 × 0.37 kW / 2 × 0.12 kW",
+      "说明书列出的动力位置": 11
+    },
+    "verified": [
+      "手册第 34 页的双眼喂入布置和排筒图、第 35 页 RSB-D 27 技术表明确了本配置的两眼、并合方式、规格和装机功率分项。",
+      "每眼拥有独立的牵伸、喂入、圈条、底盘与换筒动力。两眼共用一台 1.50 kW 吸风电机。",
+      "产品说明公开各眼独立匀整和四上三下牵伸结构。"
+    ],
+    "inferred": [
+      "厂家图示给出设备及条筒布置，电机安装方位、联轴形式、推杆与风机壳体按机构重建。",
+      "用罗拉、圈条盘、底盘及换筒推杆分别演示对应负载的运动。传动比和实际工作时序待现场确认。"
+    ],
+    "missing": [
+      "条筒底盘功率两档在公开表中并列，各档适用的订货配置和电机铭牌类型待核实。",
+      "0.50 kW 为控制系统功率。厂家未公布各电机完整物料清单、接线及安装尺寸。"
+    ],
+    "sources": [
+      {
+        "title": "Rieter · Double-head draw frame RSB-D 27",
+        "url": "https://www.rieter.com/products/systems/spinning-preparation/draw-frame-rsb-d-27",
+        "supports": "产品组合、两眼独立匀整、牵伸装置与最大运行速度。"
+      },
+      {
+        "title": "Rieter · Draw frames, 3690-v2 (2605)",
+        "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v2-100158-en.pdf",
+        "supports": "RSB-D 27 的两眼布置与规格见印刷页 34–35，包含装机功率与多个选配尺寸。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "d27_main",
+        "label": "两眼主牵伸",
+        "location": "左右两眼牵伸区",
+        "electric": "每眼 3.90 kW 主电机。",
+        "action": "各眼主传动带动主牵伸区罗拉以设定速比拉细纤维条。",
+        "loadLabel": "各眼牵伸罗拉",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "draft"
+        ],
+        "groups": [
+          {
+            "motor": "main_m1",
+            "via": [],
+            "loads": [
+              "lower1_1",
+              "lower2_1",
+              "upper1_1",
+              "upper2_1",
+              "upper3_1"
+            ]
+          },
+          {
+            "motor": "main_m2",
+            "via": [],
+            "loads": [
+              "lower1_2",
+              "lower2_2",
+              "upper1_2",
+              "upper2_2",
+              "upper3_2"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "d27_feed",
+        "label": "分眼喂入",
+        "location": "两眼后部测量和喂入区",
+        "electric": "每眼 3.90 kW 喂入电机。",
+        "action": "由匀整控制调节本眼喂入段速度，带动喂入罗拉和后区罗拉。",
+        "loadLabel": "喂入及后区罗拉",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "feed",
+          "draft"
+        ],
+        "groups": [
+          {
+            "motor": "feed_m1",
+            "via": [],
+            "loads": [
+              "feed1",
+              "lower0_1",
+              "upper0_1"
+            ]
+          },
+          {
+            "motor": "feed_m2",
+            "via": [],
+            "loads": [
+              "feed2",
+              "lower0_2",
+              "upper0_2"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "d27_coil",
+        "label": "分眼圈条",
+        "location": "左右出条端上部",
+        "electric": "每眼 1.10 kW 圈条电机。",
+        "action": "驱动本眼圈条盘回转，从偏心出条口向条筒铺放熟条。",
+        "loadLabel": "偏心圈条盘",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind"
+        ],
+        "groups": [
+          {
+            "motor": "coil_m1",
+            "via": [],
+            "loads": [
+              "coil1"
+            ]
+          },
+          {
+            "motor": "coil_m2",
+            "via": [],
+            "loads": [
+              "coil2"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "d27_table",
+        "label": "条筒底盘",
+        "location": "两眼输出条筒底座",
+        "electric": "每眼底盘电机有 0.20 或 0.37 kW 两档。",
+        "action": "底盘带动本眼条筒缓慢转动，与圈条盘相对运动以铺满筒截面。",
+        "loadLabel": "条筒底盘",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "wind"
+        ],
+        "groups": [
+          {
+            "motor": "table_m1",
+            "via": [],
+            "loads": [
+              "table1"
+            ]
+          },
+          {
+            "motor": "table_m2",
+            "via": [],
+            "loads": [
+              "table2"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "d27_change",
+        "label": "自动换筒",
+        "location": "两眼排筒导轨",
+        "electric": "每眼换筒驱动 0.12 kW。执行联接为功能重建。",
+        "action": "输出满筒并把空筒移至圈条位，模型以本眼推杆的位移示意。",
+        "loadLabel": "换筒推杆",
+        "filters": [
+          "handling"
+        ],
+        "jobs": [
+          "logistics"
+        ],
+        "groups": [
+          {
+            "motor": "change_m1",
+            "via": [],
+            "loads": [
+              "pusher1"
+            ]
+          },
+          {
+            "motor": "change_m2",
+            "via": [],
+            "loads": [
+              "pusher2"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      },
+      {
+        "id": "d27_suction",
+        "label": "两眼共用吸风",
+        "location": "两眼之间的吸风总管",
+        "electric": "共用 1.50 kW 吸风电机。",
+        "action": "风机叶轮形成负压，经两侧支管抽走牵伸区域的飞花。",
+        "loadLabel": "吸风叶轮",
+        "filters": [
+          "unspecified"
+        ],
+        "jobs": [
+          "air"
+        ],
+        "groups": [
+          {
+            "motor": "fan_m",
+            "via": [],
+            "loads": [
+              "fan"
+            ]
+          }
+        ],
+        "sources": [
+          1
+        ],
+        "status": "confirmed"
+      }
+    ]
+  }
+]

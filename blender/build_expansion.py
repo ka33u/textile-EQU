@@ -86,18 +86,23 @@ def motor(parent, id, label, loc, axis='x', radius=.10, length=.26, style='indus
 if '--' not in sys.argv or len(sys.argv[sys.argv.index('--')+1:])!=1:
     raise SystemExit('Pass one equipment ID after --')
 equipment_id=sys.argv[-1]
-families={'yarn':('assembly_winding','airjet_spinning'), 'preparation':('warp_tying','singeing'),
-          'wet':('washing_range','mercerizing','sanforizing')}
-family=next(k for k,ids in families.items() if equipment_id in ids)
-reference_file=BASE/'research'/('expansion-'+family+'.json')
-reference=next(row for row in json.loads(reference_file.read_text()) if row['id']==equipment_id)
-equipment_file=source_dir/('expansion_'+family+'.py')
+reference_files=sorted((BASE/'research').glob('expansion-*.json'))+sorted((BASE/'research').glob('variants-*.json'))
+matches=[(file,row) for file in reference_files for row in json.loads(file.read_text()) if row['id']==equipment_id]
+if len(matches)!=1:
+    raise ValueError('Expected a single manufacturer record for '+equipment_id)
+reference_file,reference=matches[0]
+is_variant='stageId' in reference
+equipment_file=source_dir/(reference_file.stem.replace('-','_')+'.py')
 exec(compile(equipment_file.read_text(),str(equipment_file),'exec'))
 root=e5_root(equipment_id,reference['equipment'],reference['maker'],reference['model'],
              reference['configuration'],reference['sources'][0]['url'])
-root['driveRevision']='7.0'
+root['driveRevision']='8.0' if is_variant else '7.0'
 root['stationDriveModel']=True
 root['actualScope']='工位与传动的资料依据分别列在路线详情中。电机外观及安装尺寸按公开外形和工位功能重建。'
+if is_variant:
+    root['stageId']=reference['stageId']
+    root['makerKey']=reference['makerKey']
+    root['referenceCheckedAt']=reference['checkedAt']
 BUILDERS[equipment_id](root)
 _s3_finish(root)
 nodes=[root,*root.children_recursive]
@@ -109,7 +114,11 @@ bpy.ops.object.select_all(action='DESELECT')
 for obj in nodes:obj.select_set(True)
 bpy.context.view_layer.objects.active=root
 bpy.context.preferences.filepaths.save_version=0
-bpy.ops.wm.save_as_mainfile(filepath=str(source_dir/(equipment_id+'.blend')),compress=True)
-bpy.ops.export_scene.gltf(filepath=str(OUT/(equipment_id+'.glb')),export_format='GLB',use_selection=True,
+blend_dir=source_dir/'variants' if is_variant else source_dir
+asset_dir=OUT.parent/'variants' if is_variant else OUT
+blend_dir.mkdir(exist_ok=True)
+asset_dir.mkdir(exist_ok=True)
+bpy.ops.wm.save_as_mainfile(filepath=str(blend_dir/(equipment_id+'.blend')),compress=True)
+bpy.ops.export_scene.gltf(filepath=str(asset_dir/(equipment_id+'.glb')),export_format='GLB',use_selection=True,
                           export_extras=True,export_yup=True,export_apply=True,export_animations=False)
 print('EXPORTED',equipment_id,len(nodes),len(anchor_ids),root['modeledMotorCount'],flush=True)

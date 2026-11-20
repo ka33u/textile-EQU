@@ -1,0 +1,202 @@
+{
+  "classes": 27,
+  "models": 39,
+  "manufacturers": 16,
+  "variants": [
+    {
+      "id": "jingwei_jwf1366pro",
+      "stage": "drawing",
+      "model": "JWF1366Pro",
+      "scope": "machine",
+      "routes": 6,
+      "motors": 5,
+      "meshes": 378,
+      "bytes": 1178316,
+      "boundsMetres": [
+        4.53,
+        2.01,
+        1.681
+      ],
+      "sha256": "1f65bf8c91cbcef247bc264628d4f2ae3eed758d837c624db50a07d121874687"
+    },
+    {
+      "id": "titan_tqf_k90",
+      "stage": "rotor_spinning",
+      "model": "TQF-K90",
+      "scope": "machine",
+      "routes": 9,
+      "motors": 606,
+      "meshes": 23386,
+      "bytes": 8254236,
+      "boundsMetres": [
+        25.6,
+        2.38,
+        3.774
+      ],
+      "sha256": "7ca290a268d3e8549705d8a27f4d5df9ebb0172dd86cbf4c9758a1318f6bee4c"
+    },
+    {
+      "id": "titan_tt868",
+      "stage": "weaving",
+      "model": "TT-868",
+      "scope": "machine",
+      "routes": 7,
+      "motors": 5,
+      "meshes": 1189,
+      "bytes": 1554024,
+      "boundsMetres": [
+        3.96,
+        1.9,
+        1.93
+      ],
+      "sha256": "39a1a62829255657ebda078a5c05cb5b0b3f149a219e6c8bebdd60d6f8b0d28a"
+    },
+    {
+      "id": "yuejian_yj1000v",
+      "stage": "texturing",
+      "model": "YJ1000V-240",
+      "scope": "machine",
+      "routes": 6,
+      "motors": 6,
+      "meshes": 8834,
+      "bytes": 7796400,
+      "boundsMetres": [
+        18.73,
+        5.143,
+        6.719
+      ],
+      "sha256": "ad678dfd8aa392737769e7e41b4e6e42aa5bb441b46b56a68a7e74c49656dd57"
+    },
+    {
+      "id": "barmag_eafk_hq",
+      "stage": "texturing",
+      "model": "eAFK HQ",
+      "scope": "machine",
+      "routes": 5,
+      "motors": 580,
+      "meshes": 22940,
+      "bytes": 19854676,
+      "boundsMetres": [
+        31.845,
+        5.143,
+        6.719
+      ],
+      "sha256": "46af5a2616b170c34d8925526f01c3d1cc6ad994fc3ba37767ea970c85890b42"
+    },
+    {
+      "id": "barmag_efk_evosmart_station",
+      "stage": "texturing",
+      "model": "eFK EvoSmart",
+      "scope": "station",
+      "routes": 3,
+      "motors": 1,
+      "meshes": 21,
+      "bytes": 457964,
+      "boundsMetres": [
+        1.25,
+        1.32,
+        0.52
+      ],
+      "sha256": "a30322f96cae5b2824c82540016af8e42028bcc1468b21624d073ecb2c9d2dbc"
+    },
+    {
+      "id": "jingwei_jwf1217",
+      "stage": "carding",
+      "model": "JWF1217",
+      "scope": "machine",
+      "routes": 12,
+      "motors": 10,
+      "meshes": 754,
+      "bytes": 2227416,
+      "boundsMetres": [
+        5.184,
+        3.645,
+        2.703
+      ],
+      "sha256": "662b647aeb6443cba69921f580f11b29e39514e2311eed46e07c0a97133f6d01"
+    },
+    {
+      "id": "rieter_rsb_d27",
+      "stage": "drawing",
+      "model": "RSB-D 27",
+      "scope": "machine",
+      "routes": 6,
+      "motors": 11,
+      "meshes": 848,
+      "bytes": 1381584,
+      "boundsMetres": [
+        7.884,
+        1.943,
+        3.26
+      ],
+      "sha256": "cab30d142de6558f2e618eedbe231ce6f39a8b451e874ea856a706b340a4bc9d"
+    },
+    {
+      "id": "saurer_autocoro_11",
+      "stage": "rotor_spinning",
+      "model": "Autocoro 11",
+      "scope": "machine",
+      "routes": 12,
+      "motors": 248,
+      "meshes": 7973,
+      "bytes": 3888256,
+      "boundsMetres": [
+        11.176,
+        2.815,
+        2.484
+      ],
+      "sha256": "1f76cdcaf42e7816875a9c1ff686e0cc879f6bf69e9db7910b1007e179834b7c"
+    },
+    {
+      "id": "saurer_bd_8",
+      "stage": "rotor_spinning",
+      "model": "BD 8",
+      "scope": "machine",
+      "routes": 8,
+      "motors": 58,
+      "meshes": 3680,
+      "bytes": 2097532,
+      "boundsMetres": [
+        10.7,
+        2.246,
+        2.425
+      ],
+      "sha256": "ba0a0dd1d49a98f62dfed8f0c826f8e2a77dd6155cf3a985ec94a30ff6a87f10"
+    },
+    {
+      "id": "rieter_r_37",
+      "stage": "rotor_spinning",
+      "model": "R 37",
+      "scope": "machine",
+      "routes": 9,
+      "motors": 131,
+      "meshes": 4804,
+      "bytes": 2471340,
+      "boundsMetres": [
+        10.065,
+        1.888,
+        1.725
+      ],
+      "sha256": "3d3b824cd05adba1aaa58705f2c9974cc5f596ee570ee76ad80ee628f883bfad"
+    },
+    {
+      "id": "saurer_autoairo",
+      "stage": "airjet_spinning",
+      "model": "Autoairo",
+      "scope": "machine",
+      "routes": 10,
+      "motors": 150,
+      "meshes": 5523,
+      "bytes": 3014128,
+      "boundsMetres": [
+        11.175,
+        2.815,
+        2.484
+      ],
+      "sha256": "1bcf831a1f64f4125ae6fe0aa4baff1591b9a95c69df4467ed657728fa643f0d"
+    }
+  ],
+  "projectionCases": 504,
+  "motorAssociations": 1813,
+  "status": "pass"
+}

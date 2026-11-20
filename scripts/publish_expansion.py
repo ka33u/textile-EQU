@@ -38,11 +38,16 @@ def expand(groups):
 def drive_record(spec,nodes):
     groups=expand(spec['groups'])
     groups=[dict(g,via=[part for part in g.get('via',[]) if not g.get('motor') or part!=g['motor']+'_out']) for g in groups]
-    motors=[g['motor'] for g in groups if g.get('motor')]
+    motors=unique(g['motor'] for g in groups if g.get('motor'))
     state=spec['status']
     assert state in ('confirmed','inferred','unassigned')
-    assert (state!='unassigned' if motors else state=='unassigned' or spec.get('actuation')=='pneumatic') and len(motors)==len(set(motors)),spec['id']
-    assert all(g['loads'] for g in groups)
+    # A photographed external motor can be located even when the OEM never identifies its load.
+    unknown_load=state=='unassigned' and bool(motors)
+    assert groups,spec['id']
+    if unknown_load:
+        assert all(g.get('motor') and not g['loads'] and not g.get('via') for g in groups),spec['id']
+    else:
+        assert all(g['loads'] for g in groups) and (motors or state=='unassigned' or spec.get('actuation')=='pneumatic'),spec['id']
     # Each intermediate entry is a successive mechanism followed by the working loads.
     # Routes with several independent trains are assembled per motor, never by proximity.
     via_count=max((len(g.get('via',[])) for g in groups),default=0)
@@ -59,11 +64,12 @@ def drive_record(spec,nodes):
         for i,ids in enumerate(levels):
             assert set(ids)<=nodes.keys(),(spec['id'],set(ids)-nodes.keys())
             steps[i]['anchorIds'].extend(ids)
-            if motor:steps[i]['motorScopes'][motor]=ids
+            if motor:steps[i]['motorScopes'].setdefault(motor,[]).extend(ids)
             if i:links.update((a,b,i) for a in levels[i-1] for b in ids)
     for i,step in enumerate(steps):
         step['anchorIds']=unique(step['anchorIds'])
-        if not motors:step.pop('motorScopes')
+        if motors:step['motorScopes']={motor:unique(ids) for motor,ids in step['motorScopes'].items()}
+        else:step.pop('motorScopes')
         if i==0:continue
         step['connectionStatus']='functional_inference' if i==1 or spec.get('transmissionKnown') else 'unmodeled'
         if step['role']=='transmission' and i>1 and step['anchorIds']:
@@ -72,6 +78,7 @@ def drive_record(spec,nodes):
     return dict(id=spec['id'],label=spec['label'],location=spec['location'],role=spec['action'],
         electric=spec['electric'],loadLabel=spec['loadLabel'],steps=steps,
         operation=spec.get('operation','production'),actuation=spec.get('actuation','pneumatic' if 'pneumatic' in spec.get('filters',[]) and not motors else 'electric' if motors else 'unspecified'),
+        **({'loadUnassigned':True} if unknown_load else {}),
         evidence={'status':map_status[state],'note':spec['electric']},
         graph={'kind':'functional_power_graph','association':'explicit_motor_groups',
                'physicalConnectionClaim':False,'links':sorted(links,key=lambda p:(p[2],p[0],p[1])),

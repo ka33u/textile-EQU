@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
+import {parseMachineHash} from '../dist/model-library.js';
 import assert from 'node:assert/strict';
 import {fallbackData,branchConnections} from '../dist/ui-data.js';
 const app=await fs.readFile('dist/app.js','utf8'),html=await fs.readFile('dist/index.html','utf8');
@@ -23,7 +24,7 @@ assert.deepEqual(Object.keys(branchConnections).filter(id=>matchesFilter(merged.
 const future=merge({...source,stages:[...source.stages,{id:'future_equipment',name:'后续设备',section:'yarn_processing'}]});assert.equal(future.stages.length,merged.stages.length+1,'Catalog size can grow');
 assert.throws(()=>merge({stages:[{id:'spinning'},{id:'spinning'}]}));
 const hashCode=app.slice(app.indexOf('function readHashRoute(){'),app.indexOf('async function syncHashRoute(){'));
-const hashEnv={state:{data:merged},location:{hash:''}},readHash=vm.runInNewContext(hashCode+';readHashRoute',hashEnv);
+const hashEnv={parseMachineHash,state:{data:merged},location:{hash:''}},readHash=vm.runInNewContext(hashCode+';readHashRoute',hashEnv);
 for(const id of Object.keys(branchConnections))for(const suffix of ['','/drive','/motor']){hashEnv.location.hash=`#${id}${suffix}`;const route=readHash();assert.equal(route.current,id);assert.equal(route.mode,suffix?'drive':'machine')}
 assert.ok(!app.includes('stages.length!==16'));assert.ok(!app.includes('if(index<15)'));
 assert.ok(app.includes('state.data.stages.length-1'));
