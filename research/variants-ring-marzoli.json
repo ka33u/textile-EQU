@@ -1,0 +1,491 @@
+[
+  {
+    "id": "marzoli_mds2_384",
+    "stageId": "spinning",
+    "makerKey": "marzoli",
+    "maker": "马佐里 Marzoli",
+    "model": "MDS2",
+    "equipment": "多切向带环锭细纱机",
+    "checkedAt": "2026-11-20",
+    "configuration": "384 锭（8 节，每节 48 锭），70 mm 锭距，普通三罗拉牵伸、双切向带、单端吸风、自动供管。选 44 mm 钢领、230 mm 纱管，含供管站总长 19.988 m。",
+    "dating": "2026 年 11 月核查时，MDS2 仍列于 Marzoli 短纤纺产品目录。2023 年版样本已记录该系列，厂家现行产品页另提供 Galileo MDS2 技术手册。",
+    "summary": "从两台主电机分别沿切向带追踪到 192 根锭子，再对照前罗拉单独驱动和中、后罗拉共用无刷电机的牵伸系统。",
+    "input": "棉或混纺粗纱、空纱管",
+    "output": "普通环锭管纱、托盘上的满管",
+    "process": [
+      "从两侧吊锭退绕粗纱，依次喂入后、中、前三列罗拉。",
+      "前列单独调速。中、后罗拉使用同步带联接，通过罗拉表面速度差牵伸粗纱。",
+      "分段切向带摩擦锭盘，锭子与纱管转动，纱线经钢丝圈加捻卷绕。",
+      "钢领板往复升降形成管纱，断头纤维由逐锭笛口汇入一条吸棉总管。",
+      "停机后，夹持梁把满管放至托盘，并由停车轨取空管装到锭子。"
+    ],
+    "quality": [
+      "同组锭盘与切向带接触情况，换向与升降中的卷绕张力。",
+      "前列与中后列的速度配合，上胶辊接触及牵伸均匀度。",
+      "各锭吸棉笛口负压的一致性，满管与空管交接次序。"
+    ],
+    "counts": {
+      "机节 / 锭数": "8 × 48 = 384，A、B 两侧各 192 锭",
+      "切向带分区": "两台主电机、两条带，各 192 锭，共用一台变频器",
+      "所选主电机功率": "每台 7.5 kW（样本每台至多 192 锭规格）",
+      "锭距 / 钢领直径 / 管长": "70 / 44 / 230 mm",
+      "下罗拉直径（前 / 中 / 后）": "27 / 30 / 27 mm",
+      "牵伸机头": "前列 1 台，中后列共用 1 台。样本给出 ≤576 锭档牵伸装机功率 6.5 kW",
+      "单端吸棉": "1 台，50 Hz 时 4 kW",
+      "机节工作段 / 含供管站总长": "13.440 / 19.988 m",
+      "收拢 / 展开落纱时机宽": "1,140 / 1,500 mm（样本外廓）"
+    },
+    "verified": [
+      "样本第 5、8、17 页说明多切向带方案各电机和各带可负责至多 192 锭，电机接入同一变频器。",
+      "第 6 页 ≤576 锭示意把两台牵伸电机放在机头。前列与中后列独立调速，中、后列共用无刷驱动和同步带。",
+      "第 8–10 页分别说明独立无配重钢领板、单大截面吸棉总管和自动落纱时停车轨的用途。",
+      "第 16、17 页给出空管装载器、单端吸风与 70 mm 锭距下的长度公式。套用 384 锭，含供管站总长为 19.988 m。"
+    ],
+    "inferred": [
+      "选择两台 7.5 kW 主电机各配一条带。模型将每区的 192 锭分到 A、B 侧各 96 锭，厂家样本给出容量，未提供具体交货机的锭号分区。",
+      "每侧罗拉的驱动分配、带轮绕法、钢领板传力轴和连杆按功能布置，输出速比、孔距及安装方向有待装配图核对。",
+      "落纱、托盘、空管提升和定向各以一个外形工位展示。四处的电机数量、安装位置和减速机构由动作推定。"
+    ],
+    "missing": [
+      "现场订单的电机铭牌、完整电气清单、接线及逐锭传动分配图。",
+      "厂家列出 3 kW 剪式机构上升电机，公开表格未把这项额定功率明确绑定到本配置的钢领板或落纱路线。",
+      "厂房外部风管、空管储存容量、箱体内各零件和各运动轴的精确工程尺寸。"
+    ],
+    "sources": [
+      {
+        "title": "Marzoli · Ring frame MDS2",
+        "url": "https://www.marzoli.com/en/spinning-solutions/spinning-section/ring-spinning-frame-mds2",
+        "supports": "现行在列系列、独立锭子/牵伸/钢领板驱动、自动落纱与允许的外部配置。"
+      },
+      {
+        "title": "Marzoli · Galileo MDS2 技术手册",
+        "url": "https://media.marzoli.com/technical-information-ring-frame-mds2-brochure.pdf",
+        "supports": "印刷页 5–6、8–11、16–17。核查每电机负责的锭数、短机牵伸图、吸风、落纱及分档功率和外形。"
+      },
+      {
+        "title": "Marzoli / Camozzi · MDS2 Ring Spinning Frame 2023",
+        "url": "https://en.marzoli.camozzi.com/kdocs/2085978/mds2_ring_spinning_frame_2023.pdf",
+        "supports": "2023 年样本记录 MDS2 系列和切向带驱动。当前选配按厂家现行技术手册核算。"
+      }
+    ],
+    "routes": [
+      {
+        "id": "mds_spindles",
+        "label": "两组主电机与切向锭带",
+        "location": "机身下部沿长度分成两区",
+        "electric": "选择每台 7.5 kW、每条带 192 锭的多切向带配置，两台电机共用变频器。厂家未披露电机磁路型式。",
+        "action": "输出轮带动切向带，锭盘靠摩擦转动。模型第一组带 A 侧 1–96、B 侧 193–288 锭，第二组带其余 192 锭。两侧锭号分配按机构推定。",
+        "loadLabel": "切向带对应的锭子与纱管",
+        "status": "confirmed",
+        "filters": [
+          "group",
+          "vfd"
+        ],
+        "jobs": [
+          "main",
+          "twist",
+          "wind"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 96,
+            "start": 1,
+            "motor": "MDS_spindle_motor_1",
+            "via": [
+              "MDS_zone1_input_pulley",
+              "MDS_zone1_transfer_belt",
+              "MDS_zone1_output_pulley",
+              "MDS_zone1_tangential_belt"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_spindle"
+            ]
+          },
+          {
+            "repeat": 96,
+            "start": 193,
+            "motor": "MDS_spindle_motor_1",
+            "via": [
+              "MDS_zone1_input_pulley",
+              "MDS_zone1_transfer_belt",
+              "MDS_zone1_output_pulley",
+              "MDS_zone1_tangential_belt"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_spindle"
+            ]
+          },
+          {
+            "repeat": 96,
+            "start": 97,
+            "motor": "MDS_spindle_motor_2",
+            "via": [
+              "MDS_zone2_input_pulley",
+              "MDS_zone2_transfer_belt",
+              "MDS_zone2_output_pulley",
+              "MDS_zone2_tangential_belt"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_spindle"
+            ]
+          },
+          {
+            "repeat": 96,
+            "start": 289,
+            "motor": "MDS_spindle_motor_2",
+            "via": [
+              "MDS_zone2_input_pulley",
+              "MDS_zone2_transfer_belt",
+              "MDS_zone2_output_pulley",
+              "MDS_zone2_tangential_belt"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_spindle"
+            ]
+          }
+        ],
+        "motorLabels": {
+          "MDS_spindle_motor_1": "第 1 台主电机 · 切向带 1 · 192 锭",
+          "MDS_spindle_motor_2": "第 2 台主电机 · 切向带 2 · 192 锭"
+        }
+      },
+      {
+        "id": "mds_front",
+        "label": "前罗拉变频驱动",
+        "location": "机头牵伸传动箱、前罗拉轴",
+        "electric": "前罗拉单独变频，样本未列前列电机的单独额定功率。",
+        "action": "机头驱动组件把动力分配至两侧前罗拉，前列下罗拉摩擦带动上胶辊，控制前钳口输出速度。",
+        "loadLabel": "两侧前下罗拉与随动上胶辊",
+        "status": "confirmed",
+        "filters": [
+          "vfd",
+          "single"
+        ],
+        "jobs": [
+          "draft"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 192,
+            "start": 1,
+            "motor": "MDS_front_draft_motor",
+            "via": [
+              "MDS_front_distribution",
+              "MDS_front_shaft_A"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_front",
+              "MDS_p{n:03d}_front_top"
+            ]
+          },
+          {
+            "repeat": 192,
+            "start": 193,
+            "motor": "MDS_front_draft_motor",
+            "via": [
+              "MDS_front_distribution",
+              "MDS_front_shaft_B"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_front",
+              "MDS_p{n:03d}_front_top"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mds_middle_back",
+        "label": "中、后罗拉无刷驱动",
+        "location": "机头牵伸传动箱、中后罗拉轴",
+        "electric": "厂家确认中、后罗拉采用无刷电机与变频驱动，短机示意为共用一台。",
+        "action": "机头分配带将电机轴动力送到各侧中、后罗拉，同步带连接两列。上胶辊通过与下罗拉接触而转动。",
+        "loadLabel": "中后下罗拉与随动上胶辊",
+        "status": "confirmed",
+        "filters": [
+          "brushless",
+          "vfd",
+          "group"
+        ],
+        "jobs": [
+          "draft"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 192,
+            "start": 1,
+            "motor": "MDS_middle_rear_motor",
+            "via": [
+              "MDS_middle_rear_distribution",
+              "MDS_middle_back_timing_A",
+              "MDS_middle_shaft_A"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_middle",
+              "MDS_p{n:03d}_middle_top"
+            ]
+          },
+          {
+            "repeat": 192,
+            "start": 1,
+            "motor": "MDS_middle_rear_motor",
+            "via": [
+              "MDS_middle_rear_distribution",
+              "MDS_middle_back_timing_A",
+              "MDS_back_shaft_A"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_back",
+              "MDS_p{n:03d}_back_top"
+            ]
+          },
+          {
+            "repeat": 192,
+            "start": 193,
+            "motor": "MDS_middle_rear_motor",
+            "via": [
+              "MDS_middle_rear_distribution",
+              "MDS_middle_back_timing_B",
+              "MDS_middle_shaft_B"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_middle",
+              "MDS_p{n:03d}_middle_top"
+            ]
+          },
+          {
+            "repeat": 192,
+            "start": 193,
+            "motor": "MDS_middle_rear_motor",
+            "via": [
+              "MDS_middle_rear_distribution",
+              "MDS_middle_back_timing_B",
+              "MDS_back_shaft_B"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_back",
+              "MDS_p{n:03d}_back_top"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mds_ringrail",
+        "label": "钢领板升降",
+        "location": "机头升降驱动、两侧钢领板",
+        "electric": "厂家确认钢领板独立驱动和无配重升降。电机磁路、功率及传力轴形式未披露。",
+        "action": "驱动两侧钢领板往复升降，改变钢丝圈的高度，使纱线沿纱管形成卷装。",
+        "loadLabel": "两侧升降钢领板",
+        "status": "confirmed",
+        "filters": [
+          "position",
+          "single"
+        ],
+        "jobs": [
+          "traverse",
+          "wind"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "motor": "MDS_ringrail_motor",
+            "via": [
+              "MDS_ringrail_transfer"
+            ],
+            "loads": [
+              "MDS_ringrail_A",
+              "MDS_ringrail_B"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mds_suction",
+        "label": "断头吸棉风机",
+        "location": "机头单端吸风箱、逐锭吸棉口",
+        "electric": "选单端抽吸，384 锭对应样本 ≤576 锭档，50 Hz 电机为 4 kW，60 Hz 档为 4.6 kW。",
+        "action": "电机驱动风机形成负压，断头纤维从各锭笛口进入一条大截面总管，汇至机头。",
+        "loadLabel": "384 处吸棉笛口",
+        "status": "confirmed",
+        "filters": [
+          "fluid"
+        ],
+        "jobs": [
+          "air"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 384,
+            "motor": "MDS_suction_motor",
+            "via": [
+              "MDS_suction_fan",
+              "MDS_single_suction_duct"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_flute"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "mds_doffing",
+        "label": "集体落纱升降",
+        "location": "机头下部至两侧夹持梁",
+        "electric": "自动落纱与停车轨有厂家依据，电机外形、数目与传力路径按该动作推定。",
+        "action": "落纱传力机构带动两侧夹持梁抬升满管，移交托盘，再把停车轨上的空管装回锭子。",
+        "loadLabel": "双侧落纱梁及其夹持头",
+        "status": "inferred",
+        "filters": [
+          "handling",
+          "position"
+        ],
+        "jobs": [
+          "logistics"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "repeat": 192,
+            "start": 1,
+            "motor": "MDS_doffer_motor",
+            "via": [
+              "MDS_doff_transfer",
+              "MDS_doffrail_A"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_grip"
+            ]
+          },
+          {
+            "repeat": 192,
+            "start": 193,
+            "motor": "MDS_doffer_motor",
+            "via": [
+              "MDS_doff_transfer",
+              "MDS_doffrail_B"
+            ],
+            "loads": [
+              "MDS_p{n:03d}_grip"
+            ]
+          }
+        ],
+        "operation": "doffing"
+      },
+      {
+        "id": "mds_trays",
+        "label": "管纱托盘输送",
+        "location": "机头底部和双侧托盘轨",
+        "electric": "托盘与停车轨的功能见厂家落纱顺序。输送电机、减速和双侧回转布置为功能推定。",
+        "action": "回转输送机构移动两侧托盘，使落纱工位交接满管与空管。",
+        "loadLabel": "两侧托盘输送轨",
+        "status": "inferred",
+        "filters": [
+          "handling",
+          "geared"
+        ],
+        "jobs": [
+          "logistics",
+          "transport"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "motor": "MDS_tray_motor",
+            "via": [
+              "MDS_tray_return"
+            ],
+            "loads": [
+              "MDS_tray_track_A",
+              "MDS_tray_track_B"
+            ]
+          }
+        ],
+        "operation": "doffing"
+      },
+      {
+        "id": "mds_loader",
+        "label": "空管提升",
+        "location": "机头外侧供管站料斗与提升链",
+        "electric": "厂家列出自动供管装置和外廓。模型依据提升动作布置减速电机。",
+        "action": "提升链从料斗拾取空管，送到上方定向机构。",
+        "loadLabel": "空管提升链",
+        "status": "inferred",
+        "filters": [
+          "handling",
+          "geared"
+        ],
+        "jobs": [
+          "transport",
+          "logistics"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "motor": "MDS_loader_motor",
+            "loads": [
+              "MDS_loader_elevator"
+            ]
+          }
+        ],
+        "operation": "doffing"
+      },
+      {
+        "id": "mds_sorter",
+        "label": "供管定向与上盘",
+        "location": "供管站上部至托盘交接处",
+        "electric": "定向电机和星轮为功能还原，实际供管器传动清单有待核实。",
+        "action": "定向机构逐支把空管送到托盘上，托盘将其运往机侧待换管位置。",
+        "loadLabel": "供管定向轮",
+        "status": "inferred",
+        "filters": [
+          "handling",
+          "position"
+        ],
+        "jobs": [
+          "logistics",
+          "position"
+        ],
+        "sources": [
+          1,
+          0
+        ],
+        "groups": [
+          {
+            "motor": "MDS_sorter_motor",
+            "loads": [
+              "MDS_loader_sorter"
+            ]
+          }
+        ],
+        "operation": "doffing"
+      }
+    ]
+  }
+]

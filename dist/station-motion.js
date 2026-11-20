@@ -21,14 +21,15 @@ export class StationMotion {
     this.production=this.entries;this.select(null);
   }
   setRoutes(routes){
-    const maintenance=new Set(),production=new Set();
+    const separateCycles=new Set(),production=new Set();
     for(const route of routes){
-      const target=route.operation==='maintenance'||route.loadUnassigned?maintenance:production;
+      const separate=route.operation==='maintenance'||route.operation==='doffing'||route.loadUnassigned;
+      const target=separate?separateCycles:production;
       for(const step of route.steps)for(const object of step.objects){
         for(const entry of this.byOwner.get(object)||[])target.add(entry);
       }
     }
-    this.production=this.entries.filter(e=>!maintenance.has(e)||production.has(e));
+    this.production=this.entries.filter(e=>!separateCycles.has(e)||production.has(e));
     this.select(null);
   }
   select(scopes){

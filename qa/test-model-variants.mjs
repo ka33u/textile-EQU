@@ -35,6 +35,9 @@ for (const key of ['jingwei','titan','yuejian','saurer','rieter','barmag']) asse
 assert(added.some(m => m.scope === 'station') && added.some(m => m.scope === 'machine'));
 assert(filterModels(catalog.models,'','drawing','立达 RSB-D27').some(m => m.id === 'rieter_rsb_d27'));
 assert(filterModels(catalog.models,'saurer','rotor_spinning').length >= 2);
+const ringMachines = filterModels(catalog.models,'','spinning');
+for (const key of ['rieter','jingwei','saurer','marzoli','toyota']) assert(ringMachines.some(model=>model.makerKey===key),key);
+const configuredLengths={jingwei_jwf1590a:60.125,marzoli_mds2_384:19.988,toyota_rx300e:41.035,saurer_zinser_51_ring:18.460};
 assert.equal(filterModels(catalog.models,'titan','drawing').length,0);
 assert.deepEqual(parseMachineHash('#drawing/motor',stages),{current:'drawing',mode:'drive',variant:null});
 assert.equal(parseMachineHash('#%ZZ',stages),null);
@@ -93,6 +96,7 @@ for (const machine of added) {
   const routes=resolveDriveRoutes(scene,detail.drive.routes), motion=new StationMotion(scene);
   motion.setRoutes(routes);
   const mapped = new Set();
+  const spindleDrives = new Map();
   const studyRows=study.stages.find(s=>s.id===machine.stageId).rows.filter(row=>row.modelAssetId===key);
   assert.equal(studyRows.length,routes.length);
   assert(studyHTML.includes('./index.html'+machineHash(machine.stageId,key,'drive')),key+' missing study link');
@@ -103,6 +107,10 @@ for (const machine of added) {
     for (const step of route.steps) assert.deepEqual(new Set(step.objects.map(n=>n.userData.driveAnchorId)),new Set(step.anchorIds),key+' '+route.id);
     const actualEdges = buildDriveBranches(route);
     assert.equal(actualEdges.length,route.graph.links.length,key+' '+route.id);
+    if(machine.stageId==='spinning'&&route.motors.length>1){
+      assert.deepEqual(new Set(Object.keys(route.motorLabels)),new Set(route.motors.map(node=>node.userData.driveAnchorId)));
+      assert.equal(new Set(Object.values(route.motorLabels)).size,route.motors.length,key+' distinguish each motor');
+    }
     for (const motor of route.motors) {
       assert.equal(motor.userData.motorDetailScope,'external_only');assert.equal(motor.userData.internalGeometryModeled,false);
       const id=motor.userData.driveAnchorId; mapped.add(id);
@@ -112,6 +120,13 @@ for (const machine of added) {
         assert.deepEqual(new Set(scopes.steps[i].objects.map(n=>n.userData.driveAnchorId)),new Set(expected),key+' '+id);
       }
       const working=scopes.steps.at(-1).objects;assert.equal(working.length===0,Boolean(route.loadUnassigned));
+      if (machine.stageId==='spinning') {
+        for (const spindle of working.filter(n=>n.userData.spindleIndex!==undefined)) {
+          const number=spindle.userData.spindleIndex;
+          if (!spindleDrives.has(number)) spindleDrives.set(number,new Set());
+          spindleDrives.get(number).add(id);
+        }
+      }
       motion.select([scopes]);
       if(route.loadUnassigned)assert.equal(motion.active.length,0);
       else assert(motion.active.length>0 && motion.active.some(e=>e.node===anchors.get(id+'_out')),id);
@@ -123,11 +138,67 @@ for (const machine of added) {
       }
       report.motorAssociations++;
     }
+    if (route.operation==='doffing') {
+      for (const motor of route.motors) {
+        const shaft=anchors.get(motor.userData.driveAnchorId+'_out');
+        assert(!motion.production.some(entry=>entry.node===shaft),key+' doffing motor runs during spinning');
+      }
+    }
     if (route.evidence.status==='not_modeled'&&!route.loadUnassigned) {assert.equal(route.motors.length,0);motion.select([route]);assert.equal(motion.active.length,0);}
   }
   assert.deepEqual(mapped,new Set([...anchors].filter(([,n])=>n.userData.driveRole==='motor').map(([id])=>id)));
   assert.equal(mapped.size,machine.motors);assert.equal(identity.modeledMotorCount,mapped.size);
   assert.equal(routes.length,machine.routes);
+  let ringFacts;
+  if (machine.stageId==='spinning') {
+    if(key in configuredLengths){
+      const length=rawBounds.max.x-rawBounds.min.x;
+      assert(Math.abs(length-configuredLengths[key])<.03,key+' total length including end equipment');
+    }
+    const count=identity.spindleCount;
+    const spindles=nodes.map(node=>node.userData).filter(data=>Number.isInteger(data.spindleIndex));
+    assert(Number.isInteger(count) && count>0 && count%2===0,key+' configuration spindle count');
+    assert.deepEqual(spindles.map(p=>p.spindleIndex).sort((a,b)=>a-b),Array.from({length:count},(_,i)=>i+1),key+' every physical spindle');
+    const sides=new Map(), perMotor=new Map();
+    for (const spindle of spindles) {
+      assert(spindle.machineSide && spindle.driveAnchorId && spindle.stationMotion?.startsWith('rotate:'),key+' indexed rotating spindle');
+      sides.set(spindle.machineSide,(sides.get(spindle.machineSide)||0)+1);
+      const drives=spindleDrives.get(spindle.spindleIndex);
+      assert.equal(drives?.size,1,key+' exact power source for spindle '+spindle.spindleIndex);
+      const [id]=drives;
+      if(spindle.spindleMotorAnchor)assert.equal(id,spindle.spindleMotorAnchor,key+' motor on the physical spindle');
+      perMotor.set(id,(perMotor.get(id)||0)+1);
+    }
+    assert.deepEqual([...sides.values()].sort((a,b)=>a-b),[count/2,count/2],key+' both sides complete');
+    if(key==='marzoli_mds2_384') {
+      assert.deepEqual([...perMotor.values()],[192,192],key+' independent drives');
+      const turn=worldModelBounds(anchors.get('MDS_tray_return'));
+      for(const side of ['A','B'])
+        assert(turn.intersectsBox(worldModelBounds(anchors.get('MDS_tray_track_'+side))),key+' connected tray track '+side);
+    }
+    if(key==='toyota_rx300e') {
+      assert.deepEqual([...perMotor.values()],[1008]);
+      const tapes=nodes.filter(n=>n.userData.drivenSpindleCount===4);
+      assert.equal(tapes.length,252);
+      const main=routes.find(r=>r.id==='rx_spindles');
+      const edges=new Map();
+      for(const [from,to] of main.graph.links) {
+        if(!edges.has(from))edges.set(from,[]);
+        edges.get(from).push(to);
+      }
+      for(const tape of tapes) {
+        const outputs=edges.get(tape.userData.driveAnchorId);
+        assert.equal(outputs?.length,4);
+        assert(outputs.every(id=>anchors.get(id).userData.tapeGroupIndex===tape.userData.tapeGroupIndex));
+      }
+      for(const name of ['middle','back']) {
+        const route=routes.find(r=>r.id==='rx_'+name+'_draft');
+        const [ge,oe]=route.motors.map(m=>new Set(scopeDriveRoute(route,m).steps.at(-1).objects));
+        assert(ge.size===oe.size && [...ge].every(node=>!oe.has(node)),key+' two independent '+name+' roller sections');
+      }
+    }
+    ringFacts={spindles:count,perSide:count/2,spindlesPerMainMotor:Object.fromEntries(perMotor)};
+  }
   for (const phase of [0,.73]) {
     motion.select(null);motion.update(phase);
     const box=worldModelBounds(container),bounds={min:box.min.toArray(),max:box.max.toArray()};
@@ -144,7 +215,7 @@ for (const machine of added) {
   }
   motion.dispose();container.clear();
   report.variants.push({id:key,stage:machine.stageId,model:title,scope:machine.scope,
-    routes:routes.length,motors:mapped.size,meshes:nodes.filter(n=>n.isMesh).length,bytes:bytes.length,
+    routes:routes.length,motors:mapped.size,...ringFacts,meshes:nodes.filter(n=>n.isMesh).length,bytes:bytes.length,
     boundsMetres:rawBounds.getSize(new THREE.Vector3()).toArray().map(n=>Number(n.toFixed(3))),sha256:machine.sha256});
   console.log(key,mapped.size+' motor locations',routes.length+' routes');
 }

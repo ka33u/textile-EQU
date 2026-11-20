@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / "dist"
 NAMES = {
     "opening": "开清棉", "carding": "梳棉", "drawing": "并条", "combing": "精梳",
-    "roving": "粗纱", "spinning": "细纱与替代成纱结构", "winding": "自动络筒",
+    "roving": "粗纱", "spinning": "环锭细纱", "winding": "自动络筒",
     "warping": "整经", "sizing": "浆纱", "drawing_in": "穿经与结经", "weaving": "织造",
     "pretreatment": "织物前处理", "dyeing": "织物染色", "stenter": "拉幅热定型",
     "calender": "轧光整理", "inspection": "验布与复卷", "compact_spinning": "紧密纺",

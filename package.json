@@ -1,6 +1,6 @@
 {
   "name": "textile-machinery-atlas",
-  "version": "8.0.0",
+  "version": "8.1.0",
   "private": true,
   "type": "module",
   "description": "纺织装备工艺与传动交互演示系统，支持同工序跨厂家、跨机型研究电机与受驱机构",

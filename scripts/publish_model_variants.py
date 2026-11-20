@@ -12,7 +12,8 @@ ROOT=Path(__file__).resolve().parents[1]
 DIST=ROOT/'dist'
 ASSETS=DIST/'assets/variants'
 MAKERS={'jingwei':'经纬纺机','titan':'浙江泰坦','yuejian':'越剑智能','saurer':'卓郎 Saurer',
-        'rieter':'立达 Rieter','barmag':'巴马格 Barmag','picanol':'必佳乐 Picanol',
+        'rieter':'立达 Rieter','barmag':'巴马格 Barmag','marzoli':'马佐里 Marzoli',
+        'toyota':'丰田自动织机 Toyota','picanol':'必佳乐 Picanol',
         'karl_mayer':'卡尔迈耶 KARL MAYER','staubli':'史陶比尔 Stäubli','benninger':'贝宁格 Benninger',
         'monforts':'门富士 Monforts','andritz':'安德里茨 ANDRITZ','uster':'乌斯特 Uster',
         'ssm':'SSM','swastik':'SWASTIK Textile Engineers','brueckner':'布鲁克纳 Brückner'}
@@ -68,6 +69,10 @@ def main():
             assert evidence
             route['evidence']['sources']=evidence;routes.append(route)
             motors=route['steps'][0]['anchorIds']
+            if 'motorLabels' in spec:
+                labels=spec['motorLabels']
+                assert set(labels)==set(motors) and all(labels.values()),(mid,spec['id'])
+                route['motorLabels']=labels
             if spec['status']=='confirmed':known.update(motors)
             elif spec['status']=='inferred':inferred.update(motors)
             elif route.get('loadUnassigned'):unknown.update(motors)

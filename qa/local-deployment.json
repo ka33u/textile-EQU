@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-20T04:20:18.543316+00:00",
+  "checkedAt": "2026-11-20T11:31:24.107683+00:00",
   "url": "http://127.0.0.1:4173/",
   "assetVersion": "2026-11-20-models",
   "status": "pass",
@@ -7,8 +7,8 @@
     {
       "path": "index.html",
       "status": 200,
-      "bytes": 18499,
-      "sha256": "f7f809824b3ba611ee7d3de37b2b62bb1dc520f5d2ec11f858565e3b20a6875d",
+      "bytes": 18497,
+      "sha256": "3283e376db55d862f81f871a13753524ba28c33014fad7b54f88780f8416d724",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -23,16 +23,16 @@
     {
       "path": "model-variants.json",
       "status": 200,
-      "bytes": 31444,
-      "sha256": "3f20d6107fc93dd063ba2386d997381b416e203bc79cbe1d0274eca120e6a969",
+      "bytes": 36355,
+      "sha256": "79bbedcff7e45f8f33e9718ed43e49f59b0c9dc9af5d05d9cd8543200349ddcc",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
     {
       "path": "app.js",
       "status": 200,
-      "bytes": 88975,
-      "sha256": "eaf68aaa57fbd7cfa9e5307a2dbaf3278ed68c87777521d1a64222b0f5ce39e4",
+      "bytes": 90517,
+      "sha256": "7e791caf263453aa372393c6a77e44090c6e6552237e895c3401fe108d9fb6ae",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -127,8 +127,8 @@
     {
       "path": "station-motion.js",
       "status": 200,
-      "bytes": 2555,
-      "sha256": "ee15bec7bb911a786865d70530e2ee4202ffe008d1da07065d2df7e839de63b7",
+      "bytes": 2624,
+      "sha256": "ab48d49540c2b25337f20bd6c14116bfb004a697b67b206d5d0ab879797a2333",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -151,16 +151,16 @@
     {
       "path": "motor-applications.html",
       "status": 200,
-      "bytes": 443713,
-      "sha256": "12ea6fefef5cefd1bdd600b9afea13ddac5a71d85ce3de416e19031fbd65f341",
+      "bytes": 542967,
+      "sha256": "6c1fb640317ebb0affb4e6382950b7cf2e49094c0769da43942fd14f4eb03273",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
     {
       "path": "motor-applications.json",
       "status": 200,
-      "bytes": 285021,
-      "sha256": "9fb4158771679b7440cb5179033b9ef18f561cf882aa66e22096f2d1e7a72131",
+      "bytes": 349550,
+      "sha256": "11e97bcfc695f741cd7411b91126c4a82e6da25589cfd3508f1a9731146c7ae3",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -453,6 +453,38 @@
       "cacheControl": "no-store, max-age=0"
     },
     {
+      "path": "assets/variants/jingwei_jwf1590a.glb",
+      "status": 200,
+      "bytes": 17636828,
+      "sha256": "4fed81b1f4e5f7da1afbe776fcdd1095bc03a218bd041eb1e37b6fb4b35abf29",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1590a.json",
+      "status": 200,
+      "bytes": 482325,
+      "sha256": "c5c189ae63cc2e386226e67bc44578520ce4455eb88f0aca4d873afe442024fb",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/marzoli_mds2_384.glb",
+      "status": 200,
+      "bytes": 8157568,
+      "sha256": "62c44e3c25c5470c27a53ab350ba482665d6434ed9cb7a45128c791f28ac65b1",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/marzoli_mds2_384.json",
+      "status": 200,
+      "bytes": 306331,
+      "sha256": "a188e9b5aed746fd75e59a7cf827b15568eea29fada8eedac4ab371562d5d2c5",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
       "path": "assets/variants/rieter_r_37.glb",
       "status": 200,
       "bytes": 2471340,
@@ -533,6 +565,22 @@
       "cacheControl": "no-store, max-age=0"
     },
     {
+      "path": "assets/variants/saurer_zinser_51_ring.glb",
+      "status": 200,
+      "bytes": 6219048,
+      "sha256": "86232efad22b22b2cfcf4f0174bb68a563f22def276d30dc76361637106f3bc9",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/saurer_zinser_51_ring.json",
+      "status": 200,
+      "bytes": 224988,
+      "sha256": "0d9e0af2e680bd185088a8fa78a58f6820d823365fb5034300a3dc09c75c2a82",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
       "path": "assets/variants/titan_tqf_k90.glb",
       "status": 200,
       "bytes": 8254236,
@@ -561,6 +609,22 @@
       "status": 200,
       "bytes": 18852,
       "sha256": "d994a04d68ecc71c0e6c85ea8c135bb9488d924082a024e4714d3e6389960686",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/toyota_rx300e.glb",
+      "status": 200,
+      "bytes": 8223516,
+      "sha256": "b4536fbbd49d91873ce73f77001adea04b0c54dfbe4758939fce999d3a653821",
+      "diskBytesMatch": true,
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/toyota_rx300e.json",
+      "status": 200,
+      "bytes": 141220,
+      "sha256": "800bc530641b67907c2755ca595701dc73b10612c465ba140f2fc4cdb66daebc",
       "diskBytesMatch": true,
       "cacheControl": "no-store, max-age=0"
     },
@@ -901,6 +965,26 @@
       "cacheControl": "no-store, max-age=0"
     },
     {
+      "path": "assets/variants/jingwei_jwf1590a.glb",
+      "fingerprint": "4fed81b1f4e5f7da",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/jingwei_jwf1590a.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/marzoli_mds2_384.glb",
+      "fingerprint": "62c44e3c25c5470c",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/marzoli_mds2_384.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
       "path": "assets/variants/rieter_r_37.glb",
       "fingerprint": "3d3b824cd05adba1",
       "cacheControl": "public, max-age=31536000, immutable"
@@ -951,6 +1035,16 @@
       "cacheControl": "no-store, max-age=0"
     },
     {
+      "path": "assets/variants/saurer_zinser_51_ring.glb",
+      "fingerprint": "86232efad22b22b2",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/saurer_zinser_51_ring.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
       "path": "assets/variants/titan_tqf_k90.glb",
       "fingerprint": "7ca290a268d3e854",
       "cacheControl": "public, max-age=31536000, immutable"
@@ -967,6 +1061,16 @@
     },
     {
       "path": "assets/variants/titan_tt868.glb",
+      "fingerprint": "0000000000000000",
+      "cacheControl": "no-store, max-age=0"
+    },
+    {
+      "path": "assets/variants/toyota_rx300e.glb",
+      "fingerprint": "b4536fbbd49d9187",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "assets/variants/toyota_rx300e.glb",
       "fingerprint": "0000000000000000",
       "cacheControl": "no-store, max-age=0"
     },

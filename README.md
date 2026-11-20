@@ -1,6 +1,6 @@
 # 纺织装备工艺与传动交互演示系统
 
-系统覆盖棉纺、机织、染整及纱线加工的 **27 类设备、39 款机型、16 家厂商**。其中 38 款展示所选整机配置，巴马格 eFK EvoSmart 展示厂家已披露的工位。点选某个电机可查看安装位置、带动的机构、传动依据及运动示意。
+系统覆盖棉纺、机织、染整及纱线加工的 **27 类设备、43 个机型条目、18 家厂商**。其中 42 个条目展示所选整机配置，巴马格 eFK EvoSmart 展示厂家已披露的工位。点选某个电机可查看安装位置、带动的机构、传动依据及运动示意。
 
 ## 本地运行
 
@@ -20,12 +20,24 @@ npm start
 |---|---|---|
 | 梳棉 | 经纬青岛宏大 JWF1217 | 锡林永磁同步直联、刺辊和盖板变频、五组伺服工位，可与立达 C 81 对照 |
 | 并条 | 经纬沈阳宏大华明 JWF1366Pro、立达 RSB-D 27 | 单眼差速匀整与双眼独立牵伸，各眼圈条、筒底盘、吸风及换筒 |
+| 环锭细纱 | 经纬 JWF1590A、卓郎 Zinser 51、马佐里 MDS2、丰田 RX300E | 与立达 G 38 FE 对照四锭锭带、切向带分区、牵伸电机、钢领板升降及落纱 |
 | 转杯纺 | 浙江泰坦 TQF-K90、卓郎 Autocoro 11 和 BD 8、立达 R 37 | 逐位转杯、步进喂棉、分梳和卷绕，各款可追踪的传动不同。可与立达 R 70 对照 |
 | 喷气纺 | 卓郎 Autoairo | 牵伸、气动成纱、导纱、卷绕与落筒，可与立达 J 70 对照 |
 | 剑杆织造 | 浙江泰坦 TT-868 | 直驱主轴、伺服送经和卷取、步进绞边、机械打纬与引纬 |
 | 假捻加弹 | 越剑 YJ1000V-240、巴马格 eAFK HQ、巴马格 eFK EvoSmart | 前两款分别为 240 和 576 纱位。EvoSmart 提供 Smart Godet 导丝盘和 EvoHeater 工位，原有 eFK 384 位整机亦可选 |
 
 例如，打开 [立达 RSB-D 27 双眼并条机传动](http://127.0.0.1:4173/#drawing/drive/rieter_rsb_d27)，选择「两眼主牵伸」后即可在两个电机间切换。在同一工序改选经纬 JWF1366Pro，可以检查匀整伺服与差速机构的连接。从「设备结构」进入加弹机的「纱线路径」可选择一根纱，运行并近看其在模型中的路径。
+
+### 环锭细纱机的传动对照
+
+打开「环锭细纱」，切换厂家后，在「传动链 / 驱动工位」选择一路。工作机构选项列出全机锭号和所在侧，点击「定位所选机构」即可近看。下表列出四台新增整机的选定锭数。
+
+| 厂家和机型 | 选定锭数 | 可核对的传动差异 | 原厂资料 |
+|---|---:|---|---|
+| [经纬 JWF1590A](http://127.0.0.1:4173/#spinning/drive/jingwei_jwf1590a) | 1,440 | 每根锭带带四锭。全电子分段牵伸、螺杆升降和钢带集体落纱可分别查看。分段配套电机的实际数量待核。 | [经纬官网及联合样本](https://www.jwgf.com/cpfw/mfjx/xsj/jwzn/202607/t20260731_648822.html) |
+| [卓郎 Zinser 51](http://127.0.0.1:4173/#spinning/drive/saurer_zinser_51_ring) | 288 | 选六节常规三罗拉机，展示切向锭带、NSD-i 牵伸、Optisuction 吸风和 Cowemat 396 F 落纱。当前模型依据 2025 年 10 月样本，2026 年 11 月的换代公告另列于型号说明。 | [常规机型资料](https://saurer.com/en/products/machines/spinning/ring-spinning/zinser-51) · [2026 年公告](https://saurer.com/en/news/pressrelease-itma-asia-2026) |
+| [马佐里 MDS2](http://127.0.0.1:4173/#spinning/drive/marzoli_mds2_384) | 384 | 选两台主电机、两条切向带，各负责 192 锭。可逐个检查所属锭位。每组在两侧各分配 96 锭是模型选用的布置。 | [MDS2 产品与样本](https://www.marzoli.com/en/spinning-solutions/spinning-section/ring-spinning-frame-mds2) |
+| [丰田 RX300E](http://127.0.0.1:4173/#spinning/drive/toyota_rx300e) | 1,008 | 单根锭带带四锭。前罗拉通长驱动，中、后罗拉各在两端设独立伺服。采用 2025 年 8 月样本中 41.035 m 的筐式供管机，分段交界的具体锭号按中点布置。 | [丰田样本，印刷第 3、4、7–10 页](https://textile-machinery.toyota-industries.com/en/catalog2022/catalog/rx300_e.pdf) |
 
 经纬 JWF1366Pro 的 2026 年 7 月说明书提供主传动图、电机型号和功率。立达 RSB-D 27 的 2026 年 5 月版手册给出双眼的布置图与功率分项。越剑使用厂家在 DirectIndustry 展厅公开的参数表，首发日期和实机配套电机清单待核实。eAFK HQ 收录于巴马格 2026 年样本，eFK EvoSmart 于 2025 年推出。整机几何按已公开的选定配置重建，详情中列有尚待装配图核实的部分。[经纬说明书](https://www.jwgf.com/cpfw/mfjx/btj/syhm/202607/P020260731520695347371.pdf) · [立达并条机手册](https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v2-100158-en.pdf) · [越剑厂商展厅](https://www.directindustry.com/prod/zhejiang-yuejian-intelligent-equipment-company/product-235275-2369973.html) · [巴马格 EvoSmart 公告](https://www.barmag.com/en/about-us/news/barmags-new-texturing-machine-impresses-the-market/)
 

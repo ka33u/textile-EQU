@@ -1,7 +1,7 @@
 {
   "classes": 27,
-  "models": 39,
-  "manufacturers": 16,
+  "models": 43,
+  "manufacturers": 18,
   "variants": [
     {
       "id": "jingwei_jwf1366pro",
@@ -132,6 +132,93 @@
       "sha256": "cab30d142de6558f2e618eedbe231ce6f39a8b451e874ea856a706b340a4bc9d"
     },
     {
+      "id": "jingwei_jwf1590a",
+      "stage": "spinning",
+      "model": "JWF1590A",
+      "scope": "machine",
+      "routes": 28,
+      "motors": 28,
+      "spindles": 1440,
+      "perSide": 720,
+      "spindlesPerMainMotor": {
+        "JW1590A_main_head": 720,
+        "JW1590A_main_tail": 720
+      },
+      "meshes": 50379,
+      "bytes": 17636828,
+      "boundsMetres": [
+        60.143,
+        2.488,
+        1.74
+      ],
+      "sha256": "4fed81b1f4e5f7da1afbe776fcdd1095bc03a218bd041eb1e37b6fb4b35abf29"
+    },
+    {
+      "id": "marzoli_mds2_384",
+      "stage": "spinning",
+      "model": "MDS2",
+      "scope": "machine",
+      "routes": 9,
+      "motors": 10,
+      "spindles": 384,
+      "perSide": 192,
+      "spindlesPerMainMotor": {
+        "MDS_spindle_motor_1": 192,
+        "MDS_spindle_motor_2": 192
+      },
+      "meshes": 11829,
+      "bytes": 8157568,
+      "boundsMetres": [
+        19.988,
+        2.54,
+        1.206
+      ],
+      "sha256": "62c44e3c25c5470c27a53ab350ba482665d6434ed9cb7a45128c791f28ac65b1"
+    },
+    {
+      "id": "toyota_rx300e",
+      "stage": "spinning",
+      "model": "RX300E",
+      "scope": "machine",
+      "routes": 9,
+      "motors": 8,
+      "spindles": 1008,
+      "perSide": 504,
+      "spindlesPerMainMotor": {
+        "rx_main": 1008
+      },
+      "meshes": 24871,
+      "bytes": 8223516,
+      "boundsMetres": [
+        41.035,
+        2.64,
+        1.275
+      ],
+      "sha256": "b4536fbbd49d91873ce73f77001adea04b0c54dfbe4758939fce999d3a653821"
+    },
+    {
+      "id": "saurer_zinser_51_ring",
+      "stage": "spinning",
+      "model": "Zinser 51",
+      "scope": "machine",
+      "routes": 12,
+      "motors": 19,
+      "spindles": 288,
+      "perSide": 144,
+      "spindlesPerMainMotor": {
+        "ZR51_spindle_motor_A": 144,
+        "ZR51_spindle_motor_B": 144
+      },
+      "meshes": 11396,
+      "bytes": 6219048,
+      "boundsMetres": [
+        18.46,
+        2.917,
+        1.815
+      ],
+      "sha256": "86232efad22b22b2cfcf4f0174bb68a563f22def276d30dc76361637106f3bc9"
+    },
+    {
       "id": "saurer_autocoro_11",
       "stage": "rotor_spinning",
       "model": "Autocoro 11",
@@ -196,7 +283,7 @@
       "sha256": "1bcf831a1f64f4125ae6fe0aa4baff1591b9a95c69df4467ed657728fa643f0d"
     }
   ],
-  "projectionCases": 504,
-  "motorAssociations": 1813,
+  "projectionCases": 672,
+  "motorAssociations": 1878,
   "status": "pass"
 }

@@ -10,7 +10,7 @@ import { TexturingMotion, TEXTURING_PHASES } from './texturing-motion.js?v=20261
 import { ModelMaterials, ModelBatches, PICK_LAYER } from './model-rendering.js?v=20261118-render';
 
 import { RotorMotion } from './rotor-motion.js?v=20261118-rotor';
-import { StationMotion } from './station-motion.js?v=20261120-models';
+import { StationMotion } from './station-motion.js?v=20261120-ring';
 
 import { StationYarn } from './station-yarn.js?v=20261120-models';
 import { ModelPicker, machineHash, parseMachineHash } from './model-library.js?v=20261120-models';
@@ -423,7 +423,7 @@ function renderDrivePanel(){
     $('station-selector-title').textContent=exact?'转杯纺位':'电机工位';
     select.innerHTML=selected.motors.map((motor,i)=>{
       const {machineSide,sectionIndex,sidePosition}=driveObjectContext(motor);
-      const title=exact?`${machineSide} 侧 · 第 ${sidePosition} 位 · 第 ${sectionIndex} 节`:stationLabel(motor,i);
+      const title=exact?`${machineSide} 侧 · 第 ${sidePosition} 位 · 第 ${sectionIndex} 节`:stationLabel(motor,i,selected);
       return `<option value="${i}">${escapeHTML(title)}</option>`;
     }).join('');
     select.value=selected.motorIndex;
@@ -442,7 +442,9 @@ function renderDrivePanel(){
     $$('#drive-route-detail [data-drive-step]').forEach(button=>button.addEventListener('click',()=>focusDriveObject(allPoints[Number(button.dataset.driveStep)]?.object)));
   }else $$('#drive-route-detail [data-drive-step]').forEach(button=>button.addEventListener('click',()=>focusDriveObject(points[Number(button.dataset.driveStep)]?.object)));
 }
-function stationLabel(motor,index){
+function stationLabel(motor,index,route){
+  const named=route?.motorLabels?.[motor.userData.driveAnchorId];
+  if(named)return named;
   const context=driveObjectContext(motor);
   const side=context.machineSide?context.machineSide+' 侧 · ':'';
   const number=context.sidePosition||context.positionIndex||index+1;
@@ -456,9 +458,12 @@ function renderStationDrive(selected){
   for(const scope of scopes){
     const sections=scope.steps.filter(step=>step.role!=='motor'&&step.objects.length);
     const controls=sections.map(step=>{
-      const options=step.objects.map((node,i)=>{
+      const indexedSpindles=step.objects.length>0&&step.objects.every(node=>Number.isInteger(node.userData.spindleIndex));
+      const mechanisms=indexedSpindles?[...step.objects].sort((a,b)=>a.userData.spindleIndex-b.userData.spindleIndex):step.objects;
+      const options=mechanisms.map((node,i)=>{
         const id=objects.push(node)-1;
         const label=node.userData.label||step.label;
+        if(indexedSpindles)return {id,label:node.userData.spindleIndex+' 锭 · '+node.userData.machineSide+' 侧 · '+label};
         return {id,label:step.objects.length>1?String(i+1).padStart(2,'0')+' · '+label:label};
       });
       if(options.length<=4)return '<li><span>'+escapeHTML(step.label)+'</span><div class="load-picks">'+options.map(o=>
@@ -468,8 +473,9 @@ function renderStationDrive(selected){
         '</select></label><button type="button" data-focus-station>定位所选机构</button></li>';
     }).join('');
     rows.push('<section class="drive-route-purpose station-evidence"><strong>'+escapeHTML(scope.label)+'</strong>'+
-      (scope.operation==='maintenance'?'<p>停产维护工位，单独演示。</p>':'')+'<dl>'+
-      '<dt>安装工位</dt><dd>'+escapeHTML(scope.location)+'</dd><dt>电机与动力源</dt><dd>'+escapeHTML(scope.electric)+'</dd>'+
+      (scope.operation==='maintenance'?'<p>停产维护工位，单独演示。</p>':'')+
+      (scope.operation==='doffing'?'<p>落纱换管周期。选择本工位可单独查看动作。</p>':'')+'<dl>'+
+      '<dt>安装工位</dt><dd>'+escapeHTML(scope.motorLabels?.[motor?.userData.driveAnchorId]||scope.location)+'</dd><dt>电机与动力源</dt><dd>'+escapeHTML(scope.electric)+'</dd>'+
       '<dt>带动机构</dt><dd>'+escapeHTML(scope.role)+'</dd></dl>'+
       '<small>'+(scope.loadUnassigned?'厂家照片可辨认电机外观':status[scope.evidence.status])+'</small><div class="station-sources">'+scope.evidence.sources.map(s=>sourceLink(s)).join('')+'</div>'+
       '<ul class="station-loads">'+controls+'</ul></section>');
@@ -502,7 +508,11 @@ function focusDriveObject(object){
   selectPart(object);
   const isMotor=driveView?.routes.some(route=>route.motors.includes(object));
   const side=rotorMotion&&driveObjectContext(object).machineSide;
-  if(side){
+  if(Number.isInteger(object.userData.spindleIndex)){
+    const center=worldModelBounds(object).getCenter(new THREE.Vector3());
+    const sign=center.z>=currentBounds().getCenter(new THREE.Vector3()).z?1:-1;
+    focusSelectedPart({direction:new THREE.Vector3(.14,.22,sign).normalize(),distanceScale:1.65});
+  }else if(side){
     const sign=side==='A'?1:-1;
     focusSelectedPart({direction:new THREE.Vector3(.14*sign,.22,sign).normalize(),distanceScale:1.28});
   }else if(isMotor)focusSelectedPart({direction:exteriorDriveDirection(currentBounds(),worldModelBounds(object)),distanceScale:1.22});
@@ -812,6 +822,10 @@ function indexModel(root,url,metadata){
       }
     }
   });
+  for(const group of groups.values()){
+    if(group.objects.every(object=>Number.isInteger(object.userData.spindleIndex)))
+      group.objects.sort((a,b)=>a.userData.spindleIndex-b.userData.spindleIndex);
+  }
   return {root,url,metadata,meshes,exploded,spinning,shells,groups,materials:new ModelMaterials(meshes)};
 }
 async function readModelBytes(response,onProgress){
@@ -922,6 +936,8 @@ function inheritedData(object,key){let current=object;while(current&&current!==c
 function labeledPart(object){let current=object;while(current&&current!==content){if(current.userData.label)return current;current=current.parent}return null}
 function semanticPartKey(object){
   const label=String(object.userData.semanticLabel||object.userData.label||object.name).normalize('NFKC').trim().replace(/\s+/g,' ');
+  if(Number.isInteger(object.userData.spindleIndex))return '旋转锭子与纱管';
+  if(Number.isInteger(object.userData.positionIndex)&&/^(?:完整)?环锭工位\s*\d/.test(label))return '环锭纺纱工位';
   if(object.userData.semanticLabel)return label;
   if(object.userData.group==='material'&&/^shed_warp_\d+(?:\.\d+)?$/.test(object.name))return '经纱';
   // Keep model numbers such as G38/C81. Only remove explicit ordinal or trailing position indices.
@@ -959,7 +975,9 @@ function selectPart(object){
   selectedPartIndex=group?.objects.indexOf(object)??-1;
   const count=group?.objects.length||1;
   const position=inheritedData(object,'positionIndex');
-  $('part-instance-counter').textContent=(count>1?`同类 ${count} 处 · 第 ${selectedPartIndex+1} 处`:'当前零件')+(position?` / 机位 ${position}`:'');
+  const spindle=inheritedData(object,'spindleIndex');
+  const location=spindle?' / '+inheritedData(object,'machineSide')+' 侧 · 全机第 '+spindle+' 锭':position?' / 机位 '+position:'';
+  $('part-instance-counter').textContent=(count>1?`同类 ${count} 处 · 第 ${selectedPartIndex+1} 处`:'当前零件')+location;
   $('prev-part-instance').hidden=count<2;$('next-part-instance').hidden=count<2;
   applyMaterials();
 }

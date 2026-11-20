@@ -1560,6 +1560,1834 @@
               "position"
             ]
           }
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "spindle_main",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "机头/机尾主驱与全车360组锭带 · 四锭一组滚盘主传动",
+          "path": "主电机经油浴传动箱和长主轴转动滚盘，每条闭合锭带关联同处两侧各2锭",
+          "electric": "样本确认高效纺织变频电机；两台主电机和各720锭分区为模型推定，不宣称异步或永磁",
+          "work": "1440锭，360组；机头及机尾各180组、720锭",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "vfd",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "main",
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "main",
+              "process"
+            ],
+            "group": [
+              "main",
+              "process"
+            ],
+            "unspecified": [
+              "main",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_1_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · A侧第1区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_1_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · A侧第1区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_1_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · A侧第1区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_2_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · A侧第2区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_2_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · A侧第2区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_2_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · A侧第2区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_3_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · A侧第3区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_3_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · A侧第3区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_A_3_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · A侧第3区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_1_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · B侧第1区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_1_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · B侧第1区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_1_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第1–240纺位 · B侧第1区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_2_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · B侧第2区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_2_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · B侧第2区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_2_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第241–480纺位 · B侧第2区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_3_rear",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · B侧第3区后罗拉",
+          "path": "电子调速控制此侧功能区的后罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应后罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_3_middle",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · B侧第3区中罗拉",
+          "path": "电子调速控制此侧功能区的中罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应中罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "draft_B_3_front",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该侧第481–720纺位 · B侧第3区前罗拉",
+          "path": "电子调速控制此侧功能区的前罗拉；不把相邻侧或其他列纳入本电机",
+          "electric": "样本确认多轴伺服和全电子牵伸；每区每列一台是可视功能分配，功率/磁路/实际台数未知",
+          "work": "30段×8锭=240锭对应前罗拉",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "ring_lift",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "中央箱体→两侧纵轴→60个模型螺杆位 · 居中螺杆式钢领板升降",
+          "path": "独立升降功能带动全部钢领板，配合纱线卷绕成形；不混入集体落纱动作",
+          "electric": "电子螺杆升降明确；电机数量、类型和功率未公开",
+          "work": "60段钢领板，每段24钢领，合计1440",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "position",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "position",
+            "process"
+          ],
+          "motorJobs": {
+            "position": [
+              "position",
+              "process"
+            ],
+            "group": [
+              "position",
+              "process"
+            ],
+            "unspecified": [
+              "position",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "doff_lift",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "中央箱体→两侧集落提升机构 · 居中集体落纱升降",
+          "path": "提升夹持梁执行拔管/插管的功能行程；夹持器开闭与摆入摆出时序不由此动画伪造",
+          "electric": "集落升降居中明确；一台模型驱动及纵向分配布置推定",
+          "work": "60段落纱梁和1440夹持工位",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "handling",
+            "position",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "position",
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "position",
+              "transport"
+            ],
+            "position": [
+              "position",
+              "transport"
+            ],
+            "group": [
+              "position",
+              "transport"
+            ],
+            "unspecified": [
+              "position",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "steel_tape_A",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "尾部驱动端与该侧整条钢带 · A侧钢带走管",
+          "path": "转动端轮带动该侧钢带，用走管销输送空满管；不使纺纱锭子跟随该电机旋转",
+          "electric": "钢带集落/智能变速公开；每侧独立一电机为模型选择，电机型式与减速比待核",
+          "work": "该侧720个走管销和720空管",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "handling",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport"
+            ],
+            "group": [
+              "transport"
+            ],
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "steel_tape_B",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "尾部驱动端与该侧整条钢带 · B侧钢带走管",
+          "path": "转动端轮带动该侧钢带，用走管销输送空满管；不使纺纱锭子跟随该电机旋转",
+          "electric": "钢带集落/智能变速公开；每侧独立一电机为模型选择，电机型式与减速比待核",
+          "work": "该侧720个走管销和720空管",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "handling",
+            "group",
+            "unspecified"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport"
+            ],
+            "group": [
+              "transport"
+            ],
+            "unspecified": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "suction_head",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该端风机和两条半长负压风道 · 机头工艺吸棉",
+          "path": "驱动叶轮形成负压；管道和单吸嘴是受影响流体工作区，不是被电机机械转动的负载",
+          "electric": "头尾两端吸棉及智能负压控制公开；两台风机的具体电机类型/功率未公开",
+          "work": "模型中各半长两侧共720吸嘴；真实气压作用域未获风路图核实",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "suction_tail",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "该端风机和两条半长负压风道 · 机尾工艺吸棉",
+          "path": "驱动叶轮形成负压；管道和单吸嘴是受影响流体工作区，不是被电机机械转动的负载",
+          "electric": "头尾两端吸棉及智能负压控制公开；两台风机的具体电机类型/功率未公开",
+          "work": "模型中各半长两侧共720吸嘴；真实气压作用域未获风路图核实",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "fluid",
+            "unspecified"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ],
+            "unspecified": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "sorter_elevator",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "自动理管机 · 空管提升",
+          "path": "以独立功能驱动说明自动理管的空管提升环节，不声称已取得理管机OEM结构图",
+          "electric": "自动理管机作为公开配置存在；此内部驱动的台数、型式、位置全为功能推定",
+          "work": "空管提升工作组",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "handling",
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "position"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport",
+              "position"
+            ],
+            "unspecified": [
+              "transport",
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "sorter_orient",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "自动理管机 · 空管定向",
+          "path": "以独立功能驱动说明自动理管的空管定向环节，不声称已取得理管机OEM结构图",
+          "electric": "自动理管机作为公开配置存在；此内部驱动的台数、型式、位置全为功能推定",
+          "work": "空管定向工作组",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "handling",
+            "unspecified"
+          ],
+          "jobs": [
+            "transport",
+            "position"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport",
+              "position"
+            ],
+            "unspecified": [
+              "transport",
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "jingwei_jwf1590a",
+          "routeId": "gripper_execution",
+          "maker": "经纬纺机 · 经纬智能",
+          "model": "JWF1590A",
+          "station": "全车集落夹持梁 · 集落夹持器开闭执行待核",
+          "path": "说明夹持器有开闭功能；与已建的升降动作分开，不把传感器当执行电机",
+          "electric": "未获得夹持执行器供能类型；不添加猜测电机",
+          "work": "1440夹持位置的开闭驱动待核",
+          "refs": [
+            "machineRef_05d69e385531a2"
+          ],
+          "filters": [
+            "unspecified"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "motorJobs": {
+            "unspecified": [
+              "position"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_spindles",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机身下部沿长度分成两区 · 两组主电机与切向锭带",
+          "path": "输出轮带动切向带，锭盘靠摩擦转动。模型第一组带 A 侧 1–96、B 侧 193–288 锭，第二组带其余 192 锭。两侧锭号分配按机构推定。",
+          "electric": "选择每台 7.5 kW、每条带 192 锭的多切向带配置，两台电机共用变频器。厂家未披露电机磁路型式。",
+          "work": "切向带对应的锭子与纱管",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "group",
+            "vfd"
+          ],
+          "jobs": [
+            "main",
+            "twist",
+            "wind"
+          ],
+          "motorJobs": {
+            "group": [
+              "main",
+              "twist",
+              "wind"
+            ],
+            "vfd": [
+              "main",
+              "twist",
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_front",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头牵伸传动箱、前罗拉轴 · 前罗拉变频驱动",
+          "path": "机头驱动组件把动力分配至两侧前罗拉，前列下罗拉摩擦带动上胶辊，控制前钳口输出速度。",
+          "electric": "前罗拉单独变频，样本未列前列电机的单独额定功率。",
+          "work": "两侧前下罗拉与随动上胶辊",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "vfd",
+            "single"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "draft"
+            ],
+            "single": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_middle_back",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头牵伸传动箱、中后罗拉轴 · 中、后罗拉无刷驱动",
+          "path": "机头分配带将电机轴动力送到各侧中、后罗拉，同步带连接两列。上胶辊通过与下罗拉接触而转动。",
+          "electric": "厂家确认中、后罗拉采用无刷电机与变频驱动，短机示意为共用一台。",
+          "work": "中后下罗拉与随动上胶辊",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "brushless",
+            "vfd",
+            "group"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "brushless": [
+              "draft"
+            ],
+            "vfd": [
+              "draft"
+            ],
+            "group": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_ringrail",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头升降驱动、两侧钢领板 · 钢领板升降",
+          "path": "驱动两侧钢领板往复升降，改变钢丝圈的高度，使纱线沿纱管形成卷装。",
+          "electric": "厂家确认钢领板独立驱动和无配重升降。电机磁路、功率及传力轴形式未披露。",
+          "work": "两侧升降钢领板",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "position",
+            "single"
+          ],
+          "jobs": [
+            "traverse",
+            "wind"
+          ],
+          "motorJobs": {
+            "position": [
+              "traverse",
+              "wind"
+            ],
+            "single": [
+              "traverse",
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_suction",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头单端吸风箱、逐锭吸棉口 · 断头吸棉风机",
+          "path": "电机驱动风机形成负压，断头纤维从各锭笛口进入一条大截面总管，汇至机头。",
+          "electric": "选单端抽吸，384 锭对应样本 ≤576 锭档，50 Hz 电机为 4 kW，60 Hz 档为 4.6 kW。",
+          "work": "384 处吸棉笛口",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_doffing",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头下部至两侧夹持梁 · 集体落纱升降",
+          "path": "落纱传力机构带动两侧夹持梁抬升满管，移交托盘，再把停车轨上的空管装回锭子。",
+          "electric": "自动落纱与停车轨有厂家依据，电机外形、数目与传力路径按该动作推定。",
+          "work": "双侧落纱梁及其夹持头",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "handling",
+            "position"
+          ],
+          "jobs": [
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ],
+            "position": [
+              "logistics"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_trays",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头底部和双侧托盘轨 · 管纱托盘输送",
+          "path": "回转输送机构移动两侧托盘，使落纱工位交接满管与空管。",
+          "electric": "托盘与停车轨的功能见厂家落纱顺序。输送电机、减速和双侧回转布置为功能推定。",
+          "work": "两侧托盘输送轨",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "handling",
+            "geared"
+          ],
+          "jobs": [
+            "logistics",
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics",
+              "transport"
+            ],
+            "geared": [
+              "logistics",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_loader",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "机头外侧供管站料斗与提升链 · 空管提升",
+          "path": "提升链从料斗拾取空管，送到上方定向机构。",
+          "electric": "厂家列出自动供管装置和外廓。模型依据提升动作布置减速电机。",
+          "work": "空管提升链",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "handling",
+            "geared"
+          ],
+          "jobs": [
+            "transport",
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport",
+              "logistics"
+            ],
+            "geared": [
+              "transport",
+              "logistics"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "marzoli_mds2_384",
+          "routeId": "mds_sorter",
+          "maker": "马佐里 Marzoli",
+          "model": "MDS2",
+          "station": "供管站上部至托盘交接处 · 供管定向与上盘",
+          "path": "定向机构逐支把空管送到托盘上，托盘将其运往机侧待换管位置。",
+          "electric": "定向电机和星轮为功能还原，实际供管器传动清单有待核实。",
+          "work": "供管定向轮",
+          "refs": [
+            "machineRef_5ecf303cc02092",
+            "machineRef_21797a115417f9"
+          ],
+          "filters": [
+            "handling",
+            "position"
+          ],
+          "jobs": [
+            "logistics",
+            "position"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics",
+              "position"
+            ],
+            "position": [
+              "logistics",
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_spindles",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "OE 端主电机至两侧 252 组锭带 · 主电机与四锭锭带",
+          "path": "主电机带动纵轴和锭带驱动盘。每条锭带带动两侧共四根锭子，锭盘、锭杆和纱管一起旋转。",
+          "electric": "选高效感应主电机加变频器。厂家同时列有另一种节能主电机与专用逆变器，当前配置的额定功率未给出。",
+          "work": "每组锭带的四根锭子",
+          "refs": [
+            "machineRef_523f5b157ae66a",
+            "machineRef_47b30409199799",
+            "machineRef_f780984d3930c0"
+          ],
+          "filters": [
+            "induction",
+            "vfd",
+            "group"
+          ],
+          "jobs": [
+            "main",
+            "twist",
+            "wind"
+          ],
+          "motorJobs": {
+            "induction": [
+              "main",
+              "twist",
+              "wind"
+            ],
+            "vfd": [
+              "main",
+              "twist",
+              "wind"
+            ],
+            "group": [
+              "main",
+              "twist",
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_front_draft",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "GE 端至两侧前罗拉 · 前罗拉通长伺服",
+          "path": "前罗拉伺服控制全长两侧的前列下罗拉与接触从动上胶辊，调节纤维束的输出速度。",
+          "electric": "第 4 页双端三罗拉图列出 1 台前罗拉电机，第 7 页确认电子牵伸罗拉伺服驱动。",
+          "work": "前列下罗拉与摩擦从动上胶辊",
+          "refs": [
+            "machineRef_47b30409199799"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft"
+            ],
+            "group": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_middle_draft",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "GE 与 OE 两端分别驱动中罗拉 · 中罗拉两端分段伺服",
+          "path": "选择 GE 或 OE 的伺服电机，只带动该端一段的中列罗拉及其摩擦从动上胶辊。",
+          "electric": "厂家图示 GE、OE 各一台中罗拉电机，采用伺服同步。模型将分界选在机身中点，准确交界锭号待核。",
+          "work": "中列下罗拉与摩擦从动上胶辊",
+          "refs": [
+            "machineRef_47b30409199799"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft"
+            ],
+            "group": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_back_draft",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "GE 与 OE 两端分别驱动后罗拉 · 后罗拉两端分段伺服",
+          "path": "选择 GE 或 OE 的伺服电机，只带动该端一段的后列罗拉及其摩擦从动上胶辊。",
+          "electric": "厂家图示 GE、OE 各一台后罗拉电机，采用伺服同步。模型将分界选在机身中点，准确交界锭号待核。",
+          "work": "后列下罗拉与摩擦从动上胶辊",
+          "refs": [
+            "machineRef_47b30409199799"
+          ],
+          "filters": [
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "draft"
+          ],
+          "motorJobs": {
+            "servo": [
+              "draft"
+            ],
+            "group": [
+              "draft"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_ring_lift",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "车头升降传动与各节钢领板 · 钢领板伺服螺杆升降",
+          "path": "伺服驱动升降机构，同步改变两侧钢领板高度和换向位置，控制卷装成形。",
+          "electric": "厂家明确钢领板运动由伺服电机和积极升降螺杆控制。纵轴分配与丝杆安装点为功能布置。",
+          "work": "每节两侧的钢领板",
+          "refs": [
+            "machineRef_47b30409199799",
+            "machineRef_d8d49e26e01fdc"
+          ],
+          "filters": [
+            "servo",
+            "position",
+            "group"
+          ],
+          "jobs": [
+            "traverse",
+            "wind"
+          ],
+          "motorJobs": {
+            "servo": [
+              "traverse",
+              "wind"
+            ],
+            "position": [
+              "traverse",
+              "wind"
+            ],
+            "group": [
+              "traverse",
+              "wind"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_suction",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "单端吸棉箱与工艺风道 · 断头吸棉风机",
+          "path": "叶轮产生负压，由机身风道收集断头纤维。",
+          "electric": "第 3 页控制图明确给出逆变器、压力传感器与吸棉风机电机。选单个 PN1，电机的具体电磁型式与安装尺寸待铭牌核对。",
+          "work": "单端吸棉叶轮",
+          "refs": [
+            "machineRef_47b30409199799",
+            "machineRef_f780984d3930c0"
+          ],
+          "filters": [
+            "vfd",
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_doff",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "两侧锭列前方 · 集体落纱夹持梁",
+          "path": "停车落纱时两侧夹持排对准纱管，将满管转交输送锭脚并装空管。",
+          "electric": "高速自动落纱属于厂家公开配置。驱动落纱梁和夹持器的动力源待核。",
+          "work": "满管、空管夹持排",
+          "refs": [
+            "machineRef_47b30409199799",
+            "machineRef_d8d49e26e01fdc"
+          ],
+          "filters": [
+            "handling",
+            "unspecified"
+          ],
+          "jobs": [
+            "logistics"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics"
+            ],
+            "unspecified": [
+              "logistics"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_tbc",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "供管端与输送锭脚 · 筐式自动补管与交接",
+          "path": "空管送入锭脚输送系统，与集体落纱周期配合。",
+          "electric": "原厂第 8、10 页给出筐式供管单元与筒管交接布局。专用电机及联接方式待核。",
+          "work": "给管轮和交接位置",
+          "refs": [
+            "machineRef_47b30409199799",
+            "machineRef_d8d49e26e01fdc"
+          ],
+          "filters": [
+            "handling",
+            "unspecified"
+          ],
+          "jobs": [
+            "logistics",
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "logistics",
+              "transport"
+            ],
+            "unspecified": [
+              "logistics",
+              "transport"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "toyota_rx300e",
+          "routeId": "rx_balloon_control",
+          "maker": "丰田自动织机 Toyota Industries",
+          "model": "RX300E",
+          "station": "钢领板与前罗拉之间 · 导纱钩与气圈控制环",
+          "path": "卷绕初期气圈环随导纱钩，在约四成管纱卷绕量后随钢领运动，以控制高速气圈。",
+          "electric": "样本列出气圈控制环的运动规律，当前资料未识别其专用动力及联接。",
+          "work": "两侧气圈控制环",
+          "refs": [
+            "machineRef_47b30409199799"
+          ],
+          "filters": [
+            "position",
+            "unspecified"
+          ],
+          "jobs": [
+            "traverse",
+            "tension"
+          ],
+          "motorJobs": {
+            "position": [
+              "traverse",
+              "tension"
+            ],
+            "unspecified": [
+              "traverse",
+              "tension"
+            ]
+          },
+          "level": "动力归属或执行边界"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_spindle",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "两机面锭脚高度的切向带；端部电机位置为重建 · 288锭切向带主传动",
+          "path": "电机经带轮及连续锭带驱动每面144根锭子；钢丝圈由纱线拖动，不是单锭电机",
+          "electric": "切向带驱动由原厂确认；模型每面1只主驱电机壳，实际电机数、功率和电磁型式未公开",
+          "work": "锭子、锭盘、管纱及随纱转动的钢丝圈",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "group"
+          ],
+          "jobs": [
+            "main",
+            "wind"
+          ],
+          "motorJobs": {
+            "group": [
+              "main",
+              "wind"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_nsdi",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "传动端大电机、4个伺服外壳与两机面三列罗拉轴 · NSD-i 三罗拉牵伸总成",
+          "path": "以不同罗拉速度牵伸粗纱；上胶辊由接触随动，粗纱卷装由牵引退绕；总成类型已核实、5只机壳的逐轴对应仍待厂家轴表",
+          "electric": "原厂明示变频电机与伺服电机；样本图可辨1个大机壳及4个小机壳。图中具体前/中/后罗拉分配为推定，并非逐锭电机",
+          "work": "AUW/EUW/MUW 三类下罗拉、上胶辊与粗纱退绕",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "vfd",
+            "servo",
+            "group"
+          ],
+          "jobs": [
+            "feed",
+            "process"
+          ],
+          "motorJobs": {
+            "vfd": [
+              "feed",
+              "process"
+            ],
+            "servo": [
+              "feed",
+              "process"
+            ],
+            "group": [
+              "feed",
+              "process"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_building",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "端部升降驱动、纵向传力位置与机节升降杆 · 双面钢领板成形升降",
+          "path": "通过升降传力机构同步调节钢领板，形成管纱卷装；不是让整根锭子上下运动",
+          "electric": "钢领板升降负载明确；电机数量、减速型式及实际传动机构未公开，1只机壳为功能代表",
+          "work": "双面钢领板与288只钢领",
+          "refs": [
+            "machineRef_8457120af174d6",
+            "machineRef_03d4947c06bdb9"
+          ],
+          "filters": [
+            "position"
+          ],
+          "jobs": [
+            "position",
+            "wind"
+          ],
+          "motorJobs": {
+            "position": [
+              "position",
+              "wind"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_doff_motion",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "两侧落纱连杆和夹持梁 · Cowemat 396 F 集体落纱梁",
+          "path": "使整面夹持梁接近管纱、提取与换管；连续演示仅为动作关系示意，不复现控制时序",
+          "electric": "自动落纱功能由原厂确认；模型每面1个动作电机位置，真实升降/摆入轴数和执行方式待核",
+          "work": "A/B面落纱梁及夹持头",
+          "refs": [
+            "machineRef_8457120af174d6",
+            "machineRef_89dab10742f174"
+          ],
+          "filters": [
+            "position",
+            "handling"
+          ],
+          "jobs": [
+            "position",
+            "transport"
+          ],
+          "motorJobs": {
+            "position": [
+              "position",
+              "transport"
+            ],
+            "handling": [
+              "position",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_doff_vacuum",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "传动端独立供给单元及两面真空分配管 · Cowemat 独立真空供给",
+          "path": "建立落纱夹持所需真空，供给两面的夹持管路",
+          "electric": "厂家明确独立真空供给；具体泵型、功率和轴数未公开，1个电机/叶轮为功能代表",
+          "work": "独立真空单元及分配管",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air",
+            "pressure"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air",
+              "pressure"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_grippers",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "每一锭对应的Cowemat落纱梁位置 · 288个可释放真空夹持头",
+          "path": "利用真空夹住管纱并按落纱流程释放；供气/真空阀细节未公开",
+          "electric": "真空夹持与可释放夹头由原厂说明；夹持头本身无单独电机",
+          "work": "288个管纱夹持头",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "pneumatic",
+            "handling"
+          ],
+          "jobs": [
+            "pressure",
+            "transport"
+          ],
+          "motorJobs": {
+            "pneumatic": [
+              "pressure",
+              "transport"
+            ],
+            "handling": [
+              "pressure",
+              "transport"
+            ]
+          },
+          "level": "厂家公开工位驱动"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_suction",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "机头与机尾的风机功能位置，两面吸棉风道 · Optisuction / Twinsuction 工艺吸风",
+          "path": "风机形成工艺吸风，经主管与逐锭笛管收集断头和飞花",
+          "electric": "厂家明确直驱IE4吸风电机；IE4是效率等级，不等同于某种电磁结构。两端各1套的具体安装仍是重建",
+          "work": "吸风叶轮、主风道及吸棉笛管",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "direct",
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "direct": [
+              "air"
+            ],
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_bobbintray",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "双机面锭脚前方的盘式输送轨与端部驱动 · Bobbintray 管纱输送",
+          "path": "让承载盘把空管送到对应锭位，并输出落下的管纱",
+          "electric": "厂家明确精密驱动；实际电机分组和减速比未公布，按机面绘制2个功能驱动位置",
+          "work": "288个承载盘及其空管",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_cowefeed_lift",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "独立机尾部料斗和倾斜提升带 · Cowefeed 空管投料与提升",
+          "path": "将投料仓中的空管送到定向分选区；仓内24支只是填充状态示意，原厂仓容量未披露",
+          "electric": "自分选供管功能及照片由原厂公开；提升段独立驱动数/电机型式未公开，1个功能机壳为推定",
+          "work": "投料仓与提升输送机构",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "feed",
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "feed",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_cowefeed_sort",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "提升带出口与空管输出通道 · Cowefeed 自动定向分选",
+          "path": "使空管方向一致后进入Bobbintray输送；内部定向原理未经装配图核实",
+          "electric": "厂家确认自动分选；转盘形制、独立驱动及传动比为功能重建",
+          "work": "空管定向机构",
+          "refs": [
+            "machineRef_8457120af174d6"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "position",
+            "transport"
+          ],
+          "motorJobs": {
+            "handling": [
+              "position",
+              "transport"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_cleaner_travel",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "粗纱架上方轨道 · 巡回清洁附件行走",
+          "path": "沿两机面巡回定位吹吸清洁附件",
+          "electric": "当前整机照片带巡回清洁器；附件厂家、型号和驱动分组未披露，电机为推定",
+          "work": "巡回清洁单元",
+          "refs": [
+            "machineRef_89dab10742f174"
+          ],
+          "filters": [
+            "handling"
+          ],
+          "jobs": [
+            "position"
+          ],
+          "motorJobs": {
+            "handling": [
+              "position"
+            ]
+          },
+          "level": "按工作机构推定"
+        },
+        {
+          "modelAssetId": "saurer_zinser_51_ring",
+          "routeId": "ZR51_cleaner_air",
+          "maker": "Saurer 卓郎",
+          "model": "Zinser 51",
+          "station": "巡回机头及两侧竖向软管 · 巡回清洁附件吹吸风",
+          "path": "经两侧管路清洁工作区与近地飞花；可在生产过程中巡回工作",
+          "electric": "照片确认吹吸附件；风机轴数、风路和电机型式为功能重建",
+          "work": "巡回吹吸风叶轮及管口",
+          "refs": [
+            "machineRef_89dab10742f174"
+          ],
+          "filters": [
+            "fluid"
+          ],
+          "jobs": [
+            "air"
+          ],
+          "motorJobs": {
+            "fluid": [
+              "air"
+            ]
+          },
+          "level": "按工作机构推定"
         }
       ]
     },
@@ -8501,6 +10329,56 @@
       "title": "Rieter · Draw frames, 3690-v2 (2605)",
       "url": "https://www.rieter.com/fileadmin/user_upload/products/documents/systems/spinning-preparation/rieter-draw-frames-brochure-3690-v2-100158-en.pdf",
       "locator": "RSB-D 27 的两眼布置与规格见印刷页 34–35，包含装机功率与多个选配尺寸。"
+    },
+    "machineRef_05d69e385531a2": {
+      "title": "经纬官网 JWF1590/JWF1590A 联合产品宣传册",
+      "url": "https://www.jwgf.com/cpfw/mfjx/xsj/jwzn/202607/P020260805512868420951.pdf",
+      "locator": "印刷第 3–4 页列出 A 型牵伸分段和中置升降，第 5–10 页介绍驱动和工艺。第 13–14 页给出 1,440 锭配置、安装尺寸和八锭一节罗拉。"
+    },
+    "machineRef_5ecf303cc02092": {
+      "title": "Marzoli · Galileo MDS2 技术手册",
+      "url": "https://media.marzoli.com/technical-information-ring-frame-mds2-brochure.pdf",
+      "locator": "印刷页 5–6、8–11、16–17。核查每电机负责的锭数、短机牵伸图、吸风、落纱及分档功率和外形。"
+    },
+    "machineRef_21797a115417f9": {
+      "title": "Marzoli · Ring frame MDS2",
+      "url": "https://www.marzoli.com/en/spinning-solutions/spinning-section/ring-spinning-frame-mds2",
+      "locator": "现行在列系列、独立锭子/牵伸/钢领板驱动、自动落纱与允许的外部配置。"
+    },
+    "machineRef_523f5b157ae66a": {
+      "title": "丰田自动织机 · RX300 系列规格",
+      "url": "https://www.toyota-industries.com/products/textile/spinning/index.html",
+      "locator": "RX300 技术表列出四锭一带、最大 1,824 锭、锭距与不同管长的升程。"
+    },
+    "machineRef_47b30409199799": {
+      "title": "丰田自动织机 · RX300 英文样本（2025.08）",
+      "url": "https://textile-machinery.toyota-industries.com/en/catalog2022/catalog/rx300_e.pdf",
+      "locator": "第3页为主传动及变频吸棉控制图，第4页为 RX300E 三罗拉五电机两端分配，第7–8页为中间车头选件、升降和落纱，第9–10页为筐式供管配置及尺寸。"
+    },
+    "machineRef_f780984d3930c0": {
+      "title": "丰田纺机 · 主传动与节能",
+      "url": "https://textile-machinery.toyota-industries.com/en/products/RX300/air.html",
+      "locator": "锭子和牵伸传动使用电机和逆变器。区分感应电机、选装节能电机和专用逆变器。吸棉系统调节吸力。"
+    },
+    "machineRef_d8d49e26e01fdc": {
+      "title": "丰田纺机 · 可靠性和落纱系统",
+      "url": "https://textile-machinery.toyota-industries.com/en/products/RX300/reliability.html",
+      "locator": "三件铸铁中墙对应 48 锭，图示高速集体落纱、供管单元与伺服螺杆升降。"
+    },
+    "machineRef_8457120af174d6": {
+      "title": "Zinser 51 Be complete，官网当前样本，版权 10.2025",
+      "url": "https://saurer.com/media/7081/download/31%20Zinser%2051%20Be%20comprehensive_EN.pdf?v=2",
+      "locator": "p.10切向带；p.12 NSD-i变频/伺服及总成图；p.17机械加压；p.18–19 Cowemat/Bobbintray/Cowefeed；p.20尺寸与48锭机节；p.21常规三罗拉、直驱IE4吸风。"
+    },
+    "machineRef_03d4947c06bdb9": {
+      "title": "当前常规 Zinser 51 工位近照",
+      "url": "https://saurer.com/uploads/media/1920x700/02/7062-Zinser51_front%20view%20lr.jpg?v=1-0",
+      "locator": "常规三罗拉路径、双锭机械加压摇架、隔纱板、管纱、钢领与锭脚的可见结构。"
+    },
+    "machineRef_89dab10742f174": {
+      "title": "当前常规 Zinser 51 整机原厂图",
+      "url": "https://saurer.com/uploads/media/1920x700/01/7061-Zinser51_full%20view%20lr.jpg?v=1-0",
+      "locator": "白色双层检修门、黑底架、蓝色双锭加压臂、粗纱架、Cowemat连杆及巡回吹吸清洁附件。"
     },
     "machineRef_a5b071f44b3576": {
       "title": "Autocoro 11 10/2026 原厂册",
